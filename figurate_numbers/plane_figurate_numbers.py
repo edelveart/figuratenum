@@ -121,3 +121,10 @@ def truncated_centered_hexagonal_numbers() -> Iterator[int]:
 
 def truncated_hex_numbers() -> Iterator[int]:
     return truncated_centered_hexagonal_numbers()
+
+
+def generalized_mgonal_numbers(m: int, init_num: int = 0) -> Iterator[int]:
+    delta = init_num
+    while True:
+        yield (delta * ((m - 2) * delta - m + 4)) // 2
+        delta += 1
