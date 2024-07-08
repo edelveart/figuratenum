@@ -267,3 +267,10 @@ def generalized_centered_mgonal_pyramidal_numbers(m: int, start_num: int = 0) ->
     while True:
         yield (m * delta ** 3 + delta * (6 - m)) // 6
         delta += 1
+
+
+def generalized_mgonal_prism_numbers(m: int, start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield delta * (m * delta ** 2 - m * delta + 2) // 2
+        delta += 1
