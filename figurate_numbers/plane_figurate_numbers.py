@@ -103,3 +103,10 @@ def truncated_pronic_numbers() -> Iterator[int]:
     while True:
         yield (7 * delta ** 2) - (7 * delta) + 2
         delta += 1
+
+
+def truncated_centered_pol_numbers(m: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        yield 1 + (m * (7 * delta ** 2 - 11 * delta + 4)) // 2
+        delta += 1
