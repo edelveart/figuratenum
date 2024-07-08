@@ -117,3 +117,7 @@ def truncated_centered_hexagonal_numbers() -> Iterator[int]:
     while True:
         yield 21 * delta ** 2 - 33 * delta + 13
         delta += 1
+
+
+def truncated_hex_numbers() -> Iterator[int]:
+    return truncated_centered_hexagonal_numbers()
