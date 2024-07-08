@@ -32,3 +32,10 @@ def polite_numbers() -> Iterator[int]:
     while True:
         yield delta + floor(log2(delta + log2(delta)))
         delta += 1
+
+
+def impolite_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield 2 ** delta
+        delta += 1
