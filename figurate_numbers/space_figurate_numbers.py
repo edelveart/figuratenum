@@ -204,3 +204,10 @@ def generalized_mgonal_pyramidal_numbers(m: int, start_num: int = 0) -> Iterator
     while True:
         yield (delta * (delta + 1) * ((m - 2) * delta - m + 5)) // 6
         delta += 1
+
+
+def generalized_cubic_numbers(start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield delta ** 3
+        delta += 1
