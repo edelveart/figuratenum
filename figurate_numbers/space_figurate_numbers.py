@@ -97,3 +97,7 @@ def centered_tetrahedron_numbers() -> Iterator[int]:
     while True:
         yield (2 * delta - 1) * ((delta ** 2 - delta + 3)) // 3
         delta += 1
+
+
+def centered_tetrahedral_numbers() -> Iterator[int]:
+    return centered_tetrahedron_numbers
