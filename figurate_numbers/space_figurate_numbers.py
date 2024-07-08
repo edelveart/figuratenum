@@ -101,3 +101,10 @@ def centered_tetrahedron_numbers() -> Iterator[int]:
 
 def centered_tetrahedral_numbers() -> Iterator[int]:
     return centered_tetrahedron_numbers
+
+
+def centered_square_pyramid_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * ((delta ** 2 - delta + 2)) // 2
+        delta += 1
