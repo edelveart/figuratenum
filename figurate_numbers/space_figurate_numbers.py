@@ -177,7 +177,7 @@ def centered_mgonal_pyramidal_numbers(m: int) -> Iterator[int]:
 def centered_hexagonal_pyramidal_numbers(m: int) -> Iterator[int]:
     delta = 1
     while True:
-        yield (m * delta ** 3 + delta * (6 - m)) // 6
+        yield delta ** 3
         delta += 1
 
 
