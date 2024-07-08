@@ -96,3 +96,10 @@ def truncated_square_numbers() -> Iterator[int]:
     while True:
         yield (7 * delta ** 2) - (10 * delta) + 4
         delta += 1
+
+
+def truncated_pronic_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (7 * delta ** 2) - (7 * delta) + 2
+        delta += 1
