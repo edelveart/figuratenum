@@ -23,3 +23,14 @@
 18. `generalized_mgonal_numbers(m, start_numb)`
 19. `generalized_centered_pol_numbers(m, start_numb)`
 20. `generalized_pronic_numbers(start_numb)`
+
+## Space figurate numbers
+
+1. `m_pyramidal_numbers(m)`
+2. `cubic_numbers`
+3. `tetrahedral_numbers`
+4. `octahedral_numbers`
+5. `dodecahedral_numbers`
+6. `icosahedral_numbers`
+7. `truncated_tetrahedral_numbers`
+8. `truncated_cubic_numbers`
