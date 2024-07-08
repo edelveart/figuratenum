@@ -76,3 +76,10 @@ def centered_cube_numbers() -> Iterator[int]:
     while True:
         yield (2 * delta - 1) * (delta ** 2 - delta + 1)
         delta += 1
+
+
+def rhombic_dodecahedral_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * (2 * delta ** 2 - 2 * delta + 1)
+        delta += 1
