@@ -274,3 +274,10 @@ def generalized_mgonal_prism_numbers(m: int, start_num: int = 0) -> Iterator[int
     while True:
         yield delta * (m * delta ** 2 - m * delta + 2) // 2
         delta += 1
+
+
+def generalized_hexagonal_prism_numbers(start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield delta * (3 * delta ** 2 - 3 * delta + 1)
+        delta += 1
