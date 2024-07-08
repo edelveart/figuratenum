@@ -144,3 +144,10 @@ def centered_dodecahedron_numbers() -> Iterator[int]:
     while True:
         yield (2 * delta - 1) * (3 * delta ** 2 - 3 * delta + 1)
         delta += 1
+
+
+def centered_truncated_tetrahedron_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * (7 * delta ** 2 - 7 * delta + 3) // 3
+        delta += 1
