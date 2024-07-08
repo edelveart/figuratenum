@@ -137,3 +137,10 @@ def centered_icosahedron_numbers() -> Iterator[int]:
 
 def centered_cuboctahedron_numbers() -> Iterator[int]:
     return centered_icosahedron_numbers()
+
+
+def centered_dodecahedron_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * (3 * delta ** 2 - 3 * delta + 1)
+        delta += 1
