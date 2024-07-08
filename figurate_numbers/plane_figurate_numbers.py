@@ -66,15 +66,15 @@ def polygram_numbers(m: int) -> Iterator[int]:
         delta += 1
 
 
+def centered_star_polygonal_numbers(m: int) -> Iterator[int]:
+    return polygram_numbers(m)
+
+
 def pentagram_numbers() -> Iterator[int]:
     delta = 1
     while True:
         yield 5 * delta ** 2 - 5 * delta + 1
         delta += 1
-
-
-def centered_star_polygonal_numbers(m: int) -> Iterator[int]:
-    return polygram_numbers(m)
 
 
 def gnomic_numbers() -> Iterator[int]:
@@ -123,22 +123,22 @@ def truncated_hex_numbers() -> Iterator[int]:
     return truncated_centered_hexagonal_numbers()
 
 
-def generalized_mgonal_numbers(m: int, init_num: int = 0) -> Iterator[int]:
-    delta = init_num
+def generalized_mgonal_numbers(m: int, start_num: int = 0) -> Iterator[int]:
+    delta = start_num
     while True:
         yield (delta * ((m - 2) * delta - m + 4)) // 2
         delta += 1
 
 
-def generalized_centered_pol_numbers(m: int, init_num: int = 0) -> Iterator[int]:
-    delta = init_num
+def generalized_centered_pol_numbers(m: int, start_num: int = 0) -> Iterator[int]:
+    delta = start_num
     while True:
         yield (m * delta ** 2 - m * delta + 2) // 2
         delta += 1
 
 
-def generalized_pronic_numbers(init_num: int = 0) -> Iterator[int]:
-    delta = init_num
+def generalized_pronic_numbers(start_num: int = 0) -> Iterator[int]:
+    delta = start_num
     while True:
         yield delta * (delta + 1)
         delta += 1
