@@ -158,3 +158,10 @@ def centered_truncated_cube_numbers() -> Iterator[int]:
     while True:
         yield (2 * delta - 1) * (23 * delta**2 - 23 * delta + 3) // 3
         delta += 1
+
+
+def centered_truncated_octahedron_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * (5 * delta ** 2 - 5 * delta + 1)
+        delta += 1
