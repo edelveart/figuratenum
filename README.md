@@ -38,3 +38,6 @@
 10. `stella_octangula_numbers`
 11. `centered_cube_numbers`
 12. `rhombic_dodecahedral_numbers`
+13. `hauy_rhombic_dodecahedral_numbers`
+14. `centered_tetrahedron_numbers` = `centered_tetrahedral_numbers`
+15. `centered_square_pyramid_numbers` = `centered_pyramid_numbers`
