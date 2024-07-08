@@ -16,6 +16,10 @@ def centered_square_numbers() -> Iterator[int]:
         delta += 1
 
 
+def diamond_numbers() -> Iterator[int]:
+    return centered_square_numbers()
+
+
 def centered_dodecagonal_numbers() -> Iterator[int]:
     delta = 1
     while True:
