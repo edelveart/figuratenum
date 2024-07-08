@@ -66,6 +66,10 @@ def polygram_numbers(m: int) -> Iterator[int]:
         delta += 1
 
 
+def centered_star_polygonal_numbers(m: int) -> Iterator[int]:
+    return polygram_numbers(m)
+
+
 def gnomic_numbers() -> Iterator[int]:
     delta = 1
     while True:
