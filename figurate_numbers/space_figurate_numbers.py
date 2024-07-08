@@ -216,5 +216,12 @@ def generalized_cubic_numbers(start_num: int = 0) -> Iterator[int]:
 def generalized_octahedral_numbers(start_num: int = 0) -> Iterator[int]:
     delta = start_num
     while True:
-        yield (2 * delta**2 + 1) * delta // 3
+        yield (2 * delta ** 2 + 1) * delta // 3
+        delta += 1
+
+
+def generalized_icosahedral_numbers(start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield (5 * delta ** 2 - 5 * delta + 2) * delta // 2
         delta += 1
