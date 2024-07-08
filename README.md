@@ -45,3 +45,10 @@
 17. `centered_octahedron_numbers`
 18. `centered_icosahedron_numbers` = `centered_cuboctahedron_numbers`
 19. `centered_dodecahedron_numbers`
+20. `centered_truncated_tetrahedron_numbers`
+21. `centered_truncated_cube_numbers`
+22. `centered_truncated_octahedron_numbers`
+23. `centered_mgonal_pyramidal_numbers(m)`
+24. `centered_hexagonal_pyramidal_numbers` = `hex_pyramidal_numbers`
+25. `hexagonal_prism_numbers`
+26. `mgonal_prism_numbers(m)`
