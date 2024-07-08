@@ -13,3 +13,10 @@ def cubic_numbers() -> Iterator[int]:
     while True:
         yield delta ** 3
         delta += 1
+
+
+def tetrahedral_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2)) // 6
+        delta += 1
