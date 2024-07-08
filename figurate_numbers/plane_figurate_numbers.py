@@ -39,3 +39,10 @@ def impolite_numbers() -> Iterator[int]:
     while True:
         yield 2 ** delta
         delta += 1
+
+
+def cross_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield 4 * delta - 3
+        delta += 1
