@@ -41,3 +41,7 @@
 13. `hauy_rhombic_dodecahedral_numbers`
 14. `centered_tetrahedron_numbers` = `centered_tetrahedral_numbers`
 15. `centered_square_pyramid_numbers` = `centered_pyramid_numbers`
+16. `centered_mgonal_pyramid_numbers(m)`
+17. `centered_octahedron_numbers`
+18. `centered_icosahedron_numbers` = `centered_cuboctahedron_numbers`
+19. `centered_dodecahedron_numbers`
