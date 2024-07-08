@@ -119,3 +119,10 @@ def centered_mgonal_pyramid_numbers(m: int) -> Iterator[int]:
     while True:
         yield (m - 1) * ((delta - 1) * delta * (2 * delta - 1)) // 6 + (2 * delta - 1)
         delta += 1
+
+
+def centered_octahedron_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * (2 * delta**2 - 2 * delta + 3) // 3
+        delta += 1
