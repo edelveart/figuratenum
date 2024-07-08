@@ -52,3 +52,15 @@
 24. `centered_hexagonal_pyramidal_numbers` = `hex_pyramidal_numbers`
 25. `hexagonal_prism_numbers`
 26. `mgonal_prism_numbers(m)`
+27. `generalized_mgonal_pyramidal_numbers(m, start_num)`
+28. `generalized_cubic_numbers(start_num)`
+29. `generalized_octahedral_numbers(start_num)`
+30. `generalized_icosahedral_numbers(start_num)`
+31. `generalized_dodecahedral_numbers(start_num)`
+32. `generalized_centered_cube_numbers(start_num)`
+33. `generalized_centered_tetrahedron_numbers(start_num)`
+34. `generalized_centered_square_pyramid_numbers(start_num)`
+35. `generalized_rhombic_dodecahedral_numbers(start_num)`
+36. `generalized_centered_mgonal_pyramidal_numbers(m, start_num)`
+37. `generalized_mgonal_prism_numbers(m, start_num)`
+38. `generalized_hexagonal_prism_numbers(start_num)`
