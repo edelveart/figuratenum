@@ -25,3 +25,10 @@ def pronic_numbers() -> Iterator[int]:
 
 def heteromecic_numbers() -> Iterator[int]:
     return pronic_numbers()
+
+
+def polite_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield delta + floor(log2(delta + log2(delta)))
+        delta += 1
