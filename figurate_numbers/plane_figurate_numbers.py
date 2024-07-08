@@ -135,3 +135,10 @@ def generalized_centered_pol_numbers(m: int, init_num: int = 0) -> Iterator[int]
     while True:
         yield (m * delta ** 2 - m * delta + 2) // 2
         delta += 1
+
+
+def generalized_pronic_numbers(init_num: int = 0) -> Iterator[int]:
+    delta = init_num
+    while True:
+        yield delta * (delta + 1)
+        delta += 1
