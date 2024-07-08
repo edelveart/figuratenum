@@ -82,3 +82,10 @@ def gnomic_numbers() -> Iterator[int]:
     while True:
         yield 2 * delta - 1
         delta += 1
+
+
+def truncated_triangular_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (3 * delta ** 2) - (3 * delta) + 1
+        delta += 1
