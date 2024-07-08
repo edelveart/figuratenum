@@ -112,3 +112,10 @@ def centered_square_pyramid_numbers() -> Iterator[int]:
 
 def centered_pyramid_numbers() -> Iterator[int]:
     return centered_square_pyramid_numbers()
+
+
+def centered_mgonal_pyramid_numbers(m: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (m - 1) * ((delta - 1) * delta * (2 * delta - 1)) // 6 + (2 * delta - 1)
+        delta += 1
