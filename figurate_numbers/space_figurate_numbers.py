@@ -34,3 +34,10 @@ def dodecahedral_numbers() -> Iterator[int]:
     while True:
         yield (delta * (3 * delta - 1) * (3 * delta - 2)) // 2
         delta += 1
+
+
+def icosahedral_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (5 * delta ** 2 - 5 * delta + 2)) // 2
+        delta += 1
