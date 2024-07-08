@@ -55,3 +55,10 @@ def truncated_cubic_numbers() -> Iterator[int]:
     while True:
         yield (3 * delta - 2) ** 3 - ((8 * (delta - 1) * delta * (delta + 1)) // 6)
         delta += 1
+
+
+def truncated_octahedral_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield 16 * delta ** 3 - 33 * delta ** 2 + 24 * delta - 6
+        delta += 1
