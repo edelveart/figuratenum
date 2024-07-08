@@ -12,8 +12,12 @@ def polygonal_numbers(m: int) -> Iterator[int]:
 def centered_dodecagonal_numbers() -> Iterator[int]:
     delta = 1
     while True:
-        yield 6 * delta**2 - 6 * delta + 1
+        yield 6 * delta ** 2 - 6 * delta + 1
         delta += 1
+
+
+def star_numbers() -> Iterator[int]:
+    return centered_dodecagonal_numbers()
 
 
 def centered_mgonal_numbers(m: int) -> Iterator[int]:
