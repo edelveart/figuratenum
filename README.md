@@ -34,3 +34,7 @@
 6. `icosahedral_numbers`
 7. `truncated_tetrahedral_numbers`
 8. `truncated_cubic_numbers`
+9. `truncated_octahedral_numbers`
+10. `stella_octangula_numbers`
+11. `centered_cube_numbers`
+12. `rhombic_dodecahedral_numbers`
