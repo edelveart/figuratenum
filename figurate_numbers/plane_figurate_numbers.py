@@ -46,3 +46,10 @@ def cross_numbers() -> Iterator[int]:
     while True:
         yield 4 * delta - 3
         delta += 1
+
+
+def aztec_diamond_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta) * (delta + 1)
+        delta += 1
