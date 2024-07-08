@@ -21,3 +21,7 @@ def pronic_numbers() -> Iterator[int]:
     while True:
         yield delta * delta + 1
         delta += 1
+
+
+def heteromecic_numbers() -> Iterator[int]:
+    return pronic_numbers()
