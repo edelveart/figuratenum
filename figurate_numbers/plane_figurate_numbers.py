@@ -128,3 +128,10 @@ def generalized_mgonal_numbers(m: int, init_num: int = 0) -> Iterator[int]:
     while True:
         yield (delta * ((m - 2) * delta - m + 4)) // 2
         delta += 1
+
+
+def generalized_centered_pol_numbers(m: int, init_num: int = 0) -> Iterator[int]:
+    delta = init_num
+    while True:
+        yield (m * delta ** 2 - m * delta + 2) // 2
+        delta += 1
