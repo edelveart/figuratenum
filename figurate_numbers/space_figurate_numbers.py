@@ -232,3 +232,10 @@ def generalized_dodecahedral_numbers(start_num: int = 0) -> Iterator[int]:
     while True:
         yield (9 * delta ** 2 - 9 * delta + 2) * delta // 2
         delta += 1
+
+
+def generalized_centered_cube_numbers(start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield (2 * delta - 1) * (delta ** 2 - delta + 1)
+        delta += 1
