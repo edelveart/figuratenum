@@ -69,3 +69,10 @@ def stella_octangula_numbers() -> Iterator[int]:
     while True:
         yield delta * (2 * delta**2 - 1)
         delta += 1
+
+
+def centered_cube_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * (delta ** 2 - delta + 1)
+        delta += 1
