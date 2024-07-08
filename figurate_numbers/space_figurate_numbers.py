@@ -179,3 +179,7 @@ def centered_hexagonal_pyramidal_numbers(m: int) -> Iterator[int]:
     while True:
         yield (m * delta ** 3 + delta * (6 - m)) // 6
         delta += 1
+
+
+def hex_pyramidal_numbers(m: int) -> Iterator[int]:
+    return centered_hexagonal_pyramidal_numbers()
