@@ -83,3 +83,10 @@ def rhombic_dodecahedral_numbers() -> Iterator[int]:
     while True:
         yield (2 * delta - 1) * (2 * delta ** 2 - 2 * delta + 1)
         delta += 1
+
+
+def hauy_rhombic_dodecahedral_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * (8 * delta ** 2 - 14 * delta + 7)
+        delta += 1
