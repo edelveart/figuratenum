@@ -190,3 +190,10 @@ def hexagonal_prism_numbers() -> Iterator[int]:
     while True:
         yield delta * (3 * delta ** 2 - 3 * delta + 1)
         delta += 1
+
+
+def mgonal_prism_numbers(m: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        yield delta * (m * delta**2 - m * delta + 2) // 2
+        delta += 1
