@@ -27,6 +27,10 @@ def heteromecic_numbers() -> Iterator[int]:
     return pronic_numbers()
 
 
+def oblong_numbers() -> Iterator[int]:
+    return pronic_numbers()
+
+
 def polite_numbers() -> Iterator[int]:
     delta = 1
     while True:
