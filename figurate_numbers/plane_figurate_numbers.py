@@ -53,3 +53,10 @@ def aztec_diamond_numbers() -> Iterator[int]:
     while True:
         yield (2 * delta) * (delta + 1)
         delta += 1
+
+
+def polygram_numbers(m: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        yield m * delta ** 2 - m * delta + 1
+        delta += 1
