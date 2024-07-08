@@ -66,6 +66,13 @@ def polygram_numbers(m: int) -> Iterator[int]:
         delta += 1
 
 
+def pentagram_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield 5 * delta ** 2 - 5 * delta + 1
+        delta += 1
+
+
 def centered_star_polygonal_numbers(m: int) -> Iterator[int]:
     return polygram_numbers(m)
 
