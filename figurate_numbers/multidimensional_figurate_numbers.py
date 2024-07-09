@@ -9,7 +9,7 @@ def factorial_iter(num: int) -> int:
 
 
 def binomial_coefficient(n: int, k: int) -> int:
-    return factorial_iter(n) / (factorial_iter(k) * factorial_iter(n - k))
+    return factorial_iter(n) // (factorial_iter(k) * factorial_iter(n - k))
 
 
 def pentatope_numbers() -> Iterator[int]:
