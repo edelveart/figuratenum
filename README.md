@@ -64,3 +64,11 @@
 36. `generalized_centered_mgonal_pyramidal_numbers(m, start_num)`
 37. `generalized_mgonal_prism_numbers(m, start_num)`
 38. `generalized_hexagonal_prism_numbers(start_num)`
+
+## Multidimensional figurate numbers
+
+1. `pentatope_numbers` = `hypertetrahedral_numbers` = `triangulotriangular_numbers`
+2. `k_dimensional_hypertetrahedron_numbers(k)`
+3. `biquadratic_numbers`
+4. `k_dimensional_hypercube_numbers(k)` = `k_hypercube_numbers(k)`
+5. `hyperoctahedral_numbers` = `hexadecachoron_numbers` = `four_cross_polytope_numbers` = `four_orthoplex_numbers`
