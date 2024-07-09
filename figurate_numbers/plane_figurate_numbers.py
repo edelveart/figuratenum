@@ -134,6 +134,10 @@ def truncated_centered_pol_numbers(m: int) -> Iterator[int]:
         delta += 1
 
 
+def truncated_centered_mgonal_numbers(m: int) -> Iterator[int]:
+    return truncated_centered_pol_numbers(m)
+
+
 def truncated_centered_hexagonal_numbers() -> Iterator[int]:
     delta = 1
     while True:
