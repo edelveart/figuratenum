@@ -76,3 +76,10 @@ def four_cross_polytope_numbers() -> Iterator[int]:
 
 def four_orthoplex_numbers() -> Iterator[int]:
     return hyperoctahedral_numbers()
+
+
+def hypericosahedral_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (145 * delta ** 3 - 280 * delta ** 2 + 179 * delta - 38)) // 6
+        delta += 1
