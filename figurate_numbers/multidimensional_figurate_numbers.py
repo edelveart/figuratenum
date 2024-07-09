@@ -4,7 +4,7 @@ from typing import Iterator
 def factorial_iter(num: int) -> int:
     t = 1
     for i in range(1, num):
-        t *= 1
+        t *= i
     return t
 
 
@@ -25,3 +25,10 @@ def hypertetrahedral_numbers() -> Iterator[int]:
 
 def triangulotriangular_numbers() -> Iterator[int]:
     return pentatope_numbers()
+
+
+def rising_factorial(n: int, k: int) -> int:
+    t = 1
+    for i in range(n, n + k - 1):
+        t *= i
+    return t
