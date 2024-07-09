@@ -77,5 +77,9 @@
 8. `polyoctahedral_numbers` = `icositetrachoron_numbers` = `octaplex_numbers` = `hyperdiamond_numbers`
 9. `k_dimensional_hyperoctahedron_numbers(k)` = `k_cross_polytope_numbers(k)`
 10. `four_dimensional_mgonal_pyramidal_numbers(m)` = `mgonal_pyramidal_numbers_of_the_second_order`
+11. `k_dimensional_mgonal_pyramidal_numbers(k, m)` = `mgonal_pyramidal_numbers_of_the_k_2_th_order(k, m)`
+12. `centered_biquadratic_numbers`
+13. `k_dimensional_centered_hypercube_numbers(k)`
+14. `centered_polytope_numbers`
 
 
