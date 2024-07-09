@@ -197,3 +197,10 @@ def k_dimensional_centered_hypercube_numbers(k: int) -> Iterator[int]:
     while True:
         yield delta ** k + (delta - 1) ** k
         delta += 1
+
+
+def centered_polytope_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (5 * delta ** 4 - 10 * delta ** 3 + 55 * delta ** 2 - 50 * delta + 24) // 24
+        delta += 1
