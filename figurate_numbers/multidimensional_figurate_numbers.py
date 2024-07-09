@@ -148,3 +148,10 @@ def k_dimensional_hyperoctahedron_numbers(k: int) -> Iterator[int]:
 
 def k_cross_polytope_numbers(k: int) -> Iterator[int]:
     return k_dimensional_hyperoctahedron_numbers(k)
+
+
+def four_dimensional_mgonal_pyramidal_numbers(m: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * ((m - 2) * delta - m + 6)) // 24
+        delta += 1
