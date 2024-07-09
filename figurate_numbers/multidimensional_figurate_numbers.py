@@ -170,3 +170,10 @@ def pseudo_rising_factorial(n: int, k: int) -> int:
 
 def pseudo_pochhammer_function(n: int, k: int) -> int:
     return pseudo_rising_factorial(n, k)
+
+
+def k_dimensional_mgonal_pyramidal_numbers(k: int, m: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
+        delta += 1
