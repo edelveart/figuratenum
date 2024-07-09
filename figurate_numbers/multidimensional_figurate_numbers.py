@@ -46,3 +46,10 @@ def biquadratic_numbers() -> Iterator[int]:
     while True:
         yield delta ** 4
         delta += 1
+
+
+def k_dimensional_hypercube_numbers(k: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        yield delta ** k
+        delta += 1
