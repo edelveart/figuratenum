@@ -37,5 +37,12 @@ def rising_factorial(n: int, k: int) -> int:
 def k_dimensional_hypertetrahedron_numbers(k: int) -> Iterator[int]:
     delta = 1
     while True:
-        yield rising_factorial(delta, k) / factorial_iter(k)
+        yield rising_factorial(delta, k) // factorial_iter(k)
+        delta += 1
+
+
+def biquadratic_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield delta ** 4
         delta += 1
