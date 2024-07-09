@@ -159,3 +159,10 @@ def four_dimensional_mgonal_pyramidal_numbers(m: int) -> Iterator[int]:
 
 def mgonal_pyramidal_numbers_of_the_second_order(m: int) -> Iterator[int]:
     return four_dimensional_mgonal_pyramidal_numbers(m)
+
+
+def pseudo_rising_factorial(n: int, k: int) -> int:
+    t = 1
+    for i in range(n, (n + k - 2) + 1):
+        t *= i
+    return t
