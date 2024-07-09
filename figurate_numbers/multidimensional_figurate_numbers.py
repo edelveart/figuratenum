@@ -139,8 +139,12 @@ def k_dimensional_hyperoctahedron_numbers(k: int) -> Iterator[int]:
     delta = 1
     while True:
         a = 0
-        for i in range((k - 1) + 1):
+        for i in range(0, (k - 1) + 1):
             a += (binomial_coefficient(k - 1, i) *
                   (rising_factorial(delta - i, k) // factorial_iter(k)))
         yield a
         delta += 1
+
+
+def k_cross_polytope_numbers(k: int) -> Iterator[int]:
+    return k_dimensional_hyperoctahedron_numbers(k)
