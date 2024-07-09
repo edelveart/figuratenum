@@ -121,3 +121,15 @@ def polyoctahedral_numbers() -> Iterator[int]:
     while True:
         yield delta ** 2 * (3 * delta ** 2 - 4 * delta + 2)
         delta += 1
+
+
+def icositetrachoron_numbers() -> Iterator[int]:
+    return polyoctahedral_numbers()
+
+
+def octaplex_numbers() -> Iterator[int]:
+    return polyoctahedral_numbers()
+
+
+def hyperdiamond_numbers() -> Iterator[int]:
+    return polyoctahedral_numbers()
