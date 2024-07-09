@@ -124,7 +124,7 @@ def centered_mgonal_pyramid_numbers(m: int) -> Iterator[int]:
 def centered_octahedron_numbers() -> Iterator[int]:
     delta = 1
     while True:
-        yield (2 * delta - 1) * (2 * delta**2 - 2 * delta + 3) // 3
+        yield (2 * delta - 1) * (2 * delta ** 2 - 2 * delta + 3) // 3
         delta += 1
 
 
@@ -156,7 +156,7 @@ def centered_truncated_tetrahedron_numbers() -> Iterator[int]:
 def centered_truncated_cube_numbers() -> Iterator[int]:
     delta = 1
     while True:
-        yield (2 * delta - 1) * (23 * delta**2 - 23 * delta + 3) // 3
+        yield (2 * delta - 1) * (23 * delta ** 2 - 23 * delta + 3) // 3
         delta += 1
 
 
@@ -195,7 +195,7 @@ def hexagonal_prism_numbers() -> Iterator[int]:
 def mgonal_prism_numbers(m: int) -> Iterator[int]:
     delta = 1
     while True:
-        yield delta * (m * delta**2 - m * delta + 2) // 2
+        yield delta * (m * delta ** 2 - m * delta + 2) // 2
         delta += 1
 
 
