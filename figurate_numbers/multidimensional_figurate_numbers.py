@@ -3,7 +3,7 @@ from typing import Iterator
 
 def factorial_iter(num: int) -> int:
     t = 1
-    for i in range(1, num):
+    for i in range(1, (num) + 1):
         t *= i
     return t
 
@@ -29,7 +29,7 @@ def triangulotriangular_numbers() -> Iterator[int]:
 
 def rising_factorial(n: int, k: int) -> int:
     t = 1
-    for i in range(n, n + k - 1):
+    for i in range(n, (n + k - 1) + 1):
         t *= i
     return t
 
@@ -133,3 +133,14 @@ def octaplex_numbers() -> Iterator[int]:
 
 def hyperdiamond_numbers() -> Iterator[int]:
     return polyoctahedral_numbers()
+
+
+def k_dimensional_hyperoctahedron_numbers(k: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        a = 0
+        for i in range((k - 1) + 1):
+            a += (binomial_coefficient(k - 1, i) *
+                  (rising_factorial(delta - i, k) // factorial_iter(k)))
+        yield a
+        delta += 1
