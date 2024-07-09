@@ -68,7 +68,7 @@
 ## Multidimensional figurate numbers
 
 1. `pentatope_numbers` = `hypertetrahedral_numbers` = `triangulotriangular_numbers`
-2. `k_dimensional_hypertetrahedron_numbers(k)`
+2. `k_dimensional_hypertetrahedron_numbers(k)` = `k_hypertetrahedron_numbers(k)` = `regular_k_polytopic_numbers(k)` = `figurate_numbers_of_order_k(k)`
 3. `biquadratic_numbers`
 4. `k_dimensional_hypercube_numbers(k)` = `k_hypercube_numbers(k)`
 5. `hyperoctahedral_numbers` = `hexadecachoron_numbers` = `four_cross_polytope_numbers` = `four_orthoplex_numbers`
