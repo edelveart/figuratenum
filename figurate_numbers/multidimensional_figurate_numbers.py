@@ -21,3 +21,7 @@ def pentatope_numbers() -> Iterator[int]:
 
 def hypertetrahedral_numbers() -> Iterator[int]:
     return pentatope_numbers()
+
+
+def triangulotriangular_numbers() -> Iterator[int]:
+    return pentatope_numbers()
