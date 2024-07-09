@@ -49,6 +49,10 @@ def regular_k_polytopic_numbers(k: int) -> Iterator[int]:
     return k_dimensional_hypertetrahedron_numbers(k)
 
 
+def figurate_numbers_of_order_k(k: int) -> Iterator[int]:
+    return k_dimensional_hypertetrahedron_numbers(k)
+
+
 def biquadratic_numbers() -> Iterator[int]:
     delta = 1
     while True:
