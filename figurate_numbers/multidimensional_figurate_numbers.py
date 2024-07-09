@@ -64,3 +64,15 @@ def hyperoctahedral_numbers() -> Iterator[int]:
     while True:
         yield (delta ** 2 * (delta ** 2 + 2)) // 3
         delta += 1
+
+
+def hexadecachoron_numbers() -> Iterator[int]:
+    return hyperoctahedral_numbers()
+
+
+def four_cross_polytope_numbers() -> Iterator[int]:
+    return hyperoctahedral_numbers()
+
+
+def four_orthoplex_numbers() -> Iterator[int]:
+    return hyperoctahedral_numbers()
