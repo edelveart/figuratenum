@@ -18,7 +18,7 @@
 13. `truncated_triangular_numbers`
 14. `truncated_square_numbers`
 15. `truncated_pronic_numbers`
-16. `truncated_centered_pol_numbers(m)`
+16. `truncated_centered_pol_numbers(m)` = `truncated_centered_pol_numbers(m)`
 17. `truncated_centered_hexagonal_numbers` = `truncated_hex_numbers`
 18. `generalized_mgonal_numbers(m, start_numb)`
 19. `generalized_centered_pol_numbers(m, start_numb)`
