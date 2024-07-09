@@ -177,3 +177,7 @@ def k_dimensional_mgonal_pyramidal_numbers(k: int, m: int) -> Iterator[int]:
     while True:
         yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
         delta += 1
+
+
+def mgonal_pyramidal_numbers_of_the_k_2_th_order(k: int, m: int) -> Iterator[int]:
+    return k_dimensional_mgonal_pyramidal_numbers(k, m)
