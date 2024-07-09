@@ -67,7 +67,7 @@ def truncated_octahedral_numbers() -> Iterator[int]:
 def stella_octangula_numbers() -> Iterator[int]:
     delta = 1
     while True:
-        yield delta * (2 * delta**2 - 1)
+        yield delta * (2 * delta ** 2 - 1)
         delta += 1
 
 
