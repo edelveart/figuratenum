@@ -190,3 +190,10 @@ def centered_biquadratic_numbers() -> Iterator[int]:
         a += delta ** 4 - (delta - 2) ** 4
         yield a + 1
         delta += 1
+
+
+def k_dimensional_centered_hypercube_numbers(k: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        yield delta ** k + (delta - 1) ** k
+        delta += 1
