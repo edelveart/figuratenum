@@ -100,7 +100,7 @@ def hexacosichoron_numbers() -> Iterator[int]:
 def hyperdodecahedral_numbers() -> Iterator[int]:
     delta = 1
     while True:
-        yield (delta * (261 * delta**3 - 504 * delta ** 2 + 283 * delta - 38)) // 2
+        yield (delta * (261 * delta ** 3 - 504 * delta ** 2 + 283 * delta - 38)) // 2
         delta += 1
 
 
@@ -114,3 +114,10 @@ def dodecaplex_numbers() -> Iterator[int]:
 
 def polydodecahedron_numbers() -> Iterator[int]:
     return hyperdodecahedral_numbers()
+
+
+def polyoctahedral_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield delta ** 2 * (3 * delta ** 2 - 4 * delta + 2)
+        delta += 1
