@@ -95,3 +95,10 @@ def polytetrahedron_numbers() -> Iterator[int]:
 
 def hexacosichoron_numbers() -> Iterator[int]:
     return hypericosahedral_numbers()
+
+
+def hyperdodecahedral_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (261 * delta ** 3 - 504 * delta ** 2 + 283 * delta - 38)) // 2
+        delta += 1
