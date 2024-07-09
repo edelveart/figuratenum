@@ -10,3 +10,10 @@ def factorial_iter(num: int) -> int:
 
 def binomial_coefficient(n: int, k: int) -> int:
     return factorial_iter(n) / (factorial_iter(k) * factorial_iter(n - k))
+
+
+def pentatope_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * (delta + 3)) // 24
+        delta += 1
