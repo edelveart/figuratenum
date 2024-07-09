@@ -41,6 +41,10 @@ def k_dimensional_hypertetrahedron_numbers(k: int) -> Iterator[int]:
         delta += 1
 
 
+def k_hypertetrahedron_numbers(k: int) -> Iterator[int]:
+    return k_dimensional_hypertetrahedron_numbers(k)
+
+
 def biquadratic_numbers() -> Iterator[int]:
     delta = 1
     while True:
