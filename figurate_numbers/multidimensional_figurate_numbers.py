@@ -155,3 +155,7 @@ def four_dimensional_mgonal_pyramidal_numbers(m: int) -> Iterator[int]:
     while True:
         yield (delta * (delta + 1) * (delta + 2) * ((m - 2) * delta - m + 6)) // 24
         delta += 1
+
+
+def mgonal_pyramidal_numbers_of_the_second_order(m: int) -> Iterator[int]:
+    return four_dimensional_mgonal_pyramidal_numbers(m)
