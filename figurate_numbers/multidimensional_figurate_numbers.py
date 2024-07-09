@@ -17,3 +17,7 @@ def pentatope_numbers() -> Iterator[int]:
     while True:
         yield (delta * (delta + 1) * (delta + 2) * (delta + 3)) // 24
         delta += 1
+
+
+def hypertetrahedral_numbers() -> Iterator[int]:
+    return pentatope_numbers()
