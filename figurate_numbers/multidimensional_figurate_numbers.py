@@ -166,3 +166,7 @@ def pseudo_rising_factorial(n: int, k: int) -> int:
     for i in range(n, (n + k - 2) + 1):
         t *= i
     return t
+
+
+def pseudo_pochhammer_function(n: int, k: int) -> int:
+    return pseudo_rising_factorial(n, k)
