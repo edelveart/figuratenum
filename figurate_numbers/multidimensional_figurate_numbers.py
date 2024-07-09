@@ -83,3 +83,15 @@ def hypericosahedral_numbers() -> Iterator[int]:
     while True:
         yield (delta * (145 * delta ** 3 - 280 * delta ** 2 + 179 * delta - 38)) // 6
         delta += 1
+
+
+def tetraplex_numbers() -> Iterator[int]:
+    return hypericosahedral_numbers()
+
+
+def polytetrahedron_numbers() -> Iterator[int]:
+    return hypericosahedral_numbers()
+
+
+def hexacosichoron_numbers() -> Iterator[int]:
+    return hypericosahedral_numbers()
