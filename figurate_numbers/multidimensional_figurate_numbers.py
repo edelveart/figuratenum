@@ -32,3 +32,10 @@ def rising_factorial(n: int, k: int) -> int:
     for i in range(n, n + k - 1):
         t *= i
     return t
+
+
+def k_dimensional_hypertetrahedron_numbers(k: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        yield rising_factorial(delta, k) / factorial_iter(k)
+        delta += 1
