@@ -53,3 +53,7 @@ def k_dimensional_hypercube_numbers(k: int) -> Iterator[int]:
     while True:
         yield delta ** k
         delta += 1
+
+
+def k_hypercube_numbers(k: int) -> Iterator[int]:
+    return k_dimensional_hypercube_numbers(k)
