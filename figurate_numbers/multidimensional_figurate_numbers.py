@@ -181,3 +181,12 @@ def k_dimensional_mgonal_pyramidal_numbers(k: int, m: int) -> Iterator[int]:
 
 def mgonal_pyramidal_numbers_of_the_k_2_th_order(k: int, m: int) -> Iterator[int]:
     return k_dimensional_mgonal_pyramidal_numbers(k, m)
+
+
+def centered_biquadratic_numbers() -> Iterator[int]:
+    delta = 1
+    a = 0
+    while True:
+        a += delta ** 4 - (delta - 2) ** 4
+        yield a + 1
+        delta += 1
