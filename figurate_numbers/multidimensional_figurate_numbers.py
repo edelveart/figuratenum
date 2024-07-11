@@ -272,3 +272,11 @@ def helper_ext_int_double_sigma(k: int, n: int) -> int:
             a += ((2 ** (1 + i)) * binomial_coefficient(k, 1 + i)
                   * binomial_coefficient(j, i))
     return 1 + t + a
+
+
+def k_dimensional_centered_hyperoctahedron_numbers(k: int) -> Iterator[int]:
+    delta = 1
+    yield 1
+    while True:
+        yield helper_ext_int_double_sigma(k, delta)
+        delta += 1
