@@ -260,3 +260,15 @@ def nexus_numbers(k: int) -> Iterator[int]:
     while True:
         yield (delta + 1) ** (k + 1) - delta ** (k + 1)
         delta += 1
+
+
+def helper_ext_int_double_sigma(k: int, n: int) -> int:
+    t = ((2 ** 1) * binomial_coefficient(k, 1) * binomial_coefficient(1, 0))
+    if n == 1:
+        return t + 1
+    a = 0
+    for j in range(1, (n - 1) + 1):
+        for i in range(0, (k - 1) + 1):
+            a += ((2 ** (1 + i)) * binomial_coefficient(k, 1 + i)
+                  * binomial_coefficient(j, i))
+    return 1 + t + a
