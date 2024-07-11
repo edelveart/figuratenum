@@ -242,3 +242,10 @@ def k_dimensional_centered_hypertetrahedron_numbers(k: int) -> Iterator[int]:
     while True:
         yield acc_helper_centered_hypertetrahedron(k, delta)
         delta += 1
+
+
+def centered_hyperoctahedral_numbers() -> Iterator[int]:
+    delta = 0
+    while True:
+        yield (2 * delta ** 4 - 4 * delta ** 3 + 10 * delta ** 2 - 8 * delta + 3) / 3
+        delta += 1
