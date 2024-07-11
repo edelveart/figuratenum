@@ -1,4 +1,4 @@
-from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers, aztec_diamond_numbers, polygram_numbers, pentagram_numbers, gnomic_numbers
+from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers, aztec_diamond_numbers, polygram_numbers, pentagram_numbers, gnomic_numbers, truncated_triangular_numbers
 
 
 def test_polygonal_numbers():
@@ -119,3 +119,13 @@ def test_gnomic_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 3, 5, 7, 9, 11, 13, 15,
                             17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37]
+
+
+def test_truncated_triangular_numbers():
+    num_generator = truncated_triangular_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 7, 19, 37, 61, 91, 127, 169,
+                            217, 271, 331, 397, 469, 547, 631, 721, 817, 919, 1027]
