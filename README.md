@@ -81,5 +81,9 @@
 12. `centered_biquadratic_numbers`
 13. `k_dimensional_centered_hypercube_numbers(k)`
 14. `centered_polytope_numbers`
+15. `k_dimensional_centered_hypertetrahedron_numbers(k)`
+16. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
+17. `nexus_numbers`
+18. `k_dimensional_centered_hyperoctahedron_numbers(k)`
 
 
