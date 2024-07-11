@@ -228,3 +228,10 @@ def helper_centered_hypertetrahedron(k: int, n: int) -> int:
         tau += (binomial_coefficient(k + 1, k - i) *
                 binomial_coefficient(n - 2, i))
     return tau
+
+
+def acc_helper_centered_hypertetrahedron(k: int, n: int) -> int:
+    a = 0
+    for j in range(1, (n) + 1):
+        a += helper_centered_hypertetrahedron(k, j)
+    return a
