@@ -1,4 +1,4 @@
-from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers, aztec_diamond_numbers, polygram_numbers, pentagram_numbers, gnomic_numbers, truncated_triangular_numbers, truncated_square_numbers, truncated_pronic_numbers
+from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers, aztec_diamond_numbers, polygram_numbers, pentagram_numbers, gnomic_numbers, truncated_triangular_numbers, truncated_square_numbers, truncated_pronic_numbers, truncated_centered_pol_numbers
 
 
 def test_polygonal_numbers():
@@ -149,3 +149,13 @@ def test_truncated_pronic_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [2, 16, 44, 86, 142, 212, 296, 394,
                             506, 632, 772, 926, 1094, 1276, 1472, 1682, 1906, 2144, 2396]
+
+
+def test_truncated_centered_pol_numbers():
+    num_generator = truncated_centered_pol_numbers(47)
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 236, 800, 1693, 2915, 4466, 6346, 8555, 11093,
+                            13960, 17156, 20681, 24535, 28718, 33230, 38071, 43241, 48740, 54568]
