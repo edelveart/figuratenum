@@ -245,7 +245,11 @@ def k_dimensional_centered_hypertetrahedron_numbers(k: int) -> Iterator[int]:
 
 
 def centered_hyperoctahedral_numbers() -> Iterator[int]:
-    delta = 0
+    delta = 1
     while True:
-        yield (2 * delta ** 4 - 4 * delta ** 3 + 10 * delta ** 2 - 8 * delta + 3) / 3
+        yield (2 * delta ** 4 - 4 * delta ** 3 + 10 * delta ** 2 - 8 * delta + 3) // 3
         delta += 1
+
+
+def orthoplex_numbers() -> Iterator[int]:
+    return centered_hyperoctahedral_numbers()
