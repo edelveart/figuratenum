@@ -1,4 +1,4 @@
-from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers
+from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers
 
 
 def test_polygonal_numbers():
@@ -39,3 +39,13 @@ def test_centered_mgonal_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 20, 58, 115, 191, 286, 400, 533, 685, 856, 1046,
                             1255, 1483, 1730, 1996, 2281, 2585, 2908, 3250]
+
+
+def test_pronic_numbers():
+    num_generator = pronic_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [2, 5, 10, 17, 26, 37, 50, 65,
+                            82, 101, 122, 145, 170, 197, 226, 257, 290, 325, 362]
