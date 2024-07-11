@@ -1,4 +1,13 @@
-from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers, aztec_diamond_numbers, polygram_numbers, pentagram_numbers, gnomic_numbers, truncated_triangular_numbers, truncated_square_numbers, truncated_pronic_numbers, truncated_centered_pol_numbers, truncated_centered_hexagonal_numbers, generalized_mgonal_numbers, generalized_centered_pol_numbers, generalized_pronic_numbers
+from figurate_numbers.plane_figurate_numbers import (
+    polygonal_numbers, centered_square_numbers,
+    centered_dodecagonal_numbers, centered_mgonal_numbers,
+    pronic_numbers, polite_numbers, impolite_numbers,
+    cross_numbers, aztec_diamond_numbers, polygram_numbers, pentagram_numbers,
+    gnomic_numbers, truncated_triangular_numbers, truncated_square_numbers,
+    truncated_pronic_numbers, truncated_centered_pol_numbers,
+    truncated_centered_hexagonal_numbers, generalized_mgonal_numbers,
+    generalized_centered_pol_numbers, generalized_pronic_numbers
+)
 
 
 def test_polygonal_numbers():
@@ -7,8 +16,8 @@ def test_polygonal_numbers():
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [1, 6, 15, 28, 45, 66, 91, 120, 153,
-                            190, 231, 276, 325, 378, 435, 496, 561, 630, 703]
+    assert infinite_seq == [1, 6, 15, 28, 45, 66, 91, 120, 153,  190,
+                            231, 276, 325, 378, 435, 496, 561, 630, 703]
 
 
 def test_centered_square_numbers():
@@ -18,7 +27,8 @@ def test_centered_square_numbers():
         next_number = next(num_generator)
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 5, 13, 25, 41, 61, 85, 113,
-                            145, 181, 221, 265, 313, 365, 421, 481, 545, 613, 685]
+                            145, 181, 221, 265, 313, 365,
+                            421, 481, 545, 613, 685]
 
 
 def test_centered_dodecagonal_numbers():
@@ -27,8 +37,8 @@ def test_centered_dodecagonal_numbers():
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [1, 13, 37, 73, 121, 181, 253, 337,
-                            433, 541, 661, 793, 937, 1093, 1261, 1441, 1633, 1837, 2053]
+    assert infinite_seq == [1, 13, 37, 73, 121, 181, 253, 337,  433, 541, 661,
+                            793, 937, 1093, 1261, 1441, 1633, 1837, 2053]
 
 
 def test_centered_mgonal_numbers():
@@ -177,8 +187,12 @@ def test_generalized_mgonal_numbers():
     for _ in range(1, 60):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [30311, 28578, 26896, 25265, 23685, 22156, 20678, 19251, 17875, 16550, 15276, 14053, 12881, 11760, 10690, 9671, 8703, 7786, 6920, 6105, 5341, 4628, 3966, 3355, 2795,
-                            2286, 1828, 1421, 1065, 760, 506, 303, 151, 50, 0, 1, 53, 156, 310, 515, 771, 1078, 1436, 1845, 2305, 2816, 3378, 3991, 4655, 5370, 6136, 6953, 7821, 8740, 9710, 10731, 11803, 12926, 14100]
+    assert infinite_seq == [30311, 28578, 26896, 25265, 23685, 22156, 20678, 19251,
+                            17875, 16550, 15276, 14053,  12881, 11760, 10690, 9671,
+                            8703,  7786, 6920, 6105, 5341, 4628, 3966, 3355, 2795,
+                            2286, 1828, 1421, 1065, 760, 506, 303, 151, 50, 0, 1, 53,
+                            156, 310, 515, 771, 1078, 1436, 1845, 2305, 2816, 3378,
+                            3991, 4655, 5370, 6136, 6953, 7821, 8740, 9710, 10731, 11803, 12926, 14100]
 
 
 def test_generalized_centered_pol_numbers():
@@ -187,8 +201,13 @@ def test_generalized_centered_pol_numbers():
     for _ in range(1, 70):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [41001, 39001, 37051, 35151, 33301, 31501, 29751, 28051, 26401, 24801, 23251, 21751, 20301, 18901, 17551, 16251, 15001, 13801, 12651, 11551, 10501, 9501, 8551, 7651, 6801, 6001, 5251, 4551, 3901, 3301,
-                            2751, 2251, 1801, 1401, 1051, 751, 501, 301, 151, 51, 1, 1, 51, 151, 301, 501, 751, 1051, 1401, 1801, 2251, 2751, 3301, 3901, 4551, 5251, 6001, 6801, 7651, 8551, 9501, 10501, 11551, 12651, 13801, 15001, 16251, 17551, 18901]
+    assert infinite_seq == [41001, 39001, 37051, 35151, 33301, 31501, 29751, 28051,
+                            26401, 24801, 23251, 21751, 20301, 18901, 17551, 16251,
+                            15001, 13801, 12651, 11551, 10501, 9501, 8551, 7651, 6801,
+                            6001, 5251, 4551, 3901, 3301, 2751, 2251, 1801, 1401, 1051,
+                            751, 501, 301, 151, 51, 1, 1, 51, 151, 301, 501, 751, 1051,
+                            1401, 1801, 2251, 2751, 3301, 3901, 4551, 5251, 6001, 6801,
+                            7651, 8551, 9501, 10501, 11551, 12651, 13801, 15001, 16251, 17551, 18901]
 
 
 def test_generalized_pronic_numbers():
@@ -197,5 +216,12 @@ def test_generalized_pronic_numbers():
     for _ in range(1, 100):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [2450, 2352, 2256, 2162, 2070, 1980, 1892, 1806, 1722, 1640, 1560, 1482, 1406, 1332, 1260, 1190, 1122, 1056, 992, 930, 870, 812, 756, 702, 650, 600, 552, 506, 462, 420, 380, 342, 306, 272, 240, 210, 182, 156, 132, 110, 90, 72, 56, 42, 30, 20,
-                            12, 6, 2, 0, 0, 2, 6, 12, 20, 30, 42, 56, 72, 90, 110, 132, 156, 182, 210, 240, 272, 306, 342, 380, 420, 462, 506, 552, 600, 650, 702, 756, 812, 870, 930, 992, 1056, 1122, 1190, 1260, 1332, 1406, 1482, 1560, 1640, 1722, 1806, 1892, 1980, 2070, 2162, 2256, 2352]
+    assert infinite_seq == [2450, 2352, 2256, 2162, 2070, 1980, 1892, 1806, 1722,
+                            1640, 1560, 1482, 1406, 1332, 1260, 1190, 1122, 1056,
+                            992, 930, 870, 812, 756, 702, 650, 600, 552, 506, 462,
+                            420, 380, 342, 306, 272, 240, 210, 182, 156, 132, 110,
+                            90, 72, 56, 42, 30, 20, 12, 6, 2, 0, 0, 2, 6, 12, 20,
+                            30, 42, 56, 72, 90, 110, 132, 156, 182, 210, 240, 272,
+                            306, 342, 380, 420, 462, 506, 552, 600, 650, 702, 756,
+                            812, 870, 930, 992, 1056, 1122, 1190, 1260, 1332, 1406,
+                            1482, 1560, 1640, 1722, 1806, 1892, 1980, 2070, 2162, 2256, 2352]
