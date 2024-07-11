@@ -238,7 +238,7 @@ def acc_helper_centered_hypertetrahedron(k: int, n: int) -> int:
 
 
 def k_dimensional_centered_hypertetrahedron_numbers(k: int) -> Iterator[int]:
-    delta = 0
+    delta = 1
     while True:
         yield acc_helper_centered_hypertetrahedron(k, delta)
         delta += 1
