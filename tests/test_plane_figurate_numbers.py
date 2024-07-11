@@ -1,4 +1,4 @@
-from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers
+from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers
 
 
 def test_polygonal_numbers():
@@ -69,3 +69,13 @@ def test_impolite_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [2, 4, 8, 16, 32, 64, 128, 256, 512, 1024,
                             2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]
+
+
+def test_cross_numbers():
+    num_generator = cross_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 5, 9, 13, 17, 21, 25,
+                            29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73]
