@@ -216,3 +216,15 @@ def centered_polytope_numbers() -> Iterator[int]:
     while True:
         yield (5 * delta ** 4 - 10 * delta ** 3 + 55 * delta ** 2 - 50 * delta + 24) // 24
         delta += 1
+
+
+def helper_centered_hypertetrahedron(k: int, n: int) -> int:
+    if n == 1:
+        return 1
+    if n == 2:
+        return binomial_coefficient(k + 1, k)
+    tau = 0
+    for i in range(0, (k - 1) + 1):
+        tau += (binomial_coefficient(k + 1, k - i) *
+                binomial_coefficient(n - 2, i))
+    return tau
