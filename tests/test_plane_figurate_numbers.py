@@ -1,4 +1,4 @@
-from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers
+from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers, aztec_diamond_numbers
 
 
 def test_polygonal_numbers():
@@ -79,3 +79,13 @@ def test_cross_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 5, 9, 13, 17, 21, 25,
                             29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73]
+
+
+def test_aztec_diamond_numbers():
+    num_generator = aztec_diamond_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [4, 12, 24, 40, 60, 84, 112, 144,
+                            180, 220, 264, 312, 364, 420, 480, 544, 612, 684, 760]
