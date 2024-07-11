@@ -1,4 +1,4 @@
-from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers, aztec_diamond_numbers, polygram_numbers, pentagram_numbers, gnomic_numbers, truncated_triangular_numbers, truncated_square_numbers, truncated_pronic_numbers, truncated_centered_pol_numbers, truncated_centered_hexagonal_numbers
+from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers, aztec_diamond_numbers, polygram_numbers, pentagram_numbers, gnomic_numbers, truncated_triangular_numbers, truncated_square_numbers, truncated_pronic_numbers, truncated_centered_pol_numbers, truncated_centered_hexagonal_numbers, generalized_mgonal_numbers
 
 
 def test_polygonal_numbers():
@@ -169,3 +169,13 @@ def test_truncated_centered_hexagonal_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 31, 103, 217, 373, 571, 811, 1093,
                             1417, 1783, 2191, 2641, 3133, 3667, 4243, 4861, 5521, 6223, 6967]
+
+
+def test_generalized_mgonal_numbers():
+    num_generator = generalized_mgonal_numbers(53, -34)
+    infinite_seq = []
+    for _ in range(1, 60):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [30311, 28578, 26896, 25265, 23685, 22156, 20678, 19251, 17875, 16550, 15276, 14053, 12881, 11760, 10690, 9671, 8703, 7786, 6920, 6105, 5341, 4628, 3966, 3355, 2795,
+                            2286, 1828, 1421, 1065, 760, 506, 303, 151, 50, 0, 1, 53, 156, 310, 515, 771, 1078, 1436, 1845, 2305, 2816, 3378, 3991, 4655, 5370, 6136, 6953, 7821, 8740, 9710, 10731, 11803, 12926, 14100]
