@@ -253,3 +253,10 @@ def centered_hyperoctahedral_numbers() -> Iterator[int]:
 
 def orthoplex_numbers() -> Iterator[int]:
     return centered_hyperoctahedral_numbers()
+
+
+def nexus_numbers(k: int) -> Iterator[int]:
+    delta = 0
+    while True:
+        yield (delta + 1) ** (k + 1) - delta ** (k + 1)
+        delta += 1
