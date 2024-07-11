@@ -1,4 +1,4 @@
-from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers, aztec_diamond_numbers, polygram_numbers
+from figurate_numbers.plane_figurate_numbers import polygonal_numbers, centered_square_numbers, centered_dodecagonal_numbers, centered_mgonal_numbers, pronic_numbers, polite_numbers, impolite_numbers, cross_numbers, aztec_diamond_numbers, polygram_numbers, pentagram_numbers
 
 
 def test_polygonal_numbers():
@@ -91,7 +91,7 @@ def test_aztec_diamond_numbers():
                             180, 220, 264, 312, 364, 420, 480, 544, 612, 684, 760]
 
 
-def test_aztec_diamond_numbers():
+def test_polygram_numbers():
     num_generator = polygram_numbers(31)
     infinite_seq = []
     for _ in range(1, 20):
@@ -99,3 +99,13 @@ def test_aztec_diamond_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 63, 187, 373, 621, 931, 1303, 1737,
                             2233, 2791, 3411, 4093, 4837, 5643, 6511, 7441, 8433, 9487, 10603]
+
+
+def test_pentagram_numbers():
+    num_generator = pentagram_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 11, 31, 61, 101, 151, 211, 281,
+                            361, 451, 551, 661, 781, 911, 1051, 1201, 1361, 1531, 1711]
