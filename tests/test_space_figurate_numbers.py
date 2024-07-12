@@ -1,7 +1,7 @@
 from figurate_numbers.space_figurate_numbers import (
     m_pyramidal_numbers, cubic_numbers, tetrahedral_numbers,
     octahedral_numbers, dodecahedral_numbers, icosahedral_numbers,
-    truncated_tetrahedral_numbers
+    truncated_tetrahedral_numbers, truncated_cubic_numbers
 )
 
 
@@ -73,3 +73,13 @@ def test_truncated_tetrahedral_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 16, 68, 180, 375, 676, 1106, 1688, 2445,
                             3400, 4576, 5996, 7683, 9660, 11950, 14576, 17561, 20928, 24700]
+
+
+def test_truncated_cubic_numbers():
+    num_generator = truncated_cubic_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 56, 311, 920, 2037, 3816, 6411, 9976, 14665,
+                            20632, 28031, 37016, 47741, 60360, 75027, 91896, 111121, 132856, 157255]
