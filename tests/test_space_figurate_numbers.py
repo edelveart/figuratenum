@@ -10,7 +10,7 @@ from figurate_numbers.space_figurate_numbers import (
     generalized_icosahedral_numbers, generalized_dodecahedral_numbers, generalized_centered_cube_numbers,
     generalized_centered_tetrahedron_numbers, generalized_centered_square_pyramid_numbers,
     generalized_rhombic_dodecahedral_numbers, generalized_centered_mgonal_pyramidal_numbers,
-    generalized_mgonal_prism_numbers
+    generalized_mgonal_prism_numbers, generalized_hexagonal_prism_numbers
 )
 
 
@@ -382,3 +382,13 @@ def test_generalized_mgonal_prism_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [-12660, -9324, -6632, -4515, -2904, -1730, -
                             924, -417, -140, -24, 0, 1, 48, 210, 556, 1155, 2076, 3388, 5160]
+
+
+def test_generalized_hexagonal_prism_numbers():
+    num_generator = generalized_hexagonal_prism_numbers(-10)
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [-3310, -2439, -1736, -1183, -762, -
+                            455, -244, -111, -38, -7, 0, 1, 14, 57, 148, 305, 546, 889, 1352]
