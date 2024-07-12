@@ -4,7 +4,8 @@ from figurate_numbers.multidimensional_figurate_numbers import (
     hyperdodecahedral_numbers, polyoctahedral_numbers, k_dimensional_hyperoctahedron_numbers,
     four_dimensional_mgonal_pyramidal_numbers, k_dimensional_mgonal_pyramidal_numbers,
     centered_biquadratic_numbers, k_dimensional_centered_hypercube_numbers, centered_polytope_numbers,
-    k_dimensional_centered_hypertetrahedron_numbers, centered_hyperoctahedral_numbers
+    k_dimensional_centered_hypertetrahedron_numbers, centered_hyperoctahedral_numbers,
+    nexus_numbers
 )
 
 
@@ -176,3 +177,15 @@ def test_centered_hyperoctahedral_numbers():
     assert infinite_seq == [1, 9, 41, 129, 321, 681, 1289, 2241, 3649,
                             5641, 8361, 11969, 16641, 22569, 29961,
                             39041, 50049, 63241, 78889]
+
+
+def test_nexus_numbers():
+    num_generator = nexus_numbers(7)
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 255, 6305, 58975, 325089, 1288991, 4085185,
+                            11012415, 26269505, 56953279, 114358881, 215622815,
+                            385749025, 660058335, 1087101569, 1732076671,
+                            2680790145, 4044203135, 5963602465]
