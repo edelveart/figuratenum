@@ -3,7 +3,7 @@ from figurate_numbers.space_figurate_numbers import (
     octahedral_numbers, dodecahedral_numbers, icosahedral_numbers,
     truncated_tetrahedral_numbers, truncated_cubic_numbers, truncated_octahedral_numbers,
     stella_octangula_numbers, centered_cube_numbers, rhombic_dodecahedral_numbers,
-    hauy_rhombic_dodecahedral_numbers
+    hauy_rhombic_dodecahedral_numbers, centered_tetrahedron_numbers
 )
 
 
@@ -135,3 +135,13 @@ def test_hauy_rhombic_dodecahedral_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 33, 185, 553, 1233, 2321, 3913, 6105, 8993,
                             12673, 17241, 22793, 29425, 37233, 46313, 56761, 68673, 82145, 97273]
+
+
+def test_centered_tetrahedron_numbers():
+    num_generator = centered_tetrahedron_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 5, 15, 35, 69, 121, 195, 295, 425,
+                            589, 791, 1035, 1325, 1665, 2059, 2511, 3025, 3605, 4255]
