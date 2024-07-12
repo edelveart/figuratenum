@@ -5,7 +5,7 @@ from figurate_numbers.multidimensional_figurate_numbers import (
     four_dimensional_mgonal_pyramidal_numbers, k_dimensional_mgonal_pyramidal_numbers,
     centered_biquadratic_numbers, k_dimensional_centered_hypercube_numbers, centered_polytope_numbers,
     k_dimensional_centered_hypertetrahedron_numbers, centered_hyperoctahedral_numbers,
-    nexus_numbers
+    nexus_numbers, k_dimensional_centered_hyperoctahedron_numbers
 )
 
 
@@ -189,3 +189,16 @@ def test_nexus_numbers():
                             11012415, 26269505, 56953279, 114358881, 215622815,
                             385749025, 660058335, 1087101569, 1732076671,
                             2680790145, 4044203135, 5963602465]
+
+
+def test_k_dimensional_centered_hyperoctahedron_numbers():
+    num_generator = k_dimensional_centered_hyperoctahedron_numbers(43)
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 87, 3785, 109823, 2391489, 41699767, 606639529,
+                            7575405375, 82913343041, 808229343063, 7106217293385,
+                            56938472541375, 419317958443905, 2858763388855095,
+                            18154539163583145, 107964506311713663, 604076883535802241,
+                            3193065939329541975, 16003669096765488329]
