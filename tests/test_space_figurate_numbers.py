@@ -280,8 +280,8 @@ def test_generalized_mgonal_pyramidal_numbers():
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [-945, -684, -476, -315, -195, -
-                            110, -54, -21, -5, 0, 0, 1, 9, 30, 70, 135, 231, 364, 540]
+    assert infinite_seq == [-945, -684, -476, -315, -195, -110,
+                            -54, -21, -5, 0, 0, 1, 9, 30, 70, 135, 231, 364, 540]
 
 
 def test_generalized_cubic_numbers():
@@ -290,8 +290,8 @@ def test_generalized_cubic_numbers():
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [-1000, -729, -512, -343, -216, -
-                            125, -64, -27, -8, -1, 0, 1, 8, 27, 64, 125, 216, 343, 512]
+    assert infinite_seq == [-1000, -729, -512, -343, -216, -125,
+                            -64, -27, -8, -1, 0, 1, 8, 27, 64, 125, 216, 343, 512]
 
 
 def test_generalized_octahedral_numbers():
@@ -300,8 +300,8 @@ def test_generalized_octahedral_numbers():
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [-670, -489, -344, -231, -146, -
-                            85, -44, -19, -6, -1, 0, 1, 6, 19, 44, 85, 146, 231, 344]
+    assert infinite_seq == [-670, -489, -344, -231, -146, -85,
+                            -44, -19, -6, -1, 0, 1, 6, 19, 44, 85, 146, 231, 344]
 
 
 def test_generalized_icosahedral_numbers():
@@ -310,8 +310,8 @@ def test_generalized_icosahedral_numbers():
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [-2760, -2034, -1448, -987, -636, -
-                            380, -204, -93, -32, -6, 0, 1, 12, 48, 124, 255, 456, 742, 1128]
+    assert infinite_seq == [-2760, -2034, -1448, -987, -636, -380,
+                            -204, -93, -32, -6, 0, 1, 12, 48, 124, 255, 456, 742, 1128]
 
 
 def test_generalized_dodecahedral_numbers():
@@ -320,8 +320,8 @@ def test_generalized_dodecahedral_numbers():
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [-4960, -3654, -2600, -1771, -1140, -680, -
-                            364, -165, -56, -10, 0, 1, 20, 84, 220, 455, 816, 1330, 2024]
+    assert infinite_seq == [-4960, -3654, -2600, -1771, -1140, -680, -364,
+                            -165, -56, -10, 0, 1, 20, 84, 220, 455, 816, 1330, 2024]
 
 
 def test_generalized_centered_cube_numbers():
@@ -330,8 +330,8 @@ def test_generalized_centered_cube_numbers():
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [-2331, -1729, -1241, -855, -559, -
-                            341, -189, -91, -35, -9, -1, 1, 9, 35, 91, 189, 341, 559, 855]
+    assert infinite_seq == [-2331, -1729, -1241, -855, -559, -341,
+                            -189, -91, -35, -9, -1, 1, 9, 35, 91, 189, 341, 559, 855]
 
 
 def test_generalized_centered_tetrahedron_numbers():
@@ -340,8 +340,8 @@ def test_generalized_centered_tetrahedron_numbers():
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [-791, -589, -425, -295, -195, -
-                            121, -69, -35, -15, -5, -1, 1, 5, 15, 35, 69, 121, 195, 295]
+    assert infinite_seq == [-791, -589, -425, -295, -195, -121,
+                            -69, -35, -15, -5, -1, 1, 5, 15, 35, 69, 121, 195, 295]
 
 
 def test_generalized_centered_square_pyramid_numbers():
@@ -350,8 +350,8 @@ def test_generalized_centered_square_pyramid_numbers():
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [-1176, -874, -629, -435, -286, -
-                            176, -99, -49, -20, -6, -1, 1, 6, 20, 49, 99, 176, 286, 435]
+    assert infinite_seq == [-1176, -874, -629, -435, -286, -176,
+                            -99, -49, -20, -6, -1, 1, 6, 20, 49, 99, 176, 286, 435]
 
 
 def test_generalized_rhombic_dodecahedral_numbers():
