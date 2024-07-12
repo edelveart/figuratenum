@@ -3,8 +3,8 @@ from figurate_numbers.multidimensional_figurate_numbers import (
     k_dimensional_hypercube_numbers, hyperoctahedral_numbers, hypericosahedral_numbers,
     hyperdodecahedral_numbers, polyoctahedral_numbers, k_dimensional_hyperoctahedron_numbers,
     four_dimensional_mgonal_pyramidal_numbers, k_dimensional_mgonal_pyramidal_numbers,
-    centered_biquadratic_numbers, k_dimensional_centered_hypercube_numbers, centered_polytope_numbers
-
+    centered_biquadratic_numbers, k_dimensional_centered_hypercube_numbers, centered_polytope_numbers,
+    k_dimensional_centered_hypertetrahedron_numbers
 )
 
 
@@ -153,3 +153,15 @@ def test_centered_polytope_numbers():
     assert infinite_seq == [1, 6, 21, 56, 126, 251, 456, 771,
                             1231, 1876, 2751, 3906, 5396, 7281,
                             9626, 12501, 15981, 20146, 25081]
+
+
+def test_k_dimensional_centered_hypertetrahedron_numbers():
+    num_generator = k_dimensional_centered_hypertetrahedron_numbers(9)
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 11, 66, 286, 1001, 3003, 8008,
+                            19448, 43758, 92378, 184755, 352705,
+                            646580, 1143780, 1960255, 3265757,
+                            5303727, 8416837, 13079352]
