@@ -390,5 +390,5 @@ def test_generalized_hexagonal_prism_numbers():
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
-    assert infinite_seq == [-3310, -2439, -1736, -1183, -762, -
-                            455, -244, -111, -38, -7, 0, 1, 14, 57, 148, 305, 546, 889, 1352]
+    assert infinite_seq == [-3310, -2439, -1736, -1183, -762, -455,
+                            -244, -111, -38, -7, 0, 1, 14, 57, 148, 305, 546, 889, 1352]
