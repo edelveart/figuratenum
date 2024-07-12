@@ -1,7 +1,7 @@
 from figurate_numbers.multidimensional_figurate_numbers import (
     pentatope_numbers, k_dimensional_hypertetrahedron_numbers, biquadratic_numbers,
     k_dimensional_hypercube_numbers, hyperoctahedral_numbers, hypericosahedral_numbers,
-    hyperdodecahedral_numbers, polyoctahedral_numbers
+    hyperdodecahedral_numbers, polyoctahedral_numbers, k_dimensional_hyperoctahedron_numbers
 )
 
 
@@ -83,3 +83,15 @@ def test_polyoctahedral_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 24, 153, 544, 1425, 3096, 5929, 10368, 16929,
                             26200, 38841, 55584, 77233, 104664, 138825, 180736, 231489, 292248, 364249]
+
+
+def test_k_dimensional_hyperoctahedron_numbers():
+    num_generator = k_dimensional_hyperoctahedron_numbers(27)
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 54, 1459, 26316, 356725, 3878946, 35267239, 275940504,
+                            1897865641, 11663134350, 64878791131, 330159018084,
+                            1550594372509, 6771089488506, 27667653828175, 106374643269936,
+                            386682074864209, 1334658881073894, 4390658718085891]
