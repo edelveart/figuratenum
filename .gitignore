@@ -5,3 +5,5 @@ dist/
 *.egg
 .venv
 proofs.py
+tests/reports
+.coverage
