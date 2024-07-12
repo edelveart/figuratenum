@@ -2,7 +2,7 @@ from figurate_numbers.space_figurate_numbers import (
     m_pyramidal_numbers, cubic_numbers, tetrahedral_numbers,
     octahedral_numbers, dodecahedral_numbers, icosahedral_numbers,
     truncated_tetrahedral_numbers, truncated_cubic_numbers, truncated_octahedral_numbers,
-    stella_octangula_numbers, centered_cube_numbers
+    stella_octangula_numbers, centered_cube_numbers, rhombic_dodecahedral_numbers
 )
 
 
@@ -114,3 +114,13 @@ def test_centered_cube_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 9, 35, 91, 189, 341, 559, 855, 1241,
                             1729, 2331, 3059, 3925, 4941, 6119, 7471, 9009, 10745, 12691]
+
+
+def test_rhombic_dodecahedral_numbers():
+    num_generator = rhombic_dodecahedral_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 15, 65, 175, 369, 671, 1105, 1695, 2465,
+                            3439, 4641, 6095, 7825, 9855, 12209, 14911, 17985, 21455, 25345]
