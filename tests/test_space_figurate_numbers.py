@@ -6,7 +6,8 @@ from figurate_numbers.space_figurate_numbers import (
     hauy_rhombic_dodecahedral_numbers, centered_tetrahedron_numbers,
     centered_square_pyramid_numbers, centered_mgonal_pyramid_numbers,
     centered_octahedron_numbers, centered_icosahedron_numbers, centered_dodecahedron_numbers,
-    centered_truncated_tetrahedron_numbers, centered_truncated_cube_numbers, centered_truncated_octahedron_numbers, centered_mgonal_pyramidal_numbers, centered_hexagonal_pyramidal_numbers, hexagonal_prism_numbers, mgonal_prism_numbers, generalized_mgonal_pyramidal_numbers, generalized_cubic_numbers, generalized_octahedral_numbers
+    centered_truncated_tetrahedron_numbers, centered_truncated_cube_numbers, centered_truncated_octahedron_numbers, centered_mgonal_pyramidal_numbers, centered_hexagonal_pyramidal_numbers, hexagonal_prism_numbers, mgonal_prism_numbers, generalized_mgonal_pyramidal_numbers, generalized_cubic_numbers, generalized_octahedral_numbers,
+    generalized_icosahedral_numbers
 )
 
 
@@ -298,3 +299,13 @@ def test_generalized_octahedral_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [-670, -489, -344, -231, -146, -
                             85, -44, -19, -6, -1, 0, 1, 6, 19, 44, 85, 146, 231, 344]
+
+
+def test_generalized_icosahedral_numbers():
+    num_generator = generalized_icosahedral_numbers(-10)
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [-2760, -2034, -1448, -987, -636, -
+                            380, -204, -93, -32, -6, 0, 1, 12, 48, 124, 255, 456, 742, 1128]
