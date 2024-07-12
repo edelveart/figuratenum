@@ -5,7 +5,7 @@ from figurate_numbers.space_figurate_numbers import (
     stella_octangula_numbers, centered_cube_numbers, rhombic_dodecahedral_numbers,
     hauy_rhombic_dodecahedral_numbers, centered_tetrahedron_numbers,
     centered_square_pyramid_numbers, centered_mgonal_pyramid_numbers,
-    centered_octahedron_numbers
+    centered_octahedron_numbers, centered_icosahedron_numbers
 )
 
 
@@ -177,3 +177,13 @@ def test_centered_octahedron_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 7, 25, 63, 129, 231, 377, 575, 833,
                             1159, 1561, 2047, 2625, 3303, 4089, 4991, 6017, 7175, 8473]
+
+
+def test_centered_icosahedron_numbers():
+    num_generator = centered_icosahedron_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 13, 55, 147, 309, 561, 923, 1415, 2057,
+                            2869, 3871, 5083, 6525, 8217, 10179, 12431, 14993, 17885, 21127]
