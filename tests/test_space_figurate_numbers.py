@@ -9,7 +9,8 @@ from figurate_numbers.space_figurate_numbers import (
     centered_truncated_tetrahedron_numbers, centered_truncated_cube_numbers, centered_truncated_octahedron_numbers, centered_mgonal_pyramidal_numbers, centered_hexagonal_pyramidal_numbers, hexagonal_prism_numbers, mgonal_prism_numbers, generalized_mgonal_pyramidal_numbers, generalized_cubic_numbers, generalized_octahedral_numbers,
     generalized_icosahedral_numbers, generalized_dodecahedral_numbers, generalized_centered_cube_numbers,
     generalized_centered_tetrahedron_numbers, generalized_centered_square_pyramid_numbers,
-    generalized_rhombic_dodecahedral_numbers, generalized_centered_mgonal_pyramidal_numbers
+    generalized_rhombic_dodecahedral_numbers, generalized_centered_mgonal_pyramidal_numbers,
+    generalized_mgonal_prism_numbers
 )
 
 
@@ -371,3 +372,13 @@ def test_generalized_centered_mgonal_pyramidal_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [-1165, -849, -596, -399, -251, -
                             145, -74, -31, -9, -1, 0, 1, 9, 31, 74, 145, 251, 399, 596]
+
+
+def test_generalized_mgonal_prism_numbers():
+    num_generator = generalized_mgonal_prism_numbers(23, -10)
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [-12660, -9324, -6632, -4515, -2904, -1730, -
+                            924, -417, -140, -24, 0, 1, 48, 210, 556, 1155, 2076, 3388, 5160]
