@@ -2,7 +2,7 @@ from figurate_numbers.space_figurate_numbers import (
     m_pyramidal_numbers, cubic_numbers, tetrahedral_numbers,
     octahedral_numbers, dodecahedral_numbers, icosahedral_numbers,
     truncated_tetrahedral_numbers, truncated_cubic_numbers, truncated_octahedral_numbers,
-    stella_octangula_numbers
+    stella_octangula_numbers, centered_cube_numbers
 )
 
 
@@ -104,3 +104,13 @@ def test_stella_octangula_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 14, 51, 124, 245, 426, 679, 1016, 1449,
                             1990, 2651, 3444, 4381, 5474, 6735, 8176, 9809, 11646, 13699]
+
+
+def test_centered_cube_numbers():
+    num_generator = centered_cube_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 9, 35, 91, 189, 341, 559, 855, 1241,
+                            1729, 2331, 3059, 3925, 4941, 6119, 7471, 9009, 10745, 12691]
