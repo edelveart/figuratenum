@@ -6,7 +6,7 @@ from figurate_numbers.space_figurate_numbers import (
     hauy_rhombic_dodecahedral_numbers, centered_tetrahedron_numbers,
     centered_square_pyramid_numbers, centered_mgonal_pyramid_numbers,
     centered_octahedron_numbers, centered_icosahedron_numbers, centered_dodecahedron_numbers,
-    centered_truncated_tetrahedron_numbers, centered_truncated_cube_numbers, centered_truncated_octahedron_numbers, centered_mgonal_pyramidal_numbers, centered_hexagonal_pyramidal_numbers, hexagonal_prism_numbers, mgonal_prism_numbers, generalized_mgonal_pyramidal_numbers
+    centered_truncated_tetrahedron_numbers, centered_truncated_cube_numbers, centered_truncated_octahedron_numbers, centered_mgonal_pyramidal_numbers, centered_hexagonal_pyramidal_numbers, hexagonal_prism_numbers, mgonal_prism_numbers, generalized_mgonal_pyramidal_numbers, generalized_cubic_numbers
 )
 
 
@@ -278,3 +278,13 @@ def test_generalized_mgonal_pyramidal_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [-945, -684, -476, -315, -195, -
                             110, -54, -21, -5, 0, 0, 1, 9, 30, 70, 135, 231, 364, 540]
+
+
+def test_generalized_cubic_numbers():
+    num_generator = generalized_cubic_numbers(-10)
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [-1000, -729, -512, -343, -216, -
+                            125, -64, -27, -8, -1, 0, 1, 8, 27, 64, 125, 216, 343, 512]
