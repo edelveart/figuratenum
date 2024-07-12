@@ -6,7 +6,7 @@ from figurate_numbers.space_figurate_numbers import (
     hauy_rhombic_dodecahedral_numbers, centered_tetrahedron_numbers,
     centered_square_pyramid_numbers, centered_mgonal_pyramid_numbers,
     centered_octahedron_numbers, centered_icosahedron_numbers, centered_dodecahedron_numbers,
-    centered_truncated_tetrahedron_numbers
+    centered_truncated_tetrahedron_numbers, centered_truncated_cube_numbers
 )
 
 
@@ -208,3 +208,13 @@ def test_centered_truncated_tetrahedron_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 17, 75, 203, 429, 781, 1287, 1975, 2873,
                             4009, 5411, 7107, 9125, 11493, 14239, 17391, 20977, 25025, 29563]
+
+
+def test_centered_truncated_cube_numbers():
+    num_generator = centered_truncated_cube_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 49, 235, 651, 1389, 2541, 4199, 6455, 9401,
+                            13129, 17731, 23299, 29925, 37701, 46719, 57071, 68849, 82145, 97051]
