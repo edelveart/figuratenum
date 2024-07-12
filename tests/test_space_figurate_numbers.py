@@ -6,7 +6,7 @@ from figurate_numbers.space_figurate_numbers import (
     hauy_rhombic_dodecahedral_numbers, centered_tetrahedron_numbers,
     centered_square_pyramid_numbers, centered_mgonal_pyramid_numbers,
     centered_octahedron_numbers, centered_icosahedron_numbers, centered_dodecahedron_numbers,
-    centered_truncated_tetrahedron_numbers, centered_truncated_cube_numbers, centered_truncated_octahedron_numbers
+    centered_truncated_tetrahedron_numbers, centered_truncated_cube_numbers, centered_truncated_octahedron_numbers, centered_mgonal_pyramidal_numbers
 )
 
 
@@ -228,3 +228,13 @@ def test_centered_truncated_octahedron_numbers():
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 33, 155, 427, 909, 1661, 2743, 4215, 6137,
                             8569, 11571, 15203, 19525, 24597, 30479, 37231, 44913, 53585, 63307]
+
+
+def test_centered_mgonal_pyramidal_numbers():
+    num_generator = centered_mgonal_pyramidal_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 21, 79, 194, 385, 671, 1071, 1604, 2289,
+                            3145, 4191, 5446, 6929, 8659, 10655, 12936, 15521, 18429, 21679]
