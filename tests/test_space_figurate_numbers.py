@@ -6,7 +6,7 @@ from figurate_numbers.space_figurate_numbers import (
     hauy_rhombic_dodecahedral_numbers, centered_tetrahedron_numbers,
     centered_square_pyramid_numbers, centered_mgonal_pyramid_numbers,
     centered_octahedron_numbers, centered_icosahedron_numbers, centered_dodecahedron_numbers,
-    centered_truncated_tetrahedron_numbers, centered_truncated_cube_numbers, centered_truncated_octahedron_numbers, centered_mgonal_pyramidal_numbers, centered_hexagonal_pyramidal_numbers
+    centered_truncated_tetrahedron_numbers, centered_truncated_cube_numbers, centered_truncated_octahedron_numbers, centered_mgonal_pyramidal_numbers, centered_hexagonal_pyramidal_numbers, hexagonal_prism_numbers
 )
 
 
@@ -241,10 +241,20 @@ def test_centered_mgonal_pyramidal_numbers():
 
 
 def test_centered_hexagonal_pyramidal_numbers():
-    num_generator = centered_hexagonal_pyramidal_numbers(19)
+    num_generator = centered_hexagonal_pyramidal_numbers()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
     assert infinite_seq == [1, 8, 27, 64, 125, 216, 343, 512, 729,
                             1000, 1331, 1728, 2197, 2744, 3375, 4096, 4913, 5832, 6859]
+
+
+def test_hexagonal_prism_numbers():
+    num_generator = hexagonal_prism_numbers()
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 14, 57, 148, 305, 546, 889, 1352, 1953,
+                            2710, 3641, 4764, 6097, 7658, 9465, 11536, 13889, 16542, 19513]
