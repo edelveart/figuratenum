@@ -3,7 +3,7 @@ from figurate_numbers.multidimensional_figurate_numbers import (
     k_dimensional_hypercube_numbers, hyperoctahedral_numbers, hypericosahedral_numbers,
     hyperdodecahedral_numbers, polyoctahedral_numbers, k_dimensional_hyperoctahedron_numbers,
     four_dimensional_mgonal_pyramidal_numbers, k_dimensional_mgonal_pyramidal_numbers,
-    centered_biquadratic_numbers
+    centered_biquadratic_numbers, k_dimensional_centered_hypercube_numbers
 )
 
 
@@ -130,3 +130,14 @@ def test_centered_biquadratic_numbers():
     assert infinite_seq == [1, 17, 97, 337, 881, 1921, 3697,
                             6497, 10657, 16561, 24641, 35377, 49297,
                             66977, 89041, 116161, 149057, 188497, 235297]
+
+
+def test_k_dimensional_centered_hypercube_numbers():
+    num_generator = k_dimensional_centered_hypercube_numbers(31)
+    infinite_seq = []
+    for _ in range(1, 20):
+        next_number = next(num_generator)
+        infinite_seq.append(next_number)
+    assert infinite_seq == [1, 2147483649, 617675543767595, 4612303691823671851,
+                            4661224559095819966029, 1331100131197477539976781,
+                            159101825553170206762441399, 10061295696317888005808036535, 391423944791228873827842892601, 10381520424476945831628649898809, 201943424957750480504146841291811, 3040459190554988156451550338468899, 36908459133046522160894572124006725, 372879996344233620392121690040396101, 3215085941470045635934544974294425839, 24143913821051915266488283417366372591, 160556565271409668427878930453953233649, 958597790281111140865704883498649895665, 5198174612988969212268967734721914749851]
