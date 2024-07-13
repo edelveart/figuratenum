@@ -1,4 +1,70 @@
-# Figurate Numbers for Python
+# FigurateNum
+
+FigurateNum is a set of figurate number generators based on the book [Figurate Numbers (2012)](https://books.google.com.pe/books/about/Figurate_Numbers.html?id=cDxYdstLPz4C&redir_esc=y) by Michel Deza and Elena Deza.
+
+It contains in total:
+- [x] 20 plane figurate numbers
+- [x] 38 space figurate numbers
+- [x] 18 multidimensional figurate numbers
+
+## What is the purpose of FigurateNum?
+
+FigurateNum facilitates the discovery of new patterns among sequences and enables various numerical calculations in mathematical projects and related endeavors. It can be integrated with other software to visualize the geometric objects described. Moreover, it serves as a valuable companion to the book!
+
+## How to install?
+
+```py
+pip install figuratenum
+```
+* It is advisable to use a virtual environment.
+
+## How to import figuratenum?
+
+```py
+import figuratenum as fgn
+```
+
+## How to use?
+
+```py
+>>> seq = fgn.hyperdodecahedral_numbers()
+
+>>> first = next(seq)
+>>> second = next(seq)
+>>> third = next(seq)
+>>> fourth = next(seq)
+
+>>> print(first, second, third, fourth)
+1 600 4983 19468
+```
+
+You could get a list of numbers using a loop:
+
+```py
+>>> generator = fgn.k_dimensional_centered_hypertetrahedron_numbers(21)
+>>> sequence = []
+>>> for _ in range(1, 15):
+>>>     next_num = next(generator)
+>>>     sequence.append(next_num)
+
+>>> print(sequence)
+[1, 23, 276, 2300, 14950, 80730, 376740, 1560780, 5852925, 20160075, 64512240, 193536720, 548354040, 1476337800]
+```
+
+Equivalently, using the array module:
+
+```py
+import array as arr_num
+
+>>> generator = fgn.k_dimensional_centered_hypertetrahedron_numbers(21)
+>>> sequence = arr_num.array('i')
+>>> for _ in range(1, 15):
+>>>     next_num = next(generator)
+>>>     sequence.append(next_num)
+
+>>> print(sequence)
+array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
+```
 
 
 ## Plane figurate numbers
@@ -85,5 +151,9 @@
 16. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
 17. `nexus_numbers`
 18. `k_dimensional_centered_hyperoctahedron_numbers(k)`
+
+## License
+
+[MIT](https://github.com/edelveart/figuratenum/blob/main/LICENSE)
 
 
