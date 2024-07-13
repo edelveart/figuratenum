@@ -1,4 +1,4 @@
-from figuratenum.plane_figurate_numbers import (
+from src.figuratenum.plane_figuratenum import (
     polygonal_numbers, centered_square_numbers,
     centered_dodecagonal_numbers, centered_mgonal_numbers,
     pronic_numbers, polite_numbers, impolite_numbers,
