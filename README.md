@@ -1,11 +1,12 @@
 # FigurateNum
 
-FigurateNum is a set of figurate number generators based on the book [Figurate Numbers (2012)](https://books.google.com.pe/books/about/Figurate_Numbers.html?id=cDxYdstLPz4C&redir_esc=y) by Michel Deza and Elena Deza.
+FigurateNum is a set of **figurate number generators** based on the book [Figurate Numbers (2012)](https://books.google.com.pe/books/about/Figurate_Numbers.html?id=cDxYdstLPz4C&redir_esc=y) by Michel Deza and Elena Deza.
 
-It contains in total:
-- [x] 20 plane figurate numbers
-- [x] 38 space figurate numbers
-- [x] 18 multidimensional figurate numbers
+FigurateNum generates the following types of **infinite sequences**:
+
+- [x] 20 sequences of plane figurate numbers
+- [x] 38 sequences of space figurate numbers
+- [x] 18 sequences of multidimensional figurate numbers
 
 ## What is the purpose of FigurateNum?
 
@@ -56,7 +57,7 @@ Equivalently, using the array module:
 ```py
 import array as arr_num
 
->>> generator = fgn.k_dimensional_centered_hypertetrahedron_numbers(21)
+>>> generator = fgn.aztec_diamond_numbers()
 >>> sequence = arr_num.array('i')
 >>> for _ in range(1, 15):
 >>>     next_num = next(generator)
@@ -152,8 +153,18 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 17. `nexus_numbers`
 18. `k_dimensional_centered_hyperoctahedron_numbers(k)`
 
+## Contributing
+
+FigurateNumber is currently under development, and we warmly invite your contributions. Just **fork** the project and then submit a **pull request**:
+
+- Sequences from Chapters 1, 2, and 3 of the book
+- New sequences not included in the book: If you have new sequences, please provide the source.
+- Tests, documentation and errata in the book
+
+When making commits, please use the following conventional prefixes to indicate the nature of the changes: `feat`, `refactor`, `fix`, `docs`, and `test`.
+
 ## License
 
-[MIT](https://github.com/edelveart/figuratenum/blob/main/LICENSE)
+[MIT License](https://github.com/edelveart/figuratenum/blob/main/LICENSE)
 
 
