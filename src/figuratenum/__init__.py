@@ -9,6 +9,14 @@ from .plane_figuratenum import (
     generalized_centered_pol_numbers, generalized_pronic_numbers
 )
 
+from .specific_plane_figuratenum import (
+    triangular_numbers, square_numbers, pentagonal_numbers,
+    hexagonal_numbers, heptagonal_numbers, octagonal_numbers,
+    nonagonal_numbers, decagonal_numbers, hendecagonal_numbers, dodecagonal_numbers, tridecagonal_numbers, tetradecagonal_numbers, pentadecagonal_numbers, hexadecagonal_numbers, heptadecagonal_numbers, octadecagonal_numbers, nonadecagonal_numbers, icosagonal_numbers, icosihenagonal_numbers, icosiheptagonal_numbers, icosidigonal_numbers, icositrigonal_numbers, icositetragonal_numbers, icosipentagonal_numbers, icosihexagonal_numbers, centered_icosiheptagonal_numbers, icosioctagonal_numbers, icosinonagonal_numbers,
+    triacontagonal_numbers
+
+)
+
 from .space_figuratenum import (
     m_pyramidal_numbers, cubic_numbers, tetrahedral_numbers,
     octahedral_numbers, dodecahedral_numbers, icosahedral_numbers,
