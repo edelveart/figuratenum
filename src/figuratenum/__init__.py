@@ -1,4 +1,4 @@
-from .plane_figurate_numbers import (
+from .plane_figuratenum import (
     polygonal_numbers, centered_square_numbers,
     centered_dodecagonal_numbers, centered_mgonal_numbers,
     pronic_numbers, polite_numbers, impolite_numbers,
@@ -9,7 +9,7 @@ from .plane_figurate_numbers import (
     generalized_centered_pol_numbers, generalized_pronic_numbers
 )
 
-from .space_figurate_numbers import (
+from .space_figuratenum import (
     m_pyramidal_numbers, cubic_numbers, tetrahedral_numbers,
     octahedral_numbers, dodecahedral_numbers, icosahedral_numbers,
     truncated_tetrahedral_numbers, truncated_cubic_numbers, truncated_octahedral_numbers,
@@ -24,7 +24,7 @@ from .space_figurate_numbers import (
     generalized_mgonal_prism_numbers, generalized_hexagonal_prism_numbers
 )
 
-from .multidimensional_figurate_numbers import (
+from .multidimensional_figuratenum import (
     pentatope_numbers, k_dimensional_hypertetrahedron_numbers, biquadratic_numbers,
     k_dimensional_hypercube_numbers, hyperoctahedral_numbers, hypericosahedral_numbers,
     hyperdodecahedral_numbers, polyoctahedral_numbers, k_dimensional_hyperoctahedron_numbers,
