@@ -1,4 +1,4 @@
-from figurate_numbers.multidimensional_figurate_numbers import (
+from figuratenum.multidimensional_figurate_numbers import (
     pentatope_numbers, k_dimensional_hypertetrahedron_numbers, biquadratic_numbers,
     k_dimensional_hypercube_numbers, hyperoctahedral_numbers, hypericosahedral_numbers,
     hyperdodecahedral_numbers, polyoctahedral_numbers, k_dimensional_hyperoctahedron_numbers,

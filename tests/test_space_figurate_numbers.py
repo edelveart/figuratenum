@@ -1,4 +1,4 @@
-from figurate_numbers.space_figurate_numbers import (
+from figuratenum.space_figurate_numbers import (
     m_pyramidal_numbers, cubic_numbers, tetrahedral_numbers,
     octahedral_numbers, dodecahedral_numbers, icosahedral_numbers,
     truncated_tetrahedral_numbers, truncated_cubic_numbers, truncated_octahedral_numbers,
