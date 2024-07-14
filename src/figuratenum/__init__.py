@@ -2,7 +2,7 @@ from .plane_figuratenum import (
     polygonal_numbers, centered_square_numbers, diamond_numbers,
     centered_dodecagonal_numbers, star_numbers, centered_mgonal_numbers,
     pronic_numbers, heteromecic_numbers, oblong_numbers,  polite_numbers,
-    impolite_numbers,   cross_numbers, aztec_diamond_numbers, polygram_numbers,
+    impolite_numbers, cross_numbers, aztec_diamond_numbers, polygram_numbers,
     centered_star_polygonal_numbers, pentagram_numbers, gnomic_numbers,
     truncated_triangular_numbers, truncated_square_numbers, truncated_pronic_numbers,
     truncated_centered_pol_numbers, truncated_centered_mgonal_numbers,
