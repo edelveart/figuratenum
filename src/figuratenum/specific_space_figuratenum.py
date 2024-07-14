@@ -232,3 +232,75 @@ def centered_octagonal_pyramid_numbers() -> Iterator[int]:
     while True:
         yield (2 * delta - 1) * (7 * delta ** 2 - 7 * delta + 6) // 6
         delta += 1
+
+
+# specific cases of centered_mgonal_pyramidal_numbers(m)
+
+
+def centered_triangular_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield delta * (delta ** 2 + 1) // 2
+        delta += 1
+
+
+def centered_square_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta ** 3 + delta) // 3
+        delta += 1
+
+
+def centered_pentagonal_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (5 * delta ** 3 + delta) // 6
+        delta += 1
+
+
+def centered_heptagonal_pyramidal_numbers() -> Iterator[int]:
+    m = 7
+    delta = 1
+    while True:
+        yield (m * delta ** 3 + delta * (6 - m)) // 6
+        delta += 1
+
+
+def centered_octagonal_pyramidal_numbers() -> Iterator[int]:
+    m = 8
+    delta = 1
+    while True:
+        yield (m * delta ** 3 + delta * (6 - m)) // 6
+        delta += 1
+
+
+def centered_nonagonal_pyramidal_numbers() -> Iterator[int]:
+    m = 9
+    delta = 1
+    while True:
+        yield (m * delta ** 3 + delta * (6 - m)) // 6
+        delta += 1
+
+
+def centered_decagonal_pyramidal_numbers() -> Iterator[int]:
+    m = 10
+    delta = 1
+    while True:
+        yield (m * delta ** 3 + delta * (6 - m)) // 6
+        delta += 1
+
+
+def centered_hendecagonal_pyramidal_numbers() -> Iterator[int]:
+    m = 11
+    delta = 1
+    while True:
+        yield (m * delta ** 3 + delta * (6 - m)) // 6
+        delta += 1
+
+
+def centered_dodecagonal_pyramidal_numbers() -> Iterator[int]:
+    m = 12
+    delta = 1
+    while True:
+        yield (m * delta ** 3 + delta * (6 - m)) // 6
+        delta += 1
