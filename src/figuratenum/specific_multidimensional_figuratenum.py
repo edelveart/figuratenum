@@ -1,7 +1,8 @@
 from typing import Iterator
 from multidimensional_figuratenum import (
     rising_factorial,
-    factorial_iter
+    factorial_iter,
+    pseudo_rising_factorial
 )
 
 # specific cases of k_dimensional_hypertetrahedron_numbers(k)
@@ -153,4 +154,111 @@ def four_dimensional_dodecagonal_pyramidal_numbers() -> Iterator[int]:
     delta = 1
     while True:
         yield (delta * (delta + 1) * (delta + 2) * ((12 - 2) * delta - 12 + 6)) // 24
+        delta += 1
+
+
+# specific cases of k_dimensional_mgonal_pyramidal_numbers(k, m) = mgonal_pyramidal_numbers_of_the_k_2_th_order(k, m)
+
+
+def five_dimensional_mgonal_pyramidal_numbers(m: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * (delta + 3) * ((m - 2) * delta - m + 7)) // 120
+        delta += 1
+
+
+def five_dimensional_square_pyramidal_numbers() -> Iterator[int]:
+    k = 5
+    m = 4
+    delta = 1
+    while True:
+        yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
+        delta += 1
+
+
+def five_dimensional_pentagonal_pyramidal_numbers() -> Iterator[int]:
+    k = 5
+    m = 5
+    delta = 1
+    while True:
+        yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
+        delta += 1
+
+
+def five_dimensional_hexagonal_pyramidal_numbers() -> Iterator[int]:
+    k = 5
+    m = 6
+    delta = 1
+    while True:
+        yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
+        delta += 1
+
+
+def five_dimensional_hexagonal_pyramidal_numbers() -> Iterator[int]:
+    k = 5
+    m = 7
+    delta = 1
+    while True:
+        yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
+        delta += 1
+
+
+def five_dimensional_octagonal_pyramidal_numbers() -> Iterator[int]:
+    k = 5
+    m = 8
+    delta = 1
+    while True:
+        yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
+        delta += 1
+
+
+def six_dimensional_mgonal_pyramidal_numbers(m: int) -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * (delta + 3) * (delta + 4) * ((m - 2) * delta - m + 8)) // 720
+        delta += 1
+
+
+def six_dimensional_square_pyramidal_numbers() -> Iterator[int]:
+    k = 6
+    m = 4
+    delta = 1
+    while True:
+        yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
+        delta += 1
+
+
+def six_dimensional_pentagonal_pyramidal_numbers() -> Iterator[int]:
+    k = 6
+    m = 5
+    delta = 1
+    while True:
+        yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
+        delta += 1
+
+
+def six_dimensional_hexagonal_pyramidal_numbers() -> Iterator[int]:
+    k = 6
+    m = 6
+    delta = 1
+    while True:
+        yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
+        delta += 1
+
+
+def six_dimensional_heptagonal_pyramidal_numbers() -> Iterator[int]:
+    k = 6
+    m = 7
+    delta = 1
+    while True:
+        yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
+        delta += 1
+
+
+def six_dimensional_octagonal_pyramidal_numbers() -> Iterator[int]:
+    k = 6
+    m = 8
+    delta = 1
+    while True:
+        yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
         delta += 1
