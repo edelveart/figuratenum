@@ -280,3 +280,10 @@ def k_dimensional_centered_hyperoctahedron_numbers(k: int) -> Iterator[int]:
     while True:
         yield helper_ext_int_double_sigma(k, delta)
         delta += 1
+
+
+def generalized_pentatope_numbers(start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield delta * (delta + 1) * (delta + 2) * (delta + 3) // 24
+        delta += 1
