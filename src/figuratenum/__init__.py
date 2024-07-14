@@ -55,3 +55,33 @@ from .multidimensional_figuratenum import (
     generalized_pentatope_numbers, generalized_k_dimensional_hypertetrahedron_numbers,
     generalized_biquadratic_numbers, generalized_k_dimensional_hypercube_numbers, generalized_hyperoctahedral_numbers, generalized_k_dimensional_hyperoctahedron_numbers, generalized_hyperdodecahedral_numbers, generalized_hypericosahedral_numbers, generalized_polyoctahedral_numbers, generalized_k_dimensional_mgonal_pyramidal_numbers, generalized_k_dimensional_centered_hypercube_numbers, generalized_nexus_numbers
 )
+
+from .specific_multidimensional_figuratenum import (
+    five_dimensional_hypertetrahedron_numbers, six_dimensional_hypertetrahedron_numbers,
+
+    five_dimensional_hypercube_numbers, six_dimensional_hypercube_numbers,
+
+    four_dimensional_hyperoctahedron_numbers, five_dimensional_hyperoctahedron_numbers,
+    six_dimensional_hyperoctahedron_numbers, seven_dimensional_hyperoctahedron_numbers,
+    eight_dimensional_hyperoctahedron_numbers, nine_dimensional_hyperoctahedron_numbers,
+    ten_dimensional_hyperoctahedron_numbers,
+
+    four_dimensional_square_pyramidal_numbers, four_dimensional_pentagonal_pyramidal_numbers,
+    four_dimensional_hexagonal_pyramidal_numbers, four_dimensional_heptagonal_pyramidal_numbers,
+    four_dimensional_octagonal_pyramidal_numbers, four_dimensional_nonagonal_pyramidal_numbers,
+    four_dimensional_decagonal_pyramidal_numbers, four_dimensional_hendecagonal_pyramidal_numbers,
+    four_dimensional_dodecagonal_pyramidal_numbers,
+
+    five_dimensional_mgonal_pyramidal_numbers, five_dimensional_square_pyramidal_numbers,
+    five_dimensional_pentagonal_pyramidal_numbers, five_dimensional_hexagonal_pyramidal_numbers,
+    five_dimensional_heptagonal_pyramidal_numbers, five_dimensional_octagonal_pyramidal_numbers,
+    six_dimensional_mgonal_pyramidal_numbers, six_dimensional_square_pyramidal_numbers,
+    six_dimensional_pentagonal_pyramidal_numbers, six_dimensional_hexagonal_pyramidal_numbers,
+    six_dimensional_heptagonal_pyramidal_numbers, six_dimensional_octagonal_pyramidal_numbers,
+
+    five_dimensional_centered_hypercube_numbers, six_dimensional_centered_hypercube_numbers,
+
+    five_dimensional_centered_hypertetrahedron_numbers, six_dimensional_centered_hypertetrahedron_numbers,
+
+    five_dimensional_centered_hyperoctahedron_numbers, six_dimensional_centered_hyperoctahedron_numbers
+)
