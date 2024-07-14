@@ -333,3 +333,10 @@ def generalized_hyperdodecahedral_numbers(start_num: int = 0) -> Iterator[int]:
     while True:
         yield (delta * (261 * delta ** 3 - 504 * delta ** 2 + 283 * delta - 38)) // 2
         delta += 1
+
+
+def generalized_hypericosahedral_numbers(start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield (delta * (145 * delta ** 3 - 280 * delta ** 2 + 179 * delta - 38)) // 6
+        delta += 1
