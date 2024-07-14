@@ -308,3 +308,10 @@ def generalized_k_dimensional_hypercube_numbers(k: int = 5, start_num: int = 0) 
     while True:
         yield delta ** k
         delta += 1
+
+
+def generalized_hyperoctahedral_numbers(start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield (delta ** 2 * (delta ** 2 + 2)) // 3
+        delta += 1
