@@ -1,7 +1,7 @@
 from typing import Iterator
 from .utils import (
     factorial_iter, binomial_coefficient, pseudo_rising_factorial,
-    pseudo_pochhammer_function,
+    pseudo_pochhammer_function, rising_factorial,
     acc_helper_centered_hypertetrahedron,
     helper_ext_int_double_sigma
 )
@@ -20,13 +20,6 @@ def hypertetrahedral_numbers() -> Iterator[int]:
 
 def triangulotriangular_numbers() -> Iterator[int]:
     return pentatope_numbers()
-
-
-def rising_factorial(n: int, k: int) -> int:
-    t = 1
-    for i in range(n, (n + k - 1) + 1):
-        t *= i
-    return t
 
 
 def k_dimensional_hypertetrahedron_numbers(k: int) -> Iterator[int]:
