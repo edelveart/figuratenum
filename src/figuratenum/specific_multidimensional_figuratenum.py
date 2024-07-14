@@ -2,7 +2,8 @@ from typing import Iterator
 from multidimensional_figuratenum import (
     rising_factorial,
     factorial_iter,
-    pseudo_rising_factorial
+    pseudo_rising_factorial,
+    acc_helper_centered_hypertetrahedron
 )
 
 # specific cases of k_dimensional_hypertetrahedron_numbers(k)
@@ -264,7 +265,7 @@ def six_dimensional_octagonal_pyramidal_numbers() -> Iterator[int]:
         delta += 1
 
 
-# specific cases of k_dimensional_centered_hypercube_numbers
+# specific cases of k_dimensional_centered_hypercube_numbers(k)
 
 
 def five_dimensional_centered_hypercube_numbers() -> Iterator[int]:
@@ -278,4 +279,20 @@ def six_dimensional_centered_hypercube_numbers() -> Iterator[int]:
     delta = 1
     while True:
         yield delta ** 6 + (delta - 1) ** 6
+        delta += 1
+
+
+# specific cases of k_dimensional_centered_hypertetrahedron_numbers(k)
+
+def five_dimensional_centered_hypertetrahedron_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield acc_helper_centered_hypertetrahedron(5, delta)
+        delta += 1
+
+
+def six_dimensional_centered_hypertetrahedron_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield acc_helper_centered_hypertetrahedron(6, delta)
         delta += 1
