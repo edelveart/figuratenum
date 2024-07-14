@@ -273,11 +273,13 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 43. `six_dimensional_octagonal_pyramidal_numbers`
 44. `centered_biquadratic_numbers`
 45. `k_dimensional_centered_hypercube_numbers(k)`
-46. `centered_polytope_numbers`
-47. `k_dimensional_centered_hypertetrahedron_numbers(k)`
-48. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
-49. `nexus_numbers`
-50. `k_dimensional_centered_hyperoctahedron_numbers(k)`
+46. `five_dimensional_centered_hypercube_numbers`
+47. `six_dimensional_centered_hypercube_numbers`
+48. `centered_polytope_numbers`
+49. `k_dimensional_centered_hypertetrahedron_numbers(k)`
+50. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
+51. `nexus_numbers`
+52. `k_dimensional_centered_hyperoctahedron_numbers(k)`
 
 ## Contributing
 
