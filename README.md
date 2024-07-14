@@ -71,14 +71,13 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 
 1. `polygonal_numbers`
 2. `triangular_numbers`
-3. `triangular_numbers`
-4. `square_numbers`
-5. `pentagonal_numbers`
-6. `hexagonal_numbers`
-7. `heptagonal_numbers`
-8. `octagonal_numbers`
-9. `nonagonal_numbers`
-10. `decagonal_numbers`
+3. `square_numbers`
+4. `pentagonal_numbers`
+5. `hexagonal_numbers`
+6. `heptagonal_numbers`
+7. `octagonal_numbers`
+8. `nonagonal_numbers`
+9.  `decagonal_numbers`
 10. `hendecagonal_numbers`
 11. `dodecagonal_numbers`
 12. `tridecagonal_numbers`
