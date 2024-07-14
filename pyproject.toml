@@ -4,23 +4,31 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "figuratenum"
-version = "0.4.0"
+version = "0.6.0"
 description = "A complete generator of infinite sequences of figurate numbers"
 readme = "README.md"
 authors = [{ name = "Edgar Armando Delgado Vega" }]
 license = { file = "LICENSE" }
 classifiers = [
-  "Topic :: Scientific/Engineering :: Mathematics",
   "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 2",
+  "Development Status :: 3 - Alpha",
+  "Topic :: Scientific/Engineering :: Mathematics",
   "Topic :: Software Development :: Libraries :: Python Modules",
   "Intended Audience :: Developers",
+  "Intended Audience :: Science/Research",
   "Intended Audience :: Education",
-  "Programming Language :: Python :: 2",
-  "Programming Language :: Python :: 3",
   "Operating System :: MacOS :: MacOS X",
   "Operating System :: Microsoft :: Windows",
+  "Operating System :: POSIX :: Linux",
 ]
-keywords = ["generators", "figurate numbers", "infinite sequences"]
+keywords = [
+  "generators",
+  "figurate numbers",
+  "infinite sequences",
+  "number sequences",
+  "number generators",
+]
 
 requires-python = ">=3.9"
 
