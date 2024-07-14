@@ -301,3 +301,10 @@ def generalized_biquadratic_numbers(start_num: int = 0) -> Iterator[int]:
     while True:
         yield delta ** 4
         delta += 1
+
+
+def generalized_k_dimensional_hypercube_numbers(k: int = 5, start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield delta ** k
+        delta += 1
