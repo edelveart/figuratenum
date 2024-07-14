@@ -1,5 +1,5 @@
 from typing import Iterator
-from multidimensional_figuratenum import (
+from .multidimensional_figuratenum import (
     rising_factorial,
     factorial_iter,
     pseudo_rising_factorial,
