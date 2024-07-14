@@ -282,6 +282,8 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 52. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
 53. `nexus_numbers`
 54. `k_dimensional_centered_hyperoctahedron_numbers(k)`
+55. `five_dimensional_centered_hyperoctahedron_numbers`
+56. `six_dimensional_centered_hyperoctahedron_numbers`
 
 ## Contributing
 
