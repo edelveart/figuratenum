@@ -277,9 +277,11 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 47. `six_dimensional_centered_hypercube_numbers`
 48. `centered_polytope_numbers`
 49. `k_dimensional_centered_hypertetrahedron_numbers(k)`
-50. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
-51. `nexus_numbers`
-52. `k_dimensional_centered_hyperoctahedron_numbers(k)`
+50. `five_dimensional_centered_hypertetrahedron_numbers`
+51. `six_dimensional_centered_hypertetrahedron_numbers`
+52. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
+53. `nexus_numbers`
+54. `k_dimensional_centered_hyperoctahedron_numbers(k)`
 
 ## Contributing
 
