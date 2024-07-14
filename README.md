@@ -240,16 +240,23 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 10. `hypericosahedral_numbers` = `tetraplex_numbers` = `polytetrahedron_numbers` = `hexacosichoron_numbers`
 11. `hyperdodecahedral_numbers` = `hecatonicosachoron_numbers` = `dodecaplex_numbers` = `polydodecahedron_numbers`
 12. `polyoctahedral_numbers` = `icositetrachoron_numbers` = `octaplex_numbers` = `hyperdiamond_numbers`
-13. `k_dimensional_hyperoctahedron_numbers(k)` = `k_cross_polytope_numbers(k)`
-14. `four_dimensional_mgonal_pyramidal_numbers(m)` = `mgonal_pyramidal_numbers_of_the_second_order`
-15. `k_dimensional_mgonal_pyramidal_numbers(k, m)` = `mgonal_pyramidal_numbers_of_the_k_2_th_order(k, m)`
-16. `centered_biquadratic_numbers`
-17. `k_dimensional_centered_hypercube_numbers(k)`
-18. `centered_polytope_numbers`
-19. `k_dimensional_centered_hypertetrahedron_numbers(k)`
-20. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
-21. `nexus_numbers`
-22. `k_dimensional_centered_hyperoctahedron_numbers(k)`
+13. `four_dimensional_hyperoctahedron_numbers`
+14. `five_dimensional_hyperoctahedron_numbers`
+15. `six_dimensional_hyperoctahedron_numbers`
+16. `seven_dimensional_hyperoctahedron_numbers`
+17. `eight_dimensional_hyperoctahedron_numbers`
+18. `nine_dimensional_hyperoctahedron_numbers`
+19. `ten_dimensional_hyperoctahedron_numbers`
+20. `k_dimensional_hyperoctahedron_numbers(k)` = `k_cross_polytope_numbers(k)`
+21. `four_dimensional_mgonal_pyramidal_numbers(m)` = `mgonal_pyramidal_numbers_of_the_second_order`
+22. `k_dimensional_mgonal_pyramidal_numbers(k, m)` = `mgonal_pyramidal_numbers_of_the_k_2_th_order(k, m)`
+23. `centered_biquadratic_numbers`
+24. `k_dimensional_centered_hypercube_numbers(k)`
+25. `centered_polytope_numbers`
+26. `k_dimensional_centered_hypertetrahedron_numbers(k)`
+27. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
+28. `nexus_numbers`
+29. `k_dimensional_centered_hyperoctahedron_numbers(k)`
 
 ## Contributing
 
