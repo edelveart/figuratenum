@@ -347,3 +347,10 @@ def generalized_polyoctahedral_numbers(start_num: int = 0) -> Iterator[int]:
     while True:
         yield delta ** 2 * (3 * delta ** 2 - 4 * delta + 2)
         delta += 1
+
+
+def generalized_k_dimensional_mgonal_pyramidal_numbers(k: int, m: int, start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield (pseudo_pochhammer_function(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
+        delta += 1
