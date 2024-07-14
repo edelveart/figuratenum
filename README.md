@@ -5,7 +5,7 @@ FigurateNum is a set of **figurate number generators** based on the book [Figura
 FigurateNum generates the following types of **infinite sequences**:
 
 - [x] 74 sequences of plane figurate numbers
-- [x] 38 sequences of space figurate numbers
+- [x] 79 sequences of space figurate numbers
 - [x] 18 sequences of multidimensional figurate numbers
 
 ## What is the purpose of FigurateNum?
