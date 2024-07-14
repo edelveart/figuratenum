@@ -32,6 +32,10 @@ from .space_figuratenum import (
     generalized_mgonal_prism_numbers, generalized_hexagonal_prism_numbers
 )
 
+from src.figuratenum.specific_space_figuratenum import (
+    triangular_pyramidal_numbers, square_pyramidal_numbers, pyramidal_numbers, pentagonal_pyramidal_numbers, hexagonal_pyramidal_numbers, heptagonal_pyramidal_numbers, octagonal_pyramidal_numbers, nonagonal_pyramidal_numbers, decagonal_pyramidal_numbers, hendecagonal_pyramidal_numbers, dodecagonal_pyramidal_numbers, tridecagonal_pyramidal_numbers, tetradecagonal_pyramidal_numbers, pentadecagonal_pyramidal_numbers, hexadecagonal_pyramidal_numbers, heptadecagonal_pyramidal_numbers, octadecagonal_pyramidal_numbers, nonadecagonal_pyramidal_numbers, icosagonal_pyramidal_numbers, icosihenagonal_pyramidal_numbers, icosidigonal_pyramidal_numbers, icositrigonal_pyramidal_numbers, icositetragonal_pyramidal_numbers, icosipentagonal_pyramidal_numbers, icosihexagonal_pyramidal_numbers, icosiheptagonal_pyramidal_numbers, icosioctagonal_pyramidal_numbers, icosinonagonal_pyramidal_numbers, triacontagonal_pyramidal_numbers
+)
+
 from .multidimensional_figuratenum import (
     pentatope_numbers, k_dimensional_hypertetrahedron_numbers, biquadratic_numbers,
     k_dimensional_hypercube_numbers, hyperoctahedral_numbers, hypericosahedral_numbers,
