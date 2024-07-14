@@ -354,3 +354,10 @@ def generalized_k_dimensional_mgonal_pyramidal_numbers(k: int, m: int, start_num
     while True:
         yield (pseudo_pochhammer_function(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
         delta += 1
+
+
+def generalized_nexus_numbers(k: int, start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield (delta + 1) ** (k + 1) - delta ** (k + 1)
+        delta += 1
