@@ -340,3 +340,10 @@ def generalized_hypericosahedral_numbers(start_num: int = 0) -> Iterator[int]:
     while True:
         yield (delta * (145 * delta ** 3 - 280 * delta ** 2 + 179 * delta - 38)) // 6
         delta += 1
+
+
+def generalized_polyoctahedral_numbers(start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield delta ** 2 * (3 * delta ** 2 - 4 * delta + 2)
+        delta += 1
