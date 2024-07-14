@@ -196,7 +196,7 @@ def five_dimensional_hexagonal_pyramidal_numbers() -> Iterator[int]:
         delta += 1
 
 
-def five_dimensional_hexagonal_pyramidal_numbers() -> Iterator[int]:
+def five_dimensional_heptagonal_pyramidal_numbers() -> Iterator[int]:
     k = 5
     m = 7
     delta = 1
