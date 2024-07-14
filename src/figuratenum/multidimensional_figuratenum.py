@@ -315,3 +315,14 @@ def generalized_hyperoctahedral_numbers(start_num: int = 0) -> Iterator[int]:
     while True:
         yield (delta ** 2 * (delta ** 2 + 2)) // 3
         delta += 1
+
+
+def generalized_k_dimensional_hyperoctahedron_numbers(k: int = 5, start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        a = 0
+        for i in range(0, (k - 1) + 1):
+            a += (binomial_coefficient(k - 1, i) *
+                  (rising_factorial(delta - i, k) // factorial_iter(k)))
+        yield a
+        delta += 1
