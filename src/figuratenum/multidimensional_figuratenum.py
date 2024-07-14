@@ -326,3 +326,10 @@ def generalized_k_dimensional_hyperoctahedron_numbers(k: int = 5, start_num: int
                   (rising_factorial(delta - i, k) // factorial_iter(k)))
         yield a
         delta += 1
+
+
+def generalized_hyperdodecahedral_numbers(start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield (delta * (261 * delta ** 3 - 504 * delta ** 2 + 283 * delta - 38)) // 2
+        delta += 1
