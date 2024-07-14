@@ -201,3 +201,34 @@ def triacontagonal_pyramidal_numbers() -> Iterator[int]:
     while True:
         yield delta * (delta + 1) * (28 * delta - 25) // 6
         delta += 1
+
+
+# specific cases of centered_mgonal_pyramid_numbers(m)
+
+
+def centered_pentagonal_pyramid_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * (2 * delta ** 2 - 2 * delta + 3) // 3
+        delta += 1
+
+
+def centered_hexagonal_pyramid_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * (5 * delta ** 2 - 5 * delta + 6) // 6
+        delta += 1
+
+
+def centered_heptagonal_pyramid_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * (delta ** 2 - delta + 1)
+        delta += 1
+
+
+def centered_octagonal_pyramid_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (2 * delta - 1) * (7 * delta ** 2 - 7 * delta + 6) // 6
+        delta += 1
