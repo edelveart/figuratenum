@@ -1,8 +1,6 @@
 from typing import Iterator
-from .multidimensional_figuratenum import (
-    rising_factorial,
-    factorial_iter,
-    pseudo_rising_factorial,
+from .utils import (
+    factorial_iter,  pseudo_rising_factorial, rising_factorial,
     acc_helper_centered_hypertetrahedron,
     helper_ext_int_double_sigma
 )
