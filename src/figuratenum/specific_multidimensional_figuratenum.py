@@ -262,3 +262,20 @@ def six_dimensional_octagonal_pyramidal_numbers() -> Iterator[int]:
     while True:
         yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial_iter(k)
         delta += 1
+
+
+# specific cases of k_dimensional_centered_hypercube_numbers
+
+
+def five_dimensional_centered_hypercube_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield delta ** 5 + (delta - 1) ** 5
+        delta += 1
+
+
+def six_dimensional_centered_hypercube_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield delta ** 6 + (delta - 1) ** 6
+        delta += 1
