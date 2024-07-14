@@ -294,3 +294,10 @@ def generalized_k_dimensional_hypertetrahedron_numbers(k: int, start_num: int = 
     while True:
         yield rising_factorial(delta, k) / factorial_iter(k)
         delta += 1
+
+
+def generalized_biquadratic_numbers(start_num: int = 0) -> Iterator[int]:
+    delta = start_num
+    while True:
+        yield delta ** 4
+        delta += 1
