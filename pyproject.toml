@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "figuratenum"
 version = "0.6.0"
-description = "A complete generator of infinite sequences of figurate numbers"
+description = "A generator of infinite sequences of figurate numbers for Python."
 readme = "README.md"
 authors = [{ name = "Edgar Armando Delgado Vega" }]
 license = { file = "LICENSE" }
