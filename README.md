@@ -6,7 +6,7 @@ FigurateNum generates the following types of **infinite sequences**:
 
 - [x] 74 sequences of plane figurate numbers
 - [x] 79 sequences of space figurate numbers
-- [x] 18 sequences of multidimensional figurate numbers
+- [x] 56 sequences of multidimensional figurate numbers
 
 ## What is the purpose of FigurateNum?
 
@@ -284,6 +284,18 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 54. `k_dimensional_centered_hyperoctahedron_numbers(k)`
 55. `five_dimensional_centered_hyperoctahedron_numbers`
 56. `six_dimensional_centered_hyperoctahedron_numbers`
+57. `generalized_pentatope_numbers`
+58. `generalized_k_dimensional_hypertetrahedron_numbers(k = 5, start_num = 0)`
+59. `generalized_biquadratic_numbers(start_num = 0)`
+60. `generalized_k_dimensional_hypercube_numbers(k = 5, start_num = 0)`
+61. `generalized_hyperoctahedral_numbers(start_num = 0)`
+62. `generalized_k_dimensional_hyperoctahedron_numbers(k = 5, start_num = 0)`
+63. `generalized_hyperdodecahedral_numbers(start_num = 0)`
+64. `generalized_hypericosahedral_numbers(start_num = 0)`
+65. `generalized_polyoctahedral_numbers(start_num = 0)`
+66. `generalized_k_dimensional_mgonal_pyramidal_numbers(k, m, start_num = 0)`
+67. `generalized_k_dimensional_centered_hypercube_numbers(k, start_num = 0)`
+68. `generalized_nexus_numbers(start_num = 0)`
 
 ## Contributing
 
