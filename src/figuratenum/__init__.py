@@ -50,5 +50,8 @@ from .multidimensional_figuratenum import (
     k_dimensional_mgonal_pyramidal_numbers, mgonal_pyramidal_numbers_of_the_k_2_th_order,
     centered_biquadratic_numbers, k_dimensional_centered_hypercube_numbers, centered_polytope_numbers,
     k_dimensional_centered_hypertetrahedron_numbers, centered_hyperoctahedral_numbers, orthoplex_numbers,
-    nexus_numbers, k_dimensional_centered_hyperoctahedron_numbers
+    nexus_numbers, k_dimensional_centered_hyperoctahedron_numbers,
+
+    generalized_pentatope_numbers, generalized_k_dimensional_hypertetrahedron_numbers,
+    generalized_biquadratic_numbers, generalized_k_dimensional_hypercube_numbers, generalized_hyperoctahedral_numbers, generalized_k_dimensional_hyperoctahedron_numbers, generalized_hyperdodecahedral_numbers, generalized_hypericosahedral_numbers, generalized_polyoctahedral_numbers, generalized_k_dimensional_mgonal_pyramidal_numbers, generalized_k_dimensional_centered_hypercube_numbers, generalized_nexus_numbers
 )
