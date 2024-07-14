@@ -230,22 +230,24 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 
 1. `pentatope_numbers` = `hypertetrahedral_numbers` = `triangulotriangular_numbers`
 2. `k_dimensional_hypertetrahedron_numbers(k)` = `k_hypertetrahedron_numbers(k)` = `regular_k_polytopic_numbers(k)` = `figurate_numbers_of_order_k(k)`
-3. `biquadratic_numbers`
-4. `k_dimensional_hypercube_numbers(k)` = `k_hypercube_numbers(k)`
-5. `hyperoctahedral_numbers` = `hexadecachoron_numbers` = `four_cross_polytope_numbers` = `four_orthoplex_numbers`
-6. `hypericosahedral_numbers` = `tetraplex_numbers` = `polytetrahedron_numbers` = `hexacosichoron_numbers`
-7. `hyperdodecahedral_numbers` = `hecatonicosachoron_numbers` = `dodecaplex_numbers` = `polydodecahedron_numbers`
-8. `polyoctahedral_numbers` = `icositetrachoron_numbers` = `octaplex_numbers` = `hyperdiamond_numbers`
-9. `k_dimensional_hyperoctahedron_numbers(k)` = `k_cross_polytope_numbers(k)`
-10. `four_dimensional_mgonal_pyramidal_numbers(m)` = `mgonal_pyramidal_numbers_of_the_second_order`
-11. `k_dimensional_mgonal_pyramidal_numbers(k, m)` = `mgonal_pyramidal_numbers_of_the_k_2_th_order(k, m)`
-12. `centered_biquadratic_numbers`
-13. `k_dimensional_centered_hypercube_numbers(k)`
-14. `centered_polytope_numbers`
-15. `k_dimensional_centered_hypertetrahedron_numbers(k)`
-16. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
-17. `nexus_numbers`
-18. `k_dimensional_centered_hyperoctahedron_numbers(k)`
+3. `five_dimensional_hypertetrahedron_numbers`
+4. `six_dimensional_hypertetrahedron_numbers`
+5. `biquadratic_numbers`
+6. `k_dimensional_hypercube_numbers(k)` = `k_hypercube_numbers(k)`
+7. `hyperoctahedral_numbers` = `hexadecachoron_numbers` = `four_cross_polytope_numbers` = `four_orthoplex_numbers`
+8. `hypericosahedral_numbers` = `tetraplex_numbers` = `polytetrahedron_numbers` = `hexacosichoron_numbers`
+9. `hyperdodecahedral_numbers` = `hecatonicosachoron_numbers` = `dodecaplex_numbers` = `polydodecahedron_numbers`
+10. `polyoctahedral_numbers` = `icositetrachoron_numbers` = `octaplex_numbers` = `hyperdiamond_numbers`
+11. `k_dimensional_hyperoctahedron_numbers(k)` = `k_cross_polytope_numbers(k)`
+12. `four_dimensional_mgonal_pyramidal_numbers(m)` = `mgonal_pyramidal_numbers_of_the_second_order`
+13. `k_dimensional_mgonal_pyramidal_numbers(k, m)` = `mgonal_pyramidal_numbers_of_the_k_2_th_order(k, m)`
+14. `centered_biquadratic_numbers`
+15. `k_dimensional_centered_hypercube_numbers(k)`
+16. `centered_polytope_numbers`
+17. `k_dimensional_centered_hypertetrahedron_numbers(k)`
+18. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
+19. `nexus_numbers`
+20. `k_dimensional_centered_hyperoctahedron_numbers(k)`
 
 ## Contributing
 
