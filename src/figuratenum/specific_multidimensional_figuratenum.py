@@ -88,3 +88,69 @@ def ten_dimensional_hyperoctahedron_numbers() -> Iterator[int]:
     while True:
         yield (2 * delta ** 8 + 120 * delta ** 6 + 1806 * delta ** 4 + 7180 * delta ** 2 + 5067) * delta ** 2 // 14175
         delta += 1
+
+
+# specific cases of four_dimensional_mgonal_pyramidal_numbers(m) = mgonal_pyramidal_numbers_of_the_second_order(m)
+
+
+def four_dimensional_square_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * ((4 - 2) * delta - 4 + 6)) // 24
+        delta += 1
+
+
+def four_dimensional_pentagonal_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * ((5 - 2) * delta - 5 + 6)) // 24
+        delta += 1
+
+
+def four_dimensional_hexagonal_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * ((6 - 2) * delta - 6 + 6)) // 24
+        delta += 1
+
+
+def four_dimensional_heptagonal_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * ((7 - 2) * delta - 7 + 6)) // 24
+        delta += 1
+
+
+def four_dimensional_octagonal_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * ((8 - 2) * delta - 8 + 6)) // 24
+        delta += 1
+
+
+def four_dimensional_nonagonal_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * ((9 - 2) * delta - 9 + 6)) // 24
+        delta += 1
+
+
+def four_dimensional_decagonal_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * ((10 - 2) * delta - 10 + 6)) // 24
+        delta += 1
+
+
+def four_dimensional_hendecagonal_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * ((11 - 2) * delta - 11 + 6)) // 24
+        delta += 1
+
+
+def four_dimensional_dodecagonal_pyramidal_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * (delta + 2) * ((12 - 2) * delta - 12 + 6)) // 24
+        delta += 1
