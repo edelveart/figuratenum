@@ -20,6 +20,13 @@ def pseudo_pochhammer_function(n: int, k: int) -> int:
     return pseudo_rising_factorial(n, k)
 
 
+def rising_factorial(n: int, k: int) -> int:
+    t = 1
+    for i in range(n, (n + k - 1) + 1):
+        t *= i
+    return t
+
+
 def helper_centered_hypertetrahedron(k: int, n: int) -> int:
     if n == 1:
         return 1
