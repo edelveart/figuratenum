@@ -1,5 +1,11 @@
 # FigurateNum
 
+![PyPI - Version](https://img.shields.io/pypi/v/figuratenum)
+![GitHub License](https://img.shields.io/github/license/edelveart/figuratenum)
+![PyPI - Wheel](https://img.shields.io/pypi/wheel/figuratenum)
+![PyPI - Status](https://img.shields.io/pypi/status/figuratenum)
+
+
 FigurateNum is a set of **figurate number generators** based on the book [Figurate Numbers (2012)](https://books.google.com.pe/books/about/Figurate_Numbers.html?id=cDxYdstLPz4C&redir_esc=y) by Michel Deza and Elena Deza.
 
 FigurateNum generates the following types of **infinite sequences**:
@@ -306,9 +312,3 @@ FigurateNumber is currently under development, and we warmly invite your contrib
 - Tests, documentation and errata in the book
 
 When making commits, please use the following conventional prefixes to indicate the nature of the changes: `feat`, `refactor`, `fix`, `docs`, and `test`.
-
-## License
-
-[MIT License](https://github.com/edelveart/figuratenum/blob/main/LICENSE)
-
-
