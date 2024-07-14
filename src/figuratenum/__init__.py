@@ -42,11 +42,13 @@ from .specific_space_figuratenum import (
 )
 
 from .multidimensional_figuratenum import (
-    pentatope_numbers, k_dimensional_hypertetrahedron_numbers, biquadratic_numbers,
-    k_dimensional_hypercube_numbers, hyperoctahedral_numbers, hypericosahedral_numbers,
-    hyperdodecahedral_numbers, polyoctahedral_numbers, k_dimensional_hyperoctahedron_numbers,
-    four_dimensional_mgonal_pyramidal_numbers, k_dimensional_mgonal_pyramidal_numbers,
+    pentatope_numbers, hypertetrahedral_numbers, triangulotriangular_numbers, k_hypertetrahedron_numbers, regular_k_polytopic_numbers, figurate_numbers_of_order_k, k_dimensional_hypertetrahedron_numbers, biquadratic_numbers,
+    k_dimensional_hypercube_numbers, k_hypercube_numbers, hyperoctahedral_numbers, hexadecachoron_numbers, four_cross_polytope_numbers, four_orthoplex_numbers, hypericosahedral_numbers,
+    tetraplex_numbers, polytetrahedron_numbers, hexacosichoron_numbers,
+    hyperdodecahedral_numbers, hecatonicosachoron_numbers, dodecaplex_numbers, polydodecahedron_numbers, polyoctahedral_numbers, icositetrachoron_numbers, octaplex_numbers, hyperdiamond_numbers,  k_dimensional_hyperoctahedron_numbers, k_cross_polytope_numbers,
+    four_dimensional_mgonal_pyramidal_numbers, mgonal_pyramidal_numbers_of_the_second_order,
+    k_dimensional_mgonal_pyramidal_numbers, mgonal_pyramidal_numbers_of_the_k_2_th_order,
     centered_biquadratic_numbers, k_dimensional_centered_hypercube_numbers, centered_polytope_numbers,
-    k_dimensional_centered_hypertetrahedron_numbers, centered_hyperoctahedral_numbers,
+    k_dimensional_centered_hypertetrahedron_numbers, centered_hyperoctahedral_numbers, orthoplex_numbers,
     nexus_numbers, k_dimensional_centered_hyperoctahedron_numbers
 )
