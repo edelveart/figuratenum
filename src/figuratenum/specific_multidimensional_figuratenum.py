@@ -3,7 +3,8 @@ from multidimensional_figuratenum import (
     rising_factorial,
     factorial_iter,
     pseudo_rising_factorial,
-    acc_helper_centered_hypertetrahedron
+    acc_helper_centered_hypertetrahedron,
+    helper_ext_int_double_sigma
 )
 
 # specific cases of k_dimensional_hypertetrahedron_numbers(k)
@@ -295,4 +296,23 @@ def six_dimensional_centered_hypertetrahedron_numbers() -> Iterator[int]:
     delta = 1
     while True:
         yield acc_helper_centered_hypertetrahedron(6, delta)
+        delta += 1
+
+
+# specific cases of k_dimensional_centered_hyperoctahedron_numbers(k)
+
+
+def five_dimensional_centered_hyperoctahedron_numbers() -> Iterator[int]:
+    delta = 1
+    yield 1
+    while True:
+        yield helper_ext_int_double_sigma(5, delta)
+        delta += 1
+
+
+def six_dimensional_centered_hyperoctahedron_numbers() -> Iterator[int]:
+    delta = 1
+    yield 1
+    while True:
+        yield helper_ext_int_double_sigma(6, delta)
         delta += 1
