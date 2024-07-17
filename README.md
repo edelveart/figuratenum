@@ -104,55 +104,51 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 27. `icosioctagonal_numbers`
 28. `icosinonagonal_numbers`
 29. `triacontagonal_numbers`
-30. `triangular_tetrahedral_numbers[finite]`
-31. `triangular_square_pyramidal_numbers[finite]`
-32. `square_tetrahedral_numbers[finite]`
-33. `square_square_pyramidal_numbers[finite]`
-34. `centered_triangular_numbers`
-35. `centered_square_numbers` = `diamond numbers`
-36. `centered_pentagonal_numbers`
-37. `centered_hexagonal_numbers`
-38. `centered_heptagonal_numbers`
-39. `centered_octagonal_numbers`
-40. `centered_nonagonal_numbers`
-41. `centered_decagonal_numbers`
-42. `centered_hendecagonal_numbers`
-43. `centered_dodecagonal_numbers` = `star_numbers`
-44. `centered_tridecagonal_numbers`
-45. `centered_tetradecagonal_numbers`
-46. `centered_pentadecagonal_numbers`
-47. `centered_hexadecagonal_numbers`
-48. `centered_heptadecagonal_numbers`
-49. `centered_octadecagonal_numbers`
-50. `centered_nonadecagonal_numbers`
-51. `centered_icosagonal_numbers`
-52. `centered_icosihenagonal_numbers`
-53. `centered_icosidigonal_numbers`
-54. `centered_icositrigonal_numbers`
-55. `centered_icositetragonal_numbers`
-56. `centered_icosipentagonal_numbers`
-57. `centered_icosihexagonal_numbers`
-58. `centered_icosiheptagonal_numbers`
-59. `centered_icosioctagonal_numbers`
-60. `centered_icosinonagonal_numbers`
-61. `centered_triacontagonal_numbers`
-62. `centered_mgonal_numbers`
-63. `pronic_numbers` = `heteromecic_numbers = oblong_numbers`
-64. `polite_numbers`
-65. `impolite_numbers`
-66. `cross_numbers`
-67. `aztec_diamond_numbers`
-68. `polygram_numbers(m)` = `centered_star_polygonal_numbers(m)`
-69. `pentagram_numbers`
-70. `gnomic_numbers`
-71. `truncated_triangular_numbers`
-72. `truncated_square_numbers`
-73. `truncated_pronic_numbers`
-74. `truncated_centered_pol_numbers(m)` = `truncated_centered_mgonal_numbers(m)`
-75. `truncated_centered_hexagonal_numbers` = `truncated_hex_numbers`
-76. `generalized_mgonal_numbers(m, start_numb)`
-77. `generalized_centered_pol_numbers(m, start_numb)`
-78. `generalized_pronic_numbers(start_numb)`
+30. `centered_triangular_numbers`
+31. `centered_square_numbers` = `diamond numbers`
+32. `centered_pentagonal_numbers`
+33. `centered_hexagonal_numbers`
+34. `centered_heptagonal_numbers`
+35. `centered_octagonal_numbers`
+36. `centered_nonagonal_numbers`
+37. `centered_decagonal_numbers`
+38. `centered_hendecagonal_numbers`
+39. `centered_dodecagonal_numbers` = `star_numbers`
+40. `centered_tridecagonal_numbers`
+41. `centered_tetradecagonal_numbers`
+42. `centered_pentadecagonal_numbers`
+43. `centered_hexadecagonal_numbers`
+44. `centered_heptadecagonal_numbers`
+45. `centered_octadecagonal_numbers`
+46. `centered_nonadecagonal_numbers`
+47. `centered_icosagonal_numbers`
+48. `centered_icosihenagonal_numbers`
+49. `centered_icosidigonal_numbers`
+50. `centered_icositrigonal_numbers`
+51. `centered_icositetragonal_numbers`
+52. `centered_icosipentagonal_numbers`
+53. `centered_icosihexagonal_numbers`
+54. `centered_icosiheptagonal_numbers`
+55. `centered_icosioctagonal_numbers`
+56. `centered_icosinonagonal_numbers`
+57. `centered_triacontagonal_numbers`
+58. `centered_mgonal_numbers`
+59. `pronic_numbers` = `heteromecic_numbers = oblong_numbers`
+60. `polite_numbers`
+61. `impolite_numbers`
+62. `cross_numbers`
+63. `aztec_diamond_numbers`
+64. `polygram_numbers(m)` = `centered_star_polygonal_numbers(m)`
+65. `pentagram_numbers`
+66. `gnomic_numbers`
+67. `truncated_triangular_numbers`
+68. `truncated_square_numbers`
+69. `truncated_pronic_numbers`
+70. `truncated_centered_pol_numbers(m)` = `truncated_centered_mgonal_numbers(m)`
+71. `truncated_centered_hexagonal_numbers` = `truncated_hex_numbers`
+72. `generalized_mgonal_numbers(m, start_numb)`
+73. `generalized_centered_pol_numbers(m, start_numb)`
+74. `generalized_pronic_numbers(start_numb)`
 
 ## Space figurate numbers
 
