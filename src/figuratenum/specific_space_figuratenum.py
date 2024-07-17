@@ -228,6 +228,14 @@ def square_tetrahedral_numbers() -> Iterator[int]:
         yield (finite_seq[delta % 3])
         delta += 1
 
+
+def square_square_pyramidal_numbers() -> Iterator[int]:
+    delta = 0
+    finite_seq = [1, 4900]
+    while True:
+        yield (finite_seq[delta % 2])
+        delta += 1
+
 # specific cases of centered_mgonal_pyramid_numbers(m)
 
 
