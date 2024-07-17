@@ -213,6 +213,13 @@ def triangular_tetrahedral_numbers() -> Iterator[int]:
         delta += 1
 
 
+def triangular_square_pyramidal_numbers() -> Iterator[int]:
+    delta = 0
+    finite_seq = [1, 55, 91, 208335]
+    while True:
+        yield (finite_seq[delta % 4])
+        delta += 1
+
 # specific cases of centered_mgonal_pyramid_numbers(m)
 
 
