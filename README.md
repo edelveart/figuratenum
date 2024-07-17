@@ -181,11 +181,11 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 27. `icosioctagonal_pyramidal_numbers`
 28. `icosinonagonal_pyramidal_numbers`
 29. `triacontagonal_pyramidal_numbers`
-30. `triangular_tetrahedral_numbers`
-31. `triangular_square_pyramidal_numbers`
-32. `square_tetrahedral_numbers`
-33. `square_square_pyramidal_numbers`
-34. `tetrahedral_square_pyramidal_numbers`
+30. `triangular_tetrahedral_numbers[finite]`
+31. `triangular_square_pyramidal_numbers[finite]`
+32. `square_tetrahedral_numbers[finite]`
+33. `square_square_pyramidal_numbers[finite]`
+34. `tetrahedral_square_pyramidal_numbers[finite]`
 35. `cubic_numbers`
 36. `tetrahedral_numbers`
 37. `octahedral_numbers`
