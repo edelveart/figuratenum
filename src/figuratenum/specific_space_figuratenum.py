@@ -202,6 +202,16 @@ def triacontagonal_pyramidal_numbers() -> Iterator[int]:
         yield delta * (delta + 1) * (28 * delta - 25) // 6
         delta += 1
 
+# specific cases of finite sequences
+
+
+def triangular_tetrahedral_numbers() -> Iterator[int]:
+    delta = 0
+    finite_seq = [1, 10, 120, 1540, 7140]
+    while True:
+        yield (finite_seq[delta % 5])
+        delta += 1
+
 
 # specific cases of centered_mgonal_pyramid_numbers(m)
 
