@@ -53,6 +53,9 @@ from .specific_space_figuratenum import (
     icosiheptagonal_pyramidal_numbers, icosioctagonal_pyramidal_numbers,
     icosinonagonal_pyramidal_numbers, triacontagonal_pyramidal_numbers,
 
+    triangular_tetrahedral_numbers, triangular_square_pyramidal_numbers, square_tetrahedral_numbers,
+    square_square_pyramidal_numbers, tetrahedral_square_pyramidal_numbers,
+
 
     centered_pentagonal_pyramid_numbers, centered_hexagonal_pyramid_numbers,
     centered_heptagonal_pyramid_numbers, centered_octagonal_pyramid_numbers,
