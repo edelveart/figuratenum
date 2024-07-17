@@ -11,7 +11,7 @@ FigurateNum is a set of **figurate number generators** based on the book [Figura
 FigurateNum generates the following types of **infinite sequences**:
 
 - [x] 74 sequences of plane figurate numbers
-- [x] 83 sequences of space figurate numbers
+- [x] 84 sequences of space figurate numbers
 - [x] 68 sequences of multidimensional figurate numbers
 
 ## What is the purpose of FigurateNum?
@@ -181,56 +181,61 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 27. `icosioctagonal_pyramidal_numbers`
 28. `icosinonagonal_pyramidal_numbers`
 29. `triacontagonal_pyramidal_numbers`
-30. `cubic_numbers`
-31. `tetrahedral_numbers`
-32. `octahedral_numbers`
-33. `dodecahedral_numbers`
-34. `icosahedral_numbers`
-35. `truncated_tetrahedral_numbers`
-36. `truncated_cubic_numbers`
-37. `truncated_octahedral_numbers`
-38. `stella_octangula_numbers`
-39. `centered_cube_numbers`
-40. `rhombic_dodecahedral_numbers`
-41. `hauy_rhombic_dodecahedral_numbers`
-42. `centered_tetrahedron_numbers` = `centered_tetrahedral_numbers`
-43. `centered_square_pyramid_numbers` = `centered_pyramid_numbers`
-44. `centered_mgonal_pyramid_numbers(m)`
-45. `centered_pentagonal_pyramid_numbers`
-46. `centered_hexagonal_pyramid_numbers`
-47. `centered_heptagonal_pyramid_numbers`
-48. `centered_octagonal_pyramid_numbers`
-49. `centered_octahedron_numbers`
-50. `centered_icosahedron_numbers` = `centered_cuboctahedron_numbers`
-51. `centered_dodecahedron_numbers`
-52. `centered_truncated_tetrahedron_numbers`
-53. `centered_truncated_cube_numbers`
-54. `centered_truncated_octahedron_numbers`
-55. `centered_mgonal_pyramidal_numbers(m)`
-56. `centered_triangular_pyramidal_numbers`
-57. `centered_square_pyramidal_numbers`
-58. `centered_pentagonal_pyramidal_numbers`
-59. `centered_heptagonal_pyramidal_numbers`
-60. `centered_octagonal_pyramidal_numbers`
-61. `centered_nonagonal_pyramidal_numbers`
-62. `centered_decagonal_pyramidal_numbers`
-63. `centered_hendecagonal_pyramidal_numbers`
-64. `centered_dodecagonal_pyramidal_numbers`
-65. `centered_hexagonal_pyramidal_numbers` = `hex_pyramidal_numbers`
-66. `hexagonal_prism_numbers`
-67. `mgonal_prism_numbers(m)`
-68. `generalized_mgonal_pyramidal_numbers(m, start_num)`
-69. `generalized_cubic_numbers(start_num)`
-70. `generalized_octahedral_numbers(start_num)`
-71. `generalized_icosahedral_numbers(start_num)`
-72. `generalized_dodecahedral_numbers(start_num)`
-73. `generalized_centered_cube_numbers(start_num)`
-74. `generalized_centered_tetrahedron_numbers(start_num)`
-75. `generalized_centered_square_pyramid_numbers(start_num)`
-76. `generalized_rhombic_dodecahedral_numbers(start_num)`
-77. `generalized_centered_mgonal_pyramidal_numbers(m, start_num)`
-78. `generalized_mgonal_prism_numbers(m, start_num)`
-79. `generalized_hexagonal_prism_numbers(start_num)`
+30. `triangular_tetrahedral_numbers`
+31. `triangular_square_pyramidal_numbers`
+32. `square_tetrahedral_numbers`
+33. `square_square_pyramidal_numbers`
+34. `tetrahedral_square_pyramidal_numbers`
+35. `cubic_numbers`
+36. `tetrahedral_numbers`
+37. `octahedral_numbers`
+38. `dodecahedral_numbers`
+39. `icosahedral_numbers`
+40. `truncated_tetrahedral_numbers`
+41. `truncated_cubic_numbers`
+42. `truncated_octahedral_numbers`
+43. `stella_octangula_numbers`
+44. `centered_cube_numbers`
+45. `rhombic_dodecahedral_numbers`
+46. `hauy_rhombic_dodecahedral_numbers`
+47. `centered_tetrahedron_numbers` = `centered_tetrahedral_numbers`
+48. `centered_square_pyramid_numbers` = `centered_pyramid_numbers`
+49. `centered_mgonal_pyramid_numbers(m)`
+50. `centered_pentagonal_pyramid_numbers`
+51. `centered_hexagonal_pyramid_numbers`
+52. `centered_heptagonal_pyramid_numbers`
+53. `centered_octagonal_pyramid_numbers`
+54. `centered_octahedron_numbers`
+55. `centered_icosahedron_numbers` = `centered_cuboctahedron_numbers`
+56. `centered_dodecahedron_numbers`
+57. `centered_truncated_tetrahedron_numbers`
+58. `centered_truncated_cube_numbers`
+59. `centered_truncated_octahedron_numbers`
+60. `centered_mgonal_pyramidal_numbers(m)`
+61. `centered_triangular_pyramidal_numbers`
+62. `centered_square_pyramidal_numbers`
+63. `centered_pentagonal_pyramidal_numbers`
+64. `centered_heptagonal_pyramidal_numbers`
+65. `centered_octagonal_pyramidal_numbers`
+66. `centered_nonagonal_pyramidal_numbers`
+67. `centered_decagonal_pyramidal_numbers`
+68. `centered_hendecagonal_pyramidal_numbers`
+69. `centered_dodecagonal_pyramidal_numbers`
+70. `centered_hexagonal_pyramidal_numbers` = `hex_pyramidal_numbers`
+71. `hexagonal_prism_numbers`
+72. `mgonal_prism_numbers(m)`
+73. `generalized_mgonal_pyramidal_numbers(m, start_num)`
+74. `generalized_cubic_numbers(start_num)`
+75. `generalized_octahedral_numbers(start_num)`
+76. `generalized_icosahedral_numbers(start_num)`
+77. `generalized_dodecahedral_numbers(start_num)`
+78. `generalized_centered_cube_numbers(start_num)`
+79. `generalized_centered_tetrahedron_numbers(start_num)`
+80. `generalized_centered_square_pyramid_numbers(start_num)`
+81. `generalized_rhombic_dodecahedral_numbers(start_num)`
+82. `generalized_centered_mgonal_pyramidal_numbers(m, start_num)`
+83. `generalized_mgonal_prism_numbers(m, start_num)`
+84. `generalized_hexagonal_prism_numbers(start_num)`
 
 ## Multidimensional figurate numbers
 
