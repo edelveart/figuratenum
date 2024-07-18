@@ -1,3 +1,6 @@
+from typing import List
+from array import array
+
 from .multidimensional_figuratenum import (
     pentatope_numbers, hypertetrahedral_numbers, triangulotriangular_numbers, k_hypertetrahedron_numbers,
     regular_k_polytopic_numbers, figurate_numbers_of_order_k, k_dimensional_hypertetrahedron_numbers,
@@ -54,7 +57,34 @@ from .specific_multidimensional_figuratenum import (
 )
 
 
-class MultidimensionalFigurateNum:
+class MultidimensionalFigurateNum():
+
+    def take_to_list(self, n: int) -> List[int]:
+        """
+        Takes the first n generated numbers from the sequence and returns them as a list.
+        Args:
+            n (int): Number of elements to take.
+        Returns:
+            list: List of the first n generated numbers.
+        """
+        seq_num = []
+        for _ in range(n):
+            seq_num.append(next(self.generator))
+        return seq_num
+
+    def take_to_array(self, n: int) -> array:
+        """
+        Takes the first n generated numbers from the sequence and returns them as an.
+        Args:
+            n (int): Number of elements to take.
+        Returns:
+            list: List of the first n generated numbers.
+        """
+        seq_num = array("i", [])
+        for _ in range(n):
+            seq_num.append(next(self.generator))
+        return seq_num
+
     @classmethod
     def pentatope_numbers(cls) -> "MultidimensionalFigurateNum":
         return cls(pentatope_numbers())
