@@ -1,4 +1,5 @@
 from .class_plane_figuratenum import PlaneFigurateNum
+from .class_space_figuratenum import SpaceFigurateNum
 
 from .plane_figuratenum import (
     polygonal_numbers, centered_square_numbers, diamond_numbers,
