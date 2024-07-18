@@ -19,10 +19,10 @@ class FigurateNum(PlaneFigurateNum, SpaceFigurateNum, MultidimensionalFigurateNu
 
     Examples
     --------
-    >>> from figuratenum import FigurateNum as fg
-    >>> print(fg.generalized_dodecahedral_numbers(-3).take(8))
+    >>> from figuratenum import FigurateNum as fgn
+    >>> print(fgn.generalized_dodecahedral_numbers(-3).take(8))
     [-165, -56, -10, 0, 1, 20, 84, 220]
-    >>> print(fg.octadecagonal_pyramidal_numbers().take_to_array(5))
+    >>> print(fgn.octadecagonal_pyramidal_numbers().take_to_array(5))
     array('i', [1, 19, 70, 170, 335])
     """
 
