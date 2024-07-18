@@ -1,4 +1,3 @@
-from typing import Iterator, List
 from .space_figuratenum import (
     m_pyramidal_numbers, cubic_numbers, tetrahedral_numbers,
     octahedral_numbers, dodecahedral_numbers, icosahedral_numbers,
@@ -43,15 +42,6 @@ from .specific_space_figuratenum import (
 
 
 class SpaceFigurateNum:
-    def __init__(self, generator: Iterator[int]):
-        self.generator = generator
-
-    def take(self, n: int) -> List[int]:
-        result = []
-        for _ in range(n):
-            result.append(next(self.generator))
-        return result
-
     @classmethod
     def m_pyramidal_numbers(cls, m: int) -> "SpaceFigurateNum":
         return cls(m_pyramidal_numbers(m))
