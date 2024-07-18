@@ -25,15 +25,6 @@ from .specific_plane_figuratenum import (
 
 
 class PlaneFigurateNum:
-    def __init__(self, generator: Iterator[int]):
-        self.generator = generator
-
-    def take(self, n: int) -> List[int]:
-        result = []
-        for _ in range(n):
-            result.append(next(self.generator))
-        return result
-
     @classmethod
     def polygonal_numbers(cls, k: int) -> "PlaneFigurateNum":
         return cls(polygonal_numbers(k))
