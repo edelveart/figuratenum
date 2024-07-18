@@ -1,5 +1,3 @@
-from typing import Iterator, List
-
 from .multidimensional_figuratenum import (
     pentatope_numbers, hypertetrahedral_numbers, triangulotriangular_numbers, k_hypertetrahedron_numbers,
     regular_k_polytopic_numbers, figurate_numbers_of_order_k, k_dimensional_hypertetrahedron_numbers,
@@ -57,15 +55,6 @@ from .specific_multidimensional_figuratenum import (
 
 
 class MultidimensionalFigurateNum:
-    def __init__(self, generator: Iterator[int]):
-        self.generator = generator
-
-    def take(self, n: int) -> List[int]:
-        result = []
-        for _ in range(n):
-            result.append(next(self.generator))
-        return result
-
     @classmethod
     def pentatope_numbers(cls) -> "MultidimensionalFigurateNum":
         return cls(pentatope_numbers())
