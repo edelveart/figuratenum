@@ -259,7 +259,7 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 18. `nine_dimensional_hyperoctahedron_numbers`
 19. `ten_dimensional_hyperoctahedron_numbers`
 20. `k_dimensional_hyperoctahedron_numbers(k)` = `k_cross_polytope_numbers(k)`
-21. `four_dimensional_mgonal_pyramidal_numbers(m)` = `mgonal_pyramidal_numbers_of_the_second_order`
+21. `four_dimensional_mgonal_pyramidal_numbers(m)` = `mgonal_pyramidal_numbers_of_the_second_order(m)`
 22. `four_dimensional_square_pyramidal_numbers`
 23. `four_dimensional_pentagonal_pyramidal_numbers`
 24. `four_dimensional_hexagonal_pyramidal_numbers`
@@ -291,11 +291,11 @@ array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
 50. `five_dimensional_centered_hypertetrahedron_numbers`
 51. `six_dimensional_centered_hypertetrahedron_numbers`
 52. `centered_hyperoctahedral_numbers` = `orthoplex_numbers`
-53. `nexus_numbers`
+53. `nexus_numbers(k)`
 54. `k_dimensional_centered_hyperoctahedron_numbers(k)`
 55. `five_dimensional_centered_hyperoctahedron_numbers`
 56. `six_dimensional_centered_hyperoctahedron_numbers`
-57. `generalized_pentatope_numbers`
+57. `generalized_pentatope_numbers(start_num = 0)`
 58. `generalized_k_dimensional_hypertetrahedron_numbers(k = 5, start_num = 0)`
 59. `generalized_biquadratic_numbers(start_num = 0)`
 60. `generalized_k_dimensional_hypercube_numbers(k = 5, start_num = 0)`
