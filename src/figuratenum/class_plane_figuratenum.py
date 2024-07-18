@@ -1,5 +1,4 @@
-from typing import List
-from array import array
+from .instance_methods_figuratenum import InstanceMethodsFigurateNum
 
 from .plane_figuratenum import (
     polygonal_numbers, centered_square_numbers, diamond_numbers,
@@ -12,6 +11,7 @@ from .plane_figuratenum import (
     truncated_centered_hexagonal_numbers, truncated_hex_numbers,
     generalized_mgonal_numbers, generalized_centered_pol_numbers, generalized_pronic_numbers
 )
+
 from .specific_plane_figuratenum import (
     triangular_numbers, square_numbers, pentagonal_numbers,
     hexagonal_numbers, heptagonal_numbers, octagonal_numbers,
@@ -26,33 +26,7 @@ from .specific_plane_figuratenum import (
 )
 
 
-class PlaneFigurateNum():
-
-    def take_to_list(self, n: int) -> List[int]:
-        """
-        Takes the first n generated numbers from the sequence and returns them as a list.
-        Args:
-            n (int): Number of elements to take.
-        Returns:
-            list: List of the first n generated numbers.
-        """
-        seq_num = []
-        for _ in range(n):
-            seq_num.append(next(self.generator))
-        return seq_num
-
-    def take_to_array(self, n: int) -> array:
-        """
-        Takes the first n generated numbers from the sequence and returns them as an.
-        Args:
-            n (int): Number of elements to take.
-        Returns:
-            list: List of the first n generated numbers.
-        """
-        seq_num = array("i", [])
-        for _ in range(n):
-            seq_num.append(next(self.generator))
-        return seq_num
+class PlaneFigurateNum(InstanceMethodsFigurateNum):
 
     @classmethod
     def polygonal_numbers(cls, k: int) -> "PlaneFigurateNum":
