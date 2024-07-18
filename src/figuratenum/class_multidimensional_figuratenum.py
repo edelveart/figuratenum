@@ -1,4 +1,5 @@
 from typing import Iterator, List
+
 from .multidimensional_figuratenum import (
     pentatope_numbers, hypertetrahedral_numbers, triangulotriangular_numbers, k_hypertetrahedron_numbers,
     regular_k_polytopic_numbers, figurate_numbers_of_order_k, k_dimensional_hypertetrahedron_numbers,
@@ -19,6 +20,39 @@ from .multidimensional_figuratenum import (
     generalized_hypericosahedral_numbers, generalized_polyoctahedral_numbers,
     generalized_k_dimensional_mgonal_pyramidal_numbers, generalized_k_dimensional_centered_hypercube_numbers,
     generalized_nexus_numbers
+)
+
+from .specific_multidimensional_figuratenum import (
+    five_dimensional_hypertetrahedron_numbers, six_dimensional_hypertetrahedron_numbers,
+
+    five_dimensional_hypercube_numbers, six_dimensional_hypercube_numbers,
+
+    four_dimensional_hyperoctahedron_numbers, five_dimensional_hyperoctahedron_numbers,
+    six_dimensional_hyperoctahedron_numbers, seven_dimensional_hyperoctahedron_numbers,
+    eight_dimensional_hyperoctahedron_numbers, nine_dimensional_hyperoctahedron_numbers,
+    ten_dimensional_hyperoctahedron_numbers,
+
+    four_dimensional_square_pyramidal_numbers, four_dimensional_pentagonal_pyramidal_numbers,
+    four_dimensional_hexagonal_pyramidal_numbers, four_dimensional_heptagonal_pyramidal_numbers,
+    four_dimensional_octagonal_pyramidal_numbers, four_dimensional_nonagonal_pyramidal_numbers,
+    four_dimensional_decagonal_pyramidal_numbers, four_dimensional_hendecagonal_pyramidal_numbers,
+    four_dimensional_dodecagonal_pyramidal_numbers,
+
+    five_dimensional_mgonal_pyramidal_numbers, five_dimensional_square_pyramidal_numbers,
+    five_dimensional_pentagonal_pyramidal_numbers, five_dimensional_hexagonal_pyramidal_numbers,
+    five_dimensional_heptagonal_pyramidal_numbers, five_dimensional_octagonal_pyramidal_numbers,
+    six_dimensional_mgonal_pyramidal_numbers, six_dimensional_square_pyramidal_numbers,
+    six_dimensional_pentagonal_pyramidal_numbers, six_dimensional_hexagonal_pyramidal_numbers,
+    six_dimensional_heptagonal_pyramidal_numbers, six_dimensional_octagonal_pyramidal_numbers,
+
+    five_dimensional_centered_hypercube_numbers,
+    six_dimensional_centered_hypercube_numbers,
+
+    five_dimensional_centered_hypertetrahedron_numbers,
+    six_dimensional_centered_hypertetrahedron_numbers,
+
+    five_dimensional_centered_hyperoctahedron_numbers,
+    six_dimensional_centered_hyperoctahedron_numbers
 )
 
 
@@ -239,3 +273,157 @@ class MultidimensionalFigurateNum:
     @classmethod
     def generalized_nexus_numbers(cls, k: int, start_num: int = 0) -> "MultidimensionalFigurateNum":
         return cls(generalized_nexus_numbers(k, start_num))
+
+    # specific multidimensional figuratenum
+
+    @classmethod
+    def five_dimensional_hypertetrahedron_numbers(cls):
+        return cls(five_dimensional_hypertetrahedron_numbers())
+
+    @classmethod
+    def six_dimensional_hypertetrahedron_numbers(cls):
+        return cls(six_dimensional_hypertetrahedron_numbers())
+
+    @classmethod
+    def five_dimensional_hypercube_numbers(cls):
+        return cls(five_dimensional_hypercube_numbers())
+
+    @classmethod
+    def six_dimensional_hypercube_numbers(cls):
+        return cls(six_dimensional_hypercube_numbers())
+
+    @classmethod
+    def four_dimensional_hyperoctahedron_numbers(cls):
+        return cls(four_dimensional_hyperoctahedron_numbers())
+
+    @classmethod
+    def five_dimensional_hyperoctahedron_numbers(cls):
+        return cls(five_dimensional_hyperoctahedron_numbers())
+
+    @classmethod
+    def six_dimensional_hyperoctahedron_numbers(cls):
+        return cls(six_dimensional_hyperoctahedron_numbers())
+
+    @classmethod
+    def seven_dimensional_hyperoctahedron_numbers(cls):
+        return cls(seven_dimensional_hyperoctahedron_numbers())
+
+    @classmethod
+    def eight_dimensional_hyperoctahedron_numbers(cls):
+        return cls(eight_dimensional_hyperoctahedron_numbers())
+
+    @classmethod
+    def nine_dimensional_hyperoctahedron_numbers(cls):
+        return cls(nine_dimensional_hyperoctahedron_numbers())
+
+    @classmethod
+    def ten_dimensional_hyperoctahedron_numbers(cls):
+        return cls(ten_dimensional_hyperoctahedron_numbers())
+
+    @classmethod
+    def four_dimensional_square_pyramidal_numbers(cls):
+        return cls(four_dimensional_square_pyramidal_numbers())
+
+    @classmethod
+    def four_dimensional_pentagonal_pyramidal_numbers(cls):
+        return cls(four_dimensional_pentagonal_pyramidal_numbers())
+
+    @classmethod
+    def four_dimensional_hexagonal_pyramidal_numbers(cls):
+        return cls(four_dimensional_hexagonal_pyramidal_numbers())
+
+    @classmethod
+    def four_dimensional_heptagonal_pyramidal_numbers(cls):
+        return cls(four_dimensional_heptagonal_pyramidal_numbers())
+
+    @classmethod
+    def four_dimensional_octagonal_pyramidal_numbers(cls):
+        return cls(four_dimensional_octagonal_pyramidal_numbers())
+
+    @classmethod
+    def four_dimensional_nonagonal_pyramidal_numbers(cls):
+        return cls(four_dimensional_nonagonal_pyramidal_numbers())
+
+    @classmethod
+    def four_dimensional_decagonal_pyramidal_numbers(cls):
+        return cls(four_dimensional_decagonal_pyramidal_numbers())
+
+    @classmethod
+    def four_dimensional_hendecagonal_pyramidal_numbers(cls):
+        return cls(four_dimensional_hendecagonal_pyramidal_numbers())
+
+    @classmethod
+    def four_dimensional_dodecagonal_pyramidal_numbers(cls):
+        return cls(four_dimensional_dodecagonal_pyramidal_numbers())
+
+    @classmethod
+    def five_dimensional_mgonal_pyramidal_numbers(cls, m: int):
+        return cls(five_dimensional_mgonal_pyramidal_numbers(m))
+
+    @classmethod
+    def five_dimensional_square_pyramidal_numbers(cls):
+        return cls(five_dimensional_square_pyramidal_numbers())
+
+    @classmethod
+    def five_dimensional_pentagonal_pyramidal_numbers(cls):
+        return cls(five_dimensional_pentagonal_pyramidal_numbers())
+
+    @classmethod
+    def five_dimensional_hexagonal_pyramidal_numbers(cls):
+        return cls(five_dimensional_hexagonal_pyramidal_numbers())
+
+    @classmethod
+    def five_dimensional_heptagonal_pyramidal_numbers(cls):
+        return cls(five_dimensional_heptagonal_pyramidal_numbers())
+
+    @classmethod
+    def five_dimensional_octagonal_pyramidal_numbers(cls):
+        return cls(five_dimensional_octagonal_pyramidal_numbers())
+
+    @classmethod
+    def six_dimensional_mgonal_pyramidal_numbers(cls, m: int):
+        return cls(six_dimensional_mgonal_pyramidal_numbers(m))
+
+    @classmethod
+    def six_dimensional_square_pyramidal_numbers(cls):
+        return cls(six_dimensional_square_pyramidal_numbers())
+
+    @classmethod
+    def six_dimensional_pentagonal_pyramidal_numbers(cls):
+        return cls(six_dimensional_pentagonal_pyramidal_numbers())
+
+    @classmethod
+    def six_dimensional_hexagonal_pyramidal_numbers(cls):
+        return cls(six_dimensional_hexagonal_pyramidal_numbers())
+
+    @classmethod
+    def six_dimensional_heptagonal_pyramidal_numbers(cls):
+        return cls(six_dimensional_heptagonal_pyramidal_numbers())
+
+    @classmethod
+    def six_dimensional_octagonal_pyramidal_numbers(cls):
+        return cls(six_dimensional_octagonal_pyramidal_numbers())
+
+    @classmethod
+    def five_dimensional_centered_hypercube_numbers(cls):
+        return cls(five_dimensional_centered_hypercube_numbers())
+
+    @classmethod
+    def six_dimensional_centered_hypercube_numbers(cls):
+        return cls(six_dimensional_centered_hypercube_numbers())
+
+    @classmethod
+    def five_dimensional_centered_hypertetrahedron_numbers(cls):
+        return cls(five_dimensional_centered_hypertetrahedron_numbers())
+
+    @classmethod
+    def six_dimensional_centered_hypertetrahedron_numbers(cls):
+        return cls(six_dimensional_centered_hypertetrahedron_numbers())
+
+    @classmethod
+    def five_dimensional_centered_hyperoctahedron_numbers(cls):
+        return cls(five_dimensional_centered_hyperoctahedron_numbers())
+
+    @classmethod
+    def six_dimensional_centered_hyperoctahedron_numbers(cls):
+        return cls(six_dimensional_centered_hyperoctahedron_numbers())
