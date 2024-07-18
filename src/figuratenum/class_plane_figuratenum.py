@@ -23,8 +23,8 @@ class PlaneFigurateNum:
         return result
 
     @classmethod
-    def polygonal_numbers(cls) -> "PlaneFigurateNum":
-        return cls(polygonal_numbers())
+    def polygonal_numbers(cls, k: int) -> "PlaneFigurateNum":
+        return cls(polygonal_numbers(k))
 
     @classmethod
     def centered_square_numbers(cls) -> "PlaneFigurateNum":
