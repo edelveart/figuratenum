@@ -23,7 +23,6 @@ FigurateNum facilitates the discovery of new patterns among sequences and enable
 ```py
 pip install figuratenum
 ```
-* It is advisable to use a virtual environment.
 
 ## How to import figuratenum?
 
@@ -58,19 +57,19 @@ You could get a list of numbers using a loop:
 [1, 23, 276, 2300, 14950, 80730, 376740, 1560780, 5852925, 20160075, 64512240, 193536720, 548354040, 1476337800]
 ```
 
-Equivalently, using the array module:
+## Alternative usage via FigurateNum class
 
 ```py
-import array as arr_num
+from figuratenum import FigurateNum as fgn
+```
 
->>> generator = fgn.aztec_diamond_numbers()
->>> sequence = arr_num.array('i')
->>> for _ in range(1, 15):
->>>     next_num = next(generator)
->>>     sequence.append(next_num)
+Importing the `FigurateNum` class allows you to use two practical methods to return lists or arrays with the requested number of elements.
 
->>> print(sequence)
-array('i', [4, 12, 24, 40, 60, 84, 112, 144, 180, 220, 264, 312, 364, 420])
+```py
+>>> print(fgn.generalized_dodecahedral_numbers(-3).take(8))
+[-165, -56, -10, 0, 1, 20, 84, 220]
+>>> print(fgn.octadecagonal_pyramidal_numbers().take_to_array(5))
+array('i', [1, 19, 70, 170, 335])
 ```
 
 ## Plane figurate numbers
