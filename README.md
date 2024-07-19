@@ -137,7 +137,7 @@ array('d', [1.0, 19.0, 70.0, 170.0, 335.0])
 55. `centered_icosioctagonal_numbers`
 56. `centered_icosinonagonal_numbers`
 57. `centered_triacontagonal_numbers`
-58. `centered_mgonal_numbers`
+58. `centered_mgonal_numbers(m)`
 59. `pronic_numbers` = `heteromecic_numbers = oblong_numbers`
 60. `polite_numbers`
 61. `impolite_numbers`
