@@ -49,8 +49,8 @@ class PlaneFigurateNum(InstanceMethodsFigurateNum):
         return cls(star_numbers())
 
     @classmethod
-    def centered_mgonal_numbers(cls) -> "PlaneFigurateNum":
-        return cls(centered_mgonal_numbers())
+    def centered_mgonal_numbers(cls, m: int) -> "PlaneFigurateNum":
+        return cls(centered_mgonal_numbers(m))
 
     @classmethod
     def pronic_numbers(cls) -> "PlaneFigurateNum":
