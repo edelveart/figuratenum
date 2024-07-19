@@ -75,7 +75,7 @@ Importing the `FigurateNum` class allows you to use practical methods to return 
 >>> print(fgn.generalized_dodecahedral_numbers(-3).take(8))
 [-165, -56, -10, 0, 1, 20, 84, 220]
 >>> print(fgn.octadecagonal_pyramidal_numbers().take_to_array(5))
-array('i', [1, 19, 70, 170, 335])
+array('d', [1.0, 19.0, 70.0, 170.0, 335.0])
 ```
 
 ## Plane figurate numbers
