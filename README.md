@@ -63,7 +63,14 @@ You could get a list of numbers using a loop:
 from figuratenum import FigurateNum as fgn
 ```
 
-Importing the `FigurateNum` class allows you to use two practical methods to return lists or arrays with the requested number of elements.
+Importing the `FigurateNum` class allows you to use practical methods to return lists, tuples or arrays with the requested number of elements:
+
+- `take(n)`
+- `take_to_list(stop, start, step)`
+- `take_to_array(stop, start, step)`
+- `take_to_tuple(stop, start, step)`
+- `take_to_np_array(stop, start, step)`
+- `pick(n)`
 
 ```py
 >>> print(fgn.generalized_dodecahedral_numbers(-3).take(8))
