@@ -69,7 +69,6 @@ Importing the `FigurateNum` class allows you to use practical methods to return 
 - `take_to_list(stop, start, step)`
 - `take_to_array(stop, start, step)`
 - `take_to_tuple(stop, start, step)`
-- `take_to_np_array(stop, start, step)`
 - `pick(n)`
 
 ```py
