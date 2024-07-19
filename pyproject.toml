@@ -4,11 +4,13 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "figuratenum"
-version = "0.7.0"
+version = "0.8.0"
 description = "A generator of infinite sequences of figurate numbers for Python."
 readme = "README.md"
 authors = [{ name = "Edgar Armando Delgado Vega" }]
 license = { file = "LICENSE" }
+requires-python = ">=3.9"
+
 classifiers = [
   "Programming Language :: Python :: 3",
   "Programming Language :: Python :: 2",
@@ -22,6 +24,7 @@ classifiers = [
   "Operating System :: Microsoft :: Windows",
   "Operating System :: POSIX :: Linux",
 ]
+
 keywords = [
   "generators",
   "figurate numbers",
@@ -30,10 +33,9 @@ keywords = [
   "number generators",
 ]
 
-requires-python = ">=3.9"
-
 [project.optional-dependencies]
 dev = ["autopep8", "pytest"]
 
 [project.urls]
 Homepage = "https://github.com/edelveart/figuratenum"
+Source = "https://github.com/edelveart/figuratenum"
