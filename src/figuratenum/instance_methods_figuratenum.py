@@ -31,7 +31,7 @@ class InstanceMethodsFigurateNum():
         start : int
             Start position.
         step : int
-            Step size between indexes.
+            Interval between elements
 
         Returns
         -------
@@ -51,7 +51,7 @@ class InstanceMethodsFigurateNum():
         start : int
             Number of elements to take.
         step : int
-            Step size between indexes.
+            I between elements
 
         Returns
         -------
@@ -71,7 +71,7 @@ class InstanceMethodsFigurateNum():
         start : int
             Start position.
         step : int
-            Step size between indexes.
+            I between elements
 
         Returns
         -------
@@ -87,11 +87,11 @@ class InstanceMethodsFigurateNum():
         Parameters
         ----------
         n : int
-            Index in the sequence figurate numbers, start at 0.
+            Index in the generated sequence, start at 0.
 
         Returns
         -------
         int
-            Number selected by index in the sequence figurate numbers.
+            Number selected by index in the generated sequence.
         """
         return next(islice(self.generator, n, None))
