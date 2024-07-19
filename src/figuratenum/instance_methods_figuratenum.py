@@ -1,5 +1,4 @@
 from typing import List, Tuple
-import numpy as np
 from array import array
 from itertools import islice
 
@@ -81,28 +80,7 @@ class InstanceMethodsFigurateNum():
         """
         return tuple(islice(self.generator, start, stop, step))
 
-    def take_to_np_array(self, stop: int,  start: int = 0, step: int = 1) -> np.ndarray:
-        """
-        Takes n generated figurate numbers from the sequence and returns them as a numpy array.
-
-        Parameters
-        ----------
-        n : int
-            Ending position.
-        start : int
-            Start position.
-        step : int
-            Step size between indexes.
-
-        Returns
-        -------
-        np.ndarray
-            Numpy array of the first n generated figurate numbers.
-        """
-        with np.printoptions(threshold=np.inf):
-            return np.array(list(islice(self.generator, start, stop, step)))
-
-    def pick(self, n: int) -> np.ndarray:
+    def pick(self, n: int) -> int:
         """
         Pick one figurate number at index n.
 
