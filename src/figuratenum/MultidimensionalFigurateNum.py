@@ -1,4 +1,4 @@
-from .instance_methods_figuratenum import InstanceMethodsFigurateNum
+from .TakeMethods import TakeMethods
 
 from .multidimensional_figuratenum import (
     pentatope_numbers, hypertetrahedral_numbers, triangulotriangular_numbers, k_hypertetrahedron_numbers,
@@ -56,7 +56,7 @@ from .specific_multidimensional_figuratenum import (
 )
 
 
-class MultidimensionalFigurateNum(InstanceMethodsFigurateNum):
+class MultidimensionalFigurateNum(TakeMethods):
 
     @classmethod
     def pentatope_numbers(cls) -> "MultidimensionalFigurateNum":

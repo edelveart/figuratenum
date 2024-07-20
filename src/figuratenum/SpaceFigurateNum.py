@@ -1,4 +1,4 @@
-from .instance_methods_figuratenum import InstanceMethodsFigurateNum
+from .TakeMethods import TakeMethods
 
 from .space_figuratenum import (
     m_pyramidal_numbers, cubic_numbers, tetrahedral_numbers,
@@ -42,7 +42,7 @@ from .specific_space_figuratenum import (
 )
 
 
-class SpaceFigurateNum(InstanceMethodsFigurateNum):
+class SpaceFigurateNum(TakeMethods):
 
     @classmethod
     def m_pyramidal_numbers(cls, m: int) -> "SpaceFigurateNum":

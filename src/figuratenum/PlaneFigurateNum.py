@@ -1,4 +1,4 @@
-from .instance_methods_figuratenum import InstanceMethodsFigurateNum
+from .TakeMethods import TakeMethods
 
 from .plane_figuratenum import (
     polygonal_numbers, centered_square_numbers, diamond_numbers,
@@ -26,7 +26,7 @@ from .specific_plane_figuratenum import (
 )
 
 
-class PlaneFigurateNum(InstanceMethodsFigurateNum):
+class PlaneFigurateNum(TakeMethods):
 
     @classmethod
     def polygonal_numbers(cls, k: int) -> "PlaneFigurateNum":
