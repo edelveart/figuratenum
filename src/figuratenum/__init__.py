@@ -1,4 +1,4 @@
-from .class_figuratenum import FigurateNum
+from .FigurateNum import FigurateNum
 
 from .plane_figuratenum import (
     polygonal_numbers, centered_square_numbers, diamond_numbers,
