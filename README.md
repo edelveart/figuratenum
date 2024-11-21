@@ -150,10 +150,15 @@ array('d', [1.0, 19.0, 70.0, 170.0, 335.0])
 68. `truncated_square_numbers`
 69. `truncated_pronic_numbers`
 70. `truncated_centered_pol_numbers(m)` = `truncated_centered_mgonal_numbers(m)`
-71. `truncated_centered_hexagonal_numbers` = `truncated_hex_numbers`
-72. `generalized_mgonal_numbers(m, start_numb)`
-73. `generalized_centered_pol_numbers(m, start_numb)`
-74. `generalized_pronic_numbers(start_numb)`
+71. `truncated_centered_triangular_numbers`
+72. `truncated_centered_square_numbers`
+73. `truncated_centered_pentagonal_numbers`
+74. `truncated_centered_hexagonal_numbers` = `truncated_hex_numbers`
+75. `generalized_mgonal_numbers(m, start_numb)`
+76. `generalized_pentagonal_numbers(start_numb)`
+77. `generalized_hexagonal_numbers(start_numb)`
+78. `generalized_centered_pol_numbers(m, start_numb)`
+79. `generalized_pronic_numbers(start_numb)`
 
 ## Space figurate numbers
 
