@@ -382,3 +382,12 @@ def centered_triacontagonal_numbers() -> Iterator[int]:
     while True:
         yield 15 * delta ** 2 - 15 * delta + 1
         delta += 1
+
+
+# specific cases of truncated_centered_pol_numbers(m)
+
+def truncated_centered_triangular_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield (21 * delta ** 2 - 33 * delta) // 2 + 7
+        delta += 1

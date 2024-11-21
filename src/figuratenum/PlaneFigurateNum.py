@@ -22,7 +22,7 @@ from .specific_plane_figuratenum import (
     icosihenagonal_numbers, icosiheptagonal_numbers, icosidigonal_numbers,
     icositrigonal_numbers, icositetragonal_numbers, icosipentagonal_numbers,
     icosihexagonal_numbers, centered_icosiheptagonal_numbers, icosioctagonal_numbers,
-    icosinonagonal_numbers, triacontagonal_numbers
+    icosinonagonal_numbers, triacontagonal_numbers, truncated_centered_triangular_numbers,
 )
 
 
@@ -253,3 +253,7 @@ class PlaneFigurateNum(TakeMethods):
     @classmethod
     def triacontagonal_numbers(cls) -> "PlaneFigurateNum":
         return cls(triacontagonal_numbers())
+
+    @classmethod
+    def truncated_centered_triangular_numbers(cls) -> "PlaneFigurateNum":
+        return cls(truncated_centered_triangular_numbers())
