@@ -350,3 +350,11 @@ def generalized_pentagonal_pyramidal_numbers(start_num: int = 0) -> Iterator[int
     while True:
         yield (delta * (delta + 1) * ((m - 2) * delta - m + 5)) // 6
         delta += 1
+
+
+def generalized_hexagonal_pyramidal_numbers(start_num: int = 0) -> Iterator[int]:
+    m = 6
+    delta = start_num
+    while True:
+        yield (delta * (delta + 1) * ((m - 2) * delta - m + 5)) // 6
+        delta += 1

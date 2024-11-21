@@ -40,7 +40,8 @@ from .specific_space_figuratenum import (
     centered_heptagonal_pyramidal_numbers, centered_octagonal_pyramidal_numbers, centered_nonagonal_pyramidal_numbers,
     centered_decagonal_pyramidal_numbers, centered_hendecagonal_pyramidal_numbers, centered_dodecagonal_pyramidal_numbers,
 
-    generalized_pentagonal_pyramidal_numbers
+    generalized_pentagonal_pyramidal_numbers,
+    generalized_hexagonal_pyramidal_numbers
 )
 
 
@@ -407,3 +408,7 @@ class SpaceFigurateNum(TakeMethods):
     @classmethod
     def generalized_pentagonal_pyramidal_numbers(cls) -> "SpaceFigurateNum":
         return cls(generalized_pentagonal_pyramidal_numbers())
+
+    @classmethod
+    def generalized_hexagonal_pyramidal_numbers(cls) -> "SpaceFigurateNum":
+        return cls(generalized_hexagonal_pyramidal_numbers())
