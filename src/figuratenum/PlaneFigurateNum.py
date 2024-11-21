@@ -26,7 +26,9 @@ from .specific_plane_figuratenum import (
 
     truncated_centered_triangular_numbers,
     truncated_centered_square_numbers,
-    truncated_centered_pentagonal_numbers
+    truncated_centered_pentagonal_numbers,
+
+    generalized_pentagonal_numbers
 
 )
 
@@ -270,3 +272,7 @@ class PlaneFigurateNum(TakeMethods):
     @classmethod
     def truncated_centered_pentagonal_numbers(cls) -> "PlaneFigurateNum":
         return cls(truncated_centered_pentagonal_numbers())
+
+    @classmethod
+    def generalized_pentagonal_numbers(cls) -> "PlaneFigurateNum":
+        return cls(generalized_pentagonal_numbers())

@@ -405,3 +405,11 @@ def truncated_centered_pentagonal_numbers() -> Iterator[int]:
     while True:
         yield (35 * delta**2 - 55 * delta) // 2 + 11
         delta += 1
+
+
+def generalized_pentagonal_numbers(start_num: int = 0) -> Iterator[int]:
+    m = 5
+    delta = start_num
+    while True:
+        yield (delta * ((m - 2) * delta - m + 4)) // 2
+        delta += 1
