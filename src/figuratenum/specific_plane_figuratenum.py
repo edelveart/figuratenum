@@ -391,3 +391,10 @@ def truncated_centered_triangular_numbers() -> Iterator[int]:
     while True:
         yield (21 * delta ** 2 - 33 * delta) // 2 + 7
         delta += 1
+
+
+def truncated_centered_square_numbers() -> Iterator[int]:
+    delta = 1
+    while True:
+        yield 14 * delta**2 - 22 * delta + 9
+        delta += 1
