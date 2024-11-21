@@ -1,3 +1,5 @@
+# python -m pytest tests/test_plane_figuratenum.py
+
 from src.figuratenum.plane_figuratenum import (
     polygonal_numbers, centered_square_numbers,
     centered_dodecagonal_numbers, centered_mgonal_numbers,

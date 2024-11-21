@@ -1,3 +1,5 @@
+# python -m pytest tests/test_space_figuratenum.py
+
 from src.figuratenum.space_figuratenum import (
     m_pyramidal_numbers, cubic_numbers, tetrahedral_numbers,
     octahedral_numbers, dodecahedral_numbers, icosahedral_numbers,

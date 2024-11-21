@@ -1,3 +1,5 @@
+# python -m pytest tests/test_multidimensional_figuratenum.py
+
 from src.figuratenum.multidimensional_figuratenum import (
     pentatope_numbers, k_dimensional_hypertetrahedron_numbers, biquadratic_numbers,
     k_dimensional_hypercube_numbers, hyperoctahedral_numbers, hypericosahedral_numbers,

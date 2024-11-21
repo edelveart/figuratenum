@@ -342,3 +342,11 @@ def centered_dodecagonal_pyramidal_numbers() -> Iterator[int]:
     while True:
         yield (m * delta ** 3 + delta * (6 - m)) // 6
         delta += 1
+
+
+def generalized_pentagonal_pyramidal_numbers(start_num: int = 0) -> Iterator[int]:
+    m = 5
+    delta = start_num
+    while True:
+        yield (delta * (delta + 1) * ((m - 2) * delta - m + 5)) // 6
+        delta += 1
