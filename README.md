@@ -6,12 +6,12 @@
 ![PyPI - Status](https://img.shields.io/pypi/status/figuratenum)
 
 
-FigurateNum is a set of **figurate number generators** based on the book [Figurate Numbers (2012)](https://books.google.com.pe/books/about/Figurate_Numbers.html?id=cDxYdstLPz4C&redir_esc=y) by Michel Deza and Elena Deza.
+FigurateNum is a set of 235 **figurate number generators** based on the book [Figurate Numbers (2012)](https://books.google.com.pe/books/about/Figurate_Numbers.html?id=cDxYdstLPz4C&redir_esc=y) by Michel Deza and Elena Deza.
 
 FigurateNum generates the following types of **infinite sequences**:
 
 - [x] 79 sequences of plane figurate numbers
-- [x] 84 sequences of space figurate numbers
+- [x] 86 sequences of space figurate numbers
 - [x] 68 sequences of multidimensional figurate numbers
 
 ## What is the purpose of FigurateNum?
@@ -235,17 +235,19 @@ array('d', [1.0, 19.0, 70.0, 170.0, 335.0])
 71. `hexagonal_prism_numbers`
 72. `mgonal_prism_numbers(m)`
 73. `generalized_mgonal_pyramidal_numbers(m, start_num)`
-74. `generalized_cubic_numbers(start_num)`
-75. `generalized_octahedral_numbers(start_num)`
-76. `generalized_icosahedral_numbers(start_num)`
-77. `generalized_dodecahedral_numbers(start_num)`
-78. `generalized_centered_cube_numbers(start_num)`
-79. `generalized_centered_tetrahedron_numbers(start_num)`
-80. `generalized_centered_square_pyramid_numbers(start_num)`
-81. `generalized_rhombic_dodecahedral_numbers(start_num)`
-82. `generalized_centered_mgonal_pyramidal_numbers(m, start_num)`
-83. `generalized_mgonal_prism_numbers(m, start_num)`
-84. `generalized_hexagonal_prism_numbers(start_num)`
+74. `generalized_pentagonal_pyramidal_numbers(start_num)`
+75. `generalized_hexagonal_pyramidal_numbers(start_num)`
+76. `generalized_cubic_numbers(start_num)`
+77. `generalized_octahedral_numbers(start_num)`
+78. `generalized_icosahedral_numbers(start_num)`
+79. `generalized_dodecahedral_numbers(start_num)`
+80. `generalized_centered_cube_numbers(start_num)`
+81. `generalized_centered_tetrahedron_numbers(start_num)`
+82. `generalized_centered_square_pyramid_numbers(start_num)`
+83. `generalized_rhombic_dodecahedral_numbers(start_num)`
+84. `generalized_centered_mgonal_pyramidal_numbers(m, start_num)`
+85. `generalized_mgonal_prism_numbers(m, start_num)`
+86. `generalized_hexagonal_prism_numbers(start_num)`
 
 ## Multidimensional figurate numbers
 
