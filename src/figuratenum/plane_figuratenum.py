@@ -41,7 +41,7 @@ def centered_mgonal_numbers(m: int) -> Iterator[int]:
 def pronic_numbers() -> Iterator[int]:
     delta = 1
     while True:
-        yield delta * delta + 1
+        yield delta * (delta + 1)
         delta += 1
 
 
