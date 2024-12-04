@@ -56,7 +56,7 @@ def test_centered_mgonal_numbers():
 def test_pronic_numbers():
     num_generator = pronic_numbers()
     infinite_seq = []
-    for _ in range(1, 80):
+    for _ in range(1, 81):
         next_number = next(num_generator)
         infinite_seq.append(next_number)
     assert infinite_seq == [2, 6, 12, 20, 30, 42, 56, 72, 90, 110, 132, 156, 182, 210, 240, 272, 306, 342, 380,
