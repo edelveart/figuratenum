@@ -11,7 +11,6 @@
 
 ![figuratenumber-social-image](figuratenum.png)
 
-
 ## What is the purpose of FigurateNum?
 
 **FigurateNum** facilitates the discovery of new patterns among sequences and enables various numerical calculations in mathematical projects and related endeavors. It can be integrated with other software to visualize the geometric objects described. Moreover, it serves as a valuable companion to the book!
