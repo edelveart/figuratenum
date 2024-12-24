@@ -1,22 +1,20 @@
-# FigurateNum
+<h1 align="center"> FigurateNum </h1>
 
-![PyPI - Version](https://img.shields.io/pypi/v/figuratenum)
-![GitHub License](https://img.shields.io/github/license/edelveart/figuratenum)
-![PyPI - Wheel](https://img.shields.io/pypi/wheel/figuratenum)
-![PyPI - Status](https://img.shields.io/pypi/status/figuratenum)
+**FigurateNum** is a collection of **233 figurate number generators** based on the book [Figurate Numbers](https://books.google.com.pe/books/about/Figurate_Numbers.html?id=cDxYdstLPz4C&redir_esc=y) by Michel Deza and Elena Deza, published in 2012.
 
-**FigurateNum** is a collection of **233 figurate number generators** based on the book
-> [Figurate Numbers](https://books.google.com.pe/books/about/Figurate_Numbers.html?id=cDxYdstLPz4C&redir_esc=y) by Michel Deza and Elena Deza, published in 2012.
+<p align="center">
+  <img src="https://img.shields.io/pypi/v/figuratenum" alt="PyPI - Version">
+  <img src="https://img.shields.io/pypi/wheel/figuratenum" alt="PyPI - Wheel">
+  <img src="https://img.shields.io/pypi/status/figuratenum" alt="PyPI - Status">
+  <img src="https://img.shields.io/github/license/edelveart/figuratenum" alt="GitHub License">
+</p>
 
-FigurateNum generates the following types of **infinite sequences**:
+![figuratenumber-social-image](figuratenum.png)
 
-- [x] 79 sequences of plane figurate numbers
-- [x] 86 sequences of space figurate numbers
-- [x] 68 sequences of multidimensional figurate numbers
 
 ## What is the purpose of FigurateNum?
 
-FigurateNum facilitates the discovery of new patterns among sequences and enables various numerical calculations in mathematical projects and related endeavors. It can be integrated with other software to visualize the geometric objects described. Moreover, it serves as a valuable companion to the book!
+**FigurateNum** facilitates the discovery of new patterns among sequences and enables various numerical calculations in mathematical projects and related endeavors. It can be integrated with other software to visualize the geometric objects described. Moreover, it serves as a valuable companion to the book!
 
 ## How to install?
 
@@ -24,13 +22,23 @@ FigurateNum facilitates the discovery of new patterns among sequences and enable
 pip install figuratenum
 ```
 
-## How to import figuratenum?
+## Features
+
+FigurateNum generates the following types of **infinite sequences**:
+
+- [x] 79 sequences of plane figurate numbers
+- [x] 86 sequences of space figurate numbers
+- [x] 68 sequences of multidimensional figurate numbers
+
+## How to use?
+
+There are two ways to use this library:
+
+### 1. Via direct import
 
 ```py
 import figuratenum as fgn
 ```
-
-## How to use?
 
 ```py
 >>> seq = fgn.hyperdodecahedral_numbers()
@@ -57,7 +65,7 @@ You could get a list of numbers using a loop:
 [1, 23, 276, 2300, 14950, 80730, 376740, 1560780, 5852925, 20160075, 64512240, 193536720, 548354040, 1476337800]
 ```
 
-## Alternative usage via FigurateNum class
+### 2. Via FigurateNum class
 
 ```py
 from figuratenum import FigurateNum as fgn
