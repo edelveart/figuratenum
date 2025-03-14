@@ -6,6 +6,7 @@
   <img src="https://img.shields.io/pypi/v/figuratenum" alt="PyPI - Version">
   <img src="https://img.shields.io/pypi/wheel/figuratenum" alt="PyPI - Wheel">
   <img src="https://img.shields.io/pypi/status/figuratenum" alt="PyPI - Status">
+  <img alt="Pepy Total Downloads" src="https://img.shields.io/pepy/dt/figuratenum">
   <img src="https://img.shields.io/github/license/edelveart/figuratenum" alt="GitHub License">
 </p>
 
