@@ -10,7 +10,7 @@
   <img src="https://img.shields.io/github/license/edelveart/figuratenum" alt="GitHub License">
 </p>
 
-![figuratenumber-social-image](figuratenum.png)
+![figuratenumber-social-image](https://raw.githubusercontent.com/edelveart/figuratenum/main/figuratenum.png)
 
 ## What is the purpose of FigurateNum?
 
