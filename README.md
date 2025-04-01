@@ -54,7 +54,7 @@ from figuratenum import FigurateNum as fgn
 1 600 4983 19468
 ```
 
-### 2.Import sequences through specialized classes: Plane, Space, and Multidimensional
+### 2. Import sequences through specialized classes: Plane, Space, and Multidimensional
 
 ```py
 # from figuratenum import PlaneFigurateNum as pfgn
@@ -270,16 +270,16 @@ Importing the `NumCollector` class allows you to use practical methods to return
 
 ## Multidimensional figurate numbers
 
-1. `pentatope` = `hypertetrahedral` = `triangulotriangular`
-2. `k_dimensional_hypertetrahedron(k)` = `k_hypertetrahedron(k)` = `regular_k_polytopic(k)` = `figurate_of_order_k(k)`
-3. `five_dimensional_hypertetrahedron`
-4. `six_dimensional_hypertetrahedron`
-5. `biquadratic`
-6. `k_dimensional_hypercube(k)` = `k_hypercube(k)`
-7. `five_dimensional_hypercube`
-8. `six_dimensional_hypercube`
+1. `k_dimensional_hypertetrahedron(k)` = `k_hypertetrahedron(k)` = `regular_k_polytopic(k)` = `figurate_of_order_k(k)`
+2. `five_dimensional_hypertetrahedron`
+3. `six_dimensional_hypertetrahedron`
+4. `k_dimensional_hypercube(k)` = `k_hypercube(k)`
+5. `five_dimensional_hypercube`
+6. `six_dimensional_hypercube`
+7. `hypertetrahedral` = `pentachoron` = `pentatope` = `triangulotriangular`
+8. `hypercube` = `octachoron` = `tesseract` = `biquadratic`
 9. `hyperoctahedral` = `hexadecachoron` = `four_cross_polytope` = `four_orthoplex`
-10. `hypericosahedral` = `tetraplex` = `polytetrahedron` = `hexacosichoron`
+10. `hypericosahedral` = `hexacosichoron` = `polytetrahedron` = `tetraplex`
 11. `hyperdodecahedral` = `hecatonicosachoron` = `dodecaplex` = `polydodecahedron`
 12. `polyoctahedral` = `icositetrachoron` = `octaplex` = `hyperdiamond`
 13. `four_dimensional_hyperoctahedron`

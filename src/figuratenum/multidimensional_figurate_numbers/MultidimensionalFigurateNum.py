@@ -67,6 +67,9 @@ class MultidimensionalFigurateNum:
     def pentachoron(self) -> Iterator[int]:
         return hypertetrahedral()
 
+    def cell_5(self) -> Iterator[int]:
+        return hypertetrahedral()
+
     def triangulotriangular(self) -> Iterator[int]:
         return triangulotriangular()
 
