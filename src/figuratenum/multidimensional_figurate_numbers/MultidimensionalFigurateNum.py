@@ -157,6 +157,9 @@ class MultidimensionalFigurateNum:
     def icositetrachoron(self) -> Iterator[int]:
         return icositetrachoron()
 
+    def cell_24(self) -> Iterator[int]:
+        return polyoctahedral()
+
     def octaplex(self) -> Iterator[int]:
         return octaplex()
 
