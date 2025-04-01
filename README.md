@@ -73,7 +73,7 @@ from figuratenum import MultidimensionalFigurateNum as mfgn
 [1, 23, 276, 2300, 14950, 80730, 376740, 1560780, 5852925, 20160075, 64512240, 193536720, 548354040, 1476337800]
 ```
 
-### 3. Using the NumCollector class for sequence collection
+### 3. Using the `NumCollector` class for sequence collection
 
 ```py
 from figuratenum import NumCollector as nc
