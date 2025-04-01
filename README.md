@@ -276,12 +276,12 @@ Importing the `NumCollector` class allows you to use practical methods to return
 4. `k_dimensional_hypercube(k)` = `k_hypercube(k)`
 5. `five_dimensional_hypercube`
 6. `six_dimensional_hypercube`
-7. `hypertetrahedral` = `pentachoron` = `pentatope` = `triangulotriangular`
-8. `hypercube` = `octachoron` = `tesseract` = `biquadratic`
-9. `hyperoctahedral` = `hexadecachoron` = `four_cross_polytope` = `four_orthoplex`
-10. `hypericosahedral` = `hexacosichoron` = `polytetrahedron` = `tetraplex`
-11. `hyperdodecahedral` = `hecatonicosachoron` = `dodecaplex` = `polydodecahedron`
-12. `polyoctahedral` = `icositetrachoron` = `octaplex` = `hyperdiamond`
+7. `hypertetrahedral` = `pentachoron` = `pentatope` = `triangulotriangular` = `cell_5`
+8. `hypercube` = `octachoron` = `tesseract` = `biquadratic` = `cell_8`
+9. `hyperoctahedral` = `hexadecachoron` = `four_cross_polytope` = `four_orthoplex` = `cell_16`
+10. `hypericosahedral` = `hexacosichoron` = `polytetrahedron` = `tetraplex` = `cell_600`
+11. `hyperdodecahedral` = `hecatonicosachoron` = `dodecaplex` = `polydodecahedron` = `cell_120`
+12. `polyoctahedral` = `icositetrachoron` = `octaplex` = `hyperdiamond` = `cell_24`
 13. `four_dimensional_hyperoctahedron`
 14. `five_dimensional_hyperoctahedron`
 15. `six_dimensional_hyperoctahedron`
