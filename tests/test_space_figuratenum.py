@@ -1,23 +1,23 @@
 # python -m pytest tests/test_space_figuratenum.py
 
-from src.figuratenum.space_figuratenum import (
-    m_pyramidal_numbers, cubic_numbers, tetrahedral_numbers,
-    octahedral_numbers, dodecahedral_numbers, icosahedral_numbers,
-    truncated_tetrahedral_numbers, truncated_cubic_numbers, truncated_octahedral_numbers,
-    stella_octangula_numbers, centered_cube_numbers, rhombic_dodecahedral_numbers,
-    hauy_rhombic_dodecahedral_numbers, centered_tetrahedron_numbers,
-    centered_square_pyramid_numbers, centered_mgonal_pyramid_numbers,
-    centered_octahedron_numbers, centered_icosahedron_numbers, centered_dodecahedron_numbers,
-    centered_truncated_tetrahedron_numbers, centered_truncated_cube_numbers, centered_truncated_octahedron_numbers, centered_mgonal_pyramidal_numbers, centered_hexagonal_pyramidal_numbers, hexagonal_prism_numbers, mgonal_prism_numbers, generalized_mgonal_pyramidal_numbers, generalized_cubic_numbers, generalized_octahedral_numbers,
-    generalized_icosahedral_numbers, generalized_dodecahedral_numbers, generalized_centered_cube_numbers,
-    generalized_centered_tetrahedron_numbers, generalized_centered_square_pyramid_numbers,
-    generalized_rhombic_dodecahedral_numbers, generalized_centered_mgonal_pyramidal_numbers,
-    generalized_mgonal_prism_numbers, generalized_hexagonal_prism_numbers
+from src.figuratenum.space_figurate_numbers.space_figuratenum import (
+    m_pyramidal, cubic, tetrahedral,
+    octahedral, dodecahedral, icosahedral,
+    truncated_tetrahedral, truncated_cubic, truncated_octahedral,
+    stella_octangula, centered_cube, rhombic_dodecahedral,
+    hauy_rhombic_dodecahedral, centered_tetrahedron,
+    centered_square_pyramid, centered_mgonal_pyramid,
+    centered_octahedron, centered_icosahedron, centered_dodecahedron,
+    centered_truncated_tetrahedron, centered_truncated_cube, centered_truncated_octahedron, centered_mgonal_pyramidal, centered_hexagonal_pyramidal, hexagonal_prism, mgonal_prism, generalized_mgonal_pyramidal, generalized_cubic, generalized_octahedral,
+    generalized_icosahedral, generalized_dodecahedral, generalized_centered_cube,
+    generalized_centered_tetrahedron, generalized_centered_square_pyramid,
+    generalized_rhombic_dodecahedral, generalized_centered_mgonal_pyramidal,
+    generalized_mgonal_prism, generalized_hexagonal_prism
 )
 
 
-def test_m_pyramidal_numbers():
-    num_generator = m_pyramidal_numbers(8)
+def test_m_pyramidal():
+    num_generator = m_pyramidal(8)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -26,8 +26,8 @@ def test_m_pyramidal_numbers():
                             1045, 1386, 1794, 2275, 2835, 3480, 4216, 5049, 5985, 7030]
 
 
-def test_cubic_numbers():
-    num_generator = cubic_numbers()
+def test_cubic():
+    num_generator = cubic()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -36,8 +36,8 @@ def test_cubic_numbers():
                             1000, 1331, 1728, 2197, 2744, 3375, 4096, 4913, 5832, 6859]
 
 
-def test_tetrahedral_numbers():
-    num_generator = tetrahedral_numbers()
+def test_tetrahedral():
+    num_generator = tetrahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -46,8 +46,8 @@ def test_tetrahedral_numbers():
                             165, 220, 286, 364, 455, 560, 680, 816, 969, 1140, 1330]
 
 
-def test_octahedral_numbers():
-    num_generator = octahedral_numbers()
+def test_octahedral():
+    num_generator = octahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -56,8 +56,8 @@ def test_octahedral_numbers():
                             670, 891, 1156, 1469, 1834, 2255, 2736, 3281, 3894, 4579]
 
 
-def test_dodecahedral_numbers():
-    num_generator = dodecahedral_numbers()
+def test_dodecahedral():
+    num_generator = dodecahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -66,8 +66,8 @@ def test_dodecahedral_numbers():
                             4060, 5456, 7140, 9139, 11480, 14190, 17296, 20825, 24804, 29260]
 
 
-def test_icosahedral_numbers():
-    num_generator = icosahedral_numbers()
+def test_icosahedral():
+    num_generator = icosahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -76,8 +76,8 @@ def test_icosahedral_numbers():
                             2260, 3036, 3972, 5083, 6384, 7890, 9616, 11577, 13788, 16264]
 
 
-def test_truncated_tetrahedral_numbers():
-    num_generator = truncated_tetrahedral_numbers()
+def test_truncated_tetrahedral():
+    num_generator = truncated_tetrahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -86,8 +86,8 @@ def test_truncated_tetrahedral_numbers():
                             3400, 4576, 5996, 7683, 9660, 11950, 14576, 17561, 20928, 24700]
 
 
-def test_truncated_cubic_numbers():
-    num_generator = truncated_cubic_numbers()
+def test_truncated_cubic():
+    num_generator = truncated_cubic()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -96,8 +96,8 @@ def test_truncated_cubic_numbers():
                             20632, 28031, 37016, 47741, 60360, 75027, 91896, 111121, 132856, 157255]
 
 
-def test_truncated_octahedral_numbers():
-    num_generator = truncated_octahedral_numbers()
+def test_truncated_octahedral():
+    num_generator = truncated_octahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -106,8 +106,8 @@ def test_truncated_octahedral_numbers():
                             12934, 17561, 23178, 29881, 37766, 46929, 57466, 69473, 83046, 98281]
 
 
-def test_stella_octangula_numbers():
-    num_generator = stella_octangula_numbers()
+def test_stella_octangula():
+    num_generator = stella_octangula()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -116,8 +116,8 @@ def test_stella_octangula_numbers():
                             1990, 2651, 3444, 4381, 5474, 6735, 8176, 9809, 11646, 13699]
 
 
-def test_centered_cube_numbers():
-    num_generator = centered_cube_numbers()
+def test_centered_cube():
+    num_generator = centered_cube()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -126,8 +126,8 @@ def test_centered_cube_numbers():
                             1729, 2331, 3059, 3925, 4941, 6119, 7471, 9009, 10745, 12691]
 
 
-def test_rhombic_dodecahedral_numbers():
-    num_generator = rhombic_dodecahedral_numbers()
+def test_rhombic_dodecahedral():
+    num_generator = rhombic_dodecahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -136,8 +136,8 @@ def test_rhombic_dodecahedral_numbers():
                             3439, 4641, 6095, 7825, 9855, 12209, 14911, 17985, 21455, 25345]
 
 
-def test_hauy_rhombic_dodecahedral_numbers():
-    num_generator = hauy_rhombic_dodecahedral_numbers()
+def test_hauy_rhombic_dodecahedral():
+    num_generator = hauy_rhombic_dodecahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -146,8 +146,8 @@ def test_hauy_rhombic_dodecahedral_numbers():
                             12673, 17241, 22793, 29425, 37233, 46313, 56761, 68673, 82145, 97273]
 
 
-def test_centered_tetrahedron_numbers():
-    num_generator = centered_tetrahedron_numbers()
+def test_centered_tetrahedron():
+    num_generator = centered_tetrahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -156,8 +156,8 @@ def test_centered_tetrahedron_numbers():
                             589, 791, 1035, 1325, 1665, 2059, 2511, 3025, 3605, 4255]
 
 
-def test_centered_square_pyramid_numbers():
-    num_generator = centered_square_pyramid_numbers()
+def test_centered_square_pyramid():
+    num_generator = centered_square_pyramid()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -166,8 +166,8 @@ def test_centered_square_pyramid_numbers():
                             874, 1176, 1541, 1975, 2484, 3074, 3751, 4521, 5390, 6364]
 
 
-def test_centered_mgonal_pyramid_numbers():
-    num_generator = centered_mgonal_pyramid_numbers(14)
+def test_centered_mgonal_pyramid():
+    num_generator = centered_mgonal_pyramid(14)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -176,8 +176,8 @@ def test_centered_mgonal_pyramid_numbers():
                             3724, 5026, 6601, 8475, 10674, 13224, 16151, 19481, 23240, 27454]
 
 
-def test_centered_octahedron_numbers():
-    num_generator = centered_octahedron_numbers()
+def test_centered_octahedron():
+    num_generator = centered_octahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -186,8 +186,8 @@ def test_centered_octahedron_numbers():
                             1159, 1561, 2047, 2625, 3303, 4089, 4991, 6017, 7175, 8473]
 
 
-def test_centered_icosahedron_numbers():
-    num_generator = centered_icosahedron_numbers()
+def test_centered_icosahedron():
+    num_generator = centered_icosahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -196,8 +196,8 @@ def test_centered_icosahedron_numbers():
                             2869, 3871, 5083, 6525, 8217, 10179, 12431, 14993, 17885, 21127]
 
 
-def test_centered_dodecahedron_numbers():
-    num_generator = centered_dodecahedron_numbers()
+def test_centered_dodecahedron():
+    num_generator = centered_dodecahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -206,8 +206,8 @@ def test_centered_dodecahedron_numbers():
                             5149, 6951, 9131, 11725, 14769, 18299, 22351, 26961, 32165, 37999]
 
 
-def test_centered_truncated_tetrahedron_numbers():
-    num_generator = centered_truncated_tetrahedron_numbers()
+def test_centered_truncated_tetrahedron():
+    num_generator = centered_truncated_tetrahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -216,8 +216,8 @@ def test_centered_truncated_tetrahedron_numbers():
                             4009, 5411, 7107, 9125, 11493, 14239, 17391, 20977, 25025, 29563]
 
 
-def test_centered_truncated_cube_numbers():
-    num_generator = centered_truncated_cube_numbers()
+def test_centered_truncated_cube():
+    num_generator = centered_truncated_cube()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -226,8 +226,8 @@ def test_centered_truncated_cube_numbers():
                             13129, 17731, 23299, 29925, 37701, 46719, 57071, 68849, 82145, 97051]
 
 
-def test_centered_truncated_octahedron_numbers():
-    num_generator = centered_truncated_octahedron_numbers()
+def test_centered_truncated_octahedron():
+    num_generator = centered_truncated_octahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -236,8 +236,8 @@ def test_centered_truncated_octahedron_numbers():
                             8569, 11571, 15203, 19525, 24597, 30479, 37231, 44913, 53585, 63307]
 
 
-def test_centered_mgonal_pyramidal_numbers():
-    num_generator = centered_mgonal_pyramidal_numbers(19)
+def test_centered_mgonal_pyramidal():
+    num_generator = centered_mgonal_pyramidal(19)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -246,8 +246,8 @@ def test_centered_mgonal_pyramidal_numbers():
                             3145, 4191, 5446, 6929, 8659, 10655, 12936, 15521, 18429, 21679]
 
 
-def test_centered_hexagonal_pyramidal_numbers():
-    num_generator = centered_hexagonal_pyramidal_numbers()
+def test_centered_hexagonal_pyramidal():
+    num_generator = centered_hexagonal_pyramidal()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -256,8 +256,8 @@ def test_centered_hexagonal_pyramidal_numbers():
                             1000, 1331, 1728, 2197, 2744, 3375, 4096, 4913, 5832, 6859]
 
 
-def test_hexagonal_prism_numbers():
-    num_generator = hexagonal_prism_numbers()
+def test_hexagonal_prism():
+    num_generator = hexagonal_prism()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -266,8 +266,8 @@ def test_hexagonal_prism_numbers():
                             2710, 3641, 4764, 6097, 7658, 9465, 11536, 13889, 16542, 19513]
 
 
-def test_mgonal_prism_numbers():
-    num_generator = mgonal_prism_numbers(35)
+def test_mgonal_prism():
+    num_generator = mgonal_prism(35)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -276,8 +276,8 @@ def test_mgonal_prism_numbers():
                             15760, 21186, 27732, 35503, 44604, 55140, 67216, 80937, 96408, 113734]
 
 
-def test_generalized_mgonal_pyramidal_numbers():
-    num_generator = generalized_mgonal_pyramidal_numbers(8, -10)
+def test_generalized_mgonal_pyramidal():
+    num_generator = generalized_mgonal_pyramidal(8, -10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -286,8 +286,8 @@ def test_generalized_mgonal_pyramidal_numbers():
                             -54, -21, -5, 0, 0, 1, 9, 30, 70, 135, 231, 364, 540]
 
 
-def test_generalized_cubic_numbers():
-    num_generator = generalized_cubic_numbers(-10)
+def test_generalized_cubic():
+    num_generator = generalized_cubic(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -296,8 +296,8 @@ def test_generalized_cubic_numbers():
                             -64, -27, -8, -1, 0, 1, 8, 27, 64, 125, 216, 343, 512]
 
 
-def test_generalized_octahedral_numbers():
-    num_generator = generalized_octahedral_numbers(-10)
+def test_generalized_octahedral():
+    num_generator = generalized_octahedral(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -306,8 +306,8 @@ def test_generalized_octahedral_numbers():
                             -44, -19, -6, -1, 0, 1, 6, 19, 44, 85, 146, 231, 344]
 
 
-def test_generalized_icosahedral_numbers():
-    num_generator = generalized_icosahedral_numbers(-10)
+def test_generalized_icosahedral():
+    num_generator = generalized_icosahedral(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -316,8 +316,8 @@ def test_generalized_icosahedral_numbers():
                             -204, -93, -32, -6, 0, 1, 12, 48, 124, 255, 456, 742, 1128]
 
 
-def test_generalized_dodecahedral_numbers():
-    num_generator = generalized_dodecahedral_numbers(-10)
+def test_generalized_dodecahedral():
+    num_generator = generalized_dodecahedral(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -326,8 +326,8 @@ def test_generalized_dodecahedral_numbers():
                             -165, -56, -10, 0, 1, 20, 84, 220, 455, 816, 1330, 2024]
 
 
-def test_generalized_centered_cube_numbers():
-    num_generator = generalized_centered_cube_numbers(-10)
+def test_generalized_centered_cube():
+    num_generator = generalized_centered_cube(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -336,8 +336,8 @@ def test_generalized_centered_cube_numbers():
                             -189, -91, -35, -9, -1, 1, 9, 35, 91, 189, 341, 559, 855]
 
 
-def test_generalized_centered_tetrahedron_numbers():
-    num_generator = generalized_centered_tetrahedron_numbers(-10)
+def test_generalized_centered_tetrahedron():
+    num_generator = generalized_centered_tetrahedron(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -346,8 +346,8 @@ def test_generalized_centered_tetrahedron_numbers():
                             -69, -35, -15, -5, -1, 1, 5, 15, 35, 69, 121, 195, 295]
 
 
-def test_generalized_centered_square_pyramid_numbers():
-    num_generator = generalized_centered_square_pyramid_numbers(-10)
+def test_generalized_centered_square_pyramid():
+    num_generator = generalized_centered_square_pyramid(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -356,8 +356,8 @@ def test_generalized_centered_square_pyramid_numbers():
                             -99, -49, -20, -6, -1, 1, 6, 20, 49, 99, 176, 286, 435]
 
 
-def test_generalized_rhombic_dodecahedral_numbers():
-    num_generator = generalized_rhombic_dodecahedral_numbers(-10)
+def test_generalized_rhombic_dodecahedral():
+    num_generator = generalized_rhombic_dodecahedral(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -366,8 +366,8 @@ def test_generalized_rhombic_dodecahedral_numbers():
                             369, -175, -65, -15, -1, 1, 15, 65, 175, 369, 671, 1105, 1695]
 
 
-def test_generalized_centered_mgonal_pyramidal_numbers():
-    num_generator = generalized_centered_mgonal_pyramidal_numbers(7, -10)
+def test_generalized_centered_mgonal_pyramidal():
+    num_generator = generalized_centered_mgonal_pyramidal(7, -10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -376,8 +376,8 @@ def test_generalized_centered_mgonal_pyramidal_numbers():
                             145, -74, -31, -9, -1, 0, 1, 9, 31, 74, 145, 251, 399, 596]
 
 
-def test_generalized_mgonal_prism_numbers():
-    num_generator = generalized_mgonal_prism_numbers(23, -10)
+def test_generalized_mgonal_prism():
+    num_generator = generalized_mgonal_prism(23, -10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -386,8 +386,8 @@ def test_generalized_mgonal_prism_numbers():
                             924, -417, -140, -24, 0, 1, 48, 210, 556, 1155, 2076, 3388, 5160]
 
 
-def test_generalized_hexagonal_prism_numbers():
-    num_generator = generalized_hexagonal_prism_numbers(-10)
+def test_generalized_hexagonal_prism():
+    num_generator = generalized_hexagonal_prism(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
