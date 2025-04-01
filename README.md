@@ -22,6 +22,8 @@
 pip install figuratenum
 ```
 
+🚨 Version **2.0.0** includes **renamed methods and changes in class usage**. These changes are **incompatible with previous versions**. Please review the updated usage instructions below to adapt your code to the new structure.
+
 ## Features
 
 FigurateNum generates the following categories of **infinite sequences**:
