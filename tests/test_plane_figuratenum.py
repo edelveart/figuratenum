@@ -1,19 +1,19 @@
 # python -m pytest tests/test_plane_figuratenum.py
 
-from src.figuratenum.plane_figuratenum import (
-    polygonal_numbers, centered_square_numbers,
-    centered_dodecagonal_numbers, centered_mgonal_numbers,
-    pronic_numbers, polite_numbers, impolite_numbers,
-    cross_numbers, aztec_diamond_numbers, polygram_numbers, pentagram_numbers,
-    gnomic_numbers, truncated_triangular_numbers, truncated_square_numbers,
-    truncated_pronic_numbers, truncated_centered_pol_numbers,
-    truncated_centered_hexagonal_numbers, generalized_mgonal_numbers,
-    generalized_centered_pol_numbers, generalized_pronic_numbers
+from src.figuratenum.plane_figurate_numbers.plane_figuratenum import (
+    polygonal, centered_square,
+    centered_dodecagonal, centered_mgonal,
+    pronic, polite, impolite,
+    cross, aztec_diamond, polygram, pentagram,
+    gnomic, truncated_triangular, truncated_square,
+    truncated_pronic, truncated_centered_pol,
+    truncated_centered_hexagonal, generalized_mgonal,
+    generalized_centered_pol, generalized_pronic
 )
 
 
-def test_polygonal_numbers():
-    num_generator = polygonal_numbers(6)
+def test_polygonal():
+    num_generator = polygonal(6)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -22,8 +22,8 @@ def test_polygonal_numbers():
                             231, 276, 325, 378, 435, 496, 561, 630, 703]
 
 
-def test_centered_square_numbers():
-    num_generator = centered_square_numbers()
+def test_centered_square():
+    num_generator = centered_square()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -33,8 +33,8 @@ def test_centered_square_numbers():
                             421, 481, 545, 613, 685]
 
 
-def test_centered_dodecagonal_numbers():
-    num_generator = centered_dodecagonal_numbers()
+def test_centered_dodecagonal():
+    num_generator = centered_dodecagonal()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -43,8 +43,8 @@ def test_centered_dodecagonal_numbers():
                             793, 937, 1093, 1261, 1441, 1633, 1837, 2053]
 
 
-def test_centered_mgonal_numbers():
-    num_generator = centered_mgonal_numbers(19)
+def test_centered_mgonal():
+    num_generator = centered_mgonal(19)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -53,8 +53,8 @@ def test_centered_mgonal_numbers():
                             1255, 1483, 1730, 1996, 2281, 2585, 2908, 3250]
 
 
-def test_pronic_numbers():
-    num_generator = pronic_numbers()
+def test_pronic():
+    num_generator = pronic()
     infinite_seq = []
     for _ in range(1, 81):
         next_number = next(num_generator)
@@ -67,8 +67,8 @@ def test_pronic_numbers():
                             4556, 4692, 4830, 4970, 5112, 5256, 5402, 5550, 5700, 5852, 6006, 6162, 6320, 6480]
 
 
-def test_polite_numbers():
-    num_generator = polite_numbers()
+def test_polite():
+    num_generator = polite()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -77,8 +77,8 @@ def test_polite_numbers():
                             12, 13, 14, 15, 17, 18, 19, 20, 21, 22, 23]
 
 
-def test_impolite_numbers():
-    num_generator = impolite_numbers()
+def test_impolite():
+    num_generator = impolite()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -87,8 +87,8 @@ def test_impolite_numbers():
                             2048, 4096, 8192, 16384, 32768, 65536, 131072, 262144, 524288]
 
 
-def test_cross_numbers():
-    num_generator = cross_numbers()
+def test_cross():
+    num_generator = cross()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -97,8 +97,8 @@ def test_cross_numbers():
                             29, 33, 37, 41, 45, 49, 53, 57, 61, 65, 69, 73]
 
 
-def test_aztec_diamond_numbers():
-    num_generator = aztec_diamond_numbers()
+def test_aztec_diamond():
+    num_generator = aztec_diamond()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -107,8 +107,8 @@ def test_aztec_diamond_numbers():
                             180, 220, 264, 312, 364, 420, 480, 544, 612, 684, 760]
 
 
-def test_polygram_numbers():
-    num_generator = polygram_numbers(31)
+def test_polygram():
+    num_generator = polygram(31)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -117,8 +117,8 @@ def test_polygram_numbers():
                             2233, 2791, 3411, 4093, 4837, 5643, 6511, 7441, 8433, 9487, 10603]
 
 
-def test_pentagram_numbers():
-    num_generator = pentagram_numbers()
+def test_pentagram():
+    num_generator = pentagram()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -127,8 +127,8 @@ def test_pentagram_numbers():
                             361, 451, 551, 661, 781, 911, 1051, 1201, 1361, 1531, 1711]
 
 
-def test_gnomic_numbers():
-    num_generator = gnomic_numbers()
+def test_gnomic():
+    num_generator = gnomic()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -137,8 +137,8 @@ def test_gnomic_numbers():
                             17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37]
 
 
-def test_truncated_triangular_numbers():
-    num_generator = truncated_triangular_numbers()
+def test_truncated_triangular():
+    num_generator = truncated_triangular()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -147,8 +147,8 @@ def test_truncated_triangular_numbers():
                             217, 271, 331, 397, 469, 547, 631, 721, 817, 919, 1027]
 
 
-def test_truncated_square_numbers():
-    num_generator = truncated_square_numbers()
+def test_truncated_square():
+    num_generator = truncated_square()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -157,8 +157,8 @@ def test_truncated_square_numbers():
                             481, 604, 741, 892, 1057, 1236, 1429, 1636, 1857, 2092, 2341]
 
 
-def test_truncated_pronic_numbers():
-    num_generator = truncated_pronic_numbers()
+def test_truncated_pronic():
+    num_generator = truncated_pronic()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -167,8 +167,8 @@ def test_truncated_pronic_numbers():
                             506, 632, 772, 926, 1094, 1276, 1472, 1682, 1906, 2144, 2396]
 
 
-def test_truncated_centered_pol_numbers():
-    num_generator = truncated_centered_pol_numbers(47)
+def test_truncated_centered_pol():
+    num_generator = truncated_centered_pol(47)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -177,8 +177,8 @@ def test_truncated_centered_pol_numbers():
                             13960, 17156, 20681, 24535, 28718, 33230, 38071, 43241, 48740, 54568]
 
 
-def test_truncated_centered_hexagonal_numbers():
-    num_generator = truncated_centered_hexagonal_numbers()
+def test_truncated_centered_hexagonal():
+    num_generator = truncated_centered_hexagonal()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -187,8 +187,8 @@ def test_truncated_centered_hexagonal_numbers():
                             1417, 1783, 2191, 2641, 3133, 3667, 4243, 4861, 5521, 6223, 6967]
 
 
-def test_generalized_mgonal_numbers():
-    num_generator = generalized_mgonal_numbers(53, -34)
+def test_generalized_mgonal():
+    num_generator = generalized_mgonal(53, -34)
     infinite_seq = []
     for _ in range(1, 60):
         next_number = next(num_generator)
@@ -201,8 +201,8 @@ def test_generalized_mgonal_numbers():
                             3991, 4655, 5370, 6136, 6953, 7821, 8740, 9710, 10731, 11803, 12926, 14100]
 
 
-def test_generalized_centered_pol_numbers():
-    num_generator = generalized_centered_pol_numbers(50, -40)
+def test_generalized_centered_pol():
+    num_generator = generalized_centered_pol(50, -40)
     infinite_seq = []
     for _ in range(1, 70):
         next_number = next(num_generator)
@@ -216,8 +216,8 @@ def test_generalized_centered_pol_numbers():
                             7651, 8551, 9501, 10501, 11551, 12651, 13801, 15001, 16251, 17551, 18901]
 
 
-def test_generalized_pronic_numbers():
-    num_generator = generalized_pronic_numbers(-50)
+def test_generalized_pronic():
+    num_generator = generalized_pronic(-50)
     infinite_seq = []
     for _ in range(1, 100):
         next_number = next(num_generator)
