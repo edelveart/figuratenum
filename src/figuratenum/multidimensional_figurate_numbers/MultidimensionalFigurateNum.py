@@ -139,6 +139,9 @@ class MultidimensionalFigurateNum:
     def hecatonicosachoron(self) -> Iterator[int]:
         return hecatonicosachoron()
 
+    def cell_120(self) -> Iterator[int]:
+        return hyperdodecahedral()
+
     def dodecaplex(self) -> Iterator[int]:
         return dodecaplex()
 
