@@ -82,11 +82,17 @@ class MultidimensionalFigurateNum:
     def biquadratic(self) -> Iterator[int]:
         return biquadratic()
 
+    def hypercubic(self) -> Iterator[int]:
+        return biquadratic()
+
     def k_dimensional_hypercube(self, k: int) -> Iterator[int]:
         return k_dimensional_hypercube(k)
 
     def k_hypercube(self, k: int) -> Iterator[int]:
         return k_hypercube(k)
+
+    def tesseract(self) -> Iterator[int]:
+        return k_dimensional_hypercube(4)
 
     def hyperoctahedral(self) -> Iterator[int]:
         return hyperoctahedral()
