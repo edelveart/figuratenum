@@ -127,6 +127,9 @@ class MultidimensionalFigurateNum:
     def tetraplex(self) -> Iterator[int]:
         return tetraplex()
 
+    def cell_600(self) -> Iterator[int]:
+        return hypericosahedral()
+
     def polytetrahedron(self) -> Iterator[int]:
         return polytetrahedron()
 
