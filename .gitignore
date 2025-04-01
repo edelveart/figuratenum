@@ -7,3 +7,4 @@ dist/
 proofs.py
 tests/reports
 .coverage
+practice-import.py
