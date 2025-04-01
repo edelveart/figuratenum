@@ -112,6 +112,9 @@ class MultidimensionalFigurateNum:
     def hexadecachoron(self) -> Iterator[int]:
         return hexadecachoron()
 
+    def cell_16(self) -> Iterator[int]:
+        return hyperoctahedral()
+
     def four_cross_polytope(self) -> Iterator[int]:
         return four_cross_polytope()
 
