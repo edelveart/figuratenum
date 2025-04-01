@@ -1,18 +1,18 @@
 # python -m pytest tests/test_multidimensional_figuratenum.py
 
-from src.figuratenum.multidimensional_figuratenum import (
-    pentatope_numbers, k_dimensional_hypertetrahedron_numbers, biquadratic_numbers,
-    k_dimensional_hypercube_numbers, hyperoctahedral_numbers, hypericosahedral_numbers,
-    hyperdodecahedral_numbers, polyoctahedral_numbers, k_dimensional_hyperoctahedron_numbers,
-    four_dimensional_mgonal_pyramidal_numbers, k_dimensional_mgonal_pyramidal_numbers,
-    centered_biquadratic_numbers, k_dimensional_centered_hypercube_numbers, centered_polytope_numbers,
-    k_dimensional_centered_hypertetrahedron_numbers, centered_hyperoctahedral_numbers,
-    nexus_numbers, k_dimensional_centered_hyperoctahedron_numbers
+from src.figuratenum.multidimensional_figurate_numbers.multidimensional_figuratenum import (
+    pentatope, k_dimensional_hypertetrahedron, biquadratic,
+    k_dimensional_hypercube, hyperoctahedral, hypericosahedral,
+    hyperdodecahedral, polyoctahedral, k_dimensional_hyperoctahedron,
+    four_dimensional_mgonal_pyramidal, k_dimensional_mgonal_pyramidal,
+    centered_biquadratic, k_dimensional_centered_hypercube, centered_polytope,
+    k_dimensional_centered_hypertetrahedron, centered_hyperoctahedral,
+    nexus, k_dimensional_centered_hyperoctahedron
 )
 
 
-def test_pentatope_numbers():
-    num_generator = pentatope_numbers()
+def test_pentatope():
+    num_generator = pentatope()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -21,8 +21,8 @@ def test_pentatope_numbers():
                             715, 1001, 1365, 1820, 2380, 3060, 3876, 4845, 5985, 7315]
 
 
-def test_k_dimensional_hypertetrahedron_numbers():
-    num_generator = k_dimensional_hypertetrahedron_numbers(21)
+def test_k_dimensional_hypertetrahedron():
+    num_generator = k_dimensional_hypertetrahedron(21)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -31,8 +31,8 @@ def test_k_dimensional_hypertetrahedron_numbers():
                             129024480, 354817320, 927983760, 2319959400, 5567902560, 12875774670, 28781143380, 62359143990]
 
 
-def test_biquadratic_numbers():
-    num_generator = biquadratic_numbers()
+def test_biquadratic():
+    num_generator = biquadratic()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -41,8 +41,8 @@ def test_biquadratic_numbers():
                             10000, 14641, 20736, 28561, 38416, 50625, 65536, 83521, 104976, 130321]
 
 
-def test_k_dimensional_hypercube_numbers():
-    num_generator = k_dimensional_hypercube_numbers(16)
+def test_k_dimensional_hypercube():
+    num_generator = k_dimensional_hypercube(16)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -51,8 +51,8 @@ def test_k_dimensional_hypercube_numbers():
                             2821109907456, 33232930569601, 281474976710656, 1853020188851841, 10000000000000000, 45949729863572161, 184884258895036416, 665416609183179841, 2177953337809371136, 6568408355712890625, 18446744073709551616, 48661191875666868481, 121439531096594251776, 288441413567621167681]
 
 
-def test_hyperoctahedral_numbers():
-    num_generator = hyperoctahedral_numbers()
+def test_hyperoctahedral():
+    num_generator = hyperoctahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -61,8 +61,8 @@ def test_hyperoctahedral_numbers():
                             3400, 4961, 7008, 9633, 12936, 17025, 22016, 28033, 35208, 43681]
 
 
-def test_hypericosahedral_numbers():
-    num_generator = hypericosahedral_numbers()
+def test_hypericosahedral():
+    num_generator = hypericosahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -71,8 +71,8 @@ def test_hypericosahedral_numbers():
                             295251, 424700, 592657, 806092, 1072555, 1400176, 1797665, 2274312, 2839987]
 
 
-def test_hyperdodecahedral_numbers():
-    num_generator = hyperdodecahedral_numbers()
+def test_hyperdodecahedral():
+    num_generator = hyperdodecahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -81,8 +81,8 @@ def test_hyperdodecahedral_numbers():
                             1592151, 2290740, 3197233, 4349268, 5787615, 7556176, 9701985, 12275208, 15329143]
 
 
-def test_polyoctahedral_numbers():
-    num_generator = polyoctahedral_numbers()
+def test_polyoctahedral():
+    num_generator = polyoctahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -91,8 +91,8 @@ def test_polyoctahedral_numbers():
                             26200, 38841, 55584, 77233, 104664, 138825, 180736, 231489, 292248, 364249]
 
 
-def test_k_dimensional_hyperoctahedron_numbers():
-    num_generator = k_dimensional_hyperoctahedron_numbers(27)
+def test_k_dimensional_hyperoctahedron():
+    num_generator = k_dimensional_hyperoctahedron(27)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -103,8 +103,8 @@ def test_k_dimensional_hyperoctahedron_numbers():
                             386682074864209, 1334658881073894, 4390658718085891]
 
 
-def test_four_dimensional_mgonal_pyramidal_numbers():
-    num_generator = four_dimensional_mgonal_pyramidal_numbers(11)
+def test_four_dimensional_mgonal_pyramidal():
+    num_generator = four_dimensional_mgonal_pyramidal(11)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -114,8 +114,8 @@ def test_four_dimensional_mgonal_pyramidal_numbers():
                             28356, 35853, 44745, 55195]
 
 
-def test_k_dimensional_mgonal_pyramidal_numbers():
-    num_generator = k_dimensional_mgonal_pyramidal_numbers(9, 14)
+def test_k_dimensional_mgonal_pyramidal():
+    num_generator = k_dimensional_mgonal_pyramidal(9, 14)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -125,8 +125,8 @@ def test_k_dimensional_mgonal_pyramidal_numbers():
                             3730650, 6288810, 10296594, 16425519, 25597275, 39056875]
 
 
-def test_centered_biquadratic_numbers():
-    num_generator = centered_biquadratic_numbers()
+def test_centered_biquadratic():
+    num_generator = centered_biquadratic()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -136,8 +136,8 @@ def test_centered_biquadratic_numbers():
                             66977, 89041, 116161, 149057, 188497, 235297]
 
 
-def test_k_dimensional_centered_hypercube_numbers():
-    num_generator = k_dimensional_centered_hypercube_numbers(31)
+def test_k_dimensional_centered_hypercube():
+    num_generator = k_dimensional_centered_hypercube(31)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -147,8 +147,8 @@ def test_k_dimensional_centered_hypercube_numbers():
                             159101825553170206762441399, 10061295696317888005808036535, 391423944791228873827842892601, 10381520424476945831628649898809, 201943424957750480504146841291811, 3040459190554988156451550338468899, 36908459133046522160894572124006725, 372879996344233620392121690040396101, 3215085941470045635934544974294425839, 24143913821051915266488283417366372591, 160556565271409668427878930453953233649, 958597790281111140865704883498649895665, 5198174612988969212268967734721914749851]
 
 
-def test_centered_polytope_numbers():
-    num_generator = centered_polytope_numbers()
+def test_centered_polytope():
+    num_generator = centered_polytope()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -158,8 +158,8 @@ def test_centered_polytope_numbers():
                             9626, 12501, 15981, 20146, 25081]
 
 
-def test_k_dimensional_centered_hypertetrahedron_numbers():
-    num_generator = k_dimensional_centered_hypertetrahedron_numbers(9)
+def test_k_dimensional_centered_hypertetrahedron():
+    num_generator = k_dimensional_centered_hypertetrahedron(9)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -170,8 +170,8 @@ def test_k_dimensional_centered_hypertetrahedron_numbers():
                             5303727, 8416837, 13079352]
 
 
-def test_centered_hyperoctahedral_numbers():
-    num_generator = centered_hyperoctahedral_numbers()
+def test_centered_hyperoctahedral():
+    num_generator = centered_hyperoctahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -181,8 +181,8 @@ def test_centered_hyperoctahedral_numbers():
                             39041, 50049, 63241, 78889]
 
 
-def test_nexus_numbers():
-    num_generator = nexus_numbers(7)
+def test_nexus():
+    num_generator = nexus(7)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -193,8 +193,8 @@ def test_nexus_numbers():
                             2680790145, 4044203135, 5963602465]
 
 
-def test_k_dimensional_centered_hyperoctahedron_numbers():
-    num_generator = k_dimensional_centered_hyperoctahedron_numbers(43)
+def test_k_dimensional_centered_hyperoctahedron():
+    num_generator = k_dimensional_centered_hyperoctahedron(43)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
