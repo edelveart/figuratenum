@@ -88,6 +88,9 @@ class MultidimensionalFigurateNum:
     def hypercube(self) -> Iterator[int]:
         return biquadratic()
 
+    def cell_8(self) -> Iterator[int]:
+        return biquadratic()
+
     def octachoron(self) -> Iterator[int]:
         return biquadratic()
 
