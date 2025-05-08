@@ -364,9 +364,9 @@ This section lists the errata and corrections for the book *Figurate Numbers (20
 
 
   It should be:
-  | Name                 | Formula               |                       |
-  | -------------------- | --------------------- | --------------------- |
-  | Cent. icosihexagonal | `1/3n^2 - 13 * n + 1` | `547, 729, 937, 1171` |
+  | Name                 | Formula           |                       |
+  | -------------------- | ----------------- | --------------------- |
+  | Cent. icosihexagonal | `13n^2 - 13n + 1` | `547, 729, 937, 1171` |
 
 - Chapter 1, formula in the table on page 51 says:
 
