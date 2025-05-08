@@ -358,9 +358,9 @@ This section lists the errata and corrections for the book *Figurate Numbers (20
 
 - Chapter 1, formula in the table on page 51 says:
 
-  | Name                 | Formula               |                       |
-  | -------------------- | --------------------- | --------------------- |
-  | Cent. icosihexagonal | `1/3n^2 - 13 * n + 1` | `546, 728, 936, 1170` |
+  | Name                 | Formula            |                       |
+  | -------------------- | ------------------ | --------------------- |
+  | Cent. icosihexagonal | `1/3n^2 - 13n + 1` | `546, 728, 936, 1170` |
 
 
   It should be:
@@ -426,11 +426,11 @@ This section lists the errata and corrections for the book *Figurate Numbers (20
   > `S_3^3(n) = ((2n - 1)(n^2 - n + 3)) / 3`
 
 - Chapter 2, page 156 (generalized centered square pyramid numbers) says:
-  > `S_4^3(n) = ((2n - 1) * (n^2 - n + 2)^2) / 3`
+  > `S_4^3(n) = ((2n - 1)(n^2 - n + 2)^2) / 3`
 
   Formula must write:
 
-  > `S_4^3(n) = ((2n - 1) * (n^2 - n + 2)) / 2`
+  > `S_4^3(n) = ((2n - 1)(n^2 - n + 2)) / 2`
 
 - Chapter 3, page 188 (hyperoctahedral numbers) says:
   > `hexadecahoron numbers`
