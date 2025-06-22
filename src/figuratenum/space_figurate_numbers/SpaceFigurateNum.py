@@ -137,8 +137,8 @@ class SpaceFigurateNum:
     def mgonal_prism(self, m: int) -> Iterator[int]:
         return mgonal_prism(m)
 
-    def generalized_mgonal_pyramidal(self, m: int) -> Iterator[int]:
-        return generalized_mgonal_pyramidal(m)
+    def generalized_mgonal_pyramidal(self, m: int, start_num) -> Iterator[int]:
+        return generalized_mgonal_pyramidal(m, start_num)
 
     def generalized_cubic(self, start_num: int = 0) -> Iterator[int]:
         return generalized_cubic(start_num)
