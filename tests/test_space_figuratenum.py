@@ -1,23 +1,12 @@
 # python -m pytest tests/test_space_figuratenum.py
 
-from src.figuratenum.space_figurate_numbers.space_figuratenum import (
-    m_pyramidal, cubic, tetrahedral,
-    octahedral, dodecahedral, icosahedral,
-    truncated_tetrahedral, truncated_cubic, truncated_octahedral,
-    stella_octangula, centered_cube, rhombic_dodecahedral,
-    hauy_rhombic_dodecahedral, centered_tetrahedron,
-    centered_square_pyramid, centered_mgonal_pyramid,
-    centered_octahedron, centered_icosahedron, centered_dodecahedron,
-    centered_truncated_tetrahedron, centered_truncated_cube, centered_truncated_octahedron, centered_mgonal_pyramidal, centered_hexagonal_pyramidal, hexagonal_prism, mgonal_prism, generalized_mgonal_pyramidal, generalized_cubic, generalized_octahedral,
-    generalized_icosahedral, generalized_dodecahedral, generalized_centered_cube,
-    generalized_centered_tetrahedron, generalized_centered_square_pyramid,
-    generalized_rhombic_dodecahedral, generalized_centered_mgonal_pyramidal,
-    generalized_mgonal_prism, generalized_hexagonal_prism
-)
+from src.figuratenum.space_figurate_numbers.SpaceFigurateNum import SpaceFigurateNum
+
+sfgn = SpaceFigurateNum()
 
 
 def test_m_pyramidal():
-    num_generator = m_pyramidal(8)
+    num_generator = sfgn.m_pyramidal(8)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -27,7 +16,7 @@ def test_m_pyramidal():
 
 
 def test_cubic():
-    num_generator = cubic()
+    num_generator = sfgn.cubic()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -37,7 +26,7 @@ def test_cubic():
 
 
 def test_tetrahedral():
-    num_generator = tetrahedral()
+    num_generator = sfgn.tetrahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -47,7 +36,7 @@ def test_tetrahedral():
 
 
 def test_octahedral():
-    num_generator = octahedral()
+    num_generator = sfgn.octahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -57,7 +46,7 @@ def test_octahedral():
 
 
 def test_dodecahedral():
-    num_generator = dodecahedral()
+    num_generator = sfgn.dodecahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -67,7 +56,7 @@ def test_dodecahedral():
 
 
 def test_icosahedral():
-    num_generator = icosahedral()
+    num_generator = sfgn.icosahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -77,7 +66,7 @@ def test_icosahedral():
 
 
 def test_truncated_tetrahedral():
-    num_generator = truncated_tetrahedral()
+    num_generator = sfgn.truncated_tetrahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -87,7 +76,7 @@ def test_truncated_tetrahedral():
 
 
 def test_truncated_cubic():
-    num_generator = truncated_cubic()
+    num_generator = sfgn.truncated_cubic()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -97,7 +86,7 @@ def test_truncated_cubic():
 
 
 def test_truncated_octahedral():
-    num_generator = truncated_octahedral()
+    num_generator = sfgn.truncated_octahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -107,7 +96,7 @@ def test_truncated_octahedral():
 
 
 def test_stella_octangula():
-    num_generator = stella_octangula()
+    num_generator = sfgn.stella_octangula()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -117,7 +106,7 @@ def test_stella_octangula():
 
 
 def test_centered_cube():
-    num_generator = centered_cube()
+    num_generator = sfgn.centered_cube()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -127,7 +116,7 @@ def test_centered_cube():
 
 
 def test_rhombic_dodecahedral():
-    num_generator = rhombic_dodecahedral()
+    num_generator = sfgn.rhombic_dodecahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -137,7 +126,7 @@ def test_rhombic_dodecahedral():
 
 
 def test_hauy_rhombic_dodecahedral():
-    num_generator = hauy_rhombic_dodecahedral()
+    num_generator = sfgn.hauy_rhombic_dodecahedral()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -147,7 +136,7 @@ def test_hauy_rhombic_dodecahedral():
 
 
 def test_centered_tetrahedron():
-    num_generator = centered_tetrahedron()
+    num_generator = sfgn.centered_tetrahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -157,7 +146,7 @@ def test_centered_tetrahedron():
 
 
 def test_centered_square_pyramid():
-    num_generator = centered_square_pyramid()
+    num_generator = sfgn.centered_square_pyramid()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -167,7 +156,7 @@ def test_centered_square_pyramid():
 
 
 def test_centered_mgonal_pyramid():
-    num_generator = centered_mgonal_pyramid(14)
+    num_generator = sfgn.centered_mgonal_pyramid(14)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -177,7 +166,7 @@ def test_centered_mgonal_pyramid():
 
 
 def test_centered_octahedron():
-    num_generator = centered_octahedron()
+    num_generator = sfgn.centered_octahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -187,7 +176,7 @@ def test_centered_octahedron():
 
 
 def test_centered_icosahedron():
-    num_generator = centered_icosahedron()
+    num_generator = sfgn.centered_icosahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -197,7 +186,7 @@ def test_centered_icosahedron():
 
 
 def test_centered_dodecahedron():
-    num_generator = centered_dodecahedron()
+    num_generator = sfgn.centered_dodecahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -207,7 +196,7 @@ def test_centered_dodecahedron():
 
 
 def test_centered_truncated_tetrahedron():
-    num_generator = centered_truncated_tetrahedron()
+    num_generator = sfgn.centered_truncated_tetrahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -217,7 +206,7 @@ def test_centered_truncated_tetrahedron():
 
 
 def test_centered_truncated_cube():
-    num_generator = centered_truncated_cube()
+    num_generator = sfgn.centered_truncated_cube()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -227,7 +216,7 @@ def test_centered_truncated_cube():
 
 
 def test_centered_truncated_octahedron():
-    num_generator = centered_truncated_octahedron()
+    num_generator = sfgn.centered_truncated_octahedron()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -237,7 +226,7 @@ def test_centered_truncated_octahedron():
 
 
 def test_centered_mgonal_pyramidal():
-    num_generator = centered_mgonal_pyramidal(19)
+    num_generator = sfgn.centered_mgonal_pyramidal(19)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -247,7 +236,7 @@ def test_centered_mgonal_pyramidal():
 
 
 def test_centered_hexagonal_pyramidal():
-    num_generator = centered_hexagonal_pyramidal()
+    num_generator = sfgn.centered_hexagonal_pyramidal()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -257,7 +246,7 @@ def test_centered_hexagonal_pyramidal():
 
 
 def test_hexagonal_prism():
-    num_generator = hexagonal_prism()
+    num_generator = sfgn.hexagonal_prism()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -267,7 +256,7 @@ def test_hexagonal_prism():
 
 
 def test_mgonal_prism():
-    num_generator = mgonal_prism(35)
+    num_generator = sfgn.mgonal_prism(35)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -277,7 +266,7 @@ def test_mgonal_prism():
 
 
 def test_generalized_mgonal_pyramidal():
-    num_generator = generalized_mgonal_pyramidal(8, -10)
+    num_generator = sfgn.generalized_mgonal_pyramidal(8, -10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -287,7 +276,7 @@ def test_generalized_mgonal_pyramidal():
 
 
 def test_generalized_cubic():
-    num_generator = generalized_cubic(-10)
+    num_generator = sfgn.generalized_cubic(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -297,7 +286,7 @@ def test_generalized_cubic():
 
 
 def test_generalized_octahedral():
-    num_generator = generalized_octahedral(-10)
+    num_generator = sfgn.generalized_octahedral(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -307,7 +296,7 @@ def test_generalized_octahedral():
 
 
 def test_generalized_icosahedral():
-    num_generator = generalized_icosahedral(-10)
+    num_generator = sfgn.generalized_icosahedral(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -317,7 +306,7 @@ def test_generalized_icosahedral():
 
 
 def test_generalized_dodecahedral():
-    num_generator = generalized_dodecahedral(-10)
+    num_generator = sfgn.generalized_dodecahedral(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -327,7 +316,7 @@ def test_generalized_dodecahedral():
 
 
 def test_generalized_centered_cube():
-    num_generator = generalized_centered_cube(-10)
+    num_generator = sfgn.generalized_centered_cube(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -337,7 +326,7 @@ def test_generalized_centered_cube():
 
 
 def test_generalized_centered_tetrahedron():
-    num_generator = generalized_centered_tetrahedron(-10)
+    num_generator = sfgn.generalized_centered_tetrahedron(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -347,7 +336,7 @@ def test_generalized_centered_tetrahedron():
 
 
 def test_generalized_centered_square_pyramid():
-    num_generator = generalized_centered_square_pyramid(-10)
+    num_generator = sfgn.generalized_centered_square_pyramid(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -357,7 +346,7 @@ def test_generalized_centered_square_pyramid():
 
 
 def test_generalized_rhombic_dodecahedral():
-    num_generator = generalized_rhombic_dodecahedral(-10)
+    num_generator = sfgn.generalized_rhombic_dodecahedral(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -367,7 +356,7 @@ def test_generalized_rhombic_dodecahedral():
 
 
 def test_generalized_centered_mgonal_pyramidal():
-    num_generator = generalized_centered_mgonal_pyramidal(7, -10)
+    num_generator = sfgn.generalized_centered_mgonal_pyramidal(7, -10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -377,7 +366,7 @@ def test_generalized_centered_mgonal_pyramidal():
 
 
 def test_generalized_mgonal_prism():
-    num_generator = generalized_mgonal_prism(23, -10)
+    num_generator = sfgn.generalized_mgonal_prism(23, -10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -387,7 +376,7 @@ def test_generalized_mgonal_prism():
 
 
 def test_generalized_hexagonal_prism():
-    num_generator = generalized_hexagonal_prism(-10)
+    num_generator = sfgn.generalized_hexagonal_prism(-10)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
