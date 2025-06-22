@@ -202,8 +202,8 @@ class MultidimensionalFigurateNum:
     def orthoplex(self) -> Iterator[int]:
         return orthoplex()
 
-    def nexus(self) -> Iterator[int]:
-        return nexus()
+    def nexus(self, k) -> Iterator[int]:
+        return nexus(k)
 
     def k_dimensional_centered_hyperoctahedron(self, k: int) -> Iterator[int]:
         return k_dimensional_centered_hyperoctahedron(k)
