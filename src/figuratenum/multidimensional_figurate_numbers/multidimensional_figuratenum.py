@@ -238,7 +238,7 @@ def generalized_pentatope(start_num: int = 0) -> Iterator[int]:
 def generalized_k_dimensional_hypertetrahedron(k: int, start_num: int = 0) -> Iterator[int]:
     delta = start_num
     while True:
-        yield rising_factorial(delta, k) / factorial_iter(k)
+        yield rising_factorial(delta, k) // factorial_iter(k)
         delta += 1
 
 
