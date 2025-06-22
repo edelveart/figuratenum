@@ -8,7 +8,7 @@ version = "2.0.2"
 description = "Generate 233 infinite figurate number sequences for mathematical research, applications, and exploration in Python."
 readme = "README.md"
 authors = [{ name = "Edgar Armando Delgado Vega" }]
-license = { file = "LICENSE" }
+license = "MIT"
 requires-python = ">=3.9"
 
 classifiers = [
