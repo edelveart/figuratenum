@@ -1,19 +1,12 @@
 # python -m pytest tests/test_plane_figuratenum.py
 
-from src.figuratenum.plane_figurate_numbers.plane_figuratenum import (
-    polygonal, centered_square,
-    centered_dodecagonal, centered_mgonal,
-    pronic, polite, impolite,
-    cross, aztec_diamond, polygram, pentagram,
-    gnomic, truncated_triangular, truncated_square,
-    truncated_pronic, truncated_centered_pol,
-    truncated_centered_hexagonal, generalized_mgonal,
-    generalized_centered_pol, generalized_pronic
-)
+from src.figuratenum.plane_figurate_numbers.PlaneFigurateNum import PlaneFigurateNum
+
+pfgn = PlaneFigurateNum()
 
 
 def test_polygonal():
-    num_generator = polygonal(6)
+    num_generator = pfgn.polygonal(6)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -23,7 +16,7 @@ def test_polygonal():
 
 
 def test_centered_square():
-    num_generator = centered_square()
+    num_generator = pfgn.centered_square()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -34,7 +27,7 @@ def test_centered_square():
 
 
 def test_centered_dodecagonal():
-    num_generator = centered_dodecagonal()
+    num_generator = pfgn.centered_dodecagonal()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -44,7 +37,7 @@ def test_centered_dodecagonal():
 
 
 def test_centered_mgonal():
-    num_generator = centered_mgonal(19)
+    num_generator = pfgn.centered_mgonal(19)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -54,7 +47,7 @@ def test_centered_mgonal():
 
 
 def test_pronic():
-    num_generator = pronic()
+    num_generator = pfgn.pronic()
     infinite_seq = []
     for _ in range(1, 81):
         next_number = next(num_generator)
@@ -68,7 +61,7 @@ def test_pronic():
 
 
 def test_polite():
-    num_generator = polite()
+    num_generator = pfgn.polite()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -78,7 +71,7 @@ def test_polite():
 
 
 def test_impolite():
-    num_generator = impolite()
+    num_generator = pfgn.impolite()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -88,7 +81,7 @@ def test_impolite():
 
 
 def test_cross():
-    num_generator = cross()
+    num_generator = pfgn.cross()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -98,7 +91,7 @@ def test_cross():
 
 
 def test_aztec_diamond():
-    num_generator = aztec_diamond()
+    num_generator = pfgn.aztec_diamond()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -108,7 +101,7 @@ def test_aztec_diamond():
 
 
 def test_polygram():
-    num_generator = polygram(31)
+    num_generator = pfgn.polygram(31)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -118,7 +111,7 @@ def test_polygram():
 
 
 def test_pentagram():
-    num_generator = pentagram()
+    num_generator = pfgn.pentagram()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -128,7 +121,7 @@ def test_pentagram():
 
 
 def test_gnomic():
-    num_generator = gnomic()
+    num_generator = pfgn.gnomic()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -138,7 +131,7 @@ def test_gnomic():
 
 
 def test_truncated_triangular():
-    num_generator = truncated_triangular()
+    num_generator = pfgn.truncated_triangular()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -148,7 +141,7 @@ def test_truncated_triangular():
 
 
 def test_truncated_square():
-    num_generator = truncated_square()
+    num_generator = pfgn.truncated_square()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -158,7 +151,7 @@ def test_truncated_square():
 
 
 def test_truncated_pronic():
-    num_generator = truncated_pronic()
+    num_generator = pfgn.truncated_pronic()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -168,7 +161,7 @@ def test_truncated_pronic():
 
 
 def test_truncated_centered_pol():
-    num_generator = truncated_centered_pol(47)
+    num_generator = pfgn.truncated_centered_pol(47)
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -178,7 +171,7 @@ def test_truncated_centered_pol():
 
 
 def test_truncated_centered_hexagonal():
-    num_generator = truncated_centered_hexagonal()
+    num_generator = pfgn.truncated_centered_hexagonal()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)
@@ -188,7 +181,7 @@ def test_truncated_centered_hexagonal():
 
 
 def test_generalized_mgonal():
-    num_generator = generalized_mgonal(53, -34)
+    num_generator = pfgn.generalized_mgonal(53, -34)
     infinite_seq = []
     for _ in range(1, 60):
         next_number = next(num_generator)
@@ -202,7 +195,7 @@ def test_generalized_mgonal():
 
 
 def test_generalized_centered_pol():
-    num_generator = generalized_centered_pol(50, -40)
+    num_generator = pfgn.generalized_centered_pol(50, -40)
     infinite_seq = []
     for _ in range(1, 70):
         next_number = next(num_generator)
@@ -217,7 +210,7 @@ def test_generalized_centered_pol():
 
 
 def test_generalized_pronic():
-    num_generator = generalized_pronic(-50)
+    num_generator = pfgn.generalized_pronic(-50)
     infinite_seq = []
     for _ in range(1, 100):
         next_number = next(num_generator)
