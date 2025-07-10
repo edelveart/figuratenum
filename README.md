@@ -10,7 +10,9 @@
   <img src="https://img.shields.io/github/license/edelveart/figuratenum" alt="GitHub License">
 </p>
 
-![figuratenumber-social-image](https://raw.githubusercontent.com/edelveart/figuratenum/main/figuratenum.png)
+<p align="center">
+<img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/figuratenum.png" width="400">
+</p>
 
 ## What is the purpose of FigurateNum?
 
@@ -28,11 +30,11 @@ pip install figuratenum
 
 FigurateNum generates the following categories of **infinite sequences**:
 
-- [x] 79 sequences of plane figurate numbers  [Explore all sequences](#plane-figurate-numbers)
-- [x] 86 sequences of space figurate numbers [Explore all sequences](#space-figurate-numbers)
-- [x] 68 sequences of multidimensional figurate numbers [Explore all sequences](#multidimensional-figurate-numbers)
+- [x] 79 Plane figurate numbers - [Explore all plane sequences on GitHub](https://github.com/edelveart/figuratenum#plane-figurate-numbers)
+- [x] 86 Space figurate numbers - [Explore all space sequences on GitHub](https://github.com/edelveart/figuratenum#space-figurate-numbers)
+- [x] 68 Multidimensional figurate numbers - [Explore all multidimensional sequences on GitHub](https://github.com/edelveart/figuratenum#multidimensional-figurate-numbers)
 
-During the development of this package, errata were identified in *Figurate Numbers (2012)*. The corresponding corrections are available [here](#errata-for-figurate-numbers-2012).
+During the development of this package, errata were identified in *Figurate Numbers (2012)*. The corresponding corrections are available [here](https://github.com/edelveart/figuratenum#errata-for-figurate-numbers-2012).
 
 ## How to use?
 
