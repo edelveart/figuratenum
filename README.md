@@ -1,6 +1,6 @@
 <h1 align="center"> FigurateNum </h1>
 
-**FigurateNum** is a collection of **233 figurate number generators** based on the book [Figurate Numbers](https://books.google.com.pe/books/about/Figurate.html?id=cDxYdstLPz4C&redir_esc=y) by Michel Deza and Elena Deza, published in 2012.
+**FigurateNum** is a collection of **235 figurate number generators** based on the book [Figurate Numbers](https://books.google.com.pe/books/about/Figurate.html?id=cDxYdstLPz4C&redir_esc=y) by Michel Deza and Elena Deza, published in 2012.
 
 <p align="center">
   <img src="https://img.shields.io/pypi/v/figuratenum" alt="PyPI - Version">
@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/figuratenum.png" width="400">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/figuratenum.png" width="400">
 </p>
 
 ## What is the purpose of FigurateNum?
@@ -33,6 +33,7 @@ FigurateNum generates the following categories of **infinite sequences**:
 - [x] 79 Plane figurate numbers - [Explore all plane sequences on GitHub](https://github.com/edelveart/figuratenum#plane-figurate-numbers)
 - [x] 86 Space figurate numbers - [Explore all space sequences on GitHub](https://github.com/edelveart/figuratenum#space-figurate-numbers)
 - [x] 68 Multidimensional figurate numbers - [Explore all multidimensional sequences on GitHub](https://github.com/edelveart/figuratenum#multidimensional-figurate-numbers)
+- [x] 2 Zoo figurate numbers - [Explore all sequences on GitHub](https://github.com/edelveart/figuratenum#zoo-figurate-numbers)
 
 During the development of this package, errata were identified in *Figurate Numbers (2012)*. The corresponding corrections are available [here](https://github.com/edelveart/figuratenum#errata-for-figurate-numbers-2012).
 
@@ -56,12 +57,13 @@ from figuratenum import FigurateNum as fgn
 1 600 4983 19468
 ```
 
-### 2. Import sequences through specialized classes: Plane, Space, and Multidimensional
+### 2. Import sequences through specialized classes: Plane, Space, Multidimensional, and Zoo
 
 ```py
 # from figuratenum import PlaneFigurateNum as pfgn
 # from figuratenum import SpacedimensionalFigurateNum as sfgn
 from figuratenum import MultidimensionalFigurateNum as mfgn
+# from figuratenum import ZooFigurateNum as zfgn
 ```
 
 ```py
@@ -99,7 +101,7 @@ Importing the `NumCollector` class allows you to use practical methods to return
 [1, 5, 15, 35, 70, 126, 210, 330, 495, 715]
 ```
 
-## Plane figurate numbers
+## Plane Figurate Numbers
 
 1. `polygonal`
 2. `triangular`
@@ -181,7 +183,7 @@ Importing the `NumCollector` class allows you to use practical methods to return
 78. `generalized_centered_pol(m, start_numb)`
 79. `generalized_pronic(start_numb)`
 
-## Space figurate numbers
+## Space Figurate Numbers
 
 1. `m_pyramidal(m)`
 2. `triangular_pyramidal`
@@ -270,7 +272,7 @@ Importing the `NumCollector` class allows you to use practical methods to return
 85. `generalized_mgonal_prism(m, start_num)`
 86. `generalized_hexagonal_prism(start_num)`
 
-## Multidimensional figurate numbers
+## Multidimensional Figurate Numbers
 
 1. `k_dimensional_hypertetrahedron(k)` = `k_hypertetrahedron(k)` = `regular_k_polytopic(k)` = `figurate_of_order_k(k)`
 2. `five_dimensional_hypertetrahedron`
@@ -340,6 +342,11 @@ Importing the `NumCollector` class allows you to use practical methods to return
 66. `generalized_k_dimensional_mgonal_pyramidal(k, m, start_num = 0)`
 67. `generalized_k_dimensional_centered_hypercube(k, start_num = 0)`
 68. `generalized_nexus(start_num = 0)`
+
+###  Zoo Figurate Numbers
+
+1. `cuban_prime`
+2. `pell`
 
 
 ## Errata for *Figurate Numbers (2012)*
