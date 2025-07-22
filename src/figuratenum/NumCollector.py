@@ -1,11 +1,10 @@
-from typing import List, Tuple
 from array import array
 from itertools import islice
 
 
 class NumCollector():
     @staticmethod
-    def take(generator, n: int) -> List[int]:
+    def take(generator, n: int) -> list[int]:
         """
         Takes the first n generated figurate numbers from the sequence and returns them as a list.
 
@@ -24,7 +23,7 @@ class NumCollector():
         return [next(generator) for _ in range(n)]
 
     @staticmethod
-    def take_to_list(generator, stop: int, start: int = 0, step: int = 1) -> List[int]:
+    def take_to_list(generator, stop: int, start: int = 0, step: int = 1) -> list[int]:
         """
         Takes n generated figurate numbers from the sequence and returns them as a list.
 
@@ -70,7 +69,7 @@ class NumCollector():
         return array('d', islice(generator, start, stop, step))
 
     @staticmethod
-    def take_to_tuple(generator, stop: int, start: int = 0, step: int = 1) -> Tuple[int, ...]:
+    def take_to_tuple(generator, stop: int, start: int = 0, step: int = 1) -> tuple[int, ...]:
         """
         Takes n generated figurate numbers from the sequence and returns them as a tuple.
 
