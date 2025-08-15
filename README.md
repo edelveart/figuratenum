@@ -30,10 +30,10 @@ pip install figuratenum
 
 FigurateNum generates the following categories of **infinite sequences**:
 
-- [x] 79 Plane figurate numbers - [Explore all plane sequences on GitHub](https://github.com/edelveart/figuratenum#plane-figurate-numbers)
-- [x] 86 Space figurate numbers - [Explore all space sequences on GitHub](https://github.com/edelveart/figuratenum#space-figurate-numbers)
-- [x] 68 Multidimensional figurate numbers - [Explore all multidimensional sequences on GitHub](https://github.com/edelveart/figuratenum#multidimensional-figurate-numbers)
-- [x] 2 Zoo figurate numbers - [Explore all sequences on GitHub](https://github.com/edelveart/figuratenum#zoo-figurate-numbers)
+- [x] 79 Plane figurate numbers - [Explore in GitHub](https://github.com/edelveart/figuratenum#plane-figurate-numbers)
+- [x] 86 Space figurate numbers - [Explore in GitHub ](https://github.com/edelveart/figuratenum#space-figurate-numbers)
+- [x] 68 Multidimensional figurate numbers - [Explore in Github ](https://github.com/edelveart/figuratenum#multidimensional-figurate-numbers)
+- [x] 2 Zoo figurate numbers - [Explore in GitHub](https://github.com/edelveart/figuratenum#zoo-figurate-numbers)
 
 During the development of this package, errata were identified in *Figurate Numbers (2012)*. The corresponding corrections are available [here](https://github.com/edelveart/figuratenum#errata-for-figurate-numbers-2012).
 
@@ -61,7 +61,7 @@ from figuratenum import FigurateNum as fgn
 
 ```py
 # from figuratenum import PlaneFigurateNum as pfgn
-# from figuratenum import SpacedimensionalFigurateNum as sfgn
+# from figuratenum import SpaceFigurateNum as sfgn
 from figuratenum import MultidimensionalFigurateNum as mfgn
 # from figuratenum import ZooFigurateNum as zfgn
 ```
@@ -133,7 +133,7 @@ Importing the `NumCollector` class allows you to use practical methods to return
 28. `icosinonagonal`
 29. `triacontagonal`
 30. `centered_triangular`
-31. `centered_square` = `diamond numbers`
+31. `centered_square` = `diamond`
 32. `centered_pentagonal`
 33. `centered_hexagonal`
 34. `centered_heptagonal`
