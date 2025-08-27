@@ -21,8 +21,38 @@ from .specific_plane_figuratenum import (
     octadecagonal, nonadecagonal, icosagonal,
     icosihenagonal, icosiheptagonal, icosidigonal,
     icositrigonal, icositetragonal, icosipentagonal,
-    icosihexagonal, centered_icosiheptagonal, icosioctagonal,
+    icosihexagonal,  icosioctagonal,
     icosinonagonal, triacontagonal,
+
+    centered_triangular,
+
+    centered_pentagonal,
+    centered_hexagonal,
+    centered_heptagonal,
+    centered_octagonal,
+    centered_nonagonal,
+    centered_decagonal,
+    centered_hendecagonal,
+
+    centered_tridecagonal,
+    centered_tetradecagonal,
+    centered_pentadecagonal,
+    centered_hexadecagonal,
+    centered_heptadecagonal,
+    centered_octadecagonal,
+    centered_nonadecagonal,
+    centered_icosagonal,
+    centered_icosihenagonal,
+    centered_icosidigonal,
+    centered_icositrigonal,
+    centered_icositetragonal,
+    centered_icosipentagonal,
+    centered_icosihexagonal,
+    centered_icosiheptagonal,
+    centered_icosioctagonal,
+    centered_icosinonagonal,
+    centered_triacontagonal,
+
 
     truncated_centered_triangular,
     truncated_centered_square,
@@ -193,9 +223,6 @@ class PlaneFigurateNum:
     def icosihexagonal(self) -> Iterator[int]:
         return icosihexagonal()
 
-    def centered_icosiheptagonal(self) -> Iterator[int]:
-        return centered_icosiheptagonal()
-
     def icosioctagonal(self) -> Iterator[int]:
         return icosioctagonal()
 
@@ -204,6 +231,84 @@ class PlaneFigurateNum:
 
     def triacontagonal(self) -> Iterator[int]:
         return triacontagonal()
+
+    def centered_triangular(self) -> Iterator[int]:
+        return centered_triangular()
+
+    def centered_pentagonal(self) -> Iterator[int]:
+        return centered_pentagonal()
+
+    def centered_hexagonal(self) -> Iterator[int]:
+        return centered_hexagonal()
+
+    def centered_heptagonal(self) -> Iterator[int]:
+        return centered_heptagonal()
+
+    def centered_octagonal(self) -> Iterator[int]:
+        return centered_octagonal()
+
+    def centered_nonagonal(self) -> Iterator[int]:
+        return centered_nonagonal()
+
+    def centered_decagonal(self) -> Iterator[int]:
+        return centered_decagonal()
+
+    def centered_hendecagonal(self) -> Iterator[int]:
+        return centered_hendecagonal()
+
+    def centered_tridecagonal(self) -> Iterator[int]:
+        return centered_tridecagonal()
+
+    def centered_tetradecagonal(self) -> Iterator[int]:
+        return centered_tetradecagonal()
+
+    def centered_pentadecagonal(self) -> Iterator[int]:
+        return centered_pentadecagonal()
+
+    def centered_hexadecagonal(self) -> Iterator[int]:
+        return centered_hexadecagonal()
+
+    def centered_heptadecagonal(self) -> Iterator[int]:
+        return centered_heptadecagonal()
+
+    def centered_octadecagonal(self) -> Iterator[int]:
+        return centered_octadecagonal()
+
+    def centered_nonadecagonal(self) -> Iterator[int]:
+        return centered_nonadecagonal()
+
+    def centered_icosagonal(self) -> Iterator[int]:
+        return centered_icosagonal()
+
+    def centered_icosihenagonal(self) -> Iterator[int]:
+        return centered_icosihenagonal()
+
+    def centered_icosidigonal(self) -> Iterator[int]:
+        return centered_icosidigonal()
+
+    def centered_icositrigonal(self) -> Iterator[int]:
+        return centered_icositrigonal()
+
+    def centered_icositetragonal(self) -> Iterator[int]:
+        return centered_icositetragonal()
+
+    def centered_icosipentagonal(self) -> Iterator[int]:
+        return centered_icosipentagonal()
+
+    def centered_icosihexagonal(self) -> Iterator[int]:
+        return centered_icosihexagonal()
+
+    def centered_icosiheptagonal(self) -> Iterator[int]:
+        return centered_icosiheptagonal()
+
+    def centered_icosioctagonal(self) -> Iterator[int]:
+        return centered_icosioctagonal()
+
+    def centered_icosinonagonal(self) -> Iterator[int]:
+        return centered_icosinonagonal()
+
+    def centered_triacontagonal(self) -> Iterator[int]:
+        return centered_triacontagonal()
 
     def truncated_centered_triangular(self) -> Iterator[int]:
         return truncated_centered_triangular()
