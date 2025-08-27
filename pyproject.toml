@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "figuratenum"
-version = "2.0.3"
+version = "2.0.4"
 description = "Generate 235 infinite figurate number sequences for mathematical research, applications, and exploration in Python."
 readme = "README.md"
 authors = [{ name = "Edgar Armando Delgado Vega" }]
@@ -39,3 +39,6 @@ dev = ["autopep8", "pytest"]
 [project.urls]
 Homepage = "https://github.com/edelveart/figuratenum"
 Source = "https://github.com/edelveart/figuratenum"
+
+[tool.setuptools]
+license-files = ["LICENSE"]
