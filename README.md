@@ -37,6 +37,9 @@ FigurateNum generates the following categories of **infinite sequences**:
 
 During the development of this package, errata were identified in *Figurate Numbers (2012)*. The corresponding corrections are available [here](https://github.com/edelveart/figuratenum#errata-for-figurate-numbers-2012).
 
+A complete **LaTeX-formatted PDF** with all commands and usage examples:
+[Download Cheatsheet](https://edelveart.github.io/resources-files/cheatsheet/figuratenum/figuratenum-python-cheatsheet.pdf).
+
 ## How to use?
 
 ### 1. Import all sequences via the `FigurateNum` class
