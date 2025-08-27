@@ -341,7 +341,7 @@ Importing the `NumCollector` class allows you to use practical methods to return
 65. `generalized_polyoctahedral(start_num = 0)`
 66. `generalized_k_dimensional_mgonal_pyramidal(k, m, start_num = 0)`
 67. `generalized_k_dimensional_centered_hypercube(k, start_num = 0)`
-68. `generalized_nexus(start_num = 0)`
+68. `generalized_nexus(k, start_num = 0)`
 
 ###  Zoo Figurate Numbers
 
