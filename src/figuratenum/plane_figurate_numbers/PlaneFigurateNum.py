@@ -1,4 +1,4 @@
-from typing import Iterator
+from collections.abc import Generator
 
 from .plane_figuratenum import (
     polygonal, centered_square, diamond,
@@ -65,262 +65,262 @@ from .specific_plane_figuratenum import (
 
 class PlaneFigurateNum:
 
-    def polygonal(self, m: int) -> Iterator[int]:
+    def polygonal(self, m: int) -> Generator[int]:
         return polygonal(m)
 
-    def centered_square(self) -> Iterator[int]:
+    def centered_square(self) -> Generator[int]:
         return centered_square()
 
-    def diamond(self) -> Iterator[int]:
+    def diamond(self) -> Generator[int]:
         return diamond()
 
-    def centered_dodecagonal(self) -> Iterator[int]:
+    def centered_dodecagonal(self) -> Generator[int]:
         return centered_dodecagonal()
 
-    def star(self) -> Iterator[int]:
+    def star(self) -> Generator[int]:
         return star()
 
-    def centered_mgonal(self, m: int) -> Iterator[int]:
+    def centered_mgonal(self, m: int) -> Generator[int]:
         return centered_mgonal(m)
 
-    def pronic(self) -> Iterator[int]:
+    def pronic(self) -> Generator[int]:
         return pronic()
 
-    def heteromecic(self) -> Iterator[int]:
+    def heteromecic(self) -> Generator[int]:
         return heteromecic()
 
-    def oblong(self) -> Iterator[int]:
+    def oblong(self) -> Generator[int]:
         return oblong()
 
-    def polite(self) -> Iterator[int]:
+    def polite(self) -> Generator[int]:
         return polite()
 
-    def impolite(self) -> Iterator[int]:
+    def impolite(self) -> Generator[int]:
         return impolite()
 
-    def cross(self) -> Iterator[int]:
+    def cross(self) -> Generator[int]:
         return cross()
 
-    def aztec_diamond(self) -> Iterator[int]:
+    def aztec_diamond(self) -> Generator[int]:
         return aztec_diamond()
 
-    def polygram(self, m: int) -> Iterator[int]:
+    def polygram(self, m: int) -> Generator[int]:
         return polygram(m)
 
-    def centered_star_polygonal(self, m: int) -> Iterator[int]:
+    def centered_star_polygonal(self, m: int) -> Generator[int]:
         return centered_star_polygonal(m)
 
-    def pentagram(self) -> Iterator[int]:
+    def pentagram(self) -> Generator[int]:
         return pentagram()
 
-    def gnomic(self) -> Iterator[int]:
+    def gnomic(self) -> Generator[int]:
         return gnomic()
 
-    def truncated_triangular(self) -> Iterator[int]:
+    def truncated_triangular(self) -> Generator[int]:
         return truncated_triangular()
 
-    def truncated_square(self) -> Iterator[int]:
+    def truncated_square(self) -> Generator[int]:
         return truncated_square()
 
-    def truncated_pronic(self) -> Iterator[int]:
+    def truncated_pronic(self) -> Generator[int]:
         return truncated_pronic()
 
-    def truncated_centered_pol(self, m: int) -> Iterator[int]:
+    def truncated_centered_pol(self, m: int) -> Generator[int]:
         return truncated_centered_pol(m)
 
-    def truncated_centered_mgonal(self, m: int) -> Iterator[int]:
+    def truncated_centered_mgonal(self, m: int) -> Generator[int]:
         return truncated_centered_mgonal(m)
 
-    def truncated_centered_hexagonal(self) -> Iterator[int]:
+    def truncated_centered_hexagonal(self) -> Generator[int]:
         return truncated_centered_hexagonal()
 
-    def truncated_hex(self) -> Iterator[int]:
+    def truncated_hex(self) -> Generator[int]:
         return truncated_hex()
 
-    def generalized_mgonal(self, m: int, start_num: int = 0) -> Iterator[int]:
+    def generalized_mgonal(self, m: int, start_num: int = 0) -> Generator[int]:
         return generalized_mgonal(m, start_num)
 
-    def generalized_centered_pol(self, m: int, start_num: int = 0) -> Iterator[int]:
+    def generalized_centered_pol(self, m: int, start_num: int = 0) -> Generator[int]:
         return generalized_centered_pol(m, start_num)
 
-    def generalized_pronic(self, start_num: int = 0) -> Iterator[int]:
+    def generalized_pronic(self, start_num: int = 0) -> Generator[int]:
         return generalized_pronic(start_num)
 
     # specific plane figuratenum
 
-    def triangular(self) -> Iterator[int]:
+    def triangular(self) -> Generator[int]:
         return triangular()
 
-    def square(self) -> Iterator[int]:
+    def square(self) -> Generator[int]:
         return square()
 
-    def pentagonal(self) -> Iterator[int]:
+    def pentagonal(self) -> Generator[int]:
         return pentagonal()
 
-    def hexagonal(self) -> Iterator[int]:
+    def hexagonal(self) -> Generator[int]:
         return hexagonal()
 
-    def heptagonal(self) -> Iterator[int]:
+    def heptagonal(self) -> Generator[int]:
         return heptagonal()
 
-    def octagonal(self) -> Iterator[int]:
+    def octagonal(self) -> Generator[int]:
         return octagonal()
 
-    def nonagonal(self) -> Iterator[int]:
+    def nonagonal(self) -> Generator[int]:
         return nonagonal()
 
-    def decagonal(self) -> Iterator[int]:
+    def decagonal(self) -> Generator[int]:
         return decagonal()
 
-    def hendecagonal(self) -> Iterator[int]:
+    def hendecagonal(self) -> Generator[int]:
         return hendecagonal()
 
-    def dodecagonal(self) -> Iterator[int]:
+    def dodecagonal(self) -> Generator[int]:
         return dodecagonal()
 
-    def tridecagonal(self) -> Iterator[int]:
+    def tridecagonal(self) -> Generator[int]:
         return tridecagonal()
 
-    def tetradecagonal(self) -> Iterator[int]:
+    def tetradecagonal(self) -> Generator[int]:
         return tetradecagonal()
 
-    def pentadecagonal(self) -> Iterator[int]:
+    def pentadecagonal(self) -> Generator[int]:
         return pentadecagonal()
 
-    def hexadecagonal(self) -> Iterator[int]:
+    def hexadecagonal(self) -> Generator[int]:
         return hexadecagonal()
 
-    def heptadecagonal(self) -> Iterator[int]:
+    def heptadecagonal(self) -> Generator[int]:
         return heptadecagonal()
 
-    def octadecagonal(self) -> Iterator[int]:
+    def octadecagonal(self) -> Generator[int]:
         return octadecagonal()
 
-    def nonadecagonal(self) -> Iterator[int]:
+    def nonadecagonal(self) -> Generator[int]:
         return nonadecagonal()
 
-    def icosagonal(self) -> Iterator[int]:
+    def icosagonal(self) -> Generator[int]:
         return icosagonal()
 
-    def icosihenagonal(self) -> Iterator[int]:
+    def icosihenagonal(self) -> Generator[int]:
         return icosihenagonal()
 
-    def icosiheptagonal(self) -> Iterator[int]:
+    def icosiheptagonal(self) -> Generator[int]:
         return icosiheptagonal()
 
-    def icosidigonal(self) -> Iterator[int]:
+    def icosidigonal(self) -> Generator[int]:
         return icosidigonal()
 
-    def icositrigonal(self) -> Iterator[int]:
+    def icositrigonal(self) -> Generator[int]:
         return icositrigonal()
 
-    def icositetragonal(self) -> Iterator[int]:
+    def icositetragonal(self) -> Generator[int]:
         return icositetragonal()
 
-    def icosipentagonal(self) -> Iterator[int]:
+    def icosipentagonal(self) -> Generator[int]:
         return icosipentagonal()
 
-    def icosihexagonal(self) -> Iterator[int]:
+    def icosihexagonal(self) -> Generator[int]:
         return icosihexagonal()
 
-    def icosioctagonal(self) -> Iterator[int]:
+    def icosioctagonal(self) -> Generator[int]:
         return icosioctagonal()
 
-    def icosinonagonal(self) -> Iterator[int]:
+    def icosinonagonal(self) -> Generator[int]:
         return icosinonagonal()
 
-    def triacontagonal(self) -> Iterator[int]:
+    def triacontagonal(self) -> Generator[int]:
         return triacontagonal()
 
-    def centered_triangular(self) -> Iterator[int]:
+    def centered_triangular(self) -> Generator[int]:
         return centered_triangular()
 
-    def centered_pentagonal(self) -> Iterator[int]:
+    def centered_pentagonal(self) -> Generator[int]:
         return centered_pentagonal()
 
-    def centered_hexagonal(self) -> Iterator[int]:
+    def centered_hexagonal(self) -> Generator[int]:
         return centered_hexagonal()
 
-    def centered_heptagonal(self) -> Iterator[int]:
+    def centered_heptagonal(self) -> Generator[int]:
         return centered_heptagonal()
 
-    def centered_octagonal(self) -> Iterator[int]:
+    def centered_octagonal(self) -> Generator[int]:
         return centered_octagonal()
 
-    def centered_nonagonal(self) -> Iterator[int]:
+    def centered_nonagonal(self) -> Generator[int]:
         return centered_nonagonal()
 
-    def centered_decagonal(self) -> Iterator[int]:
+    def centered_decagonal(self) -> Generator[int]:
         return centered_decagonal()
 
-    def centered_hendecagonal(self) -> Iterator[int]:
+    def centered_hendecagonal(self) -> Generator[int]:
         return centered_hendecagonal()
 
-    def centered_tridecagonal(self) -> Iterator[int]:
+    def centered_tridecagonal(self) -> Generator[int]:
         return centered_tridecagonal()
 
-    def centered_tetradecagonal(self) -> Iterator[int]:
+    def centered_tetradecagonal(self) -> Generator[int]:
         return centered_tetradecagonal()
 
-    def centered_pentadecagonal(self) -> Iterator[int]:
+    def centered_pentadecagonal(self) -> Generator[int]:
         return centered_pentadecagonal()
 
-    def centered_hexadecagonal(self) -> Iterator[int]:
+    def centered_hexadecagonal(self) -> Generator[int]:
         return centered_hexadecagonal()
 
-    def centered_heptadecagonal(self) -> Iterator[int]:
+    def centered_heptadecagonal(self) -> Generator[int]:
         return centered_heptadecagonal()
 
-    def centered_octadecagonal(self) -> Iterator[int]:
+    def centered_octadecagonal(self) -> Generator[int]:
         return centered_octadecagonal()
 
-    def centered_nonadecagonal(self) -> Iterator[int]:
+    def centered_nonadecagonal(self) -> Generator[int]:
         return centered_nonadecagonal()
 
-    def centered_icosagonal(self) -> Iterator[int]:
+    def centered_icosagonal(self) -> Generator[int]:
         return centered_icosagonal()
 
-    def centered_icosihenagonal(self) -> Iterator[int]:
+    def centered_icosihenagonal(self) -> Generator[int]:
         return centered_icosihenagonal()
 
-    def centered_icosidigonal(self) -> Iterator[int]:
+    def centered_icosidigonal(self) -> Generator[int]:
         return centered_icosidigonal()
 
-    def centered_icositrigonal(self) -> Iterator[int]:
+    def centered_icositrigonal(self) -> Generator[int]:
         return centered_icositrigonal()
 
-    def centered_icositetragonal(self) -> Iterator[int]:
+    def centered_icositetragonal(self) -> Generator[int]:
         return centered_icositetragonal()
 
-    def centered_icosipentagonal(self) -> Iterator[int]:
+    def centered_icosipentagonal(self) -> Generator[int]:
         return centered_icosipentagonal()
 
-    def centered_icosihexagonal(self) -> Iterator[int]:
+    def centered_icosihexagonal(self) -> Generator[int]:
         return centered_icosihexagonal()
 
-    def centered_icosiheptagonal(self) -> Iterator[int]:
+    def centered_icosiheptagonal(self) -> Generator[int]:
         return centered_icosiheptagonal()
 
-    def centered_icosioctagonal(self) -> Iterator[int]:
+    def centered_icosioctagonal(self) -> Generator[int]:
         return centered_icosioctagonal()
 
-    def centered_icosinonagonal(self) -> Iterator[int]:
+    def centered_icosinonagonal(self) -> Generator[int]:
         return centered_icosinonagonal()
 
-    def centered_triacontagonal(self) -> Iterator[int]:
+    def centered_triacontagonal(self) -> Generator[int]:
         return centered_triacontagonal()
 
-    def truncated_centered_triangular(self) -> Iterator[int]:
+    def truncated_centered_triangular(self) -> Generator[int]:
         return truncated_centered_triangular()
 
-    def truncated_centered_square(self) -> Iterator[int]:
+    def truncated_centered_square(self) -> Generator[int]:
         return truncated_centered_square()
 
-    def truncated_centered_pentagonal(self) -> Iterator[int]:
+    def truncated_centered_pentagonal(self) -> Generator[int]:
         return truncated_centered_pentagonal()
 
-    def generalized_pentagonal(self) -> Iterator[int]:
+    def generalized_pentagonal(self) -> Generator[int]:
         return generalized_pentagonal()
 
-    def generalized_hexagonal(self) -> Iterator[int]:
+    def generalized_hexagonal(self) -> Generator[int]:
         return generalized_hexagonal()
