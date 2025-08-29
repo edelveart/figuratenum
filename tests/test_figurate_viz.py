@@ -42,12 +42,12 @@ def test_gaussian_graph_default_params():
     gaussian_plot = fig_viz.gaussian_graph()
 
     assert isinstance(gaussian_plot, GaussianPlots)
-    assert gaussian_plot.circ_color == "m"
-    assert gaussian_plot.bg_color == "w"
+    assert gaussian_plot.circ_color == "g"
+    assert gaussian_plot.bg_color == "k"
     assert gaussian_plot.num_text is False
-    assert gaussian_plot.num_color == "k"
+    assert gaussian_plot.num_color == "g"
     assert gaussian_plot.rotate == 0
-    assert gaussian_plot.ext_circle is True
+    assert gaussian_plot.ext_circle is False
     assert gaussian_plot.h_modulo == length
 
 
