@@ -38,9 +38,9 @@ class FigurateViz:
                 "If you don't need visualization, you can safely ignore this error."
             ) from e
 
-    def gaussian_graph(self, circ_color="m", bg_color: str = "w",
-                       num_text: bool = False, num_color: str = "k",
-                       rotate: int = 0, ext_circle: bool = True,
+    def gaussian_graph(self, circ_color="g", bg_color: str = "k",
+                       num_text: bool = False, num_color: str = "g",
+                       rotate: int = 0, ext_circle: bool = False,
                        h_modulo: int | None = None) -> GaussianPlots:
 
         return GaussianPlots(self.fig_sequence, self._np, self._plt,

@@ -26,8 +26,8 @@ class GaussianPlots:
 
     def __init__(self, sequence: list[int] | tuple[int, ...],
                  np: ModuleType, plt: ModuleType, figsize: tuple[float, float],
-                 circ_color: str = "m", bg_color: str = "w", num_text: bool = False,
-                 num_color: str = "k", rotate: int = 0, ext_circle: bool = True,
+                 circ_color: str = "g", bg_color: str = "k", num_text: bool = False,
+                 num_color: str = "g", rotate: int = 0, ext_circle: bool = False,
                  h_modulo: int | None = None):
         self.sequence = sequence
         self.np = np
@@ -47,8 +47,8 @@ class GaussianPlots:
 
     def draw(self):
         polar_indices = range(self.h_modulo)
-        angles = self.np.arange(0, 2 * self.np.pi, 2 *
-                                self.np.pi / self.h_modulo)
+        angles = self.np.linspace(
+            0, 2 * self.np.pi, self.h_modulo, endpoint=False)
 
         self.plt.figure(figsize=self.figsize, facecolor=self.bg_color)
         ax = self.plt.subplot(111, projection='polar')
