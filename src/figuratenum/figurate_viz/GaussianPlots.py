@@ -8,7 +8,7 @@ class GaussianPlots:
     for the visualization.
 
     Parameters:
-        sequence (list[int]): Sequence of numbers to visualize.
+        sequence (list[int], tuple[int, ...]): Sequence of numbers to visualize.
         np (module): Numpy module for mathematical operations.
         plt (module): Matplotlib module for visualization.
         figsize (tuple[float, float]): Size of the figure (width, height).
