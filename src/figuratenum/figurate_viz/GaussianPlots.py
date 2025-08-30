@@ -40,19 +40,21 @@ class GaussianPlots:
         self.rotate = rotate
         self.ext_circle = ext_circle
         self.h_modulo = h_modulo or len(sequence)
+        self.figure = None
 
         if self.h_modulo > len(self.sequence):
             raise ValueError(
                 "h_modulo cannot be greater than the length of the sequence.")
 
-    def draw(self):
+    def draw(self, show: bool = True):
+        self.figure = self.plt.figure(
+            figsize=self.figsize, facecolor=self.bg_color)
+        ax = self.figure.add_subplot(111, projection='polar')
+        ax.set_facecolor(self.bg_color)
+
         polar_indices = range(self.h_modulo)
         angles = self.np.linspace(
             0, 2 * self.np.pi, self.h_modulo, endpoint=False)
-
-        self.plt.figure(figsize=self.figsize, facecolor=self.bg_color)
-        ax = self.plt.subplot(111, projection='polar')
-        ax.set_facecolor(self.bg_color)
 
         for i in polar_indices:
             result = (self.sequence[i] + self.rotate) % self.h_modulo
@@ -80,4 +82,19 @@ class GaussianPlots:
         ax.set_rmax(1.1)
 
         self.plt.grid(False)
-        self.plt.show()
+        if show:
+            self.plt.show()
+
+    def save(self, filename: str = "output.svg", format: str | None = None, **kwargs):
+        if self.figure is None:
+            raise RuntimeError("No figure to save. Call draw() first.")
+
+        if format is None:
+            ext = filename.split('.')[-1].lower()
+            format = ext if ext in ['png', 'svg',
+                                    'pdf', 'jpeg', 'jpg'] else 'svg'
+
+        try:
+            self.figure.savefig(fname=filename, format=format, **kwargs)
+        except Exception as e:
+            raise RuntimeError(f"Error saving figure: {e}") from e
