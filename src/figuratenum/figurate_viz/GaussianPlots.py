@@ -70,6 +70,7 @@ class GaussianPlots:
         ax.set_theta_offset(self.np.pi / 2)
         ax.set_theta_direction(-1)
 
+        ax.grid(False)
         ax.set_rticks([])
         ax.set_yticklabels([])
         ax.set_xticklabels([])
