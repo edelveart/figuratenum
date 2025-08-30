@@ -38,11 +38,32 @@ class FigurateViz:
                 "If you don't need visualization, you can safely ignore this error."
             ) from e
 
-    def gaussian_graph(self, circ_color="g", bg_color: str = "k",
-                       num_text: bool = False, num_color: str = "g",
-                       rotate: int = 0, ext_circle: bool = False,
-                       h_modulo: int | None = None) -> GaussianPlots:
+    def gaussian_plot(self, circ_color="g", bg_color: str = "k",
+                      num_text: bool = False, num_color: str = "g",
+                      rotate: int = 0, ext_circle: bool = False,
+                      h_modulo: int | None = None) -> GaussianPlots:
 
         return GaussianPlots(self.fig_sequence, self._np, self._plt,
                              self.figsize, circ_color, bg_color, num_text,
                              num_color, rotate, ext_circle, h_modulo)
+
+    def export_plot(self, filepath: str = "output.svg",
+                    circ_color: str = "g",
+                    bg_color: str = "k",
+                    num_text: bool = False,
+                    num_color: str = "g",
+                    rotate: int = 0,
+                    ext_circle: bool = False,
+                    h_modulo: int | None = None,
+                    **save_kwargs):
+        plot = self.gaussian_plot(
+            circ_color=circ_color,
+            bg_color=bg_color,
+            num_text=num_text,
+            num_color=num_color,
+            rotate=rotate,
+            ext_circle=ext_circle,
+            h_modulo=h_modulo
+        )
+        plot.draw(show=False)
+        plot.save(filename=filepath, **save_kwargs)
