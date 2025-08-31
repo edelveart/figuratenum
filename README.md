@@ -16,95 +16,126 @@
 
 ## What is the purpose of FigurateNum?
 
-**FigurateNum** facilitates the discovery of new patterns among sequences and enables various numerical calculations in mathematical projects and related applications. It can be integrated with other software to visualize the geometric objects described. Moreover, it serves as a valuable companion to the book.
+**FigurateNum** helps discover patterns in figurate number sequences and supports numerical computation in mathematics-related projects. It integrates with other tools for visualizing geometric structures and serves as a companion to the book.
 
 ## How to install?
 
-```py
+```bash
 pip install figuratenum
 ```
 
-🚨 Version **2.0.0** includes **renamed methods and changes in class usage**. These changes are **incompatible with previous versions**. Please review the updated usage instructions below to adapt your code to the new structure.
+### Optional: Graphical Visualization (v2.1.0)
+
+Enable the `FigurateViz` class (requires `numpy` and `matplotlib`) by installing the optional dependencies:
+
+```bash
+pip install figuratenum[figurate-viz]
+```
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/example_fgn_1.svg" width="300" alt="Example of Gaussian Graph Visualization">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/example_fgn_2.svg" width="300" alt="Example of Gaussian Graph Visualization">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/example_fgn_3.svg" width="300" alt="Example of Gaussian Graph Visualization">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/example_fgn_4.svg" width="300" alt="Example of Gaussian Graph Visualization">
+</p>
 
 ## Features
 
-FigurateNum generates the following categories of **infinite sequences**:
+The main class, `FigurateNum`, provides access to all figurate number sequences across different **dimensions**, while dedicated classes let you work with each dimension separately:
 
-- [x] 79 Plane figurate numbers - [Explore in GitHub](https://github.com/edelveart/figuratenum#plane-figurate-numbers)
-- [x] 86 Space figurate numbers - [Explore in GitHub ](https://github.com/edelveart/figuratenum#space-figurate-numbers)
-- [x] 68 Multidimensional figurate numbers - [Explore in Github ](https://github.com/edelveart/figuratenum#multidimensional-figurate-numbers)
-- [x] 2 Zoo figurate numbers - [Explore in GitHub](https://github.com/edelveart/figuratenum#zoo-figurate-numbers)
+- 79 Plane figurate numbers → `PlaneFigurateNum` class — [Explore on GitHub](https://github.com/edelveart/figuratenum#plane-figurate-numbers)
+- 86 Space figurate numbers → `SpaceFigurateNum` class — [Explore on GitHub](https://github.com/edelveart/figuratenum#space-figurate-numbers)
+- 68 Multidimensional figurate numbers → `MultidimensionalFigurateNum` class — [Explore on GitHub](https://github.com/edelveart/figuratenum#multidimensional-figurate-numbers)
+- 2 Zoo figurate numbers → `ZooFigurateNum` class — [Explore on GitHub](https://github.com/edelveart/figuratenum#zoo-figurate-numbers)
 
-During the development of this package, errata were identified in *Figurate Numbers (2012)*. The corresponding corrections are available [here](https://github.com/edelveart/figuratenum#errata-for-figurate-numbers-2012).
+### FigurateViz Visualization
 
-A complete **LaTeX-formatted PDF** with all commands and usage examples:
-[Download Cheatsheet](https://edelveart.github.io/resources-files/cheatsheet/figuratenum/figuratenum-python-cheatsheet.pdf).
+- Gaussian plots (2D) in polar coordinates with customizable colors, visibility options, and export capabilities.
+- Seamless integration with any figurate number sequence (`list[int]` or `tuple[int, ...]`).
+
+---
 
 ## How to use?
 
-### 1. Import all sequences via the `FigurateNum` class
-```py
+### 1. Import and generate sequences with `FigurateNum` and related classes
+
+```python
+from figuratenum import FigurateNum, MultidimensionalFigurateNum
+
+# 1. General use: generate any figurate sequence via FigurateNum
+seq = FigurateNum()
+hyperdodecahedral_gen = seq.hyperdodecahedral()
+print([next(hyperdodecahedral_gen) for _ in range(4)])
+# Output: [1, 600, 4983, 19468]
+
+# 2. Specialized classes: PlaneFigurateNum, SpaceFigurateNum,
+#    MultidimensionalFigurateNum, ZooFigurateNum
+multi = MultidimensionalFigurateNum()
+hypertetrahedron_gen = multi.k_dimensional_centered_hypertetrahedron(21)
+print([next(hypertetrahedron_gen) for _ in range(12)])
+# Output: [1, 23, 276, 2300, 14950, 80730, 376740,
+#          1560780, 5852925, 20160075, 64512240, 193536720]
+```
+
+### 2. Using `FigurateViz` to visualize and export
+
+```python
 from figuratenum import FigurateNum as fgn
+from figuratenum.figurate_viz.FigurateViz import FigurateViz
+
+# Generate figurate numbers
+seq_loop = fgn()
+gen = seq_loop.five_dimensional_hyperoctahedron()
+figuratenum_seq = [next(gen) for _ in range(704)]
+
+# Create and draw the Gaussian plot
+viz = FigurateViz(figuratenum_seq, figsize=(6, 6))
+viz.gaussian_plot(
+    circ_color="m", bg_color="k", num_text=False,
+    num_color="g", ext_circle=True, rotate=-1
+).draw()
+
+# Export plots as .svg, .pdf, .png (matplotlib compatible),
+# with options e.g., dpi, transparent, bbox_inches, pad_inches, etc.
+viz.export_plot(
+    "figure1.svg", circ_color="cyan",
+    dpi=300, transparent=True
+)
 ```
+
+### 3. Get sequence values easily with `NumCollector`
 
 ```py
->>> seq = fgn()
->>> hyperdodecahedral = seq.hyperdodecahedral()
+from figuratenum import NumCollector as nc, FigurateNum
 
->>> first = next(hyperdodecahedral)
->>> second = next(hyperdodecahedral)
->>> third = next(hyperdodecahedral)
->>> fourth = next(hyperdodecahedral)
+gen = FigurateNum().pentatope()
+print(nc.take_to_tuple(gen, 10))  # first 10 values as tuple
+# Output: (1, 5, 15, 35, 70, 126, 210, 330, 495, 715)
 
->>> print(first, second, third, fourth)
-1 600 4983 19468
+# Available methods:
+# - take(n)               : first n values as iterator
+# - take_to_list(stop, start=0, step=1)
+# - take_to_tuple(stop, start=0, step=1)
+# - take_to_array(stop, start=0, step=1)
+# - pick(n)               : nth value
 ```
 
-### 2. Import sequences through specialized classes: Plane, Space, Multidimensional, and Zoo
+### Version History
+> 🚨 Version **2.0.0** includes **renamed methods and changes in class usage**. These changes are **incompatible with previous versions**. Please review the updated usage instructions below to adapt your code to the new structure.
 
-```py
-# from figuratenum import PlaneFigurateNum as pfgn
-# from figuratenum import SpaceFigurateNum as sfgn
-from figuratenum import MultidimensionalFigurateNum as mfgn
-# from figuratenum import ZooFigurateNum as zfgn
-```
+### Additional Resources
 
-```py
->>> seq_loop = mfgn()
->>> k_dimensional_centered_hypertetrahedron = seq_loop.k_dimensional_centered_hypertetrahedron(21)
+- [PDF Cheatsheet with LaTeX commands and examples](https://edelveart.github.io/resources-files/cheatsheet/figuratenum/figuratenum-python-cheatsheet.pdf).
+- [Errata *Figurate Numbers (2012)*](https://github.com/edelveart/figuratenum#errata-for-figurate-numbers-2012).
 
->>> figuratenum_arr = []
->>> for _ in range(1, 15):
->>>     next_num = next(k_dimensional_centered_hypertetrahedron)
->>>     figuratenum_arr.append(next_num)
+---
 
->>> print(figuratenum_arr)
-[1, 23, 276, 2300, 14950, 80730, 376740, 1560780, 5852925, 20160075, 64512240, 193536720, 548354040, 1476337800]
-```
+## List of Figurate Numbers
 
-### 3. Using the `NumCollector` class for sequence collection
+### Plane Figurate Numbers
 
-```py
-from figuratenum import NumCollector as nc
-```
-
-Importing the `NumCollector` class allows you to use practical methods to return lists, tuples or arrays with the requested number of elements:
-
-- `take(n)`
-- `take_to_list(stop, start, step)`
-- `take_to_array(stop, start, step)`
-- `take_to_tuple(stop, start, step)`
-- `pick(n)`
-
-```py
->>> seq = fgn()
->>> pentatope = seq.pentatope()
-
->>> print(nc.take_to_list(pentatope, 10))
-[1, 5, 15, 35, 70, 126, 210, 330, 495, 715]
-```
-
-## Plane Figurate Numbers
+<details>
+<summary>Show 79 sequences of the <code>PlaneFigurateNum</code> class</summary>
 
 1. `polygonal`
 2. `triangular`
@@ -185,8 +216,12 @@ Importing the `NumCollector` class allows you to use practical methods to return
 77. `generalized_hexagonal(start_numb)`
 78. `generalized_centered_pol(m, start_numb)`
 79. `generalized_pronic(start_numb)`
+</details>
 
-## Space Figurate Numbers
+### Space Figurate Numbers
+
+<details>
+<summary>Show 86 sequences of the <code>SpaceFigurateNum</code> class</summary>
 
 1. `m_pyramidal(m)`
 2. `triangular_pyramidal`
@@ -274,8 +309,12 @@ Importing the `NumCollector` class allows you to use practical methods to return
 84. `generalized_centered_mgonal_pyramidal(m, start_num)`
 85. `generalized_mgonal_prism(m, start_num)`
 86. `generalized_hexagonal_prism(start_num)`
+</details>
 
-## Multidimensional Figurate Numbers
+### Multidimensional Figurate Numbers
+
+<details>
+<summary>Show 68 sequences of the <code>MultidimensionalFigurateNum</code> class</summary>
 
 1. `k_dimensional_hypertetrahedron(k)` = `k_hypertetrahedron(k)` = `regular_k_polytopic(k)` = `figurate_of_order_k(k)`
 2. `five_dimensional_hypertetrahedron`
@@ -345,64 +384,69 @@ Importing the `NumCollector` class allows you to use practical methods to return
 66. `generalized_k_dimensional_mgonal_pyramidal(k, m, start_num = 0)`
 67. `generalized_k_dimensional_centered_hypercube(k, start_num = 0)`
 68. `generalized_nexus(k, start_num = 0)`
+</details>
 
-###  Zoo Figurate Numbers
+### Zoo Figurate Numbers
+
+<details>
+<summary>Show 2 sequences of the <code>ZooFigurateNum</code> class</summary>
 
 1. `cuban_prime`
 2. `pell`
+</details>
 
+---
 
 ## Errata for *Figurate Numbers (2012)*
+
+<details>
+<summary>Show errata and corrections</summary>
 
 This section lists the errata and corrections for the book *Figurate Numbers (2012)* by Michel Deza and Elena Deza. If you find any errors in the content, please feel free to contribute corrections.
 
 - Chapter 1, formula in the table on page 6 says:
 
-  | Name   | Formula             |     |
-  | ------ | ------------------- | --- |
-  | Square | `1/2 (n^2 - 0 * n)` |     |
-
+    | Name   | Formula             |     |
+    | ------ | ------------------- | --- |
+    | Square | `1/2 (n^2 - 0 * n)` |     |
 
   It should be:
-  | Name   | Formula              |     |
-  | ------ | -------------------- | --- |
-  | Square | `1/2 (2n^2 - 0 * n)` |     |
+    | Name   | Formula              |     |
+    | ------ | -------------------- | --- |
+    | Square | `1/2 (2n^2 - 0 * n)` |     |
 
 - Chapter 1, formula in the table on page 51 says:
 
-  | Name                 | Formula            |                       |
-  | -------------------- | ------------------ | --------------------- |
-  | Cent. icosihexagonal | `1/3n^2 - 13n + 1` | `546, 728, 936, 1170` |
-
+    | Name                 | Formula            |                       |
+    | -------------------- | ------------------ | --------------------- |
+    | Cent. icosihexagonal | `1/3n^2 - 13n + 1` | `546, 728, 936, 1170` |
 
   It should be:
-  | Name                 | Formula           |                       |
-  | -------------------- | ----------------- | --------------------- |
-  | Cent. icosihexagonal | `13n^2 - 13n + 1` | `547, 729, 937, 1171` |
+    | Name                 | Formula           |                       |
+    | -------------------- | ----------------- | --------------------- |
+    | Cent. icosihexagonal | `13n^2 - 13n + 1` | `547, 729, 937, 1171` |
 
 - Chapter 1, formula in the table on page 51 says:
 
-  | Name                  | Formula |       |
-  | --------------------- | ------- | ----- |
-  | Cent. icosiheptagonal |         | `972` |
-
+    | Name                  | Formula |       |
+    | --------------------- | ------- | ----- |
+    | Cent. icosiheptagonal |         | `972` |
 
   It should be:
-  | Name                  | Formula |       |
-  | --------------------- | ------- | ----- |
-  | Cent. icosiheptagonal |         | `973` |
+    | Name                  | Formula |       |
+    | --------------------- | ------- | ----- |
+    | Cent. icosiheptagonal |         | `973` |
 
 - Chapter 1, formula in the table on page 51 says:
 
-  | Name                 | Formula |      |
-  | -------------------- | ------- | ---- |
-  | Cent. icosioctagonal |         | `84` |
-
+    | Name                 | Formula |      |
+    | -------------------- | ------- | ---- |
+    | Cent. icosioctagonal |         | `84` |
 
   It should be:
-  | Name                 | Formula |      |
-  | -------------------- | ------- | ---- |
-  | Cent. icosioctagonal |         | `85` |
+    | Name                 | Formula |      |
+    | -------------------- | ------- | ---- |
+    | Cent. icosioctagonal |         | `85` |
 
 - Chapter 1, page 65 (polite numbers) says:
   > `inpolite numbers`
@@ -458,10 +502,13 @@ This section lists the errata and corrections for the book *Figurate Numbers (20
 
   > `hexacosichoron numbers`
 
+</details>
+
+---
 
 ## Contributing
 
-FigurateNumber is currently under development, and we warmly invite your contributions. Just **fork** the project and then submit a **pull request**:
+FigurateNum is currently under development, and we warmly invite your contributions. Just **fork** the project and then submit a **pull request**:
 
 - Sequences from Chapters 1, 2, and 3 of the book
 - New sequences not included in the book: If you have new sequences, please provide the source.
