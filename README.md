@@ -99,13 +99,13 @@ viz.gaussian_plot(
 # with options e.g., dpi, transparent, bbox_inches, pad_inches, etc.
 viz.export_plot(
     "figure1.svg", circ_color="cyan",
-    dpi=300, transparent=True
+    transparent=True
 )
 ```
 
 ### 3. Get sequence values easily with `NumCollector`
 
-```py
+```python
 from figuratenum import NumCollector as nc, FigurateNum
 
 gen = FigurateNum().pentatope()
