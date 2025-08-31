@@ -12,8 +12,8 @@ class FigurateViz:
     make sure you have these dependencies installed.
 
     Requires the following optional dependencies:
-        - numpy >= 1.23
-        - matplotlib >= 3.7
+        - numpy >= 2.2.2
+        - matplotlib >= 3.10.0
 
     If you don't need visualization, you can safely ignore this error and continue
     using the basic functionality of the library.
@@ -34,7 +34,7 @@ class FigurateViz:
                 "To use FigurateViz, you need to install the optional dependencies. "
                 "Please run the following command:\n"
                 "pip install figuratenum[figurate-viz]\n"
-                "Note: Make sure you have numpy >= 1.23 and matplotlib >= 3.7. "
+                "Note: Make sure you have numpy >= 2.2.2 and matplotlib >= 3.10.0 "
                 "If you don't need visualization, you can safely ignore this error."
             ) from e
 
