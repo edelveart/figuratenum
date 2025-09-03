@@ -1,3 +1,6 @@
+from math import comb
+
+
 def factorial_iter(num: int) -> int:
     t = 1
     for i in range(1, (num) + 1):
@@ -5,8 +8,14 @@ def factorial_iter(num: int) -> int:
     return t
 
 
-def binomial_coefficient(n: int, k: int) -> int:
+def binomial_coefficient_from_book(n: int, k: int) -> int:
+    """Classic factorial-based version, slower, for reference only."""
     return factorial_iter(n) // (factorial_iter(k) * factorial_iter(n - k))
+
+
+def binomial_coefficient(n: int, k: int) -> int:
+    """Optimized version using math.comb for production."""
+    return comb(n, k)
 
 
 def pseudo_rising_factorial(n: int, k: int) -> int:
@@ -46,7 +55,11 @@ def acc_helper_centered_hypertetrahedron(k: int, n: int) -> int:
     return a
 
 
-def helper_ext_int_double_sigma(k: int, n: int) -> int:
+def helper_ext_int_double_sigma_from_book(k: int, n: int) -> int:
+    """
+    Original formula-based version from Figurate Numbers (2012).
+    Kept for clarity and educational reference. Slower than the optimized version.
+    """
     t = ((2 ** 1) * binomial_coefficient(k, 1) * binomial_coefficient(1, 0))
     if n == 1:
         return t + 1
@@ -56,3 +69,19 @@ def helper_ext_int_double_sigma(k: int, n: int) -> int:
             a += ((2 ** (1 + i)) * binomial_coefficient(k, 1 + i)
                   * binomial_coefficient(j, i))
     return 1 + t + a
+
+
+def helper_ext_int_double_sigma(k: int, n: int) -> int:
+    """
+    Optimized implementation of 'helper_ext_int_double_sigma_from_book(k, n)'.
+    Precomputes powers of two and binomial coefficients. Use in production.
+    """
+    if n == 1:
+        return 2 * k + 1
+    binom_k = [binomial_coefficient(k, 1 + i) for i in range(k)]
+    powers_of_2 = [2 ** (1 + i) for i in range(k)]
+    a = 0
+    for j in range(1, n):
+        for i in range(k):
+            a += powers_of_2[i] * binom_k[i] * binomial_coefficient(j, i)
+    return 2 * k + 1 + a
