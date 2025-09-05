@@ -43,11 +43,17 @@ def pseudo_pochhammer_function(n: int, k: int) -> int:
     return pseudo_rising_factorial(n, k)
 
 
-def rising_factorial(n: int, k: int) -> int:
+def rising_factorial_from_book(n: int, k: int) -> int:
+    """Classic rising factorial implementation. For reference only."""
     t = 1
     for i in range(n, (n + k - 1) + 1):
         t *= i
     return t
+
+
+def rising_factorial(n: int, k: int) -> int:
+    """Optimized version using math.prod for production"""
+    return math_prod(range(n, n + k))
 
 
 def helper_centered_hypertetrahedron(k: int, n: int) -> int:
