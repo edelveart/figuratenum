@@ -174,10 +174,21 @@ def mgonal_pyramidal_of_the_second_order(m: int) -> Generator[int]:
     return four_dimensional_mgonal_pyramidal(m)
 
 
-def k_dimensional_mgonal_pyramidal(k: int, m: int) -> Generator[int]:
+def k_dimensional_mgonal_pyramidal_from_book(k: int, m: int) -> Generator[int]:
+    """Book definition. For reference only"""
     delta = 1
     while True:
         yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial(k)
+        delta += 1
+
+
+def k_dimensional_mgonal_pyramidal(k: int, m: int):
+    """Optimized version using iterative binomial coefficient update for better performance."""
+    delta = 1
+    bin_coeff = 1
+    while True:
+        yield (bin_coeff * ((m - 2) * delta - m + k + 2)) // k
+        bin_coeff = bin_coeff * (delta + k - 1) // delta
         delta += 1
 
 
