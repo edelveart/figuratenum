@@ -22,6 +22,14 @@ def triangulotriangular() -> Generator[int]:
     return pentatope()
 
 
+def k_dimensional_hypertetrahedron_from_book(k: int) -> Generator[int]:
+    """Book definition. For reference only."""
+    delta = 1
+    while True:
+        yield rising_factorial(delta, k) // factorial(k)
+        delta += 1
+
+
 def k_dimensional_hypertetrahedron(k: int) -> Generator[int]:
     delta = 1
     while True:
@@ -148,7 +156,7 @@ def k_dimensional_hyperoctahedron_from_book(k: int) -> Generator[int]:
 
 
 def k_dimensional_hyperoctahedron(k: int) -> Generator[int]:
-    """Otimized version for production, faster with precomputed coefficients."""
+    """Optimized version for production, faster with precomputed coefficients."""
     bin_coeffs = [binomial_coefficient(k - 1, i) for i in range(0, k)]
     delta = 1
     while True:
@@ -175,7 +183,7 @@ def mgonal_pyramidal_of_the_second_order(m: int) -> Generator[int]:
 
 
 def k_dimensional_mgonal_pyramidal_from_book(k: int, m: int) -> Generator[int]:
-    """Book definition. For reference only"""
+    """Book definition. For reference only."""
     delta = 1
     while True:
         yield (pseudo_rising_factorial(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial(k)
