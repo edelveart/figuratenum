@@ -1,8 +1,9 @@
 from collections.abc import Generator
+
 from ..utils import (
-    factorial, binomial_coefficient, pseudo_rising_factorial,
+    factorial, binomial_coefficient,
+    helper_centered_hypertetrahedron, pseudo_rising_factorial,
     pseudo_pochhammer_function, rising_factorial,
-    acc_helper_centered_hypertetrahedron,
     helper_ext_int_double_sigma
 )
 
@@ -157,12 +158,12 @@ def k_dimensional_hyperoctahedron_from_book(k: int) -> Generator[int]:
 
 def k_dimensional_hyperoctahedron(k: int) -> Generator[int]:
     """Optimized version for production, faster with precomputed coefficients."""
-    bin_coeffs = [binomial_coefficient(k - 1, i) for i in range(0, k)]
+    bin_coeffs = [binomial_coefficient(k - 1, i) for i in range(k)]
     delta = 1
     while True:
         a = 0
-        for i, c in enumerate(bin_coeffs):
-            a += c * binomial_coefficient(delta - i + k - 1, k)
+        for i in range(k):
+            a += bin_coeffs[i] * binomial_coefficient(delta - i + k - 1, k)
         yield a
         delta += 1
 
@@ -228,9 +229,11 @@ def centered_polytope() -> Generator[int]:
 
 
 def k_dimensional_centered_hypertetrahedron(k: int) -> Generator[int]:
+    a = 0
     delta = 1
     while True:
-        yield acc_helper_centered_hypertetrahedron(k, delta)
+        a += helper_centered_hypertetrahedron(k, delta)
+        yield a
         delta += 1
 
 
@@ -268,9 +271,10 @@ def generalized_pentatope(start_num: int = 0) -> Generator[int]:
 
 
 def generalized_k_dimensional_hypertetrahedron(k: int, start_num: int = 0) -> Generator[int]:
+    den = factorial(k)
     delta = start_num
     while True:
-        yield rising_factorial(delta, k) // factorial(k)
+        yield rising_factorial(delta, k) // den
         delta += 1
 
 
@@ -296,12 +300,13 @@ def generalized_hyperoctahedral(start_num: int = 0) -> Generator[int]:
 
 
 def generalized_k_dimensional_hyperoctahedron(k: int = 5, start_num: int = 0) -> Generator[int]:
+    den = factorial(k)
+    bin_coeffs = [binomial_coefficient(k - 1, i) for i in range(k)]
     delta = start_num
     while True:
         a = 0
-        for i in range(0, (k - 1) + 1):
-            a += (binomial_coefficient(k - 1, i) *
-                  (rising_factorial(delta - i, k) // factorial(k)))
+        for i in range(k):
+            a += bin_coeffs[i] * (rising_factorial(delta - i, k) // den)
         yield a
         delta += 1
 
@@ -328,9 +333,10 @@ def generalized_polyoctahedral(start_num: int = 0) -> Generator[int]:
 
 
 def generalized_k_dimensional_mgonal_pyramidal(k: int, m: int, start_num: int = 0) -> Generator[int]:
+    den = factorial(k)
     delta = start_num
     while True:
-        yield (pseudo_pochhammer_function(delta, k) * ((m - 2) * delta - m + k + 2)) // factorial(k)
+        yield (pseudo_pochhammer_function(delta, k) * ((m - 2) * delta - m + k + 2)) // den
         delta += 1
 
 
