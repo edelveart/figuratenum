@@ -135,7 +135,20 @@ def hyperdiamond() -> Generator[int]:
     return polyoctahedral()
 
 
+def k_dimensional_hyperoctahedron_from_book(k: int) -> Generator[int]:
+    """Book definition. For reference only."""
+    delta = 1
+    while True:
+        a = 0
+        for i in range(0, (k - 1) + 1):
+            a += (binomial_coefficient(k - 1, i) *
+                  (rising_factorial(delta - i, k) // factorial(k)))
+        yield a
+        delta += 1
+
+
 def k_dimensional_hyperoctahedron(k: int) -> Generator[int]:
+    """Otimized version for production, faster with precomputed coefficients."""
     bin_coeffs = [binomial_coefficient(k - 1, i) for i in range(0, k)]
     delta = 1
     while True:
