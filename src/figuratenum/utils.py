@@ -1,4 +1,4 @@
-from math import comb as math_comb, factorial as math_factorial
+from math import comb as math_comb, factorial as math_factorial, prod as math_prod
 
 
 def factorial_iter(num: int) -> int:
@@ -15,7 +15,7 @@ def binomial_coefficient_from_book(n: int, k: int) -> int:
 
 
 def factorial(num: int) -> int:
-    """Optimizd version using math.factorial for production"""
+    """Optimized version using math.factorial for production"""
     return math_factorial(num)
 
 
@@ -24,11 +24,19 @@ def binomial_coefficient(n: int, k: int) -> int:
     return math_comb(n, k)
 
 
-def pseudo_rising_factorial(n: int, k: int) -> int:
+def pseudo_rising_factorial_from_book(n: int, k: int) -> int:
+    """Similar to the rising factorial but stops at n + k - 2 instead of n + k - 1.
+    Provided for reference only.
+    """
     t = 1
     for i in range(n, (n + k - 2) + 1):
         t *= i
     return t
+
+
+def pseudo_rising_factorial(n: int, k: int) -> int:
+    """Optimized version using math.prod for production"""
+    return math_prod(range(n, n + k - 1))
 
 
 def pseudo_pochhammer_function(n: int, k: int) -> int:
