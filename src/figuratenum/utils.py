@@ -1,7 +1,8 @@
-from math import comb
+from math import comb as math_comb, factorial as math_factorial
 
 
 def factorial_iter(num: int) -> int:
+    """Simple factorial implementation for reference only."""
     t = 1
     for i in range(1, (num) + 1):
         t *= i
@@ -13,9 +14,14 @@ def binomial_coefficient_from_book(n: int, k: int) -> int:
     return factorial_iter(n) // (factorial_iter(k) * factorial_iter(n - k))
 
 
+def factorial(num: int) -> int:
+    """Optimizd version using math.factorial for production"""
+    return math_factorial(num)
+
+
 def binomial_coefficient(n: int, k: int) -> int:
     """Optimized version using math.comb for production."""
-    return comb(n, k)
+    return math_comb(n, k)
 
 
 def pseudo_rising_factorial(n: int, k: int) -> int:
