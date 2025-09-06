@@ -167,8 +167,8 @@ def k_dimensional_hyperoctahedron_from_book(k: int) -> Generator[int]:
         delta += 1
 
 
-def k_dimensional_hyperoctahedron(k: int) -> Generator[int]:
-    """Optimized version for production, faster with precomputed coefficients."""
+def k_dimensional_hyperoctahedron_from_book_2(k: int) -> Generator[int]:
+    """Optimized version from Book with precomputed coefficients."""
     bin_coeffs = [binomial_coefficient(k - 1, i) for i in range(k)]
     delta = 1
     while True:
@@ -177,6 +177,23 @@ def k_dimensional_hyperoctahedron(k: int) -> Generator[int]:
             a += bin_coeffs[i] * binomial_coefficient(delta - i + k - 1, k)
         yield a
         delta += 1
+
+
+def k_dimensional_hyperoctahedron(k: int) -> Generator[int]:
+    """Incrementally optimized hyperoctahedron generator."""
+    den = factorial(k)
+    bin_coeffs = [binomial_coefficient(k - 1, i) for i in range(k)]
+    delta = 1
+    risings = [rising_factorial(delta - i, k) for i in range(k)]
+    while True:
+        yield sum(bin_coeffs[i] * risings[i] // den for i in range(k))
+        delta += 1
+        for i in range(k):
+            d_m_i_m_1 = delta - i - 1
+            if d_m_i_m_1 != 0:
+                risings[i] = risings[i] * (d_m_i_m_1 + k) // d_m_i_m_1
+            else:
+                risings[i] = rising_factorial(delta - i, k)
 
 
 def k_cross_polytope(k: int) -> Generator[int]:
