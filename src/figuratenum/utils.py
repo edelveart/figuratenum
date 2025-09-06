@@ -109,17 +109,15 @@ def helper_ext_int_double_sigma_from_book(k: int, n: int) -> int:
     return 1 + t + a
 
 
-def helper_ext_int_double_sigma(k: int, n: int) -> int:
+def helper_ext_int_double_sigma(k: int, n: int, bin_coeffs_k: list[int], powers_of_2: list[int]) -> int:
     """
-    Optimized implementation of 'helper_ext_int_double_sigma_from_book(k, n)'.
-    Precomputes powers of two and binomial coefficients. Use in production.
+    Optimized implementation of 'helper_ext_int_double_sigma_from_book'.
+    Receives precomputed powers of two and binomial coefficients. Use in production.
     """
     if n == 1:
         return 2 * k + 1
-    binom_k = [binomial_coefficient(k, 1 + i) for i in range(k)]
-    powers_of_2 = [2 ** (1 + i) for i in range(k)]
     a = 0
     for j in range(1, n):
         for i in range(k):
-            a += powers_of_2[i] * binom_k[i] * binomial_coefficient(j, i)
+            a += powers_of_2[i] * bin_coeffs_k[i] * binomial_coefficient(j, i)
     return 2 * k + 1 + a

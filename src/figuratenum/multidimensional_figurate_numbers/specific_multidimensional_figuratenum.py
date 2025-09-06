@@ -308,16 +308,20 @@ def six_dimensional_centered_hypertetrahedron() -> Generator[int]:
 
 
 def five_dimensional_centered_hyperoctahedron() -> Generator[int]:
+    bin_coeffs_k = [binomial_coefficient(5, 1 + i) for i in range(5)]
+    powers_of_2 = [2 ** (1 + i) for i in range(5)]
     delta = 1
     yield 1
     while True:
-        yield helper_ext_int_double_sigma(5, delta)
+        yield helper_ext_int_double_sigma(5, delta, bin_coeffs_k, powers_of_2)
         delta += 1
 
 
 def six_dimensional_centered_hyperoctahedron() -> Generator[int]:
+    bin_coeffs_k = [binomial_coefficient(6, 1 + i) for i in range(6)]
+    powers_of_2 = [2 ** (1 + i) for i in range(6)]
     delta = 1
     yield 1
     while True:
-        yield helper_ext_int_double_sigma(6, delta)
+        yield helper_ext_int_double_sigma(6, delta, bin_coeffs_k, powers_of_2)
         delta += 1

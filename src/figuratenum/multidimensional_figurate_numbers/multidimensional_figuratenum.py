@@ -257,10 +257,12 @@ def nexus(k: int) -> Generator[int]:
 
 
 def k_dimensional_centered_hyperoctahedron(k: int) -> Generator[int]:
+    bin_coeffs_k = [binomial_coefficient(k, 1 + i) for i in range(k)]
+    powers_of_2 = [2 ** (1 + i) for i in range(k)]
     delta = 1
     yield 1
     while True:
-        yield helper_ext_int_double_sigma(k, delta)
+        yield helper_ext_int_double_sigma(k, delta, bin_coeffs_k, powers_of_2)
         delta += 1
 
 
