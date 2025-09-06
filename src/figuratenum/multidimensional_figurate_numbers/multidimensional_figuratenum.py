@@ -303,7 +303,7 @@ def generalized_k_dimensional_hypertetrahedron_from_book(k: int, start_num: int 
 
 def generalized_k_dimensional_hypertetrahedron(k: int, start_num: int = 0) -> Generator[int]:
     """
-    Incrementally optimized generator for k-dimensional hypertetrahedron numbers.
+    Incrementally optimized version using rising factorial for better performance.
     """
     den = factorial(k)
     delta = start_num
@@ -311,10 +311,10 @@ def generalized_k_dimensional_hypertetrahedron(k: int, start_num: int = 0) -> Ge
     while True:
         yield rfact // den
         delta += 1
-        if delta - 1 == 0:
-            rfact = rising_factorial(delta, k)
-        else:
+        if delta - 1 != 0:
             rfact = rfact * (delta + k - 1) // (delta - 1)
+        else:
+            rfact = rising_factorial(delta, k)
 
 
 def generalized_biquadratic(start_num: int = 0) -> Generator[int]:
