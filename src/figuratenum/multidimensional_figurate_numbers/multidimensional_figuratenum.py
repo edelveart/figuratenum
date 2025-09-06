@@ -229,10 +229,11 @@ def centered_polytope() -> Generator[int]:
 
 
 def k_dimensional_centered_hypertetrahedron(k: int) -> Generator[int]:
+    bin_coeffs_k = [binomial_coefficient(k + 1, k - i) for i in range(k)]
     a = 0
     delta = 1
     while True:
-        a += helper_centered_hypertetrahedron(k, delta)
+        a += helper_centered_hypertetrahedron(k, delta, bin_coeffs_k)
         yield a
         delta += 1
 

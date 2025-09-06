@@ -1,7 +1,8 @@
 from collections.abc import Generator
 from ..utils import (
-    factorial_iter,  pseudo_rising_factorial, rising_factorial,
-    acc_helper_centered_hypertetrahedron,
+    binomial_coefficient, factorial_iter,
+    helper_centered_hypertetrahedron,
+    pseudo_rising_factorial, rising_factorial,
     helper_ext_int_double_sigma
 )
 
@@ -284,16 +285,22 @@ def six_dimensional_centered_hypercube() -> Generator[int]:
 # specific cases of k_dimensional_centered_hypertetrahedron(k)
 
 def five_dimensional_centered_hypertetrahedron() -> Generator[int]:
+    bin_coeffs_k = [binomial_coefficient(5 + 1, 5 - i) for i in range(5)]
+    a = 0
     delta = 1
     while True:
-        yield acc_helper_centered_hypertetrahedron(5, delta)
+        a += helper_centered_hypertetrahedron(5, delta, bin_coeffs_k)
+        yield a
         delta += 1
 
 
 def six_dimensional_centered_hypertetrahedron() -> Generator[int]:
+    bin_coeffs_k = [binomial_coefficient(6 + 1, 6 - i) for i in range(6)]
+    a = 0
     delta = 1
     while True:
-        yield acc_helper_centered_hypertetrahedron(6, delta)
+        a += helper_centered_hypertetrahedron(6, delta, bin_coeffs_k)
+        yield a
         delta += 1
 
 

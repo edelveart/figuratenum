@@ -15,7 +15,7 @@ def binomial_coefficient_from_book(n: int, k: int) -> int:
 
 
 def factorial(num: int) -> int:
-    """Optimized version using math.factorial for production"""
+    """Optimized version using math.factorial for production."""
     return math_factorial(num)
 
 
@@ -35,7 +35,7 @@ def pseudo_rising_factorial_from_book(n: int, k: int) -> int:
 
 
 def pseudo_rising_factorial(n: int, k: int) -> int:
-    """Optimized version using math.prod for production"""
+    """Optimized version using math.prod for production."""
     return math_prod(range(n, n + k - 1))
 
 
@@ -52,11 +52,15 @@ def rising_factorial_from_book(n: int, k: int) -> int:
 
 
 def rising_factorial(n: int, k: int) -> int:
-    """Optimized version using math.prod for production"""
+    """Optimized version using math.prod for production."""
     return math_prod(range(n, n + k))
 
 
-def helper_centered_hypertetrahedron(k: int, n: int) -> int:
+def helper_centered_hypertetrahedron_from_book(k: int, n: int,) -> int:
+    """
+    Original formula-based version from Figurate Numbers (2012).
+    Kept for clarity and educational reference. Slower than the optimized version.
+    """
     if n == 1:
         return 1
     if n == 2:
@@ -68,10 +72,24 @@ def helper_centered_hypertetrahedron(k: int, n: int) -> int:
     return tau
 
 
+def helper_centered_hypertetrahedron(k: int, n: int, precomputed_bin_coeffs: list[int]) -> int:
+    """
+    Optimized version that use precomputed binomial coefficients for better performance in production.
+    """
+    if n == 1:
+        return 1
+    if n == 2:
+        return binomial_coefficient(k + 1, k)
+    tau = 0
+    for i in range(k):
+        tau += (precomputed_bin_coeffs[i] * binomial_coefficient(n - 2, i))
+    return tau
+
+
 def acc_helper_centered_hypertetrahedron(k: int, n: int) -> int:
     a = 0
     for j in range(1, (n) + 1):
-        a += helper_centered_hypertetrahedron(k, j)
+        a += helper_centered_hypertetrahedron_from_book(k, j)
     return a
 
 
