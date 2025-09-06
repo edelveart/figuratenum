@@ -31,10 +31,21 @@ def k_dimensional_hypertetrahedron_from_book(k: int) -> Generator[int]:
         delta += 1
 
 
-def k_dimensional_hypertetrahedron(k: int) -> Generator[int]:
+def k_dimensional_hypertetrahedron_from_book_2(k: int) -> Generator[int]:
+    """Book definition alternative. For reference only"""
     delta = 1
     while True:
         yield binomial_coefficient(delta + k - 1, k)
+        delta += 1
+
+
+def k_dimensional_hypertetrahedron(k: int) -> Generator[int]:
+    """Optimized version using iterative binomial coefficient update for better performance."""
+    delta = 1
+    bin_coeff = 1
+    while True:
+        yield bin_coeff
+        bin_coeff = bin_coeff * (delta + k) // delta
         delta += 1
 
 
