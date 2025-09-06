@@ -180,20 +180,11 @@ def k_dimensional_hyperoctahedron_from_book_2(k: int) -> Generator[int]:
 
 
 def k_dimensional_hyperoctahedron(k: int) -> Generator[int]:
-    """Incrementally optimized hyperoctahedron generator."""
-    den = factorial(k)
-    bin_coeffs = [binomial_coefficient(k - 1, i) for i in range(k)]
-    delta = 1
-    risings = [rising_factorial(delta - i, k) for i in range(k)]
-    while True:
-        yield sum(bin_coeffs[i] * risings[i] // den for i in range(k))
-        delta += 1
-        for i in range(k):
-            d_m_i_m_1 = delta - i - 1
-            if d_m_i_m_1 != 0:
-                risings[i] = risings[i] * (d_m_i_m_1 + k) // d_m_i_m_1
-            else:
-                risings[i] = rising_factorial(delta - i, k)
+    """
+    Wrapper over the generalized hyperoctahedron
+    version with fixed start_num = 1.
+    """
+    return generalized_k_dimensional_hyperoctahedron(k, 1)
 
 
 def k_cross_polytope(k: int) -> Generator[int]:
@@ -331,15 +322,20 @@ def generalized_hyperoctahedral(start_num: int = 0) -> Generator[int]:
 
 
 def generalized_k_dimensional_hyperoctahedron(k: int = 5, start_num: int = 0) -> Generator[int]:
+    """Incrementally optimized generalized hyperoctahedron generator."""
     den = factorial(k)
     bin_coeffs = [binomial_coefficient(k - 1, i) for i in range(k)]
     delta = start_num
+    risings = [rising_factorial(delta - i, k) for i in range(k)]
     while True:
-        a = 0
-        for i in range(k):
-            a += bin_coeffs[i] * (rising_factorial(delta - i, k) // den)
-        yield a
+        yield sum(bin_coeffs[i] * risings[i] // den for i in range(k))
         delta += 1
+        for i in range(k):
+            d_m_i_m_1 = delta - i - 1
+            if d_m_i_m_1 != 0:
+                risings[i] = risings[i] * (d_m_i_m_1 + k) // d_m_i_m_1
+            else:
+                risings[i] = rising_factorial(delta - i, k)
 
 
 def generalized_hyperdodecahedral(start_num: int = 0) -> Generator[int]:
