@@ -292,12 +292,29 @@ def generalized_pentatope(start_num: int = 0) -> Generator[int]:
         delta += 1
 
 
-def generalized_k_dimensional_hypertetrahedron(k: int, start_num: int = 0) -> Generator[int]:
+def generalized_k_dimensional_hypertetrahedron_from_book(k: int, start_num: int = 0) -> Generator[int]:
+    """Book alternative definition. For reference only"""
     den = factorial(k)
     delta = start_num
     while True:
         yield rising_factorial(delta, k) // den
         delta += 1
+
+
+def generalized_k_dimensional_hypertetrahedron(k: int, start_num: int = 0) -> Generator[int]:
+    """
+    Incrementally optimized generator for k-dimensional hypertetrahedron numbers.
+    """
+    den = factorial(k)
+    delta = start_num
+    rfact = rising_factorial(delta, k)
+    while True:
+        yield rfact // den
+        delta += 1
+        if delta - 1 == 0:
+            rfact = rising_factorial(delta, k)
+        else:
+            rfact = rfact * (delta + k - 1) // (delta - 1)
 
 
 def generalized_biquadratic(start_num: int = 0) -> Generator[int]:
