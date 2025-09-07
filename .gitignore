@@ -7,4 +7,19 @@ dist/
 proofs.py
 tests/reports
 .coverage
-practice-import.py
+
+# Trial concepts
+trial_concepts/
+
+# LaTeX temporary files
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.lof
+*.lot
