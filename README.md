@@ -8,6 +8,7 @@
   <img alt="Pepy Total Downloads" src="https://img.shields.io/pepy/dt/figuratenum">
   <img src="https://img.shields.io/pypi/status/figuratenum" alt="PyPI - Status">
   <img src="https://img.shields.io/github/license/edelveart/figuratenum" alt="GitHub License">
+  <img src="https://img.shields.io/github/actions/workflow/status/edelveart/figuratenum/tests.yml" alt="GitHub Actions Workflow Status" >
 </p>
 
 <p align="center">
