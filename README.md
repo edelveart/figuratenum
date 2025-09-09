@@ -25,20 +25,21 @@
 pip install figuratenum
 ```
 
-### Optional: Graphical Visualization (v2.1.0)
+### Graphical Visualization (v2.1.0)
 
-Enable the `FigurateViz` class (requires `numpy` and `matplotlib`) by installing the optional dependencies:
+Install the optional `figurate-viz` dependencies to unlock 2D  visualizations via the `FigurateViz` class (requires `numpy` and `matplotlib`).
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/centered-decagonal-pyramidal.svg" width="250" alt="Decagonal Pyramidal">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/five-dimensional-hypercube.svg" width="250" alt="Five-dimensional Hypercube">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/centered-hexagonal-pyramidal.svg" width="250" alt="Hexagonal Pyramidal">
+</p>
+
+<p align="center"><em>Decagonal Pyramidal, Five-dimensional Hypercube, Hexagonal Pyramidal.</em></p>
 
 ```bash
 pip install figuratenum[figurate-viz]
 ```
-
-<p align="center">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/example_fgn_1.svg" width="300" alt="Example of Gaussian Graph Visualization">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/example_fgn_2.svg" width="300" alt="Example of Gaussian Graph Visualization">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/example_fgn_3.svg" width="300" alt="Example of Gaussian Graph Visualization">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/example_fgn_4.svg" width="300" alt="Example of Gaussian Graph Visualization">
-</p>
 
 ## Features
 
@@ -80,6 +81,12 @@ print([next(hypertetrahedron_gen) for _ in range(12)])
 
 ### 2. Using `FigurateViz` to visualize and export
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/five-dimensional-hyperoctahedron.svg" width="250" alt="Example of Gaussian Graph Visualization">
+ </p>
+
+<p align="center"><em>Five-dimensional Hyperoctahedron.</em></p>
+
 ```python
 from figuratenum import FigurateNum as fgn
 from figuratenum.figurate_viz.FigurateViz import FigurateViz
@@ -99,7 +106,7 @@ viz.gaussian_plot(
 # Export plots as .svg, .pdf, .png (matplotlib compatible),
 # with options e.g., dpi, transparent, bbox_inches, pad_inches, etc.
 viz.export_plot(
-    "figure1.svg", circ_color="cyan",
+    "figure1.svg", circ_color="m",
     transparent=True
 )
 ```
@@ -127,7 +134,7 @@ print(nc.take_to_tuple(gen, 10))  # first 10 values as tuple
 ### Additional Resources
 
 - [PDF Cheatsheet with LaTeX commands and examples](https://edelveart.github.io/resources-files/cheatsheet/figuratenum/figuratenum-python-cheatsheet.pdf).
-- [Errata *Figurate Numbers (2012)*](https://github.com/edelveart/figuratenum#errata-for-figurate-numbers-2012).
+- [Errata *Figurate Numbers (2012)*](https://edelveart.github.io/resources-files/errata-figuratenum.pdf).
 
 ---
 
@@ -398,121 +405,12 @@ print(nc.take_to_tuple(gen, 10))  # first 10 values as tuple
 
 ---
 
-## Errata for *Figurate Numbers (2012)*
-
-<details>
-<summary>Show errata and corrections</summary>
-
-This section lists the errata and corrections for the book *Figurate Numbers (2012)* by Michel Deza and Elena Deza. If you find any errors in the content, please feel free to contribute corrections.
-
-- Chapter 1, formula in the table on page 6 says:
-
-    | Name   | Formula             |     |
-    | ------ | ------------------- | --- |
-    | Square | `1/2 (n^2 - 0 * n)` |     |
-
-  It should be:
-    | Name   | Formula              |     |
-    | ------ | -------------------- | --- |
-    | Square | `1/2 (2n^2 - 0 * n)` |     |
-
-- Chapter 1, formula in the table on page 51 says:
-
-    | Name                 | Formula            |                       |
-    | -------------------- | ------------------ | --------------------- |
-    | Cent. icosihexagonal | `1/3n^2 - 13n + 1` | `546, 728, 936, 1170` |
-
-  It should be:
-    | Name                 | Formula           |                       |
-    | -------------------- | ----------------- | --------------------- |
-    | Cent. icosihexagonal | `13n^2 - 13n + 1` | `547, 729, 937, 1171` |
-
-- Chapter 1, formula in the table on page 51 says:
-
-    | Name                  | Formula |       |
-    | --------------------- | ------- | ----- |
-    | Cent. icosiheptagonal |         | `972` |
-
-  It should be:
-    | Name                  | Formula |       |
-    | --------------------- | ------- | ----- |
-    | Cent. icosiheptagonal |         | `973` |
-
-- Chapter 1, formula in the table on page 51 says:
-
-    | Name                 | Formula |      |
-    | -------------------- | ------- | ---- |
-    | Cent. icosioctagonal |         | `84` |
-
-  It should be:
-    | Name                 | Formula |      |
-    | -------------------- | ------- | ---- |
-    | Cent. icosioctagonal |         | `85` |
-
-- Chapter 1, page 65 (polite numbers) says:
-  > `inpolite numbers`
-
-  It should read:
-
-  > `impolite numbers`
-
-- Chapter 1, formula (truncated centered pentagonal numbers) on  page 72 says:
-  > `TCSS_5(n) = (35n^2 - 55n) / 2 + 3`
-
-  It should be:
-  > `TCSS_5(n) = (35n^2 - 55n) / 2 + 11`
-
-- Chapter 2, formula of octagonal pyramidal number on  page 92 says:
-  > `n(n+1)(6n-1) / 6`
-
-  It should be:
-  > `n(n+1)(6n-3) / 6`
-
-- Chapter 2, page 140 says:
-  > centered square pyramidal numbers are 1, 6, 19, 44, 85, 111, 146, 231, ...
-
-  This sequence must exclude the number 111:
-
-  > centered square pyramidal numbers are 1, 6, 19, 44, 85, ~~111~~, 146, 231, ...
-
-- Chapter 2, page 155 (generalized centered tetrahedron numbers) says:
-  > `S_3^3(n) = ((2n - 1)(n^2 + n + 3)) / 3`
-
-  Formula must have a negative sign:
-
-  > `S_3^3(n) = ((2n - 1)(n^2 - n + 3)) / 3`
-
-- Chapter 2, page 156 (generalized centered square pyramid numbers) says:
-  > `S_4^3(n) = ((2n - 1)(n^2 - n + 2)^2) / 3`
-
-  Formula must write:
-
-  > `S_4^3(n) = ((2n - 1)(n^2 - n + 2)) / 2`
-
-- Chapter 3, page 188 (hyperoctahedral numbers) says:
-  > `hexadecahoron numbers`
-
-  It should read:
-
-  > `hexadecachoron numbers`
-
-- Chapter 3, page 190 (hypericosahedral numbers) says:
-  > `hexacisihoron numbers`
-
-  It should read:
-
-  > `hexacosichoron numbers`
-
-</details>
-
----
-
 ## Contributing
 
 FigurateNum is currently under development, and we warmly invite your contributions. Just **fork** the project and then submit a **pull request**:
 
 - Sequences from Chapters 1, 2, and 3 of the book
 - New sequences not included in the book: If you have new sequences, please provide the source.
-- Tests, documentation and errata in the book
+- Tests, documentation and errata (located at `docs/errata/errata-figuratenum.tex`).
 
 When making commits, please use the following conventional prefixes to indicate the nature of the changes: `feat`, `refactor`, `fix`, `docs`, and `test`.
