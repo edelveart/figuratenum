@@ -19,15 +19,15 @@
 
 **FigurateNum** helps discover patterns in figurate number sequences and supports numerical computation in mathematics-related projects. It integrates with other tools for visualizing geometric structures and serves as a companion to the book.
 
-## How to install?
+### How to install?
 
 ```bash
 pip install figuratenum
 ```
 
-### Graphical Visualization (v2.1.0)
+### Optional: Graphical Visualization (v2.1.0)
 
-Install the optional `figurate-viz` dependencies to unlock 2D  visualizations via the `FigurateViz` class (requires `numpy` and `matplotlib`).
+To enable 2D visualizations via the `FigurateViz` class (requires `numpy` and `matplotlib`), install the optional dependencies:
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/centered-decagonal-pyramidal.svg" width="250" alt="Decagonal Pyramidal">
@@ -41,7 +41,7 @@ Install the optional `figurate-viz` dependencies to unlock 2D  visualizations vi
 pip install figuratenum[figurate-viz]
 ```
 
-## Features
+### Features
 
 The main class, `FigurateNum`, provides access to all figurate number sequences across different **dimensions**, while dedicated classes let you work with each dimension separately:
 
@@ -79,7 +79,7 @@ print([next(hypertetrahedron_gen) for _ in range(12)])
 #          1560780, 5852925, 20160075, 64512240, 193536720]
 ```
 
-### 2. Using `FigurateViz` to visualize and export
+###  2. Using `FigurateViz` to visualize and export
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/five-dimensional-hyperoctahedron.svg" width="250" alt="Example of Gaussian Graph Visualization">
@@ -138,7 +138,7 @@ print(nc.take_to_tuple(gen, 10))  # first 10 values as tuple
 
 ---
 
-## List of Figurate Numbers
+## What Figurate Number Sequences are Implemented?
 
 ### Plane Figurate Numbers
 
@@ -405,7 +405,11 @@ print(nc.take_to_tuple(gen, 10))  # first 10 values as tuple
 
 ---
 
-## Contributing
+### Note for Users
+
+By default, `FigurateNum` uses optimized, mathematically equivalent versions that are significantly faster, especially for multidimensional figurate numbers. Incremental computation and precomputed values allow step-by-step results without recalculating everything. The original formulas from the book are available via the `*_from_book()` methods for reference and testing.
+
+## How to contribute?
 
 FigurateNum is currently under development, and we warmly invite your contributions. Just **fork** the project and then submit a **pull request**:
 
