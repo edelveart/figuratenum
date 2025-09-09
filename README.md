@@ -29,17 +29,23 @@ pip install figuratenum
 
 To enable 2D visualizations via the `FigurateViz` class (requires `numpy` and `matplotlib`), install the optional dependencies:
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/centered-decagonal-pyramidal.svg" width="250" alt="Decagonal Pyramidal">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/five-dimensional-hypercube.svg" width="250" alt="Five-dimensional Hypercube">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/centered-hexagonal-pyramidal.svg" width="250" alt="Hexagonal Pyramidal">
-</p>
-
-<p align="center"><em>Decagonal Pyramidal, Five-dimensional Hypercube, Hexagonal Pyramidal.</em></p>
-
 ```bash
 pip install figuratenum[figurate-viz]
 ```
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/centered-hexagonal-pyramidal.svg" width="300" alt="Centered Hexagonal Pyramidal">
+  <p align="center"><em>Centered Hexagonal Pyramidal</em></p>
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/centered-decagonal-pyramidal.svg" width="300" alt="Centered Decagonal Pyramidal">
+  <p align="center"><em>Centered Decagonal Pyramidal</em></p>
+</p>
+<p align="center">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/five-dimensional-hypercube.svg" width="300" alt="Five-dimensional Hypercube">
+  <p align="center"><em>5D Hypercube</em></p>
+</p>
+
 
 ### Features
 
@@ -82,10 +88,9 @@ print([next(hypertetrahedron_gen) for _ in range(12)])
 ###  2. Using `FigurateViz` to visualize and export
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/five-dimensional-hyperoctahedron.svg" width="250" alt="Example of Gaussian Graph Visualization">
- </p>
-
-<p align="center"><em>Five-dimensional Hyperoctahedron.</em></p>
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/five-dimensional-hyperoctahedron.svg" width="300" alt="Example of Gaussian Graph Visualization">
+  <p align="center"><em>5D Hyperoctahedron</em></p>
+</p>
 
 ```python
 from figuratenum import FigurateNum as fgn
