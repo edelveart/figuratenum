@@ -112,7 +112,7 @@ viz.gaussian_plot(
 # with options e.g., dpi, transparent, bbox_inches, pad_inches, etc.
 viz.export_plot(
     "figure1.svg", circ_color="m",
-    transparent=True
+    transparent=True, rotate=-1
 )
 ```
 
