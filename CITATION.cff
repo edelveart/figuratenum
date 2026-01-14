@@ -1,12 +1,13 @@
 cff-version: 1.2.0
-message: "If you use this software and its documentation, please cite it as below. This work was developed by Edgar Armando Delgado Vega."
+message: "If you use this software, please cite it as below."
 title: "FigurateNum"
-abstract: "Generates 230+ figurate number sequences across multiple dimensions in Python. Based on 'Figurate Numbers' (2012) by Elena Deza and Michel Deza."
+abstract: "Generates 235 figurate number sequences across multiple dimensions in Python. Based on 'Figurate Numbers' (2012) by Elena Deza and Michel Deza."
 authors:
   - family-names: "Delgado Vega"
     given-names: "Edgar Armando"
     orcid: "https://orcid.org/0000-0002-9672-9087"
 version: "2.1.1"
 date-released: "2026-01-14"
-source-code: "https://github.com/edelveart/figuratenum"
+doi: "10.5281/zenodo.18250313"
+repository-code: "https://github.com/edelveart/figuratenum"
 url: "https://pypi.org/project/figuratenum/"

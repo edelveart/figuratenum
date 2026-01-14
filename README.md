@@ -7,6 +7,7 @@
   <img src="https://img.shields.io/pypi/wheel/figuratenum" alt="PyPI - Wheel">
   <img alt="Pepy Total Downloads" src="https://img.shields.io/pepy/dt/figuratenum">
   <img src="https://img.shields.io/pypi/status/figuratenum" alt="PyPI - Status">
+  <a href="https://doi.org/10.5281/zenodo.18250313"><img src="https://zenodo.org/badge/825541958.svg" alt="DOI"></a>
   <img src="https://img.shields.io/github/license/edelveart/figuratenum" alt="GitHub License">
   <img src="https://img.shields.io/github/actions/workflow/status/edelveart/figuratenum/tests.yml" alt="GitHub Actions Workflow Status" >
 </p>
@@ -18,6 +19,8 @@
 ## What is the purpose of FigurateNum?
 
 **FigurateNum** helps discover patterns in figurate number sequences and supports numerical computation in mathematics-related projects. It integrates with other tools for visualizing geometric structures and serves as a companion to the book.
+
+
 
 ### How to install?
 
@@ -423,3 +426,8 @@ FigurateNum is currently under development, and we warmly invite your contributi
 - Tests, documentation and errata (located at `docs/errata/errata-figuratenum.tex`).
 
 When making commits, please use the following conventional prefixes to indicate the nature of the changes: `feat`, `refactor`, `fix`, `docs`, and `test`.
+
+## Citation
+
+If you use FigurateNum in your research, thesis, or project, please cite it:
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18250313.svg)](https://doi.org/10.5281/zenodo.18250313)
