@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "figuratenum"
-version = "2.1.0"
+version = "2.1.1"
 description = "Generate 235 infinite figurate number sequences across multiple dimensions for mathematical research, applications, and exploration in Python."
 readme = "README.md"
 authors = [{ name = "Edgar Armando Delgado Vega" }]
