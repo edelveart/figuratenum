@@ -8,4 +8,5 @@ authors:
     orcid: "https://orcid.org/0000-0002-9672-9087"
 version: "2.1.0"
 date-released: "2025-08-30"
-url: "https://github.com/edelveart/figuratenum"
+source-code: "https://github.com/edelveart/figuratenum"
+url: "https://pypi.org/project/figuratenum/"
