@@ -541,8 +541,8 @@ def test_pentagram():
                             361, 451, 551, 661, 781, 911, 1051, 1201, 1361, 1531, 1711]
 
 
-def test_gnomic():
-    num_generator = pfgn.gnomic()
+def test_gnomonic():
+    num_generator = pfgn.gnomonic()
     infinite_seq = []
     for _ in range(1, 20):
         next_number = next(num_generator)

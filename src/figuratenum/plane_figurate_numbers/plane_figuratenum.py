@@ -99,7 +99,7 @@ def pentagram() -> Generator[int]:
         delta += 1
 
 
-def gnomic() -> Generator[int]:
+def gnomonic() -> Generator[int]:
     delta = 1
     while True:
         yield 2 * delta - 1

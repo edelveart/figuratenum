@@ -5,7 +5,7 @@ from .plane_figuratenum import (
     centered_dodecagonal, star, centered_mgonal,
     pronic, heteromecic, oblong,  polite,
     impolite, cross, aztec_diamond, polygram,
-    centered_star_polygonal, pentagram, gnomic,
+    centered_star_polygonal, pentagram, gnomonic,
     truncated_triangular, truncated_square, truncated_pronic,
     truncated_centered_pol, truncated_centered_mgonal,
     truncated_centered_hexagonal, truncated_hex,
@@ -113,8 +113,8 @@ class PlaneFigurateNum:
     def pentagram(self) -> Generator[int]:
         return pentagram()
 
-    def gnomic(self) -> Generator[int]:
-        return gnomic()
+    def gnomonic(self) -> Generator[int]:
+        return gnomonic()
 
     def truncated_triangular(self) -> Generator[int]:
         return truncated_triangular()
