@@ -35,3 +35,7 @@ def truncated_centered_m_gonal(z: np.ndarray, m: int = 5) -> np.ndarray:
 
 def polygram(z: np.ndarray, m: int = 5) -> np.ndarray:
     return z * (1 + (2*m - 2)*z + z**2) / (1 - z)**3
+
+
+def aztec_diamond(z: np.ndarray) -> np.ndarray:
+    return 4 * z / (1 - z)**3
