@@ -32,3 +32,7 @@ def dodecahedral(z: np.ndarray) -> np.ndarray:
 # Archimedean
 def truncated_tetrahedral(z:  np.ndarray) -> np.ndarray:
     return z * (1 + 12*z + 10*z**2) / (1 - z)**4
+
+
+def truncated_cubic(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 52*z + 93*z**2 + 8*z**3) / (1 - z)**4
