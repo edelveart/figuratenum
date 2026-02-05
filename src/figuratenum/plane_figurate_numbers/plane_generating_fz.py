@@ -31,3 +31,7 @@ def truncated_pronic(z: np.ndarray) -> np.ndarray:
 
 def truncated_centered_m_gonal(z: np.ndarray, m: int = 5) -> np.ndarray:
     return z * (1 + (5*m - 2)*z + (1 + 2*m)*z**2) / (1 - z)**3
+
+
+def polygram(z: np.ndarray, m: int = 5) -> np.ndarray:
+    return z * (1 + (2*m - 2)*z + z**2) / (1 - z)**3
