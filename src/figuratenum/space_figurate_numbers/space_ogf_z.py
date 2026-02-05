@@ -11,3 +11,7 @@ def cubic(z: np.ndarray) -> np.ndarray:
 
 def octahedral(z: np.ndarray) -> np.ndarray:
     return z * (z + 1)**2 / (1 - z)**4
+
+
+def hauy_octahedral(z) -> np.ndarray:
+    return z * (1 + z)**3 / (1 - z)**4
