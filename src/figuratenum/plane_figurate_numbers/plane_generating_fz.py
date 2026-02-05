@@ -23,3 +23,7 @@ def truncated_triangular(z: np.ndarray) -> np.ndarray:
 
 def truncated_square(z: np.ndarray) -> np.ndarray:
     return z * (1 + 9*z + 4*z**2) / (1 - z)**3
+
+
+def truncated_pronic(z: np.ndarray, m: int = 12) -> np.ndarray:
+    return z * (2 + 10*z + 2*z**2) / (1 - z)**3
