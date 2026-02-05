@@ -54,3 +54,7 @@ def centered_cube(z: np.ndarray) -> np.ndarray:
 
 def rhombic_dodecahedral(z: np.ndarray) -> np.ndarray:
     return z * (1 + 11*z + 11*z**2 + z**3) / (1 - z)**4
+
+
+def hauy_rhombic_dodecahedral(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 29*z + 59*z**2 + 7*z**3) / (1 - z)**4
