@@ -1,5 +1,5 @@
 import numpy as np
-from .plane_generating_fz import (
+from .plane_ogf_z import (
     aztec_diamond, cross, diamond, generalized_centered_m_gonal, generalized_m_gonal, generalized_pronic, polygram, square_triangular, triangular, square, pentagonal, hexagonal,
     m_gonal, pronic, gnomonic, truncated_centered_hexagonal, truncated_centered_pentagonal, truncated_centered_square, truncated_centered_triangular,  truncated_triangular, truncated_square, truncated_pronic, centered_m_gonal, truncated_centered_m_gonal)
 
