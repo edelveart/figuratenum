@@ -14,4 +14,8 @@ def pronic(z: np.ndarray) -> np.ndarray:
 
 
 def gnomonic(z: np.ndarray) -> np.ndarray:
-    return (z*(1 + z)) / (1 - z)**2
+    return z * (1 + z) / (1 - z)**2
+
+
+def truncated_triangular(z: np.ndarray) -> np.ndarray:
+    return z * (1 + z**2 + 4*z) / (1 - z)**3
