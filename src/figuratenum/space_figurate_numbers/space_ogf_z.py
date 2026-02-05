@@ -137,5 +137,10 @@ def generalized_dodecahedral(z:  np.ndarray) -> np.ndarray:
     return z**2 * (1 - 10*z + 16*z**2 - 16*z**3 + 10*z**4 - z**5) / (1 - z**2)**4
 
 
+# Generalized Centered
 def generalized_centered_cube(z: np.ndarray) -> np.ndarray:
     return z**2 * (1 - 9*z + 5*z**2 + z**3 + 5*z**4 - 5*z**5 + z**6 + z**7) / (1 - z**2)**4
+
+
+def generalized_centered_tetrahedron(z: np.ndarray) -> np.ndarray:
+    return z**2 * (1 - 5*z + z**2 + 5*z**3 + z**4 - 5*z**5 + z**6 + z**7) / (1 - z**2)**4
