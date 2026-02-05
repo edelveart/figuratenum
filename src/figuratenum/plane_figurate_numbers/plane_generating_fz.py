@@ -83,3 +83,9 @@ def diamond(z: np.ndarray) -> np.ndarray:
 
 def square_triangular(z: np.ndarray) -> np.ndarray:
     return z * (1 + z) / ((1 - z)*(1 - 34*z + z**2))
+
+# Generalized Plane FigurateNum, n = 0, +/-1, +/-2, ...
+
+
+def generalized_m_gonal(z: np.ndarray, m: int = 5) -> np.ndarray:
+    return z**2 * (1 + z) * (1 + (m - 4)*z + z**2) / (1 - z**2)**3
