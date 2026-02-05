@@ -6,7 +6,7 @@ def m_gonal(z: np.ndarray, m: int = 3) -> np.ndarray:
 
 
 def centered_m_gonal(z: np.ndarray, m: int = 3) -> np.ndarray:
-    return z * ((1 + (m - 2) * z + z**2)) / (1 - z)**3
+    return z * ((1 + (m - 2)*z + z**2)) / (1 - z)**3
 
 
 def pronic(z: np.ndarray) -> np.ndarray:
@@ -25,5 +25,9 @@ def truncated_square(z: np.ndarray) -> np.ndarray:
     return z * (1 + 9*z + 4*z**2) / (1 - z)**3
 
 
-def truncated_pronic(z: np.ndarray, m: int = 12) -> np.ndarray:
+def truncated_pronic(z: np.ndarray) -> np.ndarray:
     return z * (2 + 10*z + 2*z**2) / (1 - z)**3
+
+
+def truncated_centered_m_gonal(z: np.ndarray, m: int = 5) -> np.ndarray:
+    return z * (1 + (5*m - 2)*z + (1 + 2*m)*z**2) / (1 - z)**3
