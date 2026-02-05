@@ -92,3 +92,8 @@ def centered_icosahedron(z: np.ndarray) -> np.ndarray:
 
 def centered_dodecahedron(z: np.ndarray) -> np.ndarray:
     return z * (1 + 17*z + 17*z**2 + z**3) / (1 - z)**4
+
+
+# Centered Truncated
+def centered_truncated_tetrahedron(z: np.ndarray) -> np.ndarray:
+    return z * (1 + z) * (1 + 12*z + z**2) / (1 - z)**4
