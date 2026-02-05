@@ -19,3 +19,7 @@ def gnomonic(z: np.ndarray) -> np.ndarray:
 
 def truncated_triangular(z: np.ndarray) -> np.ndarray:
     return z * (1 + z**2 + 4*z) / (1 - z)**3
+
+
+def truncated_square(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 9*z + 4*z**2) / (1 - z)**3
