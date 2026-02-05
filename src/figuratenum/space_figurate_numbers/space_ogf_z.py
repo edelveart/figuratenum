@@ -123,3 +123,7 @@ def generalized_mgonal_pyramidal(z: np.ndarray, m: int) -> np.ndarray:
 
 def generalized_cubic(z: np.ndarray) -> np.ndarray:
     return z**2 * (1 - z) * (1 + 4*z**2 + z**4) / (1 - z**2)**4
+
+
+def generalized_octahedral(z: np.ndarray) -> np.ndarray:
+    return z**2 * (1 - z) * (1 + z**2)**2 / (1 - z**2)**4
