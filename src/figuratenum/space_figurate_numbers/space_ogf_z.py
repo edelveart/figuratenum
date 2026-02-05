@@ -36,3 +36,7 @@ def truncated_tetrahedral(z:  np.ndarray) -> np.ndarray:
 
 def truncated_cubic(z: np.ndarray) -> np.ndarray:
     return z * (1 + 52*z + 93*z**2 + 8*z**3) / (1 - z)**4
+
+
+def truncated_octahedral(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 34*z + 55*z**2 + 6*z**3) / (1 - z)**4
