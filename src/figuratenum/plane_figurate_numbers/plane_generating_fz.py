@@ -11,3 +11,7 @@ def centered_m_gonal(z: np.ndarray, m: int = 3) -> np.ndarray:
 
 def pronic(z: np.ndarray) -> np.ndarray:
     return 2 * z / (1 - z)**3
+
+
+def gnomonic(z: np.ndarray) -> np.ndarray:
+    return (z*(1 + z)) / (1 - z)**2
