@@ -58,3 +58,9 @@ def rhombic_dodecahedral(z: np.ndarray) -> np.ndarray:
 
 def hauy_rhombic_dodecahedral(z: np.ndarray) -> np.ndarray:
     return z * (1 + 29*z + 59*z**2 + 7*z**3) / (1 - z)**4
+
+# Centered pyramid
+
+
+def centered_tetrahedral(z: np.ndarray) -> np.ndarray:
+    return z * (1 + z + z**2 + z**3) / (1 - z)**4
