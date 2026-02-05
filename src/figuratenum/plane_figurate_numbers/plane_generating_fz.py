@@ -46,4 +46,8 @@ def cross(z: np.ndarray,) -> np.ndarray:
 
 
 def diamond(z: np.ndarray) -> np.ndarray:
-    return z * ((1 + 2*z + z**2)) / (1 - z)**3
+    return z * (1 + 2*z + z**2) / (1 - z)**3
+
+
+def square_triangular(z: np.ndarray) -> np.ndarray:
+    return z * (1 + z) / ((1 - z)*(1 - 34*z + z**2))
