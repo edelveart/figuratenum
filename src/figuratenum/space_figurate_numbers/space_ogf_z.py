@@ -19,3 +19,7 @@ def octahedral(z: np.ndarray) -> np.ndarray:
 
 def hauy_octahedral(z: np.ndarray) -> np.ndarray:
     return z * (1 + z)**3 / (1 - z)**4
+
+
+def icosahedral(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 8*z + 6*z**2) / (1 - z)**4
