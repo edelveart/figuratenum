@@ -131,3 +131,7 @@ def generalized_octahedral(z: np.ndarray) -> np.ndarray:
 
 def generalized_icosahedral(z: np.ndarray) -> np.ndarray:
     return z**2 * (1 - 6*z + 8*z**2 - 8*z**3 + 6*z**4 - z**5) / (1 - z**2)**4
+
+
+def generalized_dodecahedral(z:  np.ndarray) -> np.ndarray:
+    return z**2 * (1 - 10*z + 16*z**2 - 16*z**3 + 10*z**4 - z**5) / (1 - z**2)**4
