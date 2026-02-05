@@ -43,3 +43,7 @@ def aztec_diamond(z: np.ndarray) -> np.ndarray:
 
 def cross(z: np.ndarray,) -> np.ndarray:
     return z * (1 + 3*z) / (1 - z)**2
+
+
+def diamond(z: np.ndarray) -> np.ndarray:
+    return z * ((1 + 2*z + z**2)) / (1 - z)**3
