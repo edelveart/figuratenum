@@ -7,3 +7,7 @@ def m_pyramidal(z: np.ndarray, m: int) -> np.ndarray:
 
 def cubic(z: np.ndarray) -> np.ndarray:
     return z * (1 + 4*z + z**2) / (1 - z)**4
+
+
+def octahedral(z: np.ndarray) -> np.ndarray:
+    return z * (z + 1)**2 / (1 - z)**4
