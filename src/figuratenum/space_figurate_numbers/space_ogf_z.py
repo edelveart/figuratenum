@@ -67,3 +67,15 @@ def centered_tetrahedral(z: np.ndarray) -> np.ndarray:
 
 def centered_square_pyramid(z: np.ndarray) -> np.ndarray:
     return z * (1 + 2*z + 2*z**2 + z**3) / (1 - z)**4
+
+
+def centered_pentagonal_pyramid(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 3*z + 3*z**2 + z**3) / (1 - z)**4
+
+
+def centered_hexagonal_pyramid(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 4*z + 4*z**2 + z**3) / (1 - z)**4
+
+
+def centered__mgonal_pyramid(z: np.ndarray, m: int) -> np.ndarray:
+    return z * (1 + (m - 2)*z + (m - 2)*z**2 + z**3) / (1 - z)**4
