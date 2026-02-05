@@ -110,3 +110,7 @@ def centered_truncated_octahedron(z: np.ndarray) -> np.ndarray:
 # Centered Pyramidal
 def centered_mgonal_pyramidal(z: np.ndarray, m: int) -> np.ndarray:
     return z * (1 + (m - 2)*z + z**2) / (1 - z)**4
+
+
+def m_prism(z: np.ndarray, m: int) -> np.ndarray:
+    return z * (1 + (2*m - 2)*z + (m + 1)*z**2) / (1 - z)**4
