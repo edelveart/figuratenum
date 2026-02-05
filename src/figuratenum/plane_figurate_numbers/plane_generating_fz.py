@@ -45,6 +45,10 @@ def truncated_centered_pentagonal(z: np.ndarray) -> np.ndarray:
     return z * (1 + 23*z + 11*z**2) / (1 - z)**3
 
 
+def truncated_centered_hexagonal(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 28*z + 13*z**2) / (1 - z)**3
+
+
 def polygram(z: np.ndarray, m: int = 5) -> np.ndarray:
     return z * (1 + (2*m - 2)*z + z**2) / (1 - z)**3
 
