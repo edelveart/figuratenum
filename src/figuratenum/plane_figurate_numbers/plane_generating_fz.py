@@ -33,6 +33,10 @@ def truncated_centered_m_gonal(z: np.ndarray, m: int = 5) -> np.ndarray:
     return z * (1 + (5*m - 2)*z + (1 + 2*m)*z**2) / (1 - z)**3
 
 
+def truncated_centered_triangular(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 13*z + 7*z**2) / (1 - z)**3
+
+
 def truncated_centered_square(z: np.ndarray) -> np.ndarray:
     return z * (1 + 18*z + 9*z**2) / (1 - z)**3
 
