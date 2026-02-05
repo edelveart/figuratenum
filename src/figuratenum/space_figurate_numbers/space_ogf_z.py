@@ -29,8 +29,8 @@ def dodecahedral(z: np.ndarray) -> np.ndarray:
     return z * (1 + 16*z + 10*z**2) / (1 - z)**4
 
 
-# Archimedean
-def truncated_tetrahedral(z:  np.ndarray) -> np.ndarray:
+# Archimedean Solids
+def truncated_tetrahedral(z: np.ndarray) -> np.ndarray:
     return z * (1 + 12*z + 10*z**2) / (1 - z)**4
 
 
@@ -40,3 +40,8 @@ def truncated_cubic(z: np.ndarray) -> np.ndarray:
 
 def truncated_octahedral(z: np.ndarray) -> np.ndarray:
     return z * (1 + 34*z + 55*z**2 + 6*z**3) / (1 - z)**4
+
+
+# Star Polyhedral
+def stella_octangula(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 10*z + z**2) / (1 - z)**4
