@@ -119,3 +119,7 @@ def m_prism(z: np.ndarray, m: int) -> np.ndarray:
 # Generalized Space FigurateNum, n = 0, +/-1, +/-2, ...
 def generalized_mgonal_pyramidal(z: np.ndarray, m: int) -> np.ndarray:
     return z**2 * (1 + (m - 3)*z**2 - (m - 3)*z**3 - z**5) / (1 - z**2)**4
+
+
+def generalized_cubic(z: np.ndarray) -> np.ndarray:
+    return z**2 * (1 - z) * (1 + 4*z**2 + z**4) / (1 - z**2)**4
