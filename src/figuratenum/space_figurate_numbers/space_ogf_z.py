@@ -61,7 +61,7 @@ def hauy_rhombic_dodecahedral(z: np.ndarray) -> np.ndarray:
 
 
 # Centered pyramid
-def centered_tetrahedral(z: np.ndarray) -> np.ndarray:
+def centered_tetrahedron(z: np.ndarray) -> np.ndarray:
     return z * (1 + z + z**2 + z**3) / (1 - z)**4
 
 
@@ -83,3 +83,7 @@ def centered__mgonal_pyramid(z: np.ndarray, m: int) -> np.ndarray:
 
 def centered_octahedron(z: np.ndarray) -> np.ndarray:
     return z * (1 + 3*z + 3*z**2 + z**3) / (1 - z)**4
+
+
+def centered_icosahedron(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 9*z + 9*z**2 + z**3) / (1 - z)**4
