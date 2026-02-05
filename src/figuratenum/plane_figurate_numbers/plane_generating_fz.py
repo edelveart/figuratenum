@@ -93,3 +93,7 @@ def generalized_m_gonal(z: np.ndarray, m: int = 5) -> np.ndarray:
 
 def generalized_centered_m_gonal(z: np.ndarray, m: int = 5) -> np.ndarray:
     return z**2 * (1 + (m + 1)*z + (m - 2)*z**2 - 2*z**3 + z**4 + z**5) / (1 - z**2)**3
+
+
+def generalized_pronic(z: np.ndarray) -> np.ndarray:
+    return z * (2 + 2*z**3) / (1 - z**2)**3
