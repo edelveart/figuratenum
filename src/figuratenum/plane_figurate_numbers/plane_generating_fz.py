@@ -13,6 +13,10 @@ def square(z: np.ndarray) -> np.ndarray:
     return z * (z + 1) / (1 - z)**3
 
 
+def pentagonal(z: np.ndarray) -> np.ndarray:
+    return z * (2*z + 1) / (1 - z)**3
+
+
 def centered_m_gonal(z: np.ndarray, m: int = 3) -> np.ndarray:
     return z * ((1 + (m - 2)*z + z**2)) / (1 - z)**3
 
