@@ -19,3 +19,7 @@ def hypericosahedral(z: np.ndarray) -> np.ndarray:
 
 def hyperdodecahedral(z: np.ndarray) -> np.ndarray:
     return z * (1 + 595*z + 1993*z**2 + 543*z**3) / (1 - z)**5
+
+
+def polyoctahedral(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 19*z + 43*z**2 + 9*z**3) / (1 - z)**5
