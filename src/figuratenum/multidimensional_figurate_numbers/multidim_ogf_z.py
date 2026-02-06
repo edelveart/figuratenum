@@ -57,3 +57,7 @@ def helper_coeffs(k):
 def k_dim_hypercube(z: np.ndarray, k: int) -> np.ndarray:
     k_coeffs = helper_coeffs(k)
     return z * sum(f_n * z**n for n, f_n in enumerate(k_coeffs)) / (1 - z)**(k + 1)
+
+
+def k_dim_hyperoctahedron(z: np.ndarray, k: int) -> np.ndarray:
+    return z * (1 + z)**(k - 1) / (1 - z)**(k + 1)
