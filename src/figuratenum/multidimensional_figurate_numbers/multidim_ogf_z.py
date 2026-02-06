@@ -30,9 +30,6 @@ def polyoctahedral(z: np.ndarray) -> np.ndarray:
 
 
 # K-Dimensional
-def k_dim_hypertetrahedron(z: np.ndarray, k: int) -> np.ndarray:
-    return z / (1 - z)**(k + 1)
-
 
 def helper_a_i_k(i, k):
     return sum(
@@ -52,6 +49,10 @@ def helper_coeffs(k):
         coeffs[i] = a
         coeffs[k - 1 - i] = a
     return coeffs
+
+
+def k_dim_hypertetrahedron(z: np.ndarray, k: int) -> np.ndarray:
+    return z / (1 - z)**(k + 1)
 
 
 def k_dim_hypercube(z: np.ndarray, k: int) -> np.ndarray:
@@ -99,3 +100,7 @@ def k_dim_centered_hypercube(z: np.ndarray, k: int) -> np.ndarray:
 
 def k_dim_centered_hypertetrahedron(z: np.ndarray, k: int) -> np.ndarray:
     return z * (1 - z**(k + 1)) / (1 - z)**(k + 2)
+
+
+def k_dim_centered_hyperoctahedron(z, k: int) -> np.ndarray:
+    return z * (1 + z)**k / (1 - z)**(k + 1)
