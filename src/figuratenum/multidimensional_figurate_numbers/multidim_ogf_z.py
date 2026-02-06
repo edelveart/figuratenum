@@ -81,3 +81,8 @@ def k_dim_mgonal_pyramidal(z: np.ndarray, k: int, m: int) -> np.ndarray:
 # Centered K-Dimensional
 def centered_biquadratic(z: np.ndarray) -> np.ndarray:
     return (1 + z)**2 * (1 + 10*z + z**2) / (1 - z)**5
+
+
+def k_dim_centered_hypercube(z: np.ndarray, k: int) -> np.ndarray:
+    k_coeffs = helper_coeffs(k)
+    return z * (1 + z) * sum(f_n * z**n for n, f_n in enumerate(k_coeffs)) / (1 - z)**(k + 1)
