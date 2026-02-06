@@ -113,3 +113,7 @@ def generalized_pentatope(z: np.ndarray) -> np.ndarray:
 
 def generalized_k_dim_hypertetrahedron(z, k: int) -> np.ndarray:
     return z**2 * (1 + (-1)**k * z**(2*k - 3)) / (1 - z**2)**(k + 1)
+
+
+def generalized_biquadratic(z: np.ndarray) -> np.ndarray:
+    return z**2 * (1 + z) * (1 + 11*z**2 + 11*z**4 + z**6) / (1 - z**2)**5
