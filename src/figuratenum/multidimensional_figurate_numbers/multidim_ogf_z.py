@@ -66,3 +66,9 @@ def k_dim_hyperoctahedron(z: np.ndarray, k: int) -> np.ndarray:
 def k_dim_nexus(z: np.ndarray, k: int) -> np.ndarray:
     k_coeffs = helper_coeffs(k + 1)
     return z * sum(f_n * z**n for n, f_n in enumerate(k_coeffs)) / (1 - z)**(k + 1)
+
+
+# 4D - Pyramidal
+
+def four_dim_mgonal_pyramidal(z: np.ndarray, m: int) -> np.ndarray:
+    return z * (1 + (m - 3)*z) / (1 - z)**5
