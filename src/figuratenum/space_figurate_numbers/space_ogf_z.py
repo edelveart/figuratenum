@@ -150,7 +150,7 @@ def generalized_centered_square_pyramid(z: np.ndarray) -> np.ndarray:
     return z**2 * (1 - 6*z + 2*z**2 + 4*z**3 + 2*z**4 - 5*z**5 + z**6 + z**7) / (1 - z**2)**4
 
 
-def generalized_rhombic_dodecahedral(z) -> np.ndarray:
+def generalized_rhombic_dodecahedral(z: np.ndarray) -> np.ndarray:
     return z**2 * (1 - 15*z + 11*z**2 - 5*z**3 + 11*z**4 - 5*z**5 + z**6) / (1 - z**2)**4
 
 
