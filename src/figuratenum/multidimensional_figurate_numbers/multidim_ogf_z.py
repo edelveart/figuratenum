@@ -117,3 +117,9 @@ def generalized_k_dim_hypertetrahedron(z, k: int) -> np.ndarray:
 
 def generalized_biquadratic(z: np.ndarray) -> np.ndarray:
     return z**2 * (1 + z) * (1 + 11*z**2 + 11*z**4 + z**6) / (1 - z**2)**5
+
+
+def generalized_k_dim_hypercube(z: np.ndarray, k: int) -> np.ndarray:
+    coeffs = helper_coeffs(k)
+    k_dim = z**2 * (1 + (-1)**k * z)
+    return k_dim * sum(f_n * (z**(n*2)) for n, f_n in enumerate(coeffs)) / (1-z**2)**(k+1)
