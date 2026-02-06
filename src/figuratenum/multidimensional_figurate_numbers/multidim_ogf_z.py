@@ -87,6 +87,10 @@ def centered_hypertetrahedron(z: np.ndarray) -> np.ndarray:
     return z * (1 - z**5) / (1 - z)**6
 
 
+def centered_hyperoctahedron(z: np.ndarray) -> np.ndarray:
+    return z * (1 + z)**4 / (1 - z)**5
+
+
 # K-Dimensional Centered
 def k_dim_centered_hypercube(z: np.ndarray, k: int) -> np.ndarray:
     k_coeffs = helper_coeffs(k)
