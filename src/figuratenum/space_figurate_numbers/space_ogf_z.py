@@ -156,3 +156,7 @@ def generalized_rhombic_dodecahedral(z) -> np.ndarray:
 
 def generalized_centered_mgonal_pyramidal(z: np.ndarray, m: int) -> np.ndarray:
     return z**2 * (1 - z) * (1 + (m - 2)*z**2 + z**4) / (1 - z**2)**4
+
+
+def generalized_hexagonal_prism(z: np.ndarray) -> np.ndarray:
+    return z**2 * (1 - 7*z + 10*z**2 - 10*z**3 + 7*z**4 - z**5) / (1 - z**2)**4
