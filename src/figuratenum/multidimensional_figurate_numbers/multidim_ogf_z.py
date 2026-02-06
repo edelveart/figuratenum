@@ -15,3 +15,7 @@ def hyperoctahedral(z: np.ndarray) -> np.ndarray:
 
 def hypericosahedral(z: np.ndarray) -> np.ndarray:
     return z * (1 + 115*z + 357*z**2 + 107*z**3) / (1 - z)**5
+
+
+def hyperdodecahedral(z: np.ndarray) -> np.ndarray:
+    return z * (1 + 595*z + 1993*z**2 + 543*z**3) / (1 - z)**5
