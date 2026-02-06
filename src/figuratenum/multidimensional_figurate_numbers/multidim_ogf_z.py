@@ -1,5 +1,7 @@
 import numpy as np
 
+# 4D
+
 
 def hypertetrahedral(z: np.ndarray) -> np.ndarray:
     return z / (1 - z)**5
@@ -23,3 +25,9 @@ def hyperdodecahedral(z: np.ndarray) -> np.ndarray:
 
 def polyoctahedral(z: np.ndarray) -> np.ndarray:
     return z * (1 + 19*z + 43*z**2 + 9*z**3) / (1 - z)**5
+
+# K-Dimensional
+
+
+def k_dim_hypertetrahedron(z: np.ndarray, k: int) -> np.ndarray:
+    return z / (1 - z)**(k + 1)
