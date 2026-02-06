@@ -144,3 +144,7 @@ def generalized_centered_cube(z: np.ndarray) -> np.ndarray:
 
 def generalized_centered_tetrahedron(z: np.ndarray) -> np.ndarray:
     return z**2 * (1 - 5*z + z**2 + 5*z**3 + z**4 - 5*z**5 + z**6 + z**7) / (1 - z**2)**4
+
+
+def generalized_centered_square_pyramid(z: np.ndarray) -> np.ndarray:
+    return z**2 * (1 - 6*z + 2*z**2 + 4*z**3 + 2*z**4 - 5*z**5 + z**6 + z**7) / (1 - z**2)**4
