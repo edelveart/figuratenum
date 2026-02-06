@@ -104,3 +104,8 @@ def k_dim_centered_hypertetrahedron(z: np.ndarray, k: int) -> np.ndarray:
 
 def k_dim_centered_hyperoctahedron(z, k: int) -> np.ndarray:
     return z * (1 + z)**k / (1 - z)**(k + 1)
+
+
+# Generalized MultiDimensional FigurateNum, n = 0, +/-1, +/-2, ...
+def generalized_pentatope(z: np.ndarray) -> np.ndarray:
+    return z**2 * (1 + z**5) / (1 - z**2)**5
