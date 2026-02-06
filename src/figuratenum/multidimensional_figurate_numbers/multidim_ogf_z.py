@@ -102,7 +102,7 @@ def k_dim_centered_hypertetrahedron(z: np.ndarray, k: int) -> np.ndarray:
     return z * (1 - z**(k + 1)) / (1 - z)**(k + 2)
 
 
-def k_dim_centered_hyperoctahedron(z, k: int) -> np.ndarray:
+def k_dim_centered_hyperoctahedron(z: np.ndarray, k: int) -> np.ndarray:
     return z * (1 + z)**k / (1 - z)**(k + 1)
 
 
@@ -111,7 +111,7 @@ def generalized_pentatope(z: np.ndarray) -> np.ndarray:
     return z**2 * (1 + z**5) / (1 - z**2)**5
 
 
-def generalized_k_dim_hypertetrahedron(z, k: int) -> np.ndarray:
+def generalized_k_dim_hypertetrahedron(z: np.ndarray, k: int) -> np.ndarray:
     return z**2 * (1 + (-1)**k * z**(2*k - 3)) / (1 - z**2)**(k + 1)
 
 
@@ -123,3 +123,7 @@ def generalized_k_dim_hypercube(z: np.ndarray, k: int) -> np.ndarray:
     coeffs = helper_coeffs(k)
     k_dim = z**2 * (1 + (-1)**k * z)
     return k_dim * sum(f_n * (z**(n*2)) for n, f_n in enumerate(coeffs)) / (1-z**2)**(k+1)
+
+
+def generalized_k_dim_hyperoctahedron(z: np.ndarray, k: int) -> np.ndarray:
+    return z**2 * (1 + z**2)**(k - 1) * (1 + (-1)**k * z) / (1 - z**2)**(k + 1)
