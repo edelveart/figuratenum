@@ -1,9 +1,8 @@
 from typing import Literal
 import sympy as sp
 import numpy as np
+from .symbols_figuratenum import x, m
 
-
-x, m = sp.symbols("x m")
 
 SpaceTypes = Literal[
 
@@ -82,7 +81,7 @@ class SpaceSchema:
 
     def evaluate(self, z: np.ndarray, m_sides: int):
         """Evaluates the generating function f(z)"""
-        return self.lambdify()(z, m_sides)
+        return self.lambdify()(x=z, m=m_sides)
 
     def analytic_algebraic_properties(self):
         """Returns summarized metadata."""

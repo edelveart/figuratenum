@@ -1,9 +1,8 @@
 from typing import Literal
 import sympy as sp
 import numpy as np
+from .symbols_figuratenum import x, m, k
 
-
-x, k, m = sp.symbols("x k m")
 
 MultiDimTypes = Literal[
     # 4D

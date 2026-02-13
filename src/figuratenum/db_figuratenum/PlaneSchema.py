@@ -1,9 +1,7 @@
 from typing import Literal
 import sympy as sp
 import numpy as np
-
-
-x, m = sp.symbols("x m")
+from .symbols_figuratenum import x, m
 
 
 PlaneTypes = Literal["m_gonal",
@@ -54,7 +52,7 @@ class PlaneSchema:
 
     def evaluate(self, z: np.ndarray, m_sides: int):
         """Evaluates the generating function f(z)"""
-        return self.lambdify()(z, m_sides)
+        return self.lambdify()(x=z, m=m_sides)
 
     def analytic_algebraic_properties(self):
         """Returns summarized metadata."""
