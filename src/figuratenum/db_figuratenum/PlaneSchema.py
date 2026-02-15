@@ -44,14 +44,18 @@ class PlaneSchema:
         self.galois_description = galois_description
         self._lambdified = None
 
+    def substitute_symbolic(self, **kwargs) -> sp.Expr | sp.Basic:
+        """Substitute symbols in expression."""
+        return self.expression.subs(kwargs)
+
     def lambdify(self):
-        """Generates (once) the numerical version"""
+        """Get cached lambdified function."""
         if self._lambdified is None:
             self._lambdified = sp.lambdify((x, m), self.expression, "numpy")
         return self._lambdified
 
-    def evaluate(self, z: np.ndarray, m_sides: int):
-        """Evaluates the generating function f(z)"""
+    def evaluate_numeric(self, z: np.ndarray, m_sides: int):
+        """Evaluates the generating function f(z) numerically"""
         return self.lambdify()(x=z, m=m_sides)
 
     def analytic_algebraic_properties(self):
