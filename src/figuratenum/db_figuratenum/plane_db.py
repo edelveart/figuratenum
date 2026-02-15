@@ -3,7 +3,7 @@ from .PlaneSchema import PlaneSchema, x, m
 plane_figuratenum_registers = [
 
     PlaneSchema(
-        "m_gonal",
+        "polygonal",
         generating_function=x * ((m - 3)*x + 1) / (1 - x)**3,
         galois_group="",
         galois_description=""
@@ -33,7 +33,7 @@ plane_figuratenum_registers = [
         galois_description=""
     ),
     PlaneSchema(
-        'centered_m_gonal',
+        'centered_mgonal',
         generating_function=x * (1 + (m - 2)*x + x**2) / (1 - x)**3,
         galois_group='',
         galois_description=""
@@ -69,7 +69,7 @@ plane_figuratenum_registers = [
         galois_description=""
     ),
     PlaneSchema(
-        'truncated_centered_m_gonal',
+        'truncated_centered_mgonal',
         generating_function=x *
         (1 + (5*m - 2)*x + (1 + 2*m)*x**2) / (1 - x)**3,
         galois_group='',
@@ -131,14 +131,14 @@ plane_figuratenum_registers = [
         galois_description=""
     ),
     PlaneSchema(
-        'generalized_m_gonal',
+        'generalized_mgonal',
         generating_function=x**2 *
         (1 + x) * (1 + (m - 4)*x + x**2) / (1 - x**2)**3,
         galois_group='',
         galois_description=""
     ),
     PlaneSchema(
-        'generalized_centered_m_gonal',
+        'generalized_centered_mgonal',
         generating_function=x**2 *
         (1 + (m + 1)*x + (m - 2)*x**2 - 2 *
          x**3 + x**4 + x**5) / (1 - x**2)**3,

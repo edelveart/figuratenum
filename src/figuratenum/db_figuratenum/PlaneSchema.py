@@ -4,18 +4,18 @@ import numpy as np
 from .symbols_figuratenum import x, m
 
 
-PlaneTypes = Literal["m_gonal",
+PlaneTypes = Literal["polygonal",
                      "triangular",
                      "square",
                      "pentagonal",
                      "hexagonal",
-                     "centered_m_gonal",
+                     "centered_mgonal",
                      "pronic",
                      "gnomonic",
                      "truncated_triangular",
                      "truncated_square",
                      "truncated_pronic",
-                     "truncated_centered_m_gonal",
+                     "truncated_centered_mgonal",
                      "truncated_centered_triangular",
                      "truncated_centered_square",
                      "truncated_centered_pentagonal",
@@ -25,8 +25,8 @@ PlaneTypes = Literal["m_gonal",
                      "cross",
                      "diamond",
                      "square_triangular",
-                     "generalized_m_gonal",
-                     "generalized_centered_m_gonal",
+                     "generalized_mgonal",
+                     "generalized_centered_mgonal",
                      "generalized_pronic"]
 
 
