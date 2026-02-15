@@ -81,7 +81,7 @@ def k_dim_mgonal_pyramidal(z: np.ndarray, k: int, m: int) -> np.ndarray:
 
 # 4D Centered
 def centered_biquadratic(z: np.ndarray) -> np.ndarray:
-    return (1 + z)**2 * (1 + 10*z + z**2) / (1 - z)**5
+    return z * (z**2 + 10*z + 1) * (z + 1)**2 / (1 - z)**5
 
 
 def centered_hypertetrahedron(z: np.ndarray) -> np.ndarray:

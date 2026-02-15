@@ -90,7 +90,7 @@ multidim_figuratenum_registers = [
     # 4D Centered
     MultiDimSchema(
         "centered_biquadratic",
-        generating_function=(1 + x)**2 * (1 + 10*x + x**2) / (1 - x)**5,
+        generating_function=x * (x**2 + 10*x + 1) * (x + 1)**2 / (1 - x)**5,
         galois_group="",
         galois_description=""
     ),
