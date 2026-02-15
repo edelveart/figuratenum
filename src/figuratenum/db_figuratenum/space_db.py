@@ -231,6 +231,14 @@ generalized_space_registers = [
         galois_group="",
         galois_description=""
     ),
+    SpaceSchema(
+        "generalized_centered_tetrahedron",
+        generating_function=x**2 *
+        x**2 * (1 - 5*x + x**2 + 5*x**3 + x**4 - 5 *
+                x**5 + x**6 + x**7) / (1 - x**2)**4,
+        galois_group="",
+        galois_description=""
+    ),
 
 ]
 
