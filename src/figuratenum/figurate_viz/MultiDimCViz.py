@@ -50,7 +50,10 @@ class MultiDimCViz:
         schema = MULTIDIM_DATABASE[name_seq]
 
         if method == 'auto':
-            method = 'numeric' if self.k > 10 or name_seq in self._SEQ_TO_DOIT else 'symbolic'
+            if name_seq in self._SEQ_TO_DOIT:
+                method = 'numeric' if self.k >= 6 else 'symbolic'
+            else:
+                method = 'numeric' if self.k >= 24 else 'symbolic'
 
         if method == 'symbolic':
             expr = schema.substitute_symbolic(m=self.m, k=self.k)
