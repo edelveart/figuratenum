@@ -43,7 +43,7 @@ SpaceTypes = Literal[
 
     # Centered Pyramidal / Prism
     "centered_mgonal_pyramidal",
-    "m_prism",
+    "mgonal_prism",
 
     # Generalized
     "generalized_mgonal_pyramidal",

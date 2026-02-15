@@ -177,7 +177,7 @@ space_registers = [
     ),
     # Prism
     SpaceSchema(
-        "m_prism",
+        "mgonal_prism",
         generating_function=x * (1 + (2*m - 2)*x + (m + 1)*x**2) / (1 - x)**4,
         galois_group="",
         galois_description=""
