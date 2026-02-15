@@ -168,8 +168,13 @@ space_registers = [
     ),
 
 
-
-
+    # Centered Pyramidal
+    SpaceSchema(
+        "centered_mgonal_pyramidal",
+        generating_function=x * (1 + (m - 2)*x + x**2) / (1 - x)**4,
+        galois_group="",
+        galois_description=""
+    ),
     # Prism
     SpaceSchema(
         "m_prism",
