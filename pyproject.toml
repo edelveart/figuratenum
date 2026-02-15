@@ -12,29 +12,29 @@ license = "MIT"
 requires-python = ">=3.10"
 
 classifiers = [
-  "Programming Language :: Python :: 3",
-  "Development Status :: 5 - Production/Stable",
-  "Topic :: Scientific/Engineering :: Mathematics",
-  "Topic :: Software Development :: Libraries :: Python Modules",
-  "Intended Audience :: Developers",
-  "Intended Audience :: Science/Research",
-  "Intended Audience :: Education",
-  "Operating System :: MacOS :: MacOS X",
-  "Operating System :: Microsoft :: Windows",
-  "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Development Status :: 5 - Production/Stable",
+    "Topic :: Scientific/Engineering :: Mathematics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "Intended Audience :: Education",
+    "Operating System :: MacOS :: MacOS X",
+    "Operating System :: Microsoft :: Windows",
+    "Operating System :: POSIX :: Linux",
 ]
 
 keywords = [
-  "generators",
-  "figurate numbers",
-  "infinite sequences",
-  "number sequences",
-  "number generators",
+    "generators",
+    "figurate numbers",
+    "infinite sequences",
+    "number sequences",
+    "number generators",
 ]
 
 [project.optional-dependencies]
 dev = ["autopep8", "pytest"]
-figurate-viz = ["matplotlib>=3.10.0", "numpy>=2.2.2"]
+figurate-viz = ["matplotlib>=3.10.0", "numpy>=2.2.2", "sympy>=1.12"]
 
 [project.urls]
 Homepage = "https://github.com/edelveart/figuratenum"
