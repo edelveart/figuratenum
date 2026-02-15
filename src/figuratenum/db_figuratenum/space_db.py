@@ -271,6 +271,13 @@ generalized_space_registers = [
         galois_group="",
         galois_description=""
     ),
+    SpaceSchema(
+        "generalized_hexagonal_prism",
+        generating_function=x**2 *
+        (1 - 7*x + 10*x**2 - 10*x**3 + 7*x**4 - x**5) / (1 - x**2)**4,
+        galois_group="",
+        galois_description=""
+    ),
 
 
 ]
