@@ -247,6 +247,14 @@ generalized_space_registers = [
         galois_group="",
         galois_description=""
     ),
+    SpaceSchema(
+        "generalized_centered_square_pyramid",
+        generating_function=x**2 *
+        (1 - 6*x + 2*x**2 + 4*x**3 + 2*x**4 -
+         5*x**5 + x**6 + x**7) / (1 - x**2)**4,
+        galois_group="",
+        galois_description=""
+    ),
 
 ]
 
