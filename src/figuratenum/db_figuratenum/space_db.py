@@ -263,6 +263,16 @@ generalized_space_registers = [
         galois_description=""
     ),
 
+    #
+    SpaceSchema(
+        "generalized_centered_mgonal_pyramidal",
+        generating_function=x**2 *
+        (1 - x) * (1 + (m - 2)*x**2 + x**4) / (1 - x**2)**4,
+        galois_group="",
+        galois_description=""
+    ),
+
+
 ]
 
 space_figuratenum_registers = space_registers + generalized_space_registers
