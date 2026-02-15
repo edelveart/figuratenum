@@ -72,8 +72,8 @@ def test_polyoctahedral_series(dual_method):
 # K-Dimensional
 @pytest.mark.parametrize("dual_method", ["symbolic", "numeric"])
 def test_k_dim_hypertetrahedron_series(dual_method):
-    expected = nc.take_to_list(pfgn.k_dimensional_hypertetrahedron(7), n)
-    multidim = MultiDimCViz(m=3, k=7)
+    expected = nc.take_to_list(pfgn.k_dimensional_hypertetrahedron(24), n)
+    multidim = MultiDimCViz(m=3, k=24)
     result = multidim.expand_series(
         'k_dim_hypertetrahedron', n_terms=n+1, coeffs=True, method=dual_method
     )
@@ -92,8 +92,8 @@ def test_k_dim_hypercube_series(dual_method):
 
 @pytest.mark.parametrize("dual_method", ["symbolic", "numeric"])
 def test_k_dim_hyperoctahedron_series(dual_method):
-    expected = nc.take_to_list(pfgn.k_dimensional_hyperoctahedron(7), n)
-    multidim = MultiDimCViz(m=3, k=7)
+    expected = nc.take_to_list(pfgn.k_dimensional_hyperoctahedron(27), n)
+    multidim = MultiDimCViz(m=3, k=27)
     result = multidim.expand_series(
         'k_dim_hyperoctahedron', n_terms=n+1, coeffs=True, method=dual_method
     )
@@ -113,8 +113,9 @@ def test_k_dim_nexus_series(dual_method):
 # 4D Pyramidal
 @pytest.mark.parametrize("dual_method", ["symbolic", "numeric"])
 def test_four_dimensional_mgonal_pyramidal_series(dual_method):
-    expected = nc.take_to_list(pfgn.four_dimensional_mgonal_pyramidal(m=11), n)
-    multidim = MultiDimCViz(m=11, k=5)
+    expected = nc.take_to_list(
+        pfgn.four_dimensional_mgonal_pyramidal(m=93), n)
+    multidim = MultiDimCViz(m=93, k=5)
     result = multidim.expand_series(
         'four_dim_mgonal_pyramidal', n_terms=n+1, coeffs=True, method=dual_method)
     assert result == expected
@@ -124,8 +125,8 @@ def test_four_dimensional_mgonal_pyramidal_series(dual_method):
 @pytest.mark.parametrize("dual_method", ["symbolic", "numeric"])
 def test_k_dimensional_mgonal_pyramidal_series(dual_method):
     expected = nc.take_to_list(
-        pfgn.k_dimensional_mgonal_pyramidal(k=8, m=9), n)
-    multidim = MultiDimCViz(m=9, k=8)
+        pfgn.k_dimensional_mgonal_pyramidal(k=17, m=9), n)
+    multidim = MultiDimCViz(m=9, k=17)
     result = multidim.expand_series(
         'k_dim_mgonal_pyramidal', n_terms=n+1, coeffs=True, method=dual_method)
     assert result == expected
@@ -176,8 +177,8 @@ def test_k_dim_centered_hypercube_series(dual_method):
 @pytest.mark.parametrize("dual_method", ["symbolic", "numeric"])
 def test_k_dim_centered_hypertetrahedron_series(dual_method):
     expected = nc.take_to_list(
-        pfgn.k_dimensional_centered_hypertetrahedron(7), n)
-    multidim = MultiDimCViz(m=4, k=7)
+        pfgn.k_dimensional_centered_hypertetrahedron(42), n)
+    multidim = MultiDimCViz(m=4, k=42)
     result = multidim.expand_series(
         'k_dim_centered_hypertetrahedron', n_terms=n+1, coeffs=True, method=dual_method)
     assert result == expected
@@ -186,8 +187,8 @@ def test_k_dim_centered_hypertetrahedron_series(dual_method):
 @pytest.mark.parametrize("dual_method", ["symbolic", "numeric"])
 def test_k_dim_centered_hyperoctahedron_series(dual_method):
     expected = nc.take_to_list(
-        pfgn.k_dimensional_centered_hyperoctahedron(6), n)
-    multidim = MultiDimCViz(m=4, k=6)
+        pfgn.k_dimensional_centered_hyperoctahedron(51), n)
+    multidim = MultiDimCViz(m=4, k=51)
     result = multidim.expand_series(
         'k_dim_centered_hyperoctahedron', n_terms=n+1, coeffs=True, method=dual_method)
     assert result == expected
