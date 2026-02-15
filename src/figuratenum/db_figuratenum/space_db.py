@@ -255,6 +255,13 @@ generalized_space_registers = [
         galois_group="",
         galois_description=""
     ),
+    SpaceSchema(
+        "generalized_rhombic_dodecahedral",
+        generating_function=x**2 *
+        (1 - 15*x + 11*x**2 - 5*x**3 + 11*x**4 - 5*x**5 + x**6) / (1 - x**2)**4,
+        galois_group="",
+        galois_description=""
+    ),
 
 ]
 
