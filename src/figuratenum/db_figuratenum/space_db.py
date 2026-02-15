@@ -147,6 +147,29 @@ space_registers = [
         galois_description=""
     ),
 
+    # Centered Truncated
+    SpaceSchema(
+        "centered_truncated_tetrahedron",
+        generating_function=x * (1 + x) * (1 + 12*x + x**2) / (1 - x)**4,
+        galois_group="",
+        galois_description=""
+    ),
+    SpaceSchema(
+        "centered_truncated_cube",
+        generating_function=x * (1 + x) * (1 + 44*x + x**2) / (1 - x)**4,
+        galois_group="",
+        galois_description=""
+    ),
+    SpaceSchema(
+        "centered_truncated_octahedron",
+        generating_function=x * (1 + x) * (1 + 28*x + x**2) / (1 - x)**4,
+        galois_group="",
+        galois_description=""
+    ),
+
+
+
+
     # Prism
     SpaceSchema(
         "m_prism",
