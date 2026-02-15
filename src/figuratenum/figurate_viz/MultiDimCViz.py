@@ -11,6 +11,13 @@ class MultiDimCViz:
         self.m = m
         self.k = k
 
+    _SEQ_TO_DOIT: set[MultiDimTypes] = {
+        "k_dim_hypercube",
+        "k_dim_nexus",
+        "k_dim_centered_hypercube",
+        "generalized_k_dim_hypercube"
+    }
+
     def evaluate_plot(self, name_seq: MultiDimTypes, z_values: np.ndarray) -> np.ndarray:
         """Evaluate at numeric points (for plotting)."""
         schema = MULTIDIM_DATABASE[name_seq]
@@ -43,10 +50,14 @@ class MultiDimCViz:
         schema = MULTIDIM_DATABASE[name_seq]
 
         if method == 'auto':
-            method = 'numeric' if self.k > 10 else 'symbolic'
+            method = 'numeric' if self.k > 10 or name_seq in self._SEQ_TO_DOIT else 'symbolic'
 
         if method == 'symbolic':
             expr = schema.substitute_symbolic(m=self.m, k=self.k)
+
+            if name_seq in self._SEQ_TO_DOIT:
+                expr = expr.doit()
+
             series_expansion = sp.series(expr, x, 0, n=n_terms)
             var_expand = x
         else:
