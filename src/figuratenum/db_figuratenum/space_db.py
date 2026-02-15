@@ -221,6 +221,17 @@ generalized_space_registers = [
         galois_group="",
         galois_description=""
     ),
+
+
+    # Generalized Centered
+    SpaceSchema(
+        "generalized_centered_cube",
+        generating_function=x**2 *
+        (1 - 9*x + 5*x**2 + x**3 + 5*x**4 - 5*x**5 + x**6 + x**7) / (1 - x**2)**4,
+        galois_group="",
+        galois_description=""
+    ),
+
 ]
 
 space_figuratenum_registers = space_registers + generalized_space_registers
