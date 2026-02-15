@@ -31,7 +31,7 @@ SpaceTypes = Literal[
     "centered_square_pyramid",
     "centered_pentagonal_pyramid",
     "centered_hexagonal_pyramid",
-    "centered__mgonal_pyramid",
+    "centered_mgonal_pyramid",
     "centered_octahedron",
     "centered_icosahedron",
     "centered_dodecahedron",

@@ -120,9 +120,29 @@ space_registers = [
         galois_description=""
     ),
     SpaceSchema(
-        "centered__mgonal_pyramid",
+        "centered_mgonal_pyramid",
         generating_function=x *
         (1 + (m - 2)*x + (m - 2)*x**2 + x**3) / (1 - x)**4,
+        galois_group="",
+        galois_description=""
+    ),
+
+    # Centered
+    SpaceSchema(
+        "centered_octahedron",
+        generating_function=x * (1 + 3*x + 3*x**2 + x**3) / (1 - x)**4,
+        galois_group="",
+        galois_description=""
+    ),
+    SpaceSchema(
+        "centered_icosahedron",
+        generating_function=x * (1 + 9*x + 9*x**2 + x**3) / (1 - x)**4,
+        galois_group="",
+        galois_description=""
+    ),
+    SpaceSchema(
+        "centered_dodecahedron",
+        generating_function=x * (1 + 17*x + 17*x**2 + x**3) / (1 - x)**4,
         galois_group="",
         galois_description=""
     ),
