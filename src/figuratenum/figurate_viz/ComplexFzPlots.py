@@ -103,16 +103,33 @@ class ComplexPhasePortrait:
         Creates an enhanced phase portrait (style of Elias Wegert), combining phase coloring,
         modulus contours, and optional shading.
 
-        Args:
-            figsize (tuple[float, float]): Size of the figure (width, height). Default is (8, 8).
-            plot_type (str): Type of plot to generate ('all', 'phase', 'modulus', 'simple'). Default is 'simple'.
-            cmap_color (str): Colormap for phase coloring. Default is 'hsv'.
-            brightness (float): Base brightness for contours (0-1). Default is 0.7.
-            num_lines (int): Number of contour lines for phase and modulus. Default is 3.
-            poincare_disk (bool): If True, applies a Poincaré disk mask. Default is False.
-            show_axes (bool): If True, displays axes on the plot. Default is True.
-        Returns:
-            A Matplotlib figure with the enhanced phase portrait (Not Displayed)
+        The portrait combines:
+        - Phase coloring (from Matplotlib colormaps)
+        - Modulus and phase contours
+        - Optional shading (controlled by brightness)
+        - Optional Poincaré disk masking
+
+        Parameters
+        ----------
+        figsize : tuple[float, float], default=(8, 8)
+            Size of the figure (width, height in inches).
+        plot_type : {'all', 'phase', 'modulus', 'simple'}, default='simple'
+            Type of plot to generate.
+        cmap_color : str, default='hsv'
+            Colormap used for phase coloring.
+        brightness : float, default=0.7
+            Base brightness for contour shading (range 0-1).
+        num_lines : int, default=3
+            Number of contour lines for phase and modulus.
+        poincare_disk : bool, default=False
+            If True, applies a Poincaré disk mask to the plot.
+        show_axes : bool, default=True
+            If True, displays axes on the plot.
+
+        Returns
+        -------
+        matplotlib.figure.Figure
+            Matplotlib figure object containing the enhanced phase portrait.
         """
         fig, ax = plt.subplots(figsize=figsize)
 
