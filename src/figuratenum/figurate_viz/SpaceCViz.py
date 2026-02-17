@@ -16,7 +16,7 @@ class SpaceCViz:
     def _evaluate_fz_to_plot(self, name_seq: SpaceTypes, z_values: np.ndarray) -> np.ndarray:
         """Evaluate at numeric points (for plotting)."""
         schema = SPACE_DATABASE[name_seq]
-        return schema.evaluate_numeric(z_values, self.m)
+        return schema.evaluate_numeric(z_values, m_sides=self.m)
 
     def visualize(
         self,
@@ -40,7 +40,7 @@ class SpaceCViz:
         Parameters
         ----------
         name_seq : SpaceTypes
-            Type of space sequence to visualize.
+            Type of space figurate number generating function to visualize.
         radius : float, default=2
             Half-width of the square viewing window.
             Creates the window [-radius, radius] x [-radius, radius].

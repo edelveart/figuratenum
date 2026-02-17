@@ -16,7 +16,7 @@ class PlaneCViz:
     def _evaluate_fz_to_plot(self, name_seq: PlaneTypes, z_values: np.ndarray) -> np.ndarray:
         """Evaluate at numeric points (for plotting)."""
         schema = PLANE_DATABASE[name_seq]
-        return schema.evaluate_numeric(z_values, self.m)
+        return schema.evaluate_numeric(z_values, m_sides=self.m)
 
     def visualize(
         self,
@@ -40,7 +40,7 @@ class PlaneCViz:
         Parameters
         ----------
         name_seq : PlaneTypes
-            Type of plane sequence to visualize.
+            Type of plane figurate number generating function to visualize.
         radius : float, default=2
             Half-width of the square viewing window.
             Creates the window [-radius, radius] x [-radius, radius].

@@ -48,7 +48,7 @@ class MultiDimCViz:
         Parameters
         ----------
         name_seq : MultiDimTypes
-            Type of multidimensional sequence to visualize.
+            Type of multidimensional figurate number generating function to visualize.
         radius : float, default=2
             Half-width of the square viewing window.
             Creates the window [-radius, radius] x [-radius, radius].
