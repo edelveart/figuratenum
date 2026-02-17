@@ -93,9 +93,9 @@ class ComplexPhasePortrait:
         self,
         figsize: tuple[float, float] = (8, 8),
         plot_type: str = "simple",
-        brightness=0.7,
-        num_lines=3,
-        cmap_color="hsv",
+        cmap_color: str = "hsv",
+        brightness: float = 0.7,
+        num_lines: int = 3,
         poincare_disk: bool = False,
         show_axes: bool = True
     ) -> Figure:
@@ -104,13 +104,13 @@ class ComplexPhasePortrait:
         modulus contours, and optional shading.
 
         Args:
-            figsize (tuple): Size of the figure (width, height). Default is (8, 8).
-            type_plot (str): Type of plot to generate ('all', 'phase', 'modulus', 'simple').
+            figsize (tuple[float, float]): Size of the figure (width, height). Default is (8, 8).
+            plot_type (str): Type of plot to generate ('all', 'phase', 'modulus', 'simple'). Default is 'simple'.
+            cmap_color (str): Colormap for phase coloring. Default is 'hsv'.
             brightness (float): Base brightness for contours (0-1). Default is 0.7.
             num_lines (int): Number of contour lines for phase and modulus. Default is 3.
             poincare_disk (bool): If True, applies a Poincaré disk mask. Default is False.
-            cmap_color (str): Colormap for phase coloring. Default is 'hsv'.
-
+            show_axes (bool): If True, displays axes on the plot. Default is True.
         Returns:
             A Matplotlib figure with the enhanced phase portrait (Not Displayed)
         """
