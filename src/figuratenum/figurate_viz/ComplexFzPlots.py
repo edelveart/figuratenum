@@ -32,9 +32,17 @@ class ComplexPhasePortrait:
         self.xlim = xlim
         self.ylim = ylim
         self.resolution = resolution
-
         self._create_mesh()
         self._evaluate_function()
+
+        # Ingredients: Modulus and Phase (cached)
+        self._log_modulus = np.log(np.abs(self.F) + 1e-12)
+        self._phase_raw = np.angle(self.F)  # arctan2
+        # phase normalized in [0,1] by converting [-\pi,\pi] → [0,2\pi)
+        self._phase_normalized = np.mod(
+            self._phase_raw,
+            2 * np.pi
+        ) / (2 * np.pi)
 
     def _create_mesh(self):
         x = np.linspace(self.xlim[0], self.xlim[1], self.resolution)
@@ -48,41 +56,23 @@ class ComplexPhasePortrait:
         try:
             self.F = self.func(self.Z)
         except Exception as e:
-            print(f"Error when function fz executes: {e}")
+            print(f"Error when function f(z) executes: {e}")
             self.F = np.full_like(self.Z, np.nan, dtype=complex)
-
-    def _compute_phase(self, normalized: bool = False):
-        # if normalized, returns phase in [0,1] by converting [-\pi,\pi] → [0,2\pi)
-        phase_f = np.angle(self.F)
-        if normalized:
-            phase_f = np.mod(phase_f, 2*np.pi)
-            return phase_f / (2 * np.pi)  # normalize=[0, 1]
-        return phase_f
-
-    def _compute_modulus(self, logarithmic: bool = False):
-        abs_f = np.abs(self.F)
-        if logarithmic:
-            return np.log(abs_f + 1e-12)  # avoid log(0)
-        else:
-            return abs_f
 
     def _create_phase_colormap(self, cmap_color: str):
         """Creates the basic phase portrait with different cmap colors"""
-        phase_normalized = self._compute_phase(normalized=True)
-        return cm.get_cmap(cmap_color)(phase_normalized)[..., :3]
+        return plt.colormaps[cmap_color](self._phase_normalized)[..., :3]
 
     def _compute_modulus_contours(self, min_brightness=0.7,  frequency=3):
         """Brightness for modulus |f(z)| contour lines (via sawtooth g)"""
-        log_mod = self._compute_modulus(logarithmic=True)
-        scaled = frequency * log_mod
+        scaled = frequency * self._log_modulus
         g = np.ceil(scaled) - scaled
         return min_brightness + (1 - min_brightness) * (1 - g)
 
     def _compute_phase_contours(self,  min_brightness=0.7, frequency=3):
         """Brightness for phase arg(f(z)) contour lines (via sawtooth g)"""
         # Rotate phase by 180° ($ \arg(f(z)) + \pi$), following Wegert Book
-        phase_normalized = self._compute_phase(normalized=False) + np.pi
-        scaled = frequency * phase_normalized
+        scaled = frequency * (self._phase_raw + np.pi)
         g = np.ceil(scaled) - scaled
         return min_brightness + (1 - min_brightness) * (1 - g)
 
@@ -98,11 +88,12 @@ class ComplexPhasePortrait:
     def plot_enhanced(
         self,
         figsize: tuple[float, float] = (8, 8),
-        type_plot: str = "all",
+        plot_type: str = "simple",
         brightness=0.7,
         num_lines=3,
+        cmap_color="hsv",
         poincare_disk: bool = False,
-        cmap_color="hsv"
+        show_axes: bool = True
     ) -> Figure:
         """
         Creates an enhanced phase portrait (style of Elias Wegert), combining phase coloring,
@@ -110,29 +101,30 @@ class ComplexPhasePortrait:
 
         Args:
             figsize (tuple): Size of the figure (width, height). Default is (8, 8).
-            type_plot (str): Type of plot to generate ('all', 'phase', 'modulus', 'contours').
+            type_plot (str): Type of plot to generate ('all', 'phase', 'modulus', 'simple').
             brightness (float): Base brightness for contours (0-1). Default is 0.7.
             num_lines (int): Number of contour lines for phase and modulus. Default is 3.
             poincare_disk (bool): If True, applies a Poincaré disk mask. Default is False.
             cmap_color (str): Colormap for phase coloring. Default is 'hsv'.
 
         Returns:
-            A Matplotlib figure with the enhanced phase portrait.
+            A Matplotlib figure with the enhanced phase portrait (Not Displayed)
         """
         fig, ax = plt.subplots(figsize=figsize)
 
         rgb_land = self._create_phase_colormap(cmap_color)
 
-        b_mod = self._compute_modulus_contours(brightness, num_lines)
-        b_phase = self._compute_phase_contours(brightness, num_lines)
-
         # Plot combinations
-        # RGB * B_mod * B_phase
-        if type_plot == "all":
+        # RGB * B_mod * B_phase | RGB * B_mod | RGB * B_phase | RGB
+        if plot_type == "all":
+            b_mod = self._compute_modulus_contours(brightness, num_lines)
+            b_phase = self._compute_phase_contours(brightness, num_lines)
             rgb_land = rgb_land * (b_mod * b_phase)[..., None]
-        elif type_plot == "modulus":
+        elif plot_type == "modulus":
+            b_mod = self._compute_modulus_contours(brightness, num_lines)
             rgb_land = rgb_land * b_mod[..., None]
-        elif type_plot == "phase":
+        elif plot_type == "phase":
+            b_phase = self._compute_phase_contours(brightness, num_lines)
             rgb_land = rgb_land * b_phase[..., None]
 
         if poincare_disk:
@@ -146,7 +138,14 @@ class ComplexPhasePortrait:
             rgb_land,
             extent=extent_tuple,
             origin='lower',
-            interpolation='bicubic'
+            interpolation='bicubic',
+            aspect='equal'
         )
+        if show_axes:
+            ax.set_xlabel('Re(z)')
+            ax.set_ylabel('Im(z)')
+        else:
+            ax.axis('off')
+
         plt.tight_layout()
         return fig
