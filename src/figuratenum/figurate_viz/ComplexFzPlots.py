@@ -28,8 +28,8 @@ class ComplexPhasePortrait:
             resolution: Grid resolution (points per dimension)
         """
         self.func = func
-        self.xlim = xlim
-        self.ylim = ylim
+        self.xlim = self._validate_limits(xlim, 'xlim')
+        self.ylim = self._validate_limits(ylim, 'ylim')
         self.resolution = resolution
         self._create_mesh()
         self._evaluate_function()
@@ -42,6 +42,13 @@ class ComplexPhasePortrait:
             self._phase_raw,
             2 * np.pi
         ) / (2 * np.pi)
+
+    @staticmethod
+    def _validate_limits(limits: tuple[float, float], name: str) -> tuple[float, float]:
+        a, b = limits
+        if a >= b:
+            raise ValueError(f"{name}[0] must be < {name}[1], got {limits}")
+        return (float(a), float(b))
 
     def _create_mesh(self):
         x = np.linspace(self.xlim[0], self.xlim[1], self.resolution)
