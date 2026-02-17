@@ -3,7 +3,6 @@ import numpy as np
 import matplotlib.pyplot as plt
 from typing import Callable
 from matplotlib.figure import Figure
-from matplotlib import cm
 
 
 class ComplexPhasePortrait:
@@ -37,8 +36,8 @@ class ComplexPhasePortrait:
 
         # Ingredients: Modulus and Phase (cached)
         self._log_modulus = np.log(np.abs(self.F) + 1e-12)
-        self._phase_raw = np.angle(self.F)  # arctan2
-        # phase normalized in [0,1] by converting [-\pi,\pi] → [0,2\pi)
+        self._phase_raw = np.angle(self.F)  # arctan2(Im(z), Re(z))
+        # phase normalized in [0,1] by converting (-\pi,\pi] → [0,2\pi)
         self._phase_normalized = np.mod(
             self._phase_raw,
             2 * np.pi
@@ -49,8 +48,6 @@ class ComplexPhasePortrait:
         y = np.linspace(self.ylim[0], self.ylim[1], self.resolution)
         X, Y = np.meshgrid(x, y)
         self.Z = X + 1j*Y
-        self.X = X
-        self.Y = Y
 
     def _evaluate_function(self):
         try:
