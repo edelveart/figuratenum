@@ -1,7 +1,7 @@
 # python -m pytest tests/test_multidimensional_figuratenum.py
 
-from src.figuratenum.multidimensional_figurate_numbers.MultidimensionalFigurateNum import MultidimensionalFigurateNum
-from src.figuratenum.NumCollector import NumCollector as nc
+from figuratenum import MultidimensionalFigurateNum
+from figuratenum import NumCollector as nc
 mfgn = MultidimensionalFigurateNum()
 
 

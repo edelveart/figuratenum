@@ -1,6 +1,6 @@
 # python -m pytest tests/test_space_figuratenum.py
 
-from src.figuratenum.space_figurate_numbers.SpaceFigurateNum import SpaceFigurateNum
+from figuratenum import SpaceFigurateNum
 
 sfgn = SpaceFigurateNum()
 

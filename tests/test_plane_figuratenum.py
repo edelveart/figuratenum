@@ -1,7 +1,7 @@
 # python -m pytest tests/test_plane_figuratenum.py
 
-from src.figuratenum.plane_figurate_numbers.PlaneFigurateNum import PlaneFigurateNum
-from src.figuratenum.NumCollector import NumCollector as nc
+from figuratenum import PlaneFigurateNum
+from figuratenum import NumCollector as nc
 pfgn = PlaneFigurateNum()
 
 
