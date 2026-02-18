@@ -1,8 +1,13 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import Callable
+from typing import Callable, Literal
 from matplotlib.figure import Figure
+
+PlotType = Literal['pure_phase_portrait',
+                   'phase_contours',
+                   'modulus_contours',
+                   'enhanced_phase_portrait']
 
 
 class ComplexPhasePortrait:
@@ -92,7 +97,7 @@ class ComplexPhasePortrait:
     def plot_enhanced(
         self,
         figsize: tuple[float, float] = (8, 8),
-        plot_type: str = "simple",
+        plot_type: PlotType = "pure_phase_portrait",
         cmap_color: str = "hsv",
         brightness: float = 0.7,
         num_lines: int = 3,
@@ -100,12 +105,11 @@ class ComplexPhasePortrait:
         show_axes: bool = True
     ) -> Figure:
         """
-        Creates an enhanced phase portrait (style of Elias Wegert), combining phase coloring,
-        modulus contours, and optional shading.
+        Creates an enhanced phase portrait (style of Elias Wegert).
 
         The portrait combines:
-        - Phase coloring (from Matplotlib colormaps)
-        - Modulus and phase contours
+        - Phase portraits coloring (from Matplotlib colormaps)
+        - Modulus and phase contours, number of contour lines
         - Optional shading (controlled by brightness)
         - Optional Poincaré disk masking
 
@@ -113,7 +117,7 @@ class ComplexPhasePortrait:
         ----------
         figsize : tuple[float, float], default=(8, 8)
             Size of the figure (width, height in inches).
-        plot_type : {'all', 'phase', 'modulus', 'simple'}, default='simple'
+        plot_type : {'pure_phase_portrait', 'phase_contours', 'modulus_contours',            'enhanced_phase_portrait'},  default='pure_phase_portrait'
             Type of plot to generate.
         cmap_color : str, default='hsv'
             Colormap used for phase coloring.
@@ -137,16 +141,24 @@ class ComplexPhasePortrait:
 
         # Plot combinations
         # RGB * B_mod * B_phase | RGB * B_mod | RGB * B_phase | RGB
-        if plot_type == "all":
+        if plot_type == "enhanced_phase_portrait":
             b_mod = self._compute_modulus_contours(brightness, num_lines)
             b_phase = self._compute_phase_contours(brightness, num_lines)
             rgb_land = rgb_land * (b_mod * b_phase)[..., None]
-        elif plot_type == "modulus":
+        elif plot_type == "modulus_contours":
             b_mod = self._compute_modulus_contours(brightness, num_lines)
             rgb_land = rgb_land * b_mod[..., None]
-        elif plot_type == "phase":
+        elif plot_type == "phase_contours":
             b_phase = self._compute_phase_contours(brightness, num_lines)
             rgb_land = rgb_land * b_phase[..., None]
+        elif plot_type == "pure_phase_portrait":
+            pass  # its the rgb_land
+        else:
+            raise ValueError(
+                f"Invalid plot_type '{plot_type}'. "
+                "Must be one of: 'pure_phase_portrait', 'phase_contours', "
+                "'modulus_contours', 'enhanced_phase_portrait'."
+            )
 
         if poincare_disk:
             rgb_land = self._poincare_disk_mask(rgb_land)
