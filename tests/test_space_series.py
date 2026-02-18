@@ -1,7 +1,7 @@
 import pytest
-from src.figuratenum.space_figurate_numbers.SpaceFigurateNum import SpaceFigurateNum
-from src.figuratenum.NumCollector import NumCollector as nc
-from src.figuratenum.figurate_viz.SeriesExpansion import PowerSeriesExpansion
+from figuratenum import SpaceFigurateNum
+from figuratenum import NumCollector as nc
+from figuratenum.figurate_viz import PowerSeriesExpansion
 
 
 pfgn = SpaceFigurateNum()
