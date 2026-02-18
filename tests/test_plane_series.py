@@ -5,7 +5,7 @@ from figuratenum.figurate_viz import PowerSeriesExpansion
 
 pfgn = PlaneFigurateNum()
 
-n = 20
+n = 35
 
 
 @pytest.mark.parametrize("dual_method", ["symbolic", "numeric"])

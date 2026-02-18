@@ -6,7 +6,7 @@ from figuratenum.figurate_viz import PowerSeriesExpansion
 
 pfgn = MultidimensionalFigurateNum()
 
-n = 25
+n = 20
 
 
 # 4D
