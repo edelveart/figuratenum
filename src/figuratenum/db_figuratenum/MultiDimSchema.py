@@ -1,10 +1,10 @@
-from typing import Literal
+from typing import Literal, TypeAlias
 import sympy as sp
 import numpy as np
 from .symbols_figuratenum import x, m, k
 
 
-MultiDimTypes = Literal[
+MultiDimTypes: TypeAlias = Literal[
     # 4D
     "hypertetrahedral",
     "hypercube",

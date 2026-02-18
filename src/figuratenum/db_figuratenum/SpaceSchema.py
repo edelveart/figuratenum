@@ -1,10 +1,10 @@
-from typing import Literal
+from typing import Literal, TypeAlias
 import sympy as sp
 import numpy as np
 from .symbols_figuratenum import x, m
 
 
-SpaceTypes = Literal[
+SpaceTypes: TypeAlias = Literal[
 
     # Pyramidal
     "m_pyramidal",
@@ -56,7 +56,8 @@ SpaceTypes = Literal[
     "generalized_centered_square_pyramid",
     "generalized_rhombic_dodecahedral",
     "generalized_centered_mgonal_pyramidal",
-    "generalized_hexagonal_prism",]
+    "generalized_hexagonal_prism",
+]
 
 
 class SpaceSchema:

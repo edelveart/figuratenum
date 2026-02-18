@@ -1,13 +1,15 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from typing import Callable, Literal
+from typing import Callable, Literal, TypeAlias
 from matplotlib.figure import Figure
 
-PlotType = Literal['pure_phase_portrait',
-                   'phase_contours',
-                   'modulus_contours',
-                   'enhanced_phase_portrait']
+PlotType: TypeAlias = Literal[
+    'pure_phase_portrait',
+    'phase_contours',
+    'modulus_contours',
+    'enhanced_phase_portrait'
+]
 
 
 class ComplexPhasePortrait:
