@@ -18,7 +18,7 @@ SequenceType: TypeAlias = PlaneTypes | SpaceTypes | MultiDimTypes
 class ComplexViz:
     """
     Unified interface for evaluating and visualizing generating functions
-    of plane, space, and multidimensional figurate numbers, inspired on the style of Elias Wegert (2012).
+    of plane, space, and multidimensional figurate numbers, inspired by the style of Elias Wegert (2012).
     """
 
     def __init__(self, m: int, k: int, resolution: int = 800, figsize: tuple[float, float] = (8, 8)):
@@ -45,7 +45,7 @@ class ComplexViz:
         self.resolution = resolution
         self.figsize = figsize
 
-    def _get_evaluator(self, name_seq: SequenceType) -> Callable[[np.ndarray], np.ndarray]:
+    def _get_evaluator_fz(self, name_seq: SequenceType) -> Callable[[np.ndarray], np.ndarray]:
         """
         Get the appropriate numeric evaluator for a given sequence name.
 
@@ -75,7 +75,8 @@ class ComplexViz:
             return lambda z: schema.evaluate_numeric(z, m_sides=self.m, k_dimension=self.k)
 
         else:
-            raise ValueError(f"Unknown sequence: {name_seq}")
+            raise ValueError(
+                f"Unknown sequence '{name_seq}' for the selected type in the database")
 
     def _render_phase_portrait(
         self,
@@ -135,7 +136,7 @@ class ComplexViz:
         if ylim is None:
             ylim = (-radius, radius)
 
-        func_fz = self._get_evaluator(name_seq)
+        func_fz = self._get_evaluator_fz(name_seq)
 
         PORTRAIT = ComplexPhasePortrait(
             func_fz, xlim=xlim, ylim=ylim, resolution=resolution)
