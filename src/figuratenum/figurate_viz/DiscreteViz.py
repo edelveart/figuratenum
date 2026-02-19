@@ -7,19 +7,15 @@ from ..multidimensional_figurate_numbers.MultidimensionalFigurateNum import Mult
 
 class DiscreteViz:
     """
-    Class for visualizing figurate numbers.
+    Visualizes figurate numbers in a discrete, customizable 2D layout.
 
-    This class allows you to generate plots of a figurate number sequence using
-    2D visualizations. It uses the optional libraries `numpy` and `matplotlib`
-    to create the plots. If you want to use the visualization functionality,
-    make sure you have these dependencies installed.
+    Generates circular 2D plots of figurate number sequences, where each number
+    is represented as a point arranged along a circle. These can be seen as
+    geometric or visual “multiplication tables,” showing numeric patterns
+    through spatial arrangements. Customization includes colors, background,
+    text annotations, rotation, and more.
 
-    Requires the following optional dependencies:
-        - numpy >= 2.2.2
-        - matplotlib >= 3.10.0
-
-    If you don't need visualization, you can safely ignore this error and continue
-    using the basic functionality of the library.
+    Inspired by an expository article by J. Rogelio Pérez Buendía.
     """
 
     def __init__(self, fig_sequence: list[int] | tuple[int, ...] = [], figsize: tuple[float, float] = (6, 6)):
