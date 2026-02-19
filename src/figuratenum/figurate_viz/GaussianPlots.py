@@ -1,4 +1,7 @@
-from types import ModuleType
+import numpy as np
+from typing import cast
+import matplotlib.pyplot as plt
+from matplotlib.projections.polar import PolarAxes
 
 
 class GaussianPlots:
@@ -25,13 +28,11 @@ class GaussianPlots:
     """
 
     def __init__(self, sequence: list[int] | tuple[int, ...],
-                 np: ModuleType, plt: ModuleType, figsize: tuple[float, float],
+                 figsize: tuple[float, float],
                  circ_color: str = "g", bg_color: str = "k", num_text: bool = False,
                  num_color: str = "g", rotate: int = 0, ext_circle: bool = False,
                  h_modulo: int | None = None):
         self.sequence = sequence
-        self.np = np
-        self.plt = plt
         self.figsize = figsize
         self.circ_color = circ_color
         self.bg_color = bg_color
@@ -47,14 +48,14 @@ class GaussianPlots:
                 "h_modulo cannot be greater than the length of the sequence.")
 
     def draw(self, show: bool = True):
-        self.figure = self.plt.figure(
+        self.figure = plt.figure(
             figsize=self.figsize, facecolor=self.bg_color)
-        ax = self.figure.add_subplot(111, projection='polar')
+        ax = cast(PolarAxes, self.figure.add_subplot(111, projection='polar'))
         ax.set_facecolor(self.bg_color)
 
         polar_indices = range(self.h_modulo)
-        angles = self.np.linspace(
-            0, 2 * self.np.pi, self.h_modulo, endpoint=False)
+        angles = np.linspace(
+            0, 2 * np.pi, self.h_modulo, endpoint=False)
 
         for i in polar_indices:
             result = (self.sequence[i] + self.rotate) % self.h_modulo
@@ -69,7 +70,7 @@ class GaussianPlots:
                         ha='center', va='center', fontsize=8,
                         fontweight='normal', color=self.num_color)
 
-        ax.set_theta_offset(self.np.pi / 2)
+        ax.set_theta_offset(np.pi / 2)
         ax.set_theta_direction(-1)
 
         ax.set_aspect('equal')
@@ -81,9 +82,9 @@ class GaussianPlots:
         ax.spines['polar'].set_color(self.circ_color)
         ax.set_rmax(1.1)
 
-        self.plt.grid(False)
+        plt.grid(False)
         if show:
-            self.plt.show()
+            plt.show()
 
     def save(self, filename: str = "output.svg", format: str | None = None, **kwargs):
         if self.figure is None:

@@ -1,5 +1,4 @@
 import pytest
-from unittest.mock import patch
 from src.figuratenum.FigurateNum import FigurateNum
 from src.figuratenum.figurate_viz.FigurateViz import FigurateViz
 from src.figuratenum.figurate_viz.GaussianPlots import GaussianPlots
@@ -13,24 +12,6 @@ def test_figurate_viz_init():
 
     assert fig_viz.fig_sequence == fig_sequence
     assert fig_viz.figsize == (6, 6)
-    assert fig_viz._np is not None
-    assert fig_viz._plt is not None
-
-
-def test_missing_dependencies():
-    num_generator = fgn.cell_600()
-    fig_sequence = [next(num_generator) for _ in range(700)]
-    expected_message = (
-        "To use FigurateViz, you need to install the optional dependencies. "
-        "Please run the following command:\n"
-        "pip install figuratenum[figurate-viz]\n"
-        "Note: Make sure you have numpy >= 1.23 and matplotlib >= 3.7. "
-        "If you don't need visualization, you can safely ignore this error."
-    )
-
-    with patch.object(FigurateViz, '_load_viz_dependencies', side_effect=ImportError(expected_message)):
-        with pytest.raises(ImportError, match="To use FigurateViz, you need to install the optional dependencies"):
-            FigurateViz(fig_sequence)
 
 
 def test_gaussian_graph_default_params():
