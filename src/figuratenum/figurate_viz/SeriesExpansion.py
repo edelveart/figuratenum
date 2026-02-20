@@ -57,7 +57,6 @@ class PowerSeriesExpansion:
         needs_m = schema.requires_m()
 
         if m is not None and not needs_m:
-            import warnings
             warnings.warn(
                 f"Sequence '{name_seq}' does not use parameter 'm'; ignoring it.",
                 stacklevel=2
