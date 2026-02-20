@@ -1,5 +1,7 @@
-from .GaussianPlots import GaussianPlots
+import inspect
 
+from .GaussianPlots import GaussianPlots
+from typing import TypeAlias
 from ..plane_figurate_numbers.PlaneFigurateNum import PlaneFigurateNum
 from ..space_figurate_numbers.SpaceFigurateNum import SpaceFigurateNum
 from ..multidimensional_figurate_numbers.MultidimensionalFigurateNum import MultidimensionalFigurateNum
@@ -22,7 +24,7 @@ class DiscreteViz:
         self.fig_sequence = fig_sequence
         self.figsize = figsize
 
-    def _generate_sequence_from_class(self, seq_type: str,  figure_name: str, *args,  n_terms: int):
+    def _generate_sequence_from_class(self, seq_type: str,  figure_name: str, *, m: int | None = None, k: int | None = None,   n_terms: int):
         if seq_type == "Plane":
             seq_loop = PlaneFigurateNum()
         elif seq_type == "Space":
@@ -37,9 +39,17 @@ class DiscreteViz:
             raise ValueError(
                 f"'{figure_name}' method not found in {seq_type} class")
 
-        # Call to method passing *args (future maybe only **kwargs)
         method = getattr(seq_loop, figure_name)
-        gen = method(*args)
+        sig = inspect.signature(method)
+
+        call_kwargs = {}
+        if 'm' in sig.parameters and m is not None:
+            call_kwargs['m'] = m
+
+        if 'k' in sig.parameters and k is not None:
+            call_kwargs['k'] = k
+
+        gen = method(**call_kwargs)
 
         return [next(gen) for _ in range(n_terms)]
 
@@ -59,28 +69,28 @@ class DiscreteViz:
                 f"Available methods: {valid_methods}"
             )
 
-    def visualize_plane(self, figurate_name: str, *args, n_terms: int, show=True, **kwargs):
+    def visualize_plane(self, figurate_name: str, *, m: int | None = None, n_terms: int, show=True, **kwargs):
         self._get_valid_figuratenum_methods(figurate_name, PlaneFigurateNum())
 
         plane_seq = self._generate_sequence_from_class(
-            "Plane", figurate_name, *args,  n_terms=n_terms)
+            "Plane", figurate_name, m=m, n_terms=n_terms)
 
         return GaussianPlots(plane_seq, self.figsize, **kwargs).draw(show=show)
 
-    def visualize_space(self, figurate_name, *args, n_terms: int, show=True, **kwargs):
+    def visualize_space(self, figurate_name, *, m: int | None = None, n_terms: int, show=True, **kwargs):
         self._get_valid_figuratenum_methods(figurate_name, SpaceFigurateNum())
 
         space = self._generate_sequence_from_class(
-            "Space", figurate_name, *args, n_terms=n_terms)
+            "Space", figurate_name, m=m, n_terms=n_terms)
 
         return GaussianPlots(space, self.figsize, **kwargs).draw(show=show)
 
-    def visualize_multidim(self, figurate_name, *args,  n_terms: int, show=True, **kwargs):
+    def visualize_multidim(self, figurate_name, *, m: int | None = None, k: int | None = None,  n_terms: int, show=True, **kwargs):
         self._get_valid_figuratenum_methods(
             figurate_name, MultidimensionalFigurateNum())
 
         multidim = self._generate_sequence_from_class(
-            "MultiDim",  figurate_name, *args,  n_terms=n_terms)
+            "MultiDim",  figurate_name, m=m, k=k,  n_terms=n_terms)
 
         return GaussianPlots(multidim, self.figsize, **kwargs).draw(show=show)
 
