@@ -1,7 +1,7 @@
-import warnings
 from typing import Literal, TypeAlias
 import sympy as sp
 
+from ..db_figuratenum.validator_helper import Validator
 from ..db_figuratenum.symbols_figuratenum import x, z
 from ..db_figuratenum.PlaneSchema import PlaneTypes
 from ..db_figuratenum.plane_db import PLANE_DATABASE
@@ -53,18 +53,10 @@ class PowerSeriesExpansion:
             Integer coefficients if coeffs=True, else Series object
         """
         schema = PLANE_DATABASE[name_seq]
-
         needs_m = schema.requires_m()
 
-        if m is not None and not needs_m:
-            warnings.warn(
-                f"Sequence '{name_seq}' does not use parameter 'm'; ignoring it.",
-                stacklevel=2
-            )
-
-        if needs_m and m is None:
-            raise ValueError(
-                f"Sequence '{name_seq}' requires parameter 'm'.")
+        Validator.validate_m_and_k(
+            m=m, k=None, name_seq=name_seq, needs_m=needs_m, needs_k=False)
 
         if method == "symbolic":
             subs_kwargs = {}
@@ -115,18 +107,10 @@ class PowerSeriesExpansion:
             Integer coefficients if coeffs=True, else Series object
         """
         schema = SPACE_DATABASE[name_seq]
-
         needs_m = schema.requires_m()
 
-        if m is not None and not needs_m:
-            warnings.warn(
-                f"Sequence '{name_seq}' does not use parameter 'm'; ignoring it.",
-                stacklevel=2
-            )
-
-        if needs_m and m is None:
-            raise ValueError(
-                f"Sequence '{name_seq}' requires parameter 'm'.")
+        Validator.validate_m_and_k(
+            m=m, k=None, name_seq=name_seq, needs_m=needs_m, needs_k=False)
 
         if method == "symbolic":
             subs_kwargs = {}
@@ -182,24 +166,8 @@ class PowerSeriesExpansion:
         needs_m = schema.requires_m()
         needs_k = schema.requires_k()
 
-        if m is not None and not needs_m:
-            warnings.warn(
-                f"Sequence '{name_seq}' does not use parameter 'm'; ignoring it.",
-                stacklevel=2
-            )
-
-        if k is not None and not needs_k:
-            warnings.warn(
-                f"Sequence '{name_seq}' does not use parameter 'k'; ignoring it.",
-                stacklevel=2
-            )
-
-        if needs_m and m is None:
-            raise ValueError(
-                f"Sequence '{name_seq}' requires parameter 'm'.")
-        if needs_k and k is None:
-            raise ValueError(
-                f"Sequence '{name_seq}' requires parameter 'k'.")
+        Validator.validate_m_and_k(
+            m=m, k=k, name_seq=name_seq, needs_m=needs_m, needs_k=needs_k)
 
         if method == "symbolic":
             subs_kwargs = {}
