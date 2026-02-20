@@ -359,3 +359,19 @@ class MultidimensionalFigurateNum:
 
     def six_dimensional_centered_hyperoctahedron(self) -> Generator[int]:
         return six_dimensional_centered_hyperoctahedron()
+
+    # Alias
+
+    centered_hyperoctahedron = centered_hyperoctahedral
+    centered_hypertetrahedron = centered_polytope
+    k_dim_hypertetrahedron = k_dimensional_hypertetrahedron
+    k_dim_hypercube = k_dimensional_hypercube
+    k_dim_hyperoctahedron = k_dimensional_hyperoctahedron
+    k_dim_nexus = nexus
+
+    k_dim_centered_hypercube = k_dimensional_centered_hypercube
+    k_dim_centered_hypertetrahedron = k_dimensional_centered_hypertetrahedron
+    k_dim_centered_hyperoctahedron = k_dimensional_centered_hyperoctahedron
+
+    four_dim_mgonal_pyramidal = four_dimensional_mgonal_pyramidal
+    k_dim_mgonal_pyramidal = k_dimensional_mgonal_pyramidal
