@@ -1,7 +1,13 @@
 import pytest
-from src.figuratenum.FigurateNum import FigurateNum
-from src.figuratenum.figurate_viz.FigurateViz import FigurateViz
-from src.figuratenum.figurate_viz.GaussianPlots import GaussianPlots
+
+from figuratenum import FigurateNum
+from figuratenum.figurate_viz import FigurateViz, DiscreteViz
+from figuratenum.figurate_viz.GaussianPlots import GaussianPlots
+from matplotlib.figure import Figure
+import matplotlib
+# Use a non-interactive backend for testing.
+matplotlib.use("Agg")
+
 fgn = FigurateNum()
 
 
@@ -60,3 +66,50 @@ def test_gaussian_graph_h_modulo_error():
         fig_viz.gaussian_plot(
             circ_color="y", bg_color="b", num_text=True, num_color="y",
             rotate=3, ext_circle=False, h_modulo=600)
+
+# --------
+# New API
+# --------
+
+
+def test_plane_discreteviz_triangular():
+    viz = DiscreteViz()
+    fig = viz.visualize_plane(
+        "triangular", n_terms=100, show=False, circ_color='r')
+    assert isinstance(fig, Figure)
+
+
+def test_plane_discreteviz_centered_mgonal():
+    viz = DiscreteViz()
+    fig = viz.visualize_plane("centered_mgonal", m=5, n_terms=100, show=False)
+    assert isinstance(fig, Figure)
+
+
+def test_space_discreteviz_octahedral():
+    viz = DiscreteViz()
+    fig = viz.visualize_space("octahedral", n_terms=704, show=False)
+    assert isinstance(fig, Figure)
+
+
+def test_multidim_discreteviz_k_hypercube():
+    viz = DiscreteViz()
+    fig = viz.visualize_multidim(
+        "k_dimensional_hypercube",
+        k=9,  n_terms=704, show=False)
+    assert isinstance(fig, Figure)
+
+
+def test_multidim_discreteviz_k_dimensional_mgonal_pyramidal():
+    viz = DiscreteViz()
+    fig = viz.visualize_multidim(
+        "k_dimensional_mgonal_pyramidal",
+        k=9, m=126, n_terms=704, show=False)
+    assert isinstance(fig, Figure)
+
+
+def test_invalid_m_or_k():
+    viz = DiscreteViz()
+    with pytest.raises(ValueError):
+        viz.visualize_plane("polygonal", m=1,  n_terms=16)
+    with pytest.raises(ValueError):
+        viz.visualize_multidim("k_dimensional_hypercube", k=-2, n_terms=16)

@@ -2,6 +2,7 @@ import numpy as np
 from typing import cast
 import matplotlib.pyplot as plt
 from matplotlib.projections.polar import PolarAxes
+from matplotlib.figure import Figure
 
 
 class GaussianPlots:
@@ -41,13 +42,13 @@ class GaussianPlots:
         self.rotate = rotate
         self.ext_circle = ext_circle
         self.h_modulo = h_modulo or len(sequence)
-        self.figure = None
+        self.figure: Figure | None = None
 
         if self.h_modulo > len(self.sequence):
             raise ValueError(
                 "h_modulo cannot be greater than the length of the sequence.")
 
-    def draw(self, show: bool = True):
+    def draw(self, show: bool = True) -> Figure:
         self.figure = plt.figure(
             figsize=self.figsize, facecolor=self.bg_color)
         ax = cast(PolarAxes, self.figure.add_subplot(111, projection='polar'))
@@ -85,6 +86,7 @@ class GaussianPlots:
         plt.grid(False)
         if show:
             plt.show()
+        return self.figure
 
     def save(self, filename: str = "output.svg", format: str | None = None, **kwargs):
         if self.figure is None:
