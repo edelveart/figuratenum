@@ -12,15 +12,50 @@ import numpy as np
 
 import matplotlib
 # Use a non-interactive backend for testing.
-# Phase portraits of figurate number generating functions f(z) are rendered
-# in the complex plane, but automated tests should not open GUI windows.
 matplotlib.use("Agg")
 
 
+# -------------
+# Manual Tests
+# -------------
+res = 20
+
+
+def test_plane_centered_mgonal():
+    viz = ComplexViz(figsize=(2, 2), resolution=res*20, brightness=0.4)
+    fig = viz.visualize_plane(
+        "centered_mgonal", m=5, plot_type="modulus_contours", show=False, show_axes=False, num_lines=5)
+    assert isinstance(fig, Figure)
+
+
+def test_space_centered_mgonal_pyramid():
+    viz = ComplexViz(figsize=(1, 3), resolution=res*6)
+    fig = viz.visualize_space(
+        "centered_mgonal_pyramid", m=19, plot_type="phase_contours", cmap_color="cividis", show=False, poincare_disk=True)
+    assert isinstance(fig, Figure)
+
+
+def test_multidim_k_hypercube():
+    viz = ComplexViz(figsize=(2, 1), resolution=res*5, cmap_color="plasma")
+    fig = viz.visualize_multidim(
+        "k_dim_hypercube", k=34, plot_type="pure_phase_portrait", show=False, brightness=0.2)
+    assert isinstance(fig, Figure)
+
+
+def test_multidim_k_dim_mgonal_pyramidal():
+    viz = ComplexViz(figsize=(3, 4), resolution=res*2, num_lines=2)
+    fig = viz.visualize_multidim(
+        "k_dim_mgonal_pyramidal", m=6, k=10, plot_type="pure_phase_portrait", show=False)
+    assert isinstance(fig, Figure)
+
+
+# --------------
+# pytest-fixture
+# --------------
 @pytest.fixture
 def portrait():
     """Create a ComplexViz instance with standard test parameters."""
-    return ComplexViz(m=4, k=5, figsize=(8, 8), resolution=800)
+    return ComplexViz(figsize=(3, 3), resolution=100, plot_type="enhanced_phase_portrait")
 
 
 # --------------------
@@ -38,6 +73,14 @@ multidim_seqs_list: list[MultiDimTypes] = [
 
 
 METHOD_NAME_SEQ_LIST = "method_name, seq_list"
+
+# List of sequences that require parameters m and/or k
+sequences_requiring_params = {
+    "polygonal": ["m"],  # Example: polygonal sequence needs m
+    "m_pyramidal": ["m"],
+    "four_dim_mgonal_pyramidal": ["m"],
+    "k_dim_mgonal_pyramidal": ["m", "k"],
+}
 
 
 @pytest.mark.parametrize(
@@ -68,13 +111,25 @@ def test_visualizations(portrait, method_name, seq_list):
     method = getattr(portrait, method_name)
 
     for seq_name in seq_list:
-        fig = method(seq_name, show=False)
+        # Check if the sequence requires parameters like m or k
+        if seq_name in sequences_requiring_params:
+            params = sequences_requiring_params[seq_name]
+            kwargs = {}
+            for param in params:
+                if param == "m":
+                    kwargs["m"] = 5
+                elif param == "k":
+                    kwargs["k"] = 4
+
+            fig = method(seq_name, show=False, **kwargs)
+        else:
+            fig = method(seq_name, show=False)
         assert isinstance(fig, Figure)
 
 
-# -------------
-# Invalid input
-# -------------
+# # -------------
+# # Invalid input
+# # -------------
 def test_invalid_radius(portrait):
     with pytest.raises(ValueError):
         portrait.visualize_plane("aztec_diamond", radius=-3)
@@ -128,3 +183,10 @@ def test_invalid_multidim_sequence(portrait, invalid_seq):
     """
     with pytest.raises(ValueError):
         portrait.visualize_multidim(invalid_seq, show=False)
+
+
+def test_invalid_m_or_k(portrait):
+    with pytest.raises(ValueError):
+        portrait.visualize_plane("polygonal", m=-5)
+    with pytest.raises(ValueError):
+        portrait.visualize_multidim("k_dim_mgonal_pyramidal", k=0)
