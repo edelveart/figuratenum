@@ -2,9 +2,8 @@ from typing import Callable, TypeAlias
 import matplotlib.pyplot as plt
 from matplotlib.figure import Figure
 import numpy as np
-import warnings
 
-from ..db_figuratenum.validation_helper import Validator
+from ..db_figuratenum.validator_helper import Validator
 from ..db_figuratenum.PlaneSchema import PlaneTypes, PlaneSchema
 from ..db_figuratenum.SpaceSchema import SpaceTypes, SpaceSchema
 from ..db_figuratenum.MultiDimSchema import MultiDimTypes, MultiDimSchema
@@ -105,19 +104,15 @@ class ComplexViz:
 
         if name_seq in PLANE_DATABASE:
             schema = PLANE_DATABASE[name_seq]
-            return create_evaluator_parametrized(schema, m=m, k=k)
-
         elif name_seq in SPACE_DATABASE:
             schema = SPACE_DATABASE[name_seq]
-            return create_evaluator_parametrized(schema, m=m, k=k)
-
         elif name_seq in MULTIDIM_DATABASE:
             schema = MULTIDIM_DATABASE[name_seq]
-            return create_evaluator_parametrized(schema, m=m, k=k)
-
         else:
             raise ValueError(
                 f"Unknown sequence '{name_seq}' in figuratenum complexviz database")
+
+        return create_evaluator_parametrized(schema, m=m, k=k)
 
     def _render_phase_portrait(
         self,
