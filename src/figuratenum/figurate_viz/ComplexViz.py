@@ -4,7 +4,7 @@ from matplotlib.figure import Figure
 import numpy as np
 import warnings
 
-
+from ..db_figuratenum.validation_helper import Validator
 from ..db_figuratenum.PlaneSchema import PlaneTypes, PlaneSchema
 from ..db_figuratenum.SpaceSchema import SpaceTypes, SpaceSchema
 from ..db_figuratenum.MultiDimSchema import MultiDimTypes, MultiDimSchema
@@ -79,23 +79,8 @@ class ComplexViz:
                 needs_m = schema.requires_m()
                 needs_k = schema.requires_k()
 
-                if m is not None and not needs_m:
-                    warnings.warn(
-                        f"Sequence '{name_seq}' does not use parameter 'm'; ignoring it.",
-                        stacklevel=2
-                    )
-                if k is not None and not needs_k:
-                    warnings.warn(
-                        f"Sequence '{name_seq}' does not use parameter 'k'; ignoring it.",
-                        stacklevel=2
-                    )
-
-                if needs_m and m is None:
-                    raise ValueError(
-                        f"Sequence '{name_seq}' requires parameter 'm'.")
-                if needs_k and k is None:
-                    raise ValueError(
-                        f"Sequence '{name_seq}' requires parameter 'k'.")
+                Validator.validate_m_and_k(
+                    m=m, k=k, name_seq=name_seq, needs_m=needs_m, needs_k=needs_k)
 
                 kwargs = {}
                 if needs_m:
@@ -105,18 +90,12 @@ class ComplexViz:
 
                 return lambda z: schema.evaluate_numeric(z, **kwargs)
 
-            else:
+            else:  # PlaneSchema or SpaceSchema
                 needs_m = schema.requires_m()
+                needs_k = False
 
-                if m is not None and not needs_m:
-                    warnings.warn(
-                        f"Sequence '{name_seq}' does not use parameter 'm'; ignoring it.",
-                        stacklevel=2
-                    )
-
-                if needs_m and m is None:
-                    raise ValueError(
-                        f"Sequence '{name_seq}' requires parameter 'm'.")
+                Validator.validate_m_and_k(
+                    m=m, k=k, name_seq=name_seq, needs_m=needs_m, needs_k=False)
 
                 kwargs = {}
                 if needs_m:
