@@ -196,7 +196,7 @@ class ComplexPhasePortrait:
     ) -> np.ndarray:
         """
         Build the RGB image of the phase portrait.
-        Adapted from empet's domain coloring implementation [1],
+        Adapted from empet's domain coloring implementation by Emilia Pretisor,
         extended to support arbitrary Matplotlib colormaps beyond HSV.
 
         - If cmap_color == 'hsv': uses the HSV color space (Wegert),
@@ -206,7 +206,7 @@ class ComplexPhasePortrait:
         over the resulting RGB.
         References
         ----------
-        [1] empet, "Domain Coloring", nbviewer.org/github/empet/Math/
+        [1] Emilia Petrisor(2019), "Domain Coloring", nbviewer.org/github/empet/Math/
             blob/master/DomainColoring.ipynb
         """
         if cmap_color == "hsv":
