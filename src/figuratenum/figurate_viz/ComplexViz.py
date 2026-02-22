@@ -19,6 +19,12 @@ class ComplexViz:
     """
     Unified interface for evaluating and visualizing generating functions
     of plane, space, and multidimensional figurate numbers, inspired by the style of Elias Wegert (2012).
+
+    References
+    ----------
+    [1] Wegert, E. (2012). Visual Complex Functions: An Introduction
+        with Phase Portraits. Birkhäuser Basel.
+        https://doi.org/10.1007/978-3-0348-0180-5
     """
 
     def __init__(
@@ -28,7 +34,7 @@ class ComplexViz:
         plot_type: PlotType = "enhanced_phase_portrait",
         cmap_color: str = "hsv",
         brightness: float = 0.7,
-        num_lines: int = 3,
+        num_lines: int = 20,
         poincare_disk: bool = False,
         show_axes: bool = True,
     ):
