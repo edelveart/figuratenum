@@ -17,6 +17,11 @@ class ComplexPhasePortrait:
     """
     Create phase portraits of complex functions
     based on the style of Elias Wegert (2012).
+
+    References
+    ----------
+    [1] Wegert, E. (2012). Visual Complex Functions. Birkhäuser Basel.
+            https://doi.org/10.1007/978-3-0348-0180-5
     """
 
     def __init__(
@@ -71,24 +76,22 @@ class ComplexPhasePortrait:
             print(f"Error when function f(z) executes: {e}")
             self.F = np.full_like(self.Z, np.nan, dtype=complex)
 
-    def _compute_modulus_contours(self, min_brightness=0.7,  num_lines=3):
+    def _compute_modulus_contours(self, min_brightness=0.7, frequency=18):
         """
-        Brightness for modulus |f(z)| contour lines (via sawtooth g_floor)
-
-        Period = 2π / num_lines
+        Brightness for modulus |f(z)| contour lines (via sawtooth g)
+        Period = 2π / frequency
         """
-        period = 2 * np.pi / num_lines
+        period = 2 * np.pi / frequency
         return self._sawtooth_wegert(self._log_modulus,
                                      period,
                                      min_brightness, 1)
 
-    def _compute_phase_contours(self,  min_brightness=0.7, num_lines=3):
-        """Brightness for phase arg(f(z)) contour lines (via sawtooth g_floor)
-        Period = 2π / num_lines
+    def _compute_phase_contours(self,  min_brightness=0.7, frequency=18):
+        """Brightness for phase arg(f(z)) contour lines (via sawtooth g)
+        Period = 2π / frequency
         """
-        # Rotate phase by 180° ($ \arg(f(z)) + \pi$), i.e., an offset
-        period = 2 * np.pi / num_lines
-        return self._sawtooth_wegert(self._phase_raw,
+        period = 2 * np.pi / frequency
+        return self._sawtooth_wegert((self._phase_raw),
                                      period,
                                      min_brightness, 1)
 
@@ -97,16 +100,16 @@ class ComplexPhasePortrait:
                          min_brightness: float, max_brightness: float = 1) -> np.ndarray:
         """
         Sawtooth brightness (Wegert 2012, p.33):
-        g = ⌈x/T⌉ - x/T  gives  descending -> sawtooth
+        g = ⌈x/T⌉ - x/T  gives  descending -> sawtooth.
+        Implemented as 1 - g to produce ascending sawtooth,
+        which matches Wegert's figures visually.
+
         Used for:
         - Modulus contours: x = log|f|, contour lines at |f| = eⁿ
         - Phase contours:   x = arg(f), isochromatic lines per cycle
-        Note: using np.floor gives ascending -> sawtooth (empet convention),
-        which is visually equivalent but with inverted shading direction.
         """
         scaled = x / period
-        frac_part = np.ceil(scaled) - scaled   # Wegert
-        # frac_part = scaled - np.floor(scaled) # empet / ascending
+        frac_part = 1 - (np.ceil(scaled) - scaled)
         return min_brightness + (max_brightness - min_brightness) * frac_part
 
     def _poincare_disk_mask(self, rgb):
@@ -124,7 +127,7 @@ class ComplexPhasePortrait:
         plot_type: PlotType = "pure_phase_portrait",
         cmap_color: str = "hsv",
         brightness: float = 0.7,
-        num_lines: int = 3,
+        num_lines: int = 18,
         poincare_disk: bool = False,
         show_axes: bool = True
     ) -> Figure:
@@ -147,7 +150,7 @@ class ComplexPhasePortrait:
             Colormap used for phase coloring.
         brightness : float, default=0.7
             Base brightness for contour shading (range 0-1).
-        num_lines : int, default=3
+        num_lines : int, default=18
             Number of contour lines for phase and modulus.
         poincare_disk : bool, default=False
             If True, applies a Poincaré disk mask to the plot.
@@ -192,11 +195,10 @@ class ComplexPhasePortrait:
         plot_type: PlotType,
         cmap_color: str = "hsv",
         brightness: float = 0.7,
-        num_lines: int = 3,
+        num_lines: int = 18,
     ) -> np.ndarray:
         """
-        Build the RGB image of the phase portrait.
-        Adapted from empet's domain coloring implementation by Emilia Pretisor,
+        Build the RGB image of the phase portrait following Wegert (2012),
         extended to support arbitrary Matplotlib colormaps beyond HSV.
 
         - If cmap_color == 'hsv': uses the HSV color space (Wegert),
@@ -204,14 +206,18 @@ class ComplexPhasePortrait:
         - Any other colormap: applies the Matplotlib colormap
         to the normalized phase, then multiplies the contours
         over the resulting RGB.
+
         References
         ----------
-        [1] Emilia Petrisor(2019), "Domain Coloring", nbviewer.org/github/empet/Math/
-            blob/master/DomainColoring.ipynb
+        [1] Wegert, E. (2012). Visual Complex Functions. Birkhäuser Basel.
+        https://doi.org/10.1007/978-3-0348-0180-5
+        [2] Petrisor, E. (2014). Domain Coloring.
+        https://nbviewer.org/github/empet/Math/blob/master/DomainColoring.ipynb
+
         """
         if cmap_color == "hsv":
             H = self._phase_normalized
-            S = 0.9 * np.ones_like(H)
+            S = 1 * np.ones_like(H)
             V_mod = self._compute_modulus_contours(brightness, num_lines)
             V_phase = self._compute_phase_contours(brightness, num_lines)
 
