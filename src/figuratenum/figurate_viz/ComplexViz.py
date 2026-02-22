@@ -12,7 +12,6 @@ from ..db_figuratenum.space_db import SPACE_DATABASE
 from ..db_figuratenum.multidim_db import MULTIDIM_DATABASE
 from .ComplexFzPlots import ComplexPhasePortrait, PlotType
 
-
 SequenceType: TypeAlias = PlaneTypes | SpaceTypes | MultiDimTypes
 
 
@@ -57,7 +56,7 @@ class ComplexViz:
         """
         self.resolution = resolution
         self.figsize = figsize
-        self.plot_type = plot_type
+        self.plot_type: PlotType = plot_type
         self.cmap_color = cmap_color
         self.brightness = brightness
         self.num_lines = num_lines
@@ -117,24 +116,27 @@ class ComplexViz:
     def _render_phase_portrait(
         self,
         name_seq: SequenceType,
-        plot_type: PlotType,
+        plot_type: PlotType | None = None,
         m: int | None = None,
         k: int | None = None,
         radius: float = 2,
         xlim: tuple[float, float] | None = None,
         ylim: tuple[float, float] | None = None,
         resolution: int | None = None,
-        figsize: tuple[float, float] = (6, 6),
+        figsize: tuple[float, float] | None = None,
         show: bool = True,
         **kwargs
     ) -> Figure:
         """
         Render a phase portrait with optional overrides.
         """
-        resolution = resolution or self.resolution
-        plot_type = plot_type or self.plot_type
+        if resolution is None:
+            resolution = self.resolution
+        if plot_type is None:
+            plot_type = self.plot_type
+        if figsize is None:
+            figsize = self.figsize
 
-        figsize = figsize or self.figsize
         if xlim is None:
             xlim = (-radius, radius)
         if ylim is None:
@@ -165,7 +167,7 @@ class ComplexViz:
         self,
         name_seq: PlaneTypes,
         *, m: int | None = None,
-        plot_type: PlotType = "enhanced_phase_portrait",
+        plot_type: PlotType | None = None,
         **kwargs
     ) -> Figure:
         """
@@ -211,7 +213,7 @@ class ComplexViz:
         self,
         name_seq: SpaceTypes,
         *, m: int | None = None,
-        plot_type: PlotType = "enhanced_phase_portrait",
+        plot_type: PlotType | None = None,
         **kwargs
     ) -> Figure:
         """
@@ -257,7 +259,7 @@ class ComplexViz:
         self,
         name_seq: MultiDimTypes,
         *, m: int | None = None, k: int | None = None,
-        plot_type: PlotType = "enhanced_phase_portrait",
+        plot_type: PlotType | None = None,
         **kwargs
     ) -> Figure:
         """
