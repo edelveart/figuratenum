@@ -1,6 +1,6 @@
 <h1 align="center"> FigurateNum </h1>
 
-**FigurateNum** is a collection of **235 figurate number generators** based on the book [Figurate Numbers](https://books.google.com.pe/books/about/Figurate.html?id=cDxYdstLPz4C&redir_esc=y) by Michel Deza and Elena Deza, published in 2012.
+**FigurateNum** is a collection of **235 figurate number generators** based on the book [Figurate Numbers](https://doi.org/10.1142/8188) by Michel Deza and Elena Deza, published in 2012.
 
 <p align="center">
   <img src="https://img.shields.io/pypi/v/figuratenum" alt="PyPI - Version">
