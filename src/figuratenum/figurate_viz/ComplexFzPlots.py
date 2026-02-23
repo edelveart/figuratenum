@@ -21,7 +21,7 @@ class ComplexPhasePortrait:
     References
     ----------
     [1] Wegert, E. (2012). Visual Complex Functions. Birkhäuser Basel.
-            https://doi.org/10.1007/978-3-0348-0180-5
+    https://doi.org/10.1007/978-3-0348-0180-5
     """
 
     def __init__(
@@ -48,7 +48,7 @@ class ComplexPhasePortrait:
         self._evaluate_function()
 
         # Ingredients: Modulus and Phase (cached)
-        self._log_modulus = np.log(np.abs(self.F) + 1e-12)
+        self._log_modulus = np.log(np.abs(self.F) + 1e-16)
         self._phase_raw = np.angle(self.F)  # arctan2(Im(z), Re(z))
         # phase normalized in [0,1] by converting (-\pi,\pi] → [0,2\pi)
         self._phase_normalized = np.mod(
@@ -76,24 +76,21 @@ class ComplexPhasePortrait:
             print(f"Error when function f(z) executes: {e}")
             self.F = np.full_like(self.Z, np.nan, dtype=complex)
 
-    def _compute_modulus_contours(self, min_brightness=0.7, frequency=18):
+    def _compute_modulus_contours(self, min_brightness=0.7, num_lines=18):
         """
         Brightness for modulus |f(z)| contour lines (via sawtooth g)
-        Period = 2π / frequency
+        Period = -2π / frequency.
         """
-        period = 2 * np.pi / frequency
-        return self._sawtooth_wegert(self._log_modulus,
-                                     period,
-                                     min_brightness, 1)
+        period = -2 * np.pi / num_lines
+        return self._sawtooth_wegert(self._log_modulus, period, min_brightness, 1)
 
-    def _compute_phase_contours(self,  min_brightness=0.7, frequency=18):
-        """Brightness for phase arg(f(z)) contour lines (via sawtooth g)
-        Period = 2π / frequency
+    def _compute_phase_contours(self,  min_brightness=0.7, num_lines=18):
         """
-        period = 2 * np.pi / frequency
-        return self._sawtooth_wegert((self._phase_raw),
-                                     period,
-                                     min_brightness, 1)
+        Brightness for phase arg(f(z)) contour lines (via sawtooth g)
+        Period = -2π / frequency.
+        """
+        period = -2 * np.pi / num_lines
+        return self._sawtooth_wegert((self._phase_raw), period, min_brightness, 1)
 
     @staticmethod
     def _sawtooth_wegert(x: np.ndarray, period: float,
@@ -101,23 +98,30 @@ class ComplexPhasePortrait:
         """
         Sawtooth brightness (Wegert 2012, p.33):
         g = ⌈x/T⌉ - x/T  gives  descending -> sawtooth.
-        Implemented as 1 - g to produce ascending sawtooth,
-        which matches Wegert's figures visually.
+        See -2pi in modulus and phase contours.
 
         Used for:
         - Modulus contours: x = log|f|, contour lines at |f| = eⁿ
         - Phase contours:   x = arg(f), isochromatic lines per cycle
+
+        References
+        ----------
+        [1] Wegert, E. (2012). Visual Complex Functions. Birkhäuser Basel.
+        https://doi.org/10.1007/978-3-0348-0180-5
+        [2] Petrisor, E. (2014). Domain Coloring.
+        https://nbviewer.org/github/empet/Math/blob/master/DomainColoring.ipynb
         """
         scaled = x / period
-        frac_part = 1 - (np.ceil(scaled) - scaled)
-        return min_brightness + (max_brightness - min_brightness) * frac_part
+        g = (np.ceil(scaled) - scaled)
+        return min_brightness + (max_brightness - min_brightness) * g
 
-    def _poincare_disk_mask(self, rgb):
+    def _poincare_disk_mask(self, rgb, D: float = 1.0):
         """
         Apply Poincaré Disk Mask to RGB image
-        : ${x + iy : x^2 + y^2 < 1}
+        : ${x + iy : x^2 + y^2 < D}$
+        Pixels outside the disk or radius D are made transparent.
         """
-        mask = np.abs(self.Z) < 1
+        mask = np.abs(self.Z) < D
         alpha = mask.astype(float)
         return np.dstack([rgb, alpha])  # RGBA
 
@@ -129,7 +133,8 @@ class ComplexPhasePortrait:
         brightness: float = 0.7,
         num_lines: int = 18,
         poincare_disk: bool = False,
-        show_axes: bool = True
+        poincare_disk_radius: float = 1.0,
+        show_axes: bool = True,
     ) -> Figure:
         """
         Creates an enhanced phase portrait (style of Elias Wegert).
@@ -144,7 +149,7 @@ class ComplexPhasePortrait:
         ----------
         figsize : tuple[float, float], default=(8, 8)
             Size of the figure (width, height in inches).
-        plot_type : {'pure_phase_portrait', 'phase_contours', 'modulus_contours',            'enhanced_phase_portrait'},  default='pure_phase_portrait'
+        plot_type : {'pure_phase_portrait', 'phase_contours', 'modulus_contours', 'enhanced_phase_portrait'}, default='pure_phase_portrait'
             Type of plot to generate.
         cmap_color : str, default='hsv'
             Colormap used for phase coloring.
@@ -154,26 +159,44 @@ class ComplexPhasePortrait:
             Number of contour lines for phase and modulus.
         poincare_disk : bool, default=False
             If True, applies a Poincaré disk mask to the plot.
+        poincare_disk_radius : float, default=1.0
+            Radius of the Poincaré disk applied to the plot.
+            Only used if `poincare_disk=True`. Pixels outside the
+            circle of radius `poincare_disk_radius` are made transparent.
+            Must be positive.
         show_axes : bool, default=True
-            If True, displays axes on the plot.
+            If True, displays the real and imaginary axes labels.
 
         Returns
         -------
         matplotlib.figure.Figure
             Matplotlib figure object containing the enhanced phase portrait.
         """
+
+        if not (0 <= brightness < 1):
+            raise ValueError("brightness must be in [0,1)")
+
+        if num_lines <= 0:
+            raise ValueError("num_lines must be positive")
+
         fig, ax = plt.subplots(figsize=figsize)
 
         rgb_land = self._build_rgb_wegert(
-            plot_type=plot_type, cmap_color=cmap_color, num_lines=num_lines, brightness=brightness)
+            plot_type=plot_type,
+            cmap_color=cmap_color,
+            num_lines=num_lines,
+            brightness=brightness,
+        )
 
         if poincare_disk:
-            rgb_land = self._poincare_disk_mask(rgb_land)
+            rgb_land = self._poincare_disk_mask(
+                rgb_land, D=poincare_disk_radius)
 
-        extent_tuple: tuple[float, float, float, float] = (
+        extent_tuple = (
             self.xlim[0], self.xlim[1],
             self.ylim[0], self.ylim[1]
         )
+
         ax.imshow(
             rgb_land,
             extent=extent_tuple,
@@ -181,6 +204,7 @@ class ComplexPhasePortrait:
             interpolation='bicubic',
             aspect='equal'
         )
+
         if show_axes:
             ax.set_xlabel('Re(z)')
             ax.set_ylabel('Im(z)')
@@ -207,13 +231,6 @@ class ComplexPhasePortrait:
         to the normalized phase, then multiplies the contours
         over the resulting RGB.
 
-        References
-        ----------
-        [1] Wegert, E. (2012). Visual Complex Functions. Birkhäuser Basel.
-        https://doi.org/10.1007/978-3-0348-0180-5
-        [2] Petrisor, E. (2014). Domain Coloring.
-        https://nbviewer.org/github/empet/Math/blob/master/DomainColoring.ipynb
-
         """
         if cmap_color == "hsv":
             H = self._phase_normalized
@@ -229,7 +246,7 @@ class ComplexPhasePortrait:
             }.get(plot_type)
 
             if V is None:
-                raise ValueError(f"plot_type inválido: '{plot_type}'")
+                raise ValueError(f"Invalid plot_type: '{plot_type}'")
 
             return hsv_to_rgb(np.dstack([H, S, V]))
 
@@ -249,7 +266,7 @@ class ComplexPhasePortrait:
             }.get(plot_type)
 
             if factor is None:
-                raise ValueError(f"plot_type inválido: '{plot_type}'")
+                raise ValueError(f"Invalid plot_type: '{plot_type}'")
             # Plot combinations
             # RGB * B_mod * B_phase | RGB * B_mod | RGB * B_phase | RGB
             return np.clip(rgb * factor[..., None], 0, 1)
