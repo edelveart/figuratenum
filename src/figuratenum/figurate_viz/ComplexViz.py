@@ -205,8 +205,13 @@ class ComplexViz:
                 Number of contour lines for phase and modulus
             - poincare_disk : bool, default=False
                 Apply a Poincaré disk mask if True
+            - poincare_disk_radius: float, default = 1.0
+                Radius of the Poincaré disk applied to the plot.
+                Only used if `poincare_disk=True`. Pixels outside the
+                circle of radius `poincare_disk_radius` are made transparent.
+                Must be positive.
             - show_axes : bool, default=True
-                Display axes on the plot
+                Display axes on the plotclear
 
         Returns
         -------
@@ -251,6 +256,11 @@ class ComplexViz:
                 Number of contour lines for phase and modulus
             - poincare_disk : bool, default=False
                 Apply a Poincaré disk mask if True
+            - poincare_disk_radius: float, default = 1.0
+                Radius of the Poincaré disk applied to the plot.
+                Only used if `poincare_disk=True`. Pixels outside the
+                circle of radius `poincare_disk_radius` are made transparent.
+                Must be positive.
             - show_axes : bool, default=True
                 Display axes on the plot
 
@@ -297,6 +307,11 @@ class ComplexViz:
                 Number of contour lines for phase and modulus
             - poincare_disk : bool, default=False
                 Apply a Poincaré disk mask if True
+            - poincare_disk_radius: float, default = 1.0
+                Radius of the Poincaré disk applied to the plot.
+                Only used if `poincare_disk=True`. Pixels outside the
+                circle of radius `poincare_disk_radius` are made transparent.
+                Must be positive.
             - show_axes : bool, default=True
                 Display axes on the plot
 
