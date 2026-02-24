@@ -172,7 +172,7 @@ class MobiusViz:
 
         return fig
 
-    def moebius(self, name_seq: str, *, m: int | None = None, k: int | None = None, n_terms: int):
+    def mobius(self, name_seq: str, *, m: int | None = None, k: int | None = None, n_terms: int):
         """
         Compute the Möbius function values μ(n) for a sequence of figurate numbers.
 
@@ -224,7 +224,14 @@ class MobiusViz:
 
         return self._cumulative_mu(gen_seq=gen, n_terms=n_terms)
 
-    def visualize_mertens(self, name_seq: str, *, m: int | None = None, k: int | None = None, n_terms: int, show: bool = True):
+    def visualize_mertens(
+        self,
+        name_seq: str,
+        *, m: int | None = None, k: int | None = None,
+        n_terms: int,
+        show: bool = True,
+        show_labels: bool = True
+    ):
         """
         Plot the cumulative Mertens function M(n) for a sequence of figurate numbers.
 
@@ -240,6 +247,8 @@ class MobiusViz:
             Number of terms in the sequence to plot.
         show : bool, default=True
             Whether to display the figure immediately.
+        show_labels : bool, default=True
+            Whether to display the title and axis labels.
 
         Returns
         -------
@@ -268,10 +277,17 @@ class MobiusViz:
         ax.set_xticks(range(0, n_terms + 1, step))
         ax.set_xlim(1, n_terms)
         ax.margins(x=0)
-        ax.set_title(f"Mertens function for {name_seq}")
-        ax.set_xlabel("n")
-        ax.set_ylabel("M(n)")
         ax.grid(False)
+
+        if show_labels:
+            title = f"Mertens function ({name_seq})"
+            if k is not None:
+                title += f", dimension={k}"
+            if m is not None:
+                title += f", facets={m}"
+            ax.set_title(title)
+            ax.set_xlabel("n-th figurate number")
+            ax.set_ylabel("M(n)")
 
         fig.tight_layout()
         if show:
