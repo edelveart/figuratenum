@@ -1,7 +1,7 @@
 from .DiscreteViz import DiscreteViz
 from .SeriesExpansion import PowerSeriesExpansion
 from .ComplexViz import ComplexViz
-from .MobiusViz import MobiusViz
+from .MobiusViz import MobiusMuViz
 
 # Deprecated: Temporal alias for transition. Will be removed in version 4.0.0
 FigurateViz = DiscreteViz

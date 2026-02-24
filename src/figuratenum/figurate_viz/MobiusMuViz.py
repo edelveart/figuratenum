@@ -6,7 +6,7 @@ from ..db_figuratenum.validator_helper import Validator
 from matplotlib.ticker import MaxNLocator
 
 
-class MobiusViz:
+class MobiusMuViz:
     """
     A class for computing and visualizing the Möbius function μ(n) and
     the cumulative Mertens function M(n) for sequences of figurate numbers.
