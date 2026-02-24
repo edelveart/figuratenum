@@ -29,9 +29,10 @@ def test_plane_centered_mgonal():
 
 
 def test_space_centered_mgonal_pyramid():
-    viz = ComplexViz(figsize=(1, 3), resolution=res*6)
+    viz = ComplexViz(figsize=(1, 3), resolution=res *
+                     6, plot_type="phase_contours")
     fig = viz.visualize_space(
-        "centered_mgonal_pyramid", m=19, plot_type="phase_contours", cmap_color="cividis", show=False, poincare_disk=True)
+        "centered_mgonal_pyramid", m=19,  cmap_color="cividis", show=False, poincare_disk=True)
     assert isinstance(fig, Figure)
 
 
@@ -43,9 +44,10 @@ def test_multidim_k_hypercube():
 
 
 def test_multidim_k_dim_mgonal_pyramidal():
-    viz = ComplexViz(figsize=(3, 4), resolution=res*2, num_lines=2)
+    viz = ComplexViz(figsize=(3, 4), resolution=res*2,
+                     num_lines=2, plot_type="modulus_contours")
     fig = viz.visualize_multidim(
-        "k_dim_mgonal_pyramidal", m=6, k=10, plot_type="pure_phase_portrait", show=False)
+        "k_dim_mgonal_pyramidal", m=6, k=10,  show=False)
     assert isinstance(fig, Figure)
 
 
