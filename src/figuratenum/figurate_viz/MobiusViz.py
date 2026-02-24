@@ -7,6 +7,18 @@ from matplotlib.ticker import MaxNLocator
 
 
 class MobiusViz:
+    """
+    A class for computing and visualizing the Möbius function μ(n) and
+    the cumulative Mertens function M(n) for sequences of figurate numbers.
+
+    Attributes
+    ----------
+    figsize : tuple[float, float]
+        Default figure size for plots.
+    _PRIMES : list[int]
+        List of small prime numbers used for efficient μ(n) computation.
+    """
+
     def __init__(self, figsize: tuple[float, float] = (8, 5)):
         self._PRIMES = self._small_primes()
         self.figsize = figsize
