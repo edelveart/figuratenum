@@ -1,6 +1,7 @@
 import inspect
 import numpy as np
 import matplotlib.pyplot as plt
+from typing import Literal
 from ..FigurateNum import FigurateNum
 from ..db_figuratenum.validator_helper import Validator
 from matplotlib.ticker import MaxNLocator
@@ -34,7 +35,7 @@ class MobiusMuViz:
                     sieve[j] = False
         return primes
 
-    def _mobius_single(self, n: int) -> int:
+    def _mobius_single(self, n: int) -> Literal[0, 1, -1]:
         """
         Compute the Möbius function μ(n) for a single integer efficiently,
         without generating large arrays.
@@ -46,7 +47,7 @@ class MobiusMuViz:
 
         Returns
         -------
-        int
+        Literal[0, 1, -1]
             μ(n), which is:
             - 0 if n is divisible by a square,
             - 1 if n is a product of an even number of distinct primes or n = 1,
