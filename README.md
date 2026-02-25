@@ -1,7 +1,7 @@
 <h1 align="center"> FigurateNum </h1>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/figurate-num.png" width="400" alt="FigurateNum HeroImage">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/figuratenum.png" width="400" alt="FigurateNum HeroImage">
 </p>
 
 <p align="center">
