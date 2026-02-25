@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "figuratenum"
-version = "2.1.1"
-description = "Generate 235 infinite figurate number sequences across multiple dimensions for mathematical research, applications, and exploration in Python."
+version = "3.0.0-alpha"
+description = "GGenerates 235 figurate number sequences and visualizes their generating functions across multiple dimensions for mathematical research, applications, and exploration in Python."
 readme = "README.md"
 authors = [{ name = "Edgar Armando Delgado Vega" }]
 license = "MIT"
@@ -13,7 +13,7 @@ requires-python = ">=3.10"
 
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Development Status :: 5 - Production/Stable",
+    "Development Status :: 3 - Alpha",
     "Topic :: Scientific/Engineering :: Mathematics",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Intended Audience :: Developers",
@@ -25,11 +25,21 @@ classifiers = [
 ]
 
 keywords = [
-    "generators",
-    "figurate numbers",
-    "infinite sequences",
+    "mathematics",
     "number sequences",
+    "infinite sequences",
     "number generators",
+    "sequence generator",
+    "figurate numbers",
+    "plane figurate numbers",
+    "space figurate numbers",
+    "multidimensional figurate numbers",
+    "math graphs",
+    "math visualization",
+    "complex plane",
+    "phase portraits",
+    "domain_coloring",
+    "generating functions",
 ]
 
 [project.optional-dependencies]

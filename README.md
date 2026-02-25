@@ -1,7 +1,7 @@
 <h1 align="center"> FigurateNum </h1>
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/figurate-num.png" width="400" alt="FigurateNum HeroImage">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/figuratenum.png" width="400" alt="FigurateNum HeroImage">
 </p>
 
 <p align="center">
@@ -23,7 +23,7 @@
 </p>
 <p align="center"><em>Phase Portraits of Generalized Pronic (2D) and Centered Hypertetrahedron (4D)</em></p>
 
-`ComplexViz` plots generating functions as [enhanced phase portraits](https://doi.org/10.1007/978-3-0348-0180-5), inspired by Elias Wegert (2012), customizable through `matplotlib`.
+`ComplexViz` plots generating functions as [enhanced phase portraits](https://doi.org/10.1007/978-3-0348-0180-5), inspired by Elias Wegert (2012). The graphs are customizable through `matplotlib`.
 
 ### Installation
 
