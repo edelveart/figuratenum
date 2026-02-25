@@ -1,6 +1,8 @@
 <h1 align="center"> FigurateNum </h1>
 
-**FigurateNum** is a collection of **235 figurate number generators** based on the book [Figurate Numbers](https://doi.org/10.1142/8188) by Michel Deza and Elena Deza, published in 2012.
+<p align="center">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/figurate-num.png" width="400" alt="FigurateNum HeroImage">
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/pypi/v/figuratenum" alt="PyPI - Version">
@@ -12,141 +14,91 @@
   <img src="https://img.shields.io/github/actions/workflow/status/edelveart/figuratenum/tests.yml" alt="GitHub Actions Workflow Status" >
 </p>
 
+**FigurateNum** collects **235 figurate number sequences** and their generating functions, based on the book [Figurate Numbers](https://doi.org/10.1142/8188) by Elena Deza and Michel Marie Deza (2012).
+
+### New `ComplexViz`
+
 <p align="center">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/figuratenum.png" width="400">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/complex-viz-example.png" width="400" alt="Generalized Pronic & Centered Hypertetrahedron Phase Portraits">
 </p>
+<p align="center"><em>Phase Portraits of Generalized Pronic (2D) and Centered Hypertetrahedron (4D)</em></p>
 
-## What is the purpose of FigurateNum?
+`ComplexViz` plots generating functions as [enhanced phase portraits](https://doi.org/10.1007/978-3-0348-0180-5), inspired by Elias Wegert (2012), customizable through `matplotlib`.
 
-**FigurateNum** helps discover patterns in figurate number sequences and supports numerical computation in mathematics-related projects. It integrates with other tools for visualizing geometric structures and serves as a companion to the book.
-
-
-
-### How to install?
+### Installation
 
 ```bash
+# Core library (only generators)
 pip install figuratenum
-```
 
-### Optional: Graphical Visualization (v2.1.0)
-
-To enable 2D visualizations via the `FigurateViz` class (requires `numpy` and `matplotlib`), install the optional dependencies:
-
-```bash
+# Full installation with 2D visualization (requires numpy, sympy, and matplotlib)
 pip install figuratenum[figurate-viz]
 ```
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/centered-hexagonal-pyramidal.svg" width="300" alt="Centered Hexagonal Pyramidal">
-  <p align="center"><em>Centered Hexagonal Pyramidal</em></p>
-</p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/centered-decagonal-pyramidal.svg" width="300" alt="Centered Decagonal Pyramidal">
-  <p align="center"><em>Centered Decagonal Pyramidal</em></p>
-</p>
-<p align="center">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/five-dimensional-hypercube.svg" width="300" alt="Five-dimensional Hypercube">
-  <p align="center"><em>5D Hypercube</em></p>
-</p>
+## Features
 
+- Access all figurate number sequences via the main `FigurateNum` class.
+- The package offers specific classes for each dimension:
+    - `PlaneFigurateNum` (79) - [See list](https://github.com/edelveart/figuratenum#plane-figurate-numbers)
+    - `SpaceFigurateNum` (86) - [See list](https://github.com/edelveart/figuratenum#space-figurate-numbers)
+    - `MultidimensionalFigurateNum` (68) - [See list](https://github.com/edelveart/figuratenum#multidimensional-figurate-numbers)
+    - `ZooFigurateNum` (2) - [See list](https://github.com/edelveart/figuratenum#zoo-figurate-numbers)
+- Optional visualization with the `ComplexViz` and `DiscreteViz` classes.
 
-### Features
+## How to Use
 
-The main class, `FigurateNum`, provides access to all figurate number sequences across different **dimensions**, while dedicated classes let you work with each dimension separately:
-
-- 79 Plane figurate numbers → `PlaneFigurateNum` class — [Explore on GitHub](https://github.com/edelveart/figuratenum#plane-figurate-numbers)
-- 86 Space figurate numbers → `SpaceFigurateNum` class — [Explore on GitHub](https://github.com/edelveart/figuratenum#space-figurate-numbers)
-- 68 Multidimensional figurate numbers → `MultidimensionalFigurateNum` class — [Explore on GitHub](https://github.com/edelveart/figuratenum#multidimensional-figurate-numbers)
-- 2 Zoo figurate numbers → `ZooFigurateNum` class — [Explore on GitHub](https://github.com/edelveart/figuratenum#zoo-figurate-numbers)
-
-### FigurateViz Visualization
-
-- Gaussian plots (2D) in polar coordinates with customizable colors, visibility options, and export capabilities.
-- Seamless integration with any figurate number sequence (`list[int]` or `tuple[int, ...]`).
-
----
-
-## How to use?
-
-### 1. Import and generate sequences with `FigurateNum` and related classes
+### Generating Sequences
 
 ```python
 from figuratenum import FigurateNum, MultidimensionalFigurateNum
 
-# 1. General use: generate any figurate sequence via FigurateNum
-seq = FigurateNum()
-hyperdodecahedral_gen = seq.hyperdodecahedral()
-print([next(hyperdodecahedral_gen) for _ in range(4)])
-# Output: [1, 600, 4983, 19468]
+# Using the main class FigurateNum
+seq = FigurateNum().hyperdodecahedral()
+print([next(seq) for _ in range(4)])
+# [1, 600, 4983, 19468]
 
-# 2. Specialized classes: PlaneFigurateNum, SpaceFigurateNum,
-#    MultidimensionalFigurateNum, ZooFigurateNum
-multi = MultidimensionalFigurateNum()
-hypertetrahedron_gen = multi.k_dimensional_centered_hypertetrahedron(21)
-print([next(hypertetrahedron_gen) for _ in range(12)])
-# Output: [1, 23, 276, 2300, 14950, 80730, 376740,
-#          1560780, 5852925, 20160075, 64512240, 193536720]
+# Using the specific class MultidimensionalFigurateNum
+seq = MultidimensionalFigurateNum().k_dimensional_centered_hypertetrahedron(21)
+print([next(seq) for _ in range(7)])
+# [1, 23, 276, 2300, 14950, 80730, 376740]
 ```
 
-###  2. Using `FigurateViz` to visualize and export
+### Visualizing Sequences
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/five-dimensional-hyperoctahedron.svg" width="300" alt="Example of Gaussian Graph Visualization">
-  <p align="center"><em>5D Hyperoctahedron</em></p>
-</p>
+Both classes provide: `visualize_plane()`,  `visualize_space()`, `visualize_multidim()`.
 
-```python
-from figuratenum import FigurateNum as fgn
-from figuratenum.figurate_viz.FigurateViz import FigurateViz
 
-# Generate figurate numbers
-seq_loop = fgn()
-gen = seq_loop.five_dimensional_hyperoctahedron()
-figuratenum_seq = [next(gen) for _ in range(704)]
+```py
+from figuratenum.figurate_viz import ComplexViz, DiscreteViz
 
-# Create and draw the Gaussian plot
-viz = FigurateViz(figuratenum_seq, figsize=(6, 6))
-viz.gaussian_plot(
+# Phase portrait plots using ComplexViz
+c = ComplexViz(plot_type="enhanced_phase_portrait",
+               poincare_disk=True, num_lines=10)
+
+c.visualize_plane(
+    "square",
+    cmap_color="twilight",
+    poincare_disk_radius=2.0,
+    show_axes=True, brightness=0.76
+)
+
+# Modular plots using DiscreteViz
+d = DiscreteViz()
+d.visualize_multidim(
+    "five_dimensional_hyperoctahedron", n_terms=704,
     circ_color="m", bg_color="k", num_text=False,
-    num_color="g", ext_circle=True, rotate=-1
-).draw()
-
-# Export plots as .svg, .pdf, .png (matplotlib compatible),
-# with options e.g., dpi, transparent, bbox_inches, pad_inches, etc.
-viz.export_plot(
-    "figure1.svg", circ_color="m",
-    transparent=True, rotate=-1
+    num_color="g", ext_circle=True, rotate=-1, show=True
 )
 ```
 
-### 3. Get sequence values easily with `NumCollector`
-
-```python
-from figuratenum import NumCollector as nc, FigurateNum
-
-gen = FigurateNum().pentatope()
-print(nc.take_to_tuple(gen, 10))  # first 10 values as tuple
-# Output: (1, 5, 15, 35, 70, 126, 210, 330, 495, 715)
-
-# Available methods:
-# - take(n)               : first n values as iterator
-# - take_to_list(stop, start=0, step=1)
-# - take_to_tuple(stop, start=0, step=1)
-# - take_to_array(stop, start=0, step=1)
-# - pick(n)               : nth value
-```
-
-### Version History
-> 🚨 Version **2.0.0** includes **renamed methods and changes in class usage**. These changes are **incompatible with previous versions**. Please review the updated usage instructions below to adapt your code to the new structure.
-
-### Additional Resources
-
-- [PDF Cheatsheet with LaTeX commands and examples](https://edelveart.github.io/resources-files/cheatsheet/figuratenum/figuratenum-python-cheatsheet.pdf).
-- [Errata *Figurate Numbers (2012)*](https://edelveart.github.io/resources-files/errata-figuratenum.pdf).
+<p align="center">
+  <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/discrete-complex-viz-example.png" width="400" alt="Example of ComplexViz and DiscreteViz Sequences">
+</p>
+<p align="center"><em>Discrete plot of 5D Hyperoctahedron and Phase Portrait of Square Numbers</em></p>
 
 ---
 
-## What Figurate Number Sequences are Implemented?
+## Sequences Implemented
 
 ### Plane Figurate Numbers
 
@@ -411,23 +363,30 @@ print(nc.take_to_tuple(gen, 10))  # first 10 values as tuple
 2. `pell`
 </details>
 
+
 ---
 
-### Note for Users
+## Additional resources
+
+- [PDF Cheatsheet](https://edelveart.github.io/resources-files/cheatsheet/figuratenum/figuratenum-python-cheatsheet.pdf).
+- [Errata *Figurate Numbers (2012)*](https://edelveart.github.io/resources-files/errata-figuratenum.pdf).
+
+## Contributing
+
+FigurateNum is under active development, and we warmly welcome your contributions. Fork the repository and submit a **pull request**:
+
+- Add new sequences or improve tests, documentation, and errata (located at `docs/errata/errata-figuratenum.tex`).
+- Follow conventional commit prefixes: `feat`, `refactor`, `fix`, `docs`, and `test`.
+
+
+### Notes
 
 By default, `FigurateNum` uses optimized, mathematically equivalent versions that are significantly faster, especially for multidimensional figurate numbers. Incremental computation and precomputed values allow step-by-step results without recalculating everything. The original formulas from the book are available via the `*_from_book()` methods for reference and testing.
 
-## How to contribute?
+### Version History
+> 🚨 Version **2.0.0** includes **renamed methods and changes in class usage**. These changes are **incompatible with previous versions**. Please review the updated usage instructions below to adapt your code to the new structure.
 
-FigurateNum is currently under development, and we warmly invite your contributions. Just **fork** the project and then submit a **pull request**:
-
-- Sequences from Chapters 1, 2, and 3 of the book
-- New sequences not included in the book: If you have new sequences, please provide the source.
-- Tests, documentation and errata (located at `docs/errata/errata-figuratenum.tex`).
-
-When making commits, please use the following conventional prefixes to indicate the nature of the changes: `feat`, `refactor`, `fix`, `docs`, and `test`.
-
-## Citation
+### Citation
 
 If you use FigurateNum in your research, thesis, or project, please cite it:
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18250313.svg)](https://doi.org/10.5281/zenodo.18250313)
