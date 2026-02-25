@@ -16,7 +16,7 @@
 
 **FigurateNum** collects **235 figurate number sequences** and their generating functions, based on the book [Figurate Numbers](https://doi.org/10.1142/8188) by Elena Deza and Michel Marie Deza (2012).
 
-### New `ComplexViz`
+### New in v.3.0.0a0: `ComplexViz`
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/edelveart/figuratenum/main/docs/images/complex-viz-example.png" width="400" alt="Generalized Pronic & Centered Hypertetrahedron Phase Portraits">
@@ -28,11 +28,14 @@
 ### Installation
 
 ```bash
-# Core library (only generators)
+# Stable version (only generators)
 pip install figuratenum
 
-# Full installation with 2D visualization (requires numpy, sympy, and matplotlib)
+# Install discrete visualization (includes FigurateViz, requires numpy and matplotlib)
 pip install figuratenum[figurate-viz]
+
+# Alpha version (includes full visualization ComplexViz and DiscreteViz, requires numpy, sympy, and matplotlib)
+pip install figuratenum[figurate-viz]==3.0.0a0
 ```
 
 ## Features
