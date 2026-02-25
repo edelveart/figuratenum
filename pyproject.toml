@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "figuratenum"
 version = "3.0.0-alpha"
-description = "GGenerates 235 figurate number sequences and visualizes their generating functions across multiple dimensions for mathematical research, applications, and exploration in Python."
+description = "Generates 235 figurate number sequences and visualizes their generating functions across multiple dimensions in Python."
 readme = "README.md"
 authors = [{ name = "Edgar Armando Delgado Vega" }]
 license = "MIT"
