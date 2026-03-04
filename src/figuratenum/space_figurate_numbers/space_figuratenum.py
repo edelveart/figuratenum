@@ -53,7 +53,8 @@ def truncated_tetrahedral() -> Generator[int]:
 def truncated_cubic() -> Generator[int]:
     delta = 1
     while True:
-        yield (3 * delta - 2) ** 3 - ((8 * (delta - 1) * delta * (delta + 1)) // 6)
+        # yield (3 * delta - 2) ** 3 - ((8 * (delta - 1) * delta * (delta + 1)) // 6) # alternative via C(3n-2)-8S_3^3(n-1)
+        yield (77 * delta**3 - 162 * delta**2 + 112 * delta - 24) // 3
         delta += 1
 
 
@@ -117,7 +118,7 @@ def centered_pyramid() -> Generator[int]:
 def centered_mgonal_pyramid(m: int) -> Generator[int]:
     delta = 1
     while True:
-        yield (m - 1) * ((delta - 1) * delta * (2 * delta - 1)) // 6 + (2 * delta - 1)
+        yield (2 * delta - 1) * ((m - 1) * delta**2 - (m - 1) * delta + 6) // 6
         delta += 1
 
 
