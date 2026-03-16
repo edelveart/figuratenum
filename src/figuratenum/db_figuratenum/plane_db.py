@@ -131,6 +131,12 @@ plane_figuratenum_registers = [
         galois_description=""
     ),
     PlaneSchema(
+        'pentagonal_triangular',
+        generating_function=x * (1 + 15*x) / ((1 - x) * (1 - 194*x + x**2)),
+        galois_group='',
+        galois_description=""
+    ),
+    PlaneSchema(
         'generalized_mgonal',
         generating_function=x**2 *
         (1 + x) * (1 + (m - 4)*x + x**2) / (1 - x**2)**3,
