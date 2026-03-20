@@ -262,6 +262,14 @@ plane_highly_polygonal = [
         galois_group='',
         galois_description=""
     ),
+    PlaneSchema(
+        'nonagonal_square',
+        # A036411
+        generating_function=(
+            (1 + 8*x + 182*x**2 + 8*x**3 + x**4)/((1-x)*(1 - 898*x**2 + x**4))),
+        galois_group='',
+        galois_description=""
+    ),
 ]
 
 
