@@ -255,6 +255,13 @@ plane_highly_polygonal = [
         galois_group='',
         galois_description=""
     ),
+    PlaneSchema(
+        'nonagonal_triangular',
+        # A048909
+        generating_function=x*(1+70*x+x**2)/((1-x)*(1-254*x+x**2)),
+        galois_group='',
+        galois_description=""
+    ),
 ]
 
 
