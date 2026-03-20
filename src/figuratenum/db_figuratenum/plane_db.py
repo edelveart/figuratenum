@@ -171,6 +171,13 @@ plane_highly_polygonal = [
         galois_group='',
         galois_description=""
     ),
+    PlaneSchema(
+        'hexagonal_square',
+        # A046176
+        generating_function=x*(1+x)/(1-34*x+x**2),
+        galois_group='',
+        galois_description=""
+    ),
 ]
 
 
