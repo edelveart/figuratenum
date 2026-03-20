@@ -278,6 +278,14 @@ plane_highly_polygonal = [
         galois_group='',
         galois_description=""
     ),
+    PlaneSchema(
+        'nonagonal_hexagonal',
+        # A048915
+        generating_function=x*(1+324*x+1168173106*x**2+20902860*x **
+                               3+82621*x**4) / ((1-x)*(1-64514*x+x**2)*(1+64514*x+x**2)),
+        galois_group='',
+        galois_description=""
+    ),
 ]
 
 
