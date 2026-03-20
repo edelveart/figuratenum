@@ -123,19 +123,7 @@ plane_figuratenum_registers = [
         galois_group='',
         galois_description=""
     ),
-    PlaneSchema(
-        'square_triangular',
-        generating_function=x * (1 + x) / ((1 - x)*(1 - 34*x + x**2)
-                                           ),
-        galois_group='',
-        galois_description=""
-    ),
-    PlaneSchema(
-        'pentagonal_triangular',
-        generating_function=x * (1 + 15*x) / ((1 - x) * (1 - 194*x + x**2)),
-        galois_group='',
-        galois_description=""
-    ),
+
     PlaneSchema(
         'generalized_mgonal',
         generating_function=x**2 *
@@ -160,5 +148,33 @@ plane_figuratenum_registers = [
 
 ]
 
+plane_highly_polygonal = [
 
-PLANE_DATABASE = {seq.name: seq for seq in plane_figuratenum_registers}
+    PlaneSchema(
+        'square_triangular',
+        generating_function=x * (1 + x) / ((1 - x)*(1 - 34*x + x**2)),
+        galois_group='',
+        galois_description=""
+    ),
+    PlaneSchema(
+        'pentagonal_triangular',
+        # A014979 (Modified x**2 -> x)
+        generating_function=x * (1 + 15*x) / ((1 - x) * (1 - 194*x + x**2)),
+        galois_group='',
+        galois_description=""
+    ),
+
+    PlaneSchema(
+        'pentagonal_square',
+        # A036353
+        generating_function=x*(1+198*x+x**2)/((1-x)*(1-9602*x+x**2)),
+        galois_group='',
+        galois_description=""
+    ),
+]
+
+
+extended_plane_figuratenum_registers = plane_figuratenum_registers + \
+    plane_highly_polygonal
+PLANE_DATABASE = {
+    seq.name: seq for seq in extended_plane_figuratenum_registers}

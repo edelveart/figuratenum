@@ -25,11 +25,16 @@ PlaneTypes: TypeAlias = Literal[
     "aztec_diamond",
     "cross",
     "diamond",
-    "square_triangular",
-    "pentagonal_triangular",
+
+    # Generalized
     "generalized_mgonal",
     "generalized_centered_mgonal",
-    "generalized_pronic"
+    "generalized_pronic",
+
+    # Highly Polygonal
+    "square_triangular",
+    "pentagonal_triangular",
+    "pentagonal_square"
 ]
 
 
