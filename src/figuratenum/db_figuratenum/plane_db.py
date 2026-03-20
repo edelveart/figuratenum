@@ -247,6 +247,14 @@ plane_highly_polygonal = [
         galois_group='',
         galois_description=""
     ),
+    PlaneSchema(
+        'octagonal_heptagonal',
+        # A048906
+        generating_function=x*(-133*x**2-64722*x-1) /
+        (x**3-232323*x**2+232323*x-1),
+        galois_group='',
+        galois_description=""
+    ),
 ]
 
 
