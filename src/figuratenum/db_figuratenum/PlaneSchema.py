@@ -35,7 +35,8 @@ PlaneTypes: TypeAlias = Literal[
     "square_triangular",
     "pentagonal_triangular",
     "pentagonal_square",
-    "hexagonal_square"
+    "hexagonal_square",
+    "hexagonal_pentagonal"
 ]
 
 
