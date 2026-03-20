@@ -224,6 +224,13 @@ plane_highly_polygonal = [
         galois_group='',
         galois_description=""
     ),
+    PlaneSchema(
+        'octagonal_square',
+        # A036428
+        generating_function=x*(x**2+30*x+1)/((1-x)*(1-194*x+x**2)),
+        galois_group='',
+        galois_description=""
+    ),
 ]
 
 
