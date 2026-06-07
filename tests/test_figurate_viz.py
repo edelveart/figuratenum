@@ -2,7 +2,7 @@ import pytest
 
 from figuratenum import FigurateNum
 from figuratenum.figurate_viz import FigurateViz, DiscreteViz
-from figuratenum.figurate_viz.GaussianPlots import GaussianPlots
+from figuratenum.figurate_viz.ModularPlots import ModularPlots
 from matplotlib.figure import Figure
 import matplotlib
 # Use a non-interactive backend for testing.
@@ -28,7 +28,7 @@ def test_gaussian_graph_default_params():
 
     gaussian_plot = fig_viz.gaussian_plot()
 
-    assert isinstance(gaussian_plot, GaussianPlots)
+    assert isinstance(gaussian_plot, ModularPlots)
     assert gaussian_plot.circ_color == "g"
     assert gaussian_plot.bg_color == "k"
     assert gaussian_plot.num_text is False
@@ -48,7 +48,7 @@ def test_gaussian_graph():
         circ_color="m", bg_color="c", num_text=True, num_color="g",
         rotate=rotate_start_value, ext_circle=False)
 
-    assert isinstance(gaussian_plot, GaussianPlots)
+    assert isinstance(gaussian_plot, ModularPlots)
     assert gaussian_plot.circ_color == "m"
     assert gaussian_plot.bg_color == "c"
     assert gaussian_plot.num_text is True

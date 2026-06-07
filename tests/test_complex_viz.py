@@ -32,7 +32,7 @@ def test_space_centered_mgonal_pyramid():
     viz = ComplexViz(figsize=(1, 3), resolution=res *
                      6, plot_type="phase_contours")
     fig = viz.visualize_space(
-        "centered_mgonal_pyramid", m=19,  cmap_color="cividis", show=False, poincare_disk=True)
+        "centered_mgonal_pyramid", m=19,  cmap_color="cividis", show=False, disk=True)
     assert isinstance(fig, Figure)
 
 
