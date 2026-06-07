@@ -35,7 +35,7 @@ class ComplexViz:
         cmap_color: str = "hsv",
         brightness: float = 0.7,
         num_lines: int = 20,
-        poincare_disk: bool = False,
+        disk: bool = False,
         show_axes: bool = True,
     ):
         """
@@ -55,8 +55,8 @@ class ComplexViz:
             Base brightness for contours (0-1).
         num_lines : int, default=3
             Default number of contour lines for phase and modulus.
-        poincare_disk : bool, default=False
-            Apply Poincaré disk mask if True.
+        disk : bool, default=False
+            Apply a disk mask if True.
         show_axes : bool, default=True
             Display axes by default.
         """
@@ -66,7 +66,7 @@ class ComplexViz:
         self.cmap_color = cmap_color
         self.brightness = brightness
         self.num_lines = num_lines
-        self.poincare_disk = poincare_disk
+        self.disk = disk
         self.show_axes = show_axes
 
     def _get_evaluator_fz(self, name_seq: SequenceType, m: int | None = None, k: int | None = None) -> Callable[[np.ndarray], np.ndarray]:
@@ -160,7 +160,7 @@ class ComplexViz:
             cmap_color=kwargs.pop("cmap_color", self.cmap_color),
             brightness=kwargs.pop("brightness", self.brightness),
             num_lines=kwargs.pop("num_lines", self.num_lines),
-            poincare_disk=kwargs.pop("poincare_disk", self.poincare_disk),
+            disk=kwargs.pop("disk", self.disk),
             show_axes=kwargs.pop("show_axes", self.show_axes),
             **kwargs
         )
@@ -203,12 +203,12 @@ class ComplexViz:
                 Base brightness for contours (0-1)
             - num_lines : int, default=3
                 Number of contour lines for phase and modulus
-            - poincare_disk : bool, default=False
-                Apply a Poincaré disk mask if True
-            - poincare_disk_radius: float, default = 1.0
-                Radius of the Poincaré disk applied to the plot.
-                Only used if `poincare_disk=True`. Pixels outside the
-                circle of radius `poincare_disk_radius` are made transparent.
+            - disk : bool, default=False
+                Apply a disk mask if True
+            - disk_radius: float, default=1.0
+                Radius of the disk applied to the plot.
+                Only used if `disk=True`. Pixels outside the
+                circle of radius `disk_radius` are made transparent.
                 Must be positive.
             - show_axes : bool, default=True
                 Display axes on the plotclear
@@ -254,12 +254,12 @@ class ComplexViz:
                 Base brightness for contours (0-1)
             - num_lines : int, default=3
                 Number of contour lines for phase and modulus
-            - poincare_disk : bool, default=False
-                Apply a Poincaré disk mask if True
-            - poincare_disk_radius: float, default = 1.0
-                Radius of the Poincaré disk applied to the plot.
-                Only used if `poincare_disk=True`. Pixels outside the
-                circle of radius `poincare_disk_radius` are made transparent.
+            - disk : bool, default=False
+                Apply a disk mask if True
+            - disk_radius: float, default=1.0
+                Radius of the disk applied to the plot.
+                Only used if `disk=True`. Pixels outside the
+                circle of radius `disk_radius` are made transparent.
                 Must be positive.
             - show_axes : bool, default=True
                 Display axes on the plot
@@ -305,12 +305,12 @@ class ComplexViz:
                 Base brightness for contours (0-1)
             - num_lines : int, default=3
                 Number of contour lines for phase and modulus
-            - poincare_disk : bool, default=False
-                Apply a Poincaré disk mask if True
-            - poincare_disk_radius: float, default = 1.0
-                Radius of the Poincaré disk applied to the plot.
-                Only used if `poincare_disk=True`. Pixels outside the
-                circle of radius `poincare_disk_radius` are made transparent.
+            - disk : bool, default=False
+                Apply a disk mask if True
+            - disk_radius: float, default=1.0
+                Radius of the disk applied to the plot.
+                Only used if `disk=True`. Pixels outside the
+                circle of radius `disk_radius` are made transparent.
                 Must be positive.
             - show_axes : bool, default=True
                 Display axes on the plot

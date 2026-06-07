@@ -115,9 +115,9 @@ class ComplexPhasePortrait:
         g = (np.ceil(scaled) - scaled)
         return min_brightness + (max_brightness - min_brightness) * g
 
-    def _poincare_disk_mask(self, rgb, D: float = 1.0):
+    def _disk_mask(self, rgb, D: float = 1.0):
         """
-        Apply Poincaré Disk Mask to RGB image
+        Apply Disk Mask to RGB image
         : ${x + iy : x^2 + y^2 < D}$
         Pixels outside the disk or radius D are made transparent.
         """
@@ -132,8 +132,8 @@ class ComplexPhasePortrait:
         cmap_color: str = "hsv",
         brightness: float = 0.7,
         num_lines: int = 18,
-        poincare_disk: bool = False,
-        poincare_disk_radius: float = 1.0,
+        disk: bool = False,
+        disk_radius: float = 1.0,
         show_axes: bool = True,
     ) -> Figure:
         """
@@ -143,7 +143,7 @@ class ComplexPhasePortrait:
         - Phase portraits coloring (from Matplotlib colormaps)
         - Modulus and phase contours, number of contour lines
         - Optional shading (controlled by brightness)
-        - Optional Poincaré disk masking
+        - Optional disk masking
 
         Parameters
         ----------
@@ -157,12 +157,12 @@ class ComplexPhasePortrait:
             Base brightness for contour shading (range 0-1).
         num_lines : int, default=18
             Number of contour lines for phase and modulus.
-        poincare_disk : bool, default=False
-            If True, applies a Poincaré disk mask to the plot.
-        poincare_disk_radius : float, default=1.0
-            Radius of the Poincaré disk applied to the plot.
-            Only used if `poincare_disk=True`. Pixels outside the
-            circle of radius `poincare_disk_radius` are made transparent.
+        disk : bool, default=False
+            If True, applies a disk mask to the plot.
+        disk_radius : float, default=1.0
+            Radius of the disk applied to the plot.
+            Only used if `disk=True`. Pixels outside the
+            circle of radius `disk_radius` are made transparent.
             Must be positive.
         show_axes : bool, default=True
             If True, displays the real and imaginary axes labels.
@@ -188,9 +188,9 @@ class ComplexPhasePortrait:
             brightness=brightness,
         )
 
-        if poincare_disk:
-            rgb_land = self._poincare_disk_mask(
-                rgb_land, D=poincare_disk_radius)
+        if disk:
+            rgb_land = self._disk_mask(
+                rgb_land, D=disk_radius)
 
         extent_tuple = (
             self.xlim[0], self.xlim[1],
