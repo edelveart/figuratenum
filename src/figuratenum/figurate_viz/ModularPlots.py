@@ -5,7 +5,7 @@ from matplotlib.projections.polar import PolarAxes
 from matplotlib.figure import Figure
 
 
-class GaussianPlots:
+class ModularPlots:
     """
     Class to create geometric visualizations of sequences in polar coordinates
     with modular arithmetic. Allows customization of colors, sizes, and settings

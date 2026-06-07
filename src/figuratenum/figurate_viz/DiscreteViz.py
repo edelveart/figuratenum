@@ -1,7 +1,7 @@
 import inspect
 
 from ..db_figuratenum.validator_helper import Validator
-from .GaussianPlots import GaussianPlots
+from .ModularPlots import ModularPlots
 from ..plane_figurate_numbers.PlaneFigurateNum import PlaneFigurateNum
 from ..space_figurate_numbers.SpaceFigurateNum import SpaceFigurateNum
 from ..multidimensional_figurate_numbers.MultidimensionalFigurateNum import MultidimensionalFigurateNum
@@ -81,7 +81,7 @@ class DiscreteViz:
         plane_seq = self._generate_sequence_from_class(
             "Plane", figuratenum_name, m=m, n_terms=n_terms)
 
-        return GaussianPlots(plane_seq, self.figsize, **kwargs).draw(show=show)
+        return ModularPlots(plane_seq, self.figsize, **kwargs).draw(show=show)
 
     def visualize_space(self, figuratenum_name, *, m: int | None = None, n_terms: int, show=True, **kwargs):
         self._get_valid_figuratenum_methods(
@@ -90,7 +90,7 @@ class DiscreteViz:
         space = self._generate_sequence_from_class(
             "Space", figuratenum_name, m=m, n_terms=n_terms)
 
-        return GaussianPlots(space, self.figsize, **kwargs).draw(show=show)
+        return ModularPlots(space, self.figsize, **kwargs).draw(show=show)
 
     def visualize_multidim(self, figuratenum_name, *, m: int | None = None, k: int | None = None,  n_terms: int, show=True, **kwargs):
         self._get_valid_figuratenum_methods(
@@ -99,15 +99,15 @@ class DiscreteViz:
         multidim = self._generate_sequence_from_class(
             "MultiDim",  figuratenum_name, m=m, k=k,  n_terms=n_terms)
 
-        return GaussianPlots(multidim, self.figsize, **kwargs).draw(show=show)
+        return ModularPlots(multidim, self.figsize, **kwargs).draw(show=show)
 
     def gaussian_plot(self, circ_color="g", bg_color: str = "k",
                       num_text: bool = False, num_color: str = "g",
                       rotate: int = 0, ext_circle: bool = False,
-                      h_modulo: int | None = None) -> GaussianPlots:
+                      h_modulo: int | None = None) -> ModularPlots:
 
-        return GaussianPlots(self.fig_sequence, self.figsize, circ_color, bg_color, num_text,
-                             num_color, rotate, ext_circle, h_modulo)
+        return ModularPlots(self.fig_sequence, self.figsize, circ_color, bg_color, num_text,
+                            num_color, rotate, ext_circle, h_modulo)
 
     def export_plot(self, filepath: str = "output.svg",
                     circ_color: str = "g",
