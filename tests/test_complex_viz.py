@@ -32,7 +32,7 @@ def test_space_centered_mgonal_pyramid():
     viz = ComplexViz(figsize=(1, 3), resolution=res *
                      6, plot_type="phase_contours")
     fig = viz.visualize_space(
-        "centered_mgonal_pyramid", m=19,  cmap_color="cividis", show=False, disk=True)
+        "centered_mgonal_pyramid", m=19,  cmap_color="cividis", show=False, disk_radius=3.0)
     assert isinstance(fig, Figure)
 
 
@@ -134,7 +134,7 @@ def test_visualizations(portrait, method_name, seq_list):
 # # -------------
 def test_invalid_radius(portrait):
     with pytest.raises(ValueError):
-        portrait.visualize_plane("aztec_diamond", radius=-3)
+        portrait.visualize_plane("aztec_diamond", disk_radius=-3)
 
 
 def test_invalid_limits(portrait):
