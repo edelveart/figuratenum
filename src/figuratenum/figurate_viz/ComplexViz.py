@@ -35,30 +35,44 @@ class ComplexViz:
         cmap_color: str = "hsv",
         brightness: float = 0.7,
         num_lines: int = 20,
-        disk: bool = False,
-        show_axes: bool = True,
+        domain_grid_radius: float = 2.0,
+        disk_radius:  float | None = None,
+        show_axes: bool = False,
     ):
         """
-        Constructs a ComplexViz instance.
+        Initialize a ComplexViz instance.
+
+        Default configuration for phase portrait visualization of
+        complex-valued generating functions of figurate numbers.
+
+        Defaults are used unless overridden per method call.
 
         Parameters
         ----------
         resolution : int, default=800
             Default resolution of the evaluation grid.
-        figsize : tuple[float,float], default=(8,8)
-            Default figure size in inches.
-        plot_type : PlotType, default='enhanced_phase_portrait'
-            Default plot type.
+        figsize : tuple[float, float], default=(6, 6)
+            Figure size in inches (width, height)
+        plot_type : {'pure_phase_portrait', 'phase_contours', 'modulus_contours', 'enhanced_phase_portrait'}, default='enhanced_phase_portrait'
+            Type of plot to generate:
+            - 'pure_phase_portrait': phase coloring only
+            - 'phase_contours': phase coloring with contour lines
+            - 'modulus_contours': phase coloring with modulus contours
+            - 'enhanced_phase_portrait': combines phase and modulus contours
         cmap_color : str, default='hsv'
             Default colormap for phase coloring.
         brightness : float, default=0.7
             Base brightness for contours (0-1).
-        num_lines : int, default=3
+        num_lines : int, default=20
             Default number of contour lines for phase and modulus.
-        disk : bool, default=False
-            Apply a disk mask if True.
-        show_axes : bool, default=True
-            Display axes by default.
+        disk_radius : float | None, default=None
+            Radius of the circular masking region centered at (0, 0).
+            Values outside this radius are excluded (set to transparent).
+            Must be strictly positive if provided.
+        domain_grid_radius : float, default=2.0
+            Half-width of the square evaluation domain centered at the origin.
+        show_axes : bool, default=False
+            If True, displays the real (Re) and imaginary (Im) axes.
         """
         self.resolution = resolution
         self.figsize = figsize
@@ -66,7 +80,8 @@ class ComplexViz:
         self.cmap_color = cmap_color
         self.brightness = brightness
         self.num_lines = num_lines
-        self.disk = disk
+        self.disk_radius = disk_radius
+        self.domain_grid_radius = domain_grid_radius
         self.show_axes = show_axes
 
     def _get_evaluator_fz(self, name_seq: SequenceType, m: int | None = None, k: int | None = None) -> Callable[[np.ndarray], np.ndarray]:
@@ -125,7 +140,6 @@ class ComplexViz:
         plot_type: PlotType | None = None,
         m: int | None = None,
         k: int | None = None,
-        radius: float = 2,
         xlim: tuple[float, float] | None = None,
         ylim: tuple[float, float] | None = None,
         resolution: int | None = None,
@@ -144,9 +158,9 @@ class ComplexViz:
             figsize = self.figsize
 
         if xlim is None:
-            xlim = (-radius, radius)
+            xlim = (-self.domain_grid_radius, self.domain_grid_radius)
         if ylim is None:
-            ylim = (-radius, radius)
+            ylim = (-self.domain_grid_radius, self.domain_grid_radius)
 
         func_fz = self._get_evaluator_fz(name_seq, m=m, k=k)
 
@@ -157,10 +171,10 @@ class ComplexViz:
         fig = portrait.plot_enhanced(
             plot_type=plot_type,
             figsize=figsize,
+            disk_radius=kwargs.pop("disk_radius", self.disk_radius),
             cmap_color=kwargs.pop("cmap_color", self.cmap_color),
             brightness=kwargs.pop("brightness", self.brightness),
             num_lines=kwargs.pop("num_lines", self.num_lines),
-            disk=kwargs.pop("disk", self.disk),
             show_axes=kwargs.pop("show_axes", self.show_axes),
             **kwargs
         )
@@ -174,150 +188,111 @@ class ComplexViz:
         name_seq: PlaneTypes,
         *, m: int | None = None,
         plot_type: PlotType | None = None,
+        show: bool = True,
         **kwargs
     ) -> Figure:
         """
-        Evaluates the generating function for the given plane figurate number
-        and produces a visual representation in the complex plane inspired by
-        the work of Elias Wegert (2012).
+        Visualize the generating function of a plane figurate number in the complex plane (phase portrait).
 
         Parameters
         ----------
         name_seq : PlaneTypes
             Plane figurate number sequence defining its generating function f(z).
-        plot_type : {'pure_phase_portrait', 'phase_contours', 'modulus_contours', 'enhanced_phase_portrait'}, default='enhanced_phase_portrait'
-            Type of plot to generate:
-            - 'pure_phase_portrait': phase coloring only
-            - 'phase_contours': phase coloring with contour lines
-            - 'modulus_contours': phase coloring with modulus contours
-            - 'enhanced_phase_portrait': combines phase and modulus contours
+        m : int | None
+            Parameter controlling the evaluation of the sequence.
+        plot_type : PlotType, optional
+            Overrides the default plot type of the instance.
         show : bool, default=True
             Whether to display the plot immediately. If False, the plot is generated but not shown.
         **kwargs : dict
-            Optional arguments passed to `ComplexPhasePortrait.plot_enhanced`:
-            - figsize : tuple[float, float], default=(8, 8)
-                Figure size in inches (width, height)
-            - cmap_color : str, default='hsv'
-                Colormap used for phase coloring
-            - brightness : float, default=0.7
-                Base brightness for contours (0-1)
-            - num_lines : int, default=3
-                Number of contour lines for phase and modulus
-            - disk : bool, default=False
-                Apply a disk mask if True
-            - disk_radius: float, default=1.0
-                Radius of the disk applied to the plot.
-                Only used if `disk=True`. Pixels outside the
-                circle of radius `disk_radius` are made transparent.
-                Must be positive.
-            - show_axes : bool, default=True
-                Display axes on the plotclear
+            Per-call plot options. Can override instance defaults:
+            - xlim : tuple[float, float], optional
+                Horizontal limits of the complex plane. Overrides `domain_grid_radius`.
+            - ylim : tuple[float, float], optional
+                Vertical limits of the complex plane. Overrides `domain_grid_radius`.
+            - show_axes : bool, optional
+                Whether to display the real (Re) and imaginary (Im) axes.
+            - Instance defaults applied if not provided: figsize, cmap_color, brightness, num_lines, disk_radius.
 
         Returns
         -------
         matplotlib.figure.Figure
-            The generated figure object. The figure is displayed automatically.
+            The generated figure. Automatically displayed if `show=True`.
         """
-        return self._render_phase_portrait(name_seq, m=m, plot_type=plot_type, **kwargs)
+        return self._render_phase_portrait(name_seq, m=m, plot_type=plot_type, show=show, **kwargs)
 
     def visualize_space(
         self,
         name_seq: SpaceTypes,
         *, m: int | None = None,
         plot_type: PlotType | None = None,
+        show: bool = True,
         **kwargs
     ) -> Figure:
         """
-        Evaluates the generating function for the given space figurate number
-        and produces a visual representation in the complex plane inspired by
-        the work of Elias Wegert (2012).
+        Visualize the generating function of a space figurate number in the complex plane (phase portrait).
 
         Parameters
         ----------
         name_seq : SpaceTypes
             Space figurate number sequence defining its generating function f(z).
-        plot_type : {'pure_phase_portrait', 'phase_contours', 'modulus_contours', 'enhanced_phase_portrait'}, default='enhanced_phase_portrait'
-            Type of plot to generate:
-            - 'pure_phase_portrait': phase coloring only
-            - 'phase_contours': phase coloring with contour lines
-            - 'modulus_contours': phase coloring with modulus contours
-            - 'enhanced_phase_portrait': combines phase and modulus contours
+        m : int | None
+            Parameter controlling the evaluation of the sequence.
+        plot_type : PlotType, optional
+            Overrides the default plot type of the instance.
         show : bool, default=True
             Whether to display the plot immediately. If False, the plot is generated but not shown.
         **kwargs : dict
-            Optional arguments passed to `ComplexPhasePortrait.plot_enhanced`:
-            - figsize : tuple[float, float], default=(8, 8)
-                Figure size in inches (width, height)
-            - cmap_color : str, default='hsv'
-                Colormap used for phase coloring
-            - brightness : float, default=0.7
-                Base brightness for contours (0-1)
-            - num_lines : int, default=3
-                Number of contour lines for phase and modulus
-            - disk : bool, default=False
-                Apply a disk mask if True
-            - disk_radius: float, default=1.0
-                Radius of the disk applied to the plot.
-                Only used if `disk=True`. Pixels outside the
-                circle of radius `disk_radius` are made transparent.
-                Must be positive.
-            - show_axes : bool, default=True
-                Display axes on the plot
+            Per-call plot options. Can override instance defaults:
+            - xlim : tuple[float, float], optional
+                Horizontal limits of the complex plane. Overrides `domain_grid_radius`.
+            - ylim : tuple[float, float], optional
+                Vertical limits of the complex plane. Overrides `domain_grid_radius`.
+            - show_axes : bool, optional
+                Whether to display the real (Re) and imaginary (Im) axes.
+            - Instance defaults applied if not provided: figsize, cmap_color, brightness, num_lines, disk_radius.
 
         Returns
         -------
         matplotlib.figure.Figure
-            The generated figure object. The figure is displayed automatically.
+            The generated figure. Automatically displayed if `show=True`.
         """
-        return self._render_phase_portrait(name_seq, m=m, plot_type=plot_type,  **kwargs)
+        return self._render_phase_portrait(name_seq, m=m, plot_type=plot_type, show=show, **kwargs)
 
     def visualize_multidim(
         self,
         name_seq: MultiDimTypes,
         *, m: int | None = None, k: int | None = None,
         plot_type: PlotType | None = None,
+        show: bool = True,
         **kwargs
     ) -> Figure:
         """
-        Evaluates the generating function for the given multidimensional figurate number
-        and produces a visual representation in the complex plane inspired by
-        the work of Elias Wegert (2012).
+        Visualize the generating function of a multidimensional figurate number in the complex plane (phase portrait).
 
         Parameters
         ----------
         name_seq : MultiDimTypes
-            Multidimensional figurate number sequence defining its generating function f(z)..
-        plot_type : {'pure_phase_portrait', 'phase_contours', 'modulus_contours', 'enhanced_phase_portrait'}, default='enhanced_phase_portrait'
-            Type of plot to generate:
-            - 'pure_phase_portrait': phase coloring only
-            - 'phase_contours': phase coloring with contour lines
-            - 'modulus_contours': phase coloring with modulus contours
-            - 'enhanced_phase_portrait': combines phase and modulus contours
+            Multidimensional figurate number sequence defining its generating function f(z).
+        m, k : int | None
+            Parameters controlling the evaluation of the sequence.
+        plot_type : PlotType, optional
+            Overrides the default plot type of the instance.
         show : bool, default=True
             Whether to display the plot immediately. If False, the plot is generated but not shown.
         **kwargs : dict
-            Optional arguments passed to `ComplexPhasePortrait.plot_enhanced`:
-            - figsize : tuple[float, float], default=(8, 8)
-                Figure size in inches (width, height)
-            - cmap_color : str, default='hsv'
-                Colormap used for phase coloring
-            - brightness : float, default=0.7
-                Base brightness for contours (0-1)
-            - num_lines : int, default=3
-                Number of contour lines for phase and modulus
-            - disk : bool, default=False
-                Apply a disk mask if True
-            - disk_radius: float, default=1.0
-                Radius of the disk applied to the plot.
-                Only used if `disk=True`. Pixels outside the
-                circle of radius `disk_radius` are made transparent.
-                Must be positive.
-            - show_axes : bool, default=True
-                Display axes on the plot
+            Per-call plot options. Can override instance defaults:
+            - xlim : tuple[float, float], optional
+                Horizontal limits of the complex plane. Overrides `domain_grid_radius`.
+            - ylim : tuple[float, float], optional
+                Vertical limits of the complex plane. Overrides `domain_grid_radius`.
+            - show_axes : bool, optional
+                Whether to display the real (Re) and imaginary (Im) axes.
+            - Instance defaults applied if not provided: figsize, cmap_color, brightness, num_lines, disk_radius.
 
         Returns
         -------
         matplotlib.figure.Figure
-            The generated figure object. The figure is displayed automatically.
+            The generated figure. Automatically displayed if `show=True`.
         """
-        return self._render_phase_portrait(name_seq, m=m, k=k, plot_type=plot_type, **kwargs)
+        return self._render_phase_portrait(name_seq, m=m, k=k, plot_type=plot_type, show=show, **kwargs)

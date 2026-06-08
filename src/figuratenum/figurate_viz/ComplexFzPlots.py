@@ -132,9 +132,8 @@ class ComplexPhasePortrait:
         cmap_color: str = "hsv",
         brightness: float = 0.7,
         num_lines: int = 18,
-        disk: bool = False,
-        disk_radius: float = 1.0,
-        show_axes: bool = True,
+        disk_radius: float | None = None,
+        show_axes: bool = False,
     ) -> Figure:
         """
         Creates an enhanced phase portrait (style of Elias Wegert).
@@ -157,14 +156,12 @@ class ComplexPhasePortrait:
             Base brightness for contour shading (range 0-1).
         num_lines : int, default=18
             Number of contour lines for phase and modulus.
-        disk : bool, default=False
-            If True, applies a disk mask to the plot.
-        disk_radius : float, default=1.0
+        disk_radius : float | None, default=None
             Radius of the disk applied to the plot.
-            Only used if `disk=True`. Pixels outside the
-            circle of radius `disk_radius` are made transparent.
+            Pixels outside the circle of radius `disk_radiusius`
+            are made transparent.
             Must be positive.
-        show_axes : bool, default=True
+        show_axes : bool, default=False
             If True, displays the real and imaginary axes labels.
 
         Returns
@@ -188,9 +185,10 @@ class ComplexPhasePortrait:
             brightness=brightness,
         )
 
-        if disk:
-            rgb_land = self._disk_mask(
-                rgb_land, D=disk_radius)
+        if disk_radius is not None:
+            if disk_radius <= 0:
+                raise ValueError("disk_radius must be positive")
+            rgb_land = self._disk_mask(rgb_land, D=disk_radius)
 
         extent_tuple = (
             self.xlim[0], self.xlim[1],
