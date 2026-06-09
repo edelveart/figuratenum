@@ -1,5 +1,4 @@
 from collections.abc import Generator
-
 from .multidimensional_figuratenum import (
     pentatope, hypertetrahedral, triangulotriangular, k_hypertetrahedron,
     regular_k_polytopic, figurate_of_order_k, k_dimensional_hypertetrahedron,
@@ -56,157 +55,104 @@ from .specific_multidimensional_figuratenum import (
 )
 
 
-class MultidimensionalFigurateNum:
+class MultidimensionalFigurateNum():
 
     def pentatope(self) -> Generator[int]:
         return pentatope()
-
-    def hypertetrahedral(self) -> Generator[int]:
-        return hypertetrahedral()
-
-    def pentachoron(self) -> Generator[int]:
-        return hypertetrahedral()
-
-    def cell_5(self) -> Generator[int]:
-        return hypertetrahedral()
-
-    def triangulotriangular(self) -> Generator[int]:
-        return triangulotriangular()
-
-    def k_hypertetrahedron(self, k: int) -> Generator[int]:
-        return k_hypertetrahedron(k)
-
-    def regular_k_polytopic(self, k: int) -> Generator[int]:
-        return regular_k_polytopic(k)
-
-    def figurate_of_order_k(self, k: int) -> Generator[int]:
-        return figurate_of_order_k(k)
+    hypertetrahedral = pentatope
+    pentachoron = pentatope
+    cell_5 = pentatope
+    triangulotriangular = pentatope
 
     def k_dimensional_hypertetrahedron(self, k: int) -> Generator[int]:
         return k_dimensional_hypertetrahedron(k)
+    k_hypertetrahedron = k_dimensional_hypertetrahedron
+    regular_k_polytopic = k_dimensional_hypertetrahedron
+    figurate_of_order_k = k_dimensional_hypertetrahedron
+    k_dim_hypertetrahedron = k_dimensional_hypertetrahedron
 
     def biquadratic(self) -> Generator[int]:
         return biquadratic()
-
-    def hypercube(self) -> Generator[int]:
-        return biquadratic()
-
-    def cell_8(self) -> Generator[int]:
-        return biquadratic()
-
-    def octachoron(self) -> Generator[int]:
-        return biquadratic()
+    hypercube = biquadratic
+    octachoron = biquadratic
+    tesseract = biquadratic
+    cell_8 = biquadratic
 
     def k_dimensional_hypercube(self, k: int) -> Generator[int]:
         return k_dimensional_hypercube(k)
-
-    def k_hypercube(self, k: int) -> Generator[int]:
-        return k_hypercube(k)
-
-    def tesseract(self) -> Generator[int]:
-        return k_dimensional_hypercube(4)
+    k_hypercube = k_dimensional_hypercube
+    k_dim_hypercube = k_dimensional_hypercube
 
     def hyperoctahedral(self) -> Generator[int]:
         return hyperoctahedral()
-
-    def hexadecachoron(self) -> Generator[int]:
-        return hexadecachoron()
-
-    def cell_16(self) -> Generator[int]:
-        return hyperoctahedral()
-
-    def four_cross_polytope(self) -> Generator[int]:
-        return four_cross_polytope()
-
-    def four_orthoplex(self) -> Generator[int]:
-        return four_orthoplex()
+    hexadecachoron = hyperoctahedral
+    four_cross_polytope = hyperoctahedral
+    four_orthoplex = hyperoctahedral
+    cell_16 = hyperoctahedral
 
     def hypericosahedral(self) -> Generator[int]:
         return hypericosahedral()
-
-    def tetraplex(self) -> Generator[int]:
-        return tetraplex()
-
-    def cell_600(self) -> Generator[int]:
-        return hypericosahedral()
-
-    def polytetrahedron(self) -> Generator[int]:
-        return polytetrahedron()
-
-    def hexacosichoron(self) -> Generator[int]:
-        return hexacosichoron()
+    tetraplex = hypericosahedral
+    polytetrahedron = hypericosahedral
+    hexacosichoron = hypericosahedral
+    cell_600 = hypericosahedral
 
     def hyperdodecahedral(self) -> Generator[int]:
         return hyperdodecahedral()
-
-    def hecatonicosachoron(self) -> Generator[int]:
-        return hecatonicosachoron()
-
-    def cell_120(self) -> Generator[int]:
-        return hyperdodecahedral()
-
-    def dodecaplex(self) -> Generator[int]:
-        return dodecaplex()
-
-    def polydodecahedron(self) -> Generator[int]:
-        return polydodecahedron()
+    hecatonicosachoron = hyperdodecahedral
+    dodecaplex = hyperdodecahedral
+    polydodecahedron = hyperdodecahedral
+    cell_120 = hyperdodecahedral
 
     def polyoctahedral(self) -> Generator[int]:
         return polyoctahedral()
-
-    def icositetrachoron(self) -> Generator[int]:
-        return icositetrachoron()
-
-    def cell_24(self) -> Generator[int]:
-        return polyoctahedral()
-
-    def octaplex(self) -> Generator[int]:
-        return octaplex()
-
-    def hyperdiamond(self) -> Generator[int]:
-        return hyperdiamond()
+    icositetrachoron = polyoctahedral
+    octaplex = polyoctahedral
+    hyperdiamond = polyoctahedral
+    cell_24 = polyoctahedral
 
     def k_dimensional_hyperoctahedron(self, k: int) -> Generator[int]:
         return k_dimensional_hyperoctahedron(k)
-
-    def k_cross_polytope(self, k: int) -> Generator[int]:
-        return k_cross_polytope(k)
+    k_cross_polytope = k_dimensional_hyperoctahedron
+    k_dim_hyperoctahedron = k_dimensional_hyperoctahedron
 
     def four_dimensional_mgonal_pyramidal(self, m: int) -> Generator[int]:
         return four_dimensional_mgonal_pyramidal(m)
-
-    def mgonal_pyramidal_of_the_second_order(self, m: int) -> Generator[int]:
-        return mgonal_pyramidal_of_the_second_order(m)
+    mgonal_pyramidal_of_the_second_order = four_dimensional_mgonal_pyramidal
+    four_dim_mgonal_pyramidal = four_dimensional_mgonal_pyramidal
 
     def k_dimensional_mgonal_pyramidal(self, k: int, m: int) -> Generator[int]:
         return k_dimensional_mgonal_pyramidal(k, m)
-
-    def mgonal_pyramidal_of_the_k_2_th_order(self, k: int, m: int) -> Generator[int]:
-        return mgonal_pyramidal_of_the_k_2_th_order(k, m)
+    mgonal_pyramidal_of_the_k_2_th_order = k_dimensional_mgonal_pyramidal
+    k_dim_mgonal_pyramidal = k_dimensional_mgonal_pyramidal
 
     def centered_biquadratic(self) -> Generator[int]:
         return centered_biquadratic()
 
     def k_dimensional_centered_hypercube(self, k: int) -> Generator[int]:
         return k_dimensional_centered_hypercube(k)
+    k_dim_centered_hypercube = k_dimensional_centered_hypercube
 
     def centered_polytope(self) -> Generator[int]:
         return centered_polytope()
+    centered_hypertetrahedron = centered_polytope
 
     def k_dimensional_centered_hypertetrahedron(self, k: int) -> Generator[int]:
         return k_dimensional_centered_hypertetrahedron(k)
+    k_dim_centered_hypertetrahedron = k_dimensional_centered_hypertetrahedron
 
     def centered_hyperoctahedral(self) -> Generator[int]:
         return centered_hyperoctahedral()
-
-    def orthoplex(self) -> Generator[int]:
-        return orthoplex()
+    orthoplex = centered_hyperoctahedral
+    centered_hyperoctahedron = centered_hyperoctahedral
 
     def nexus(self, k) -> Generator[int]:
         return nexus(k)
+    k_dim_nexus = nexus
 
     def k_dimensional_centered_hyperoctahedron(self, k: int) -> Generator[int]:
         return k_dimensional_centered_hyperoctahedron(k)
+    k_dim_centered_hyperoctahedron = k_dimensional_centered_hyperoctahedron
 
     def generalized_pentatope(self, start_num: int = 0) -> Generator[int]:
         return generalized_pentatope(start_num)
@@ -359,19 +305,3 @@ class MultidimensionalFigurateNum:
 
     def six_dimensional_centered_hyperoctahedron(self) -> Generator[int]:
         return six_dimensional_centered_hyperoctahedron()
-
-    # Alias
-
-    centered_hyperoctahedron = centered_hyperoctahedral
-    centered_hypertetrahedron = centered_polytope
-    k_dim_hypertetrahedron = k_dimensional_hypertetrahedron
-    k_dim_hypercube = k_dimensional_hypercube
-    k_dim_hyperoctahedron = k_dimensional_hyperoctahedron
-    k_dim_nexus = nexus
-
-    k_dim_centered_hypercube = k_dimensional_centered_hypercube
-    k_dim_centered_hypertetrahedron = k_dimensional_centered_hypertetrahedron
-    k_dim_centered_hyperoctahedron = k_dimensional_centered_hyperoctahedron
-
-    four_dim_mgonal_pyramidal = four_dimensional_mgonal_pyramidal
-    k_dim_mgonal_pyramidal = k_dimensional_mgonal_pyramidal
