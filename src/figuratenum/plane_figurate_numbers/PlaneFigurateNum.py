@@ -70,27 +70,19 @@ class PlaneFigurateNum:
 
     def centered_square(self) -> Generator[int]:
         return centered_square()
-
-    def diamond(self) -> Generator[int]:
-        return diamond()
+    diamond = centered_square
 
     def centered_dodecagonal(self) -> Generator[int]:
         return centered_dodecagonal()
-
-    def star(self) -> Generator[int]:
-        return star()
+    star = centered_dodecagonal
 
     def centered_mgonal(self, m: int) -> Generator[int]:
         return centered_mgonal(m)
 
     def pronic(self) -> Generator[int]:
         return pronic()
-
-    def heteromecic(self) -> Generator[int]:
-        return heteromecic()
-
-    def oblong(self) -> Generator[int]:
-        return oblong()
+    heteromecic = pronic
+    oblong = pronic
 
     def polite(self) -> Generator[int]:
         return polite()
@@ -106,9 +98,7 @@ class PlaneFigurateNum:
 
     def polygram(self, m: int) -> Generator[int]:
         return polygram(m)
-
-    def centered_star_polygonal(self, m: int) -> Generator[int]:
-        return centered_star_polygonal(m)
+    centered_star_polygonal = polygram
 
     def pentagram(self) -> Generator[int]:
         return pentagram()
@@ -133,9 +123,7 @@ class PlaneFigurateNum:
 
     def truncated_centered_hexagonal(self) -> Generator[int]:
         return truncated_centered_hexagonal()
-
-    def truncated_hex(self) -> Generator[int]:
-        return truncated_hex()
+    truncated_hex = truncated_centered_hexagonal
 
     def generalized_mgonal(self, m: int, start_num: int = 0) -> Generator[int]:
         return generalized_mgonal(m, start_num)
