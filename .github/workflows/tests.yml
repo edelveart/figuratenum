@@ -5,6 +5,7 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
 
@@ -17,6 +18,21 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -e .[dev,figurate-viz]
+
+      - name: Generate API documentation
+        run: python scripts/generate_sequences_api.py
+
+      - name: Check if docs are up to date
+        run: |
+          if ! git diff --quiet docs/reference/sequences.md; then
+            echo "❌ Docs are outdated."
+            echo ""
+            echo "Fix it by running:"
+            echo "  python scripts/generate_sequences_api.py"
+            echo "  git add docs/reference/sequences.md"
+            echo "  git commit -m 'chore(docs): update API docs'"
+            exit 1
+          fi
 
       - name: Run tests with pytest
         run: pytest
