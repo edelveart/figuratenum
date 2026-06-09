@@ -89,15 +89,11 @@ class SpaceFigurateNum:
 
     def centered_tetrahedron(self) -> Generator[int]:
         return centered_tetrahedron()
-
-    def centered_tetrahedral(self) -> Generator[int]:
-        return centered_tetrahedral()
+    centered_tetrahedral = centered_tetrahedron
 
     def centered_square_pyramid(self) -> Generator[int]:
         return centered_square_pyramid()
-
-    def centered_pyramid(self) -> Generator[int]:
-        return centered_pyramid()
+    centered_pyramid = centered_square_pyramid
 
     def centered_mgonal_pyramid(self, m: int) -> Generator[int]:
         return centered_mgonal_pyramid(m)
@@ -107,9 +103,7 @@ class SpaceFigurateNum:
 
     def centered_icosahedron(self) -> Generator[int]:
         return centered_icosahedron()
-
-    def centered_cuboctahedron(self) -> Generator[int]:
-        return centered_cuboctahedron()
+    centered_cuboctahedron = centered_icosahedron
 
     def centered_dodecahedron(self) -> Generator[int]:
         return centered_dodecahedron()
@@ -128,9 +122,7 @@ class SpaceFigurateNum:
 
     def centered_hexagonal_pyramidal(self) -> Generator[int]:
         return centered_hexagonal_pyramidal()
-
-    def hex_pyramidal(self) -> Generator[int]:
-        return hex_pyramidal()
+    hex_pyramidal = centered_hexagonal_pyramidal
 
     def hexagonal_prism(self) -> Generator[int]:
         return hexagonal_prism()
@@ -181,9 +173,7 @@ class SpaceFigurateNum:
 
     def square_pyramidal(self) -> Generator[int]:
         return square_pyramidal()
-
-    def pyramidal(self) -> Generator[int]:
-        return pyramidal()
+    pyramidal = square_pyramidal
 
     def pentagonal_pyramidal(self) -> Generator[int]:
         return pentagonal_pyramidal()
