@@ -1,11 +1,12 @@
 from typing import Literal
 import inspect
+import os
 
 # =========================
 # CONFIG
 # =========================
 
-OUTPUT_DIR = "docs"
+OUTPUT_FILE = "docs/reference/sequences.md"
 
 
 # =========================
@@ -16,24 +17,16 @@ def get_methods_with_aliases(cls, order_by: str):
     """
     Groups methods by actual function identity.
     Automatically detects real Python aliases.
-
-    Parameters
-    ----------
-    order_by : str
-        - "code": preserves class definition order
-        - "alpha": sorts alphabetically by canonical name
     """
 
     groups = {}
 
-    # order of definition in class
     original_order = [
         name
         for name in cls.__dict__.keys()
         if callable(getattr(cls, name)) and not name.startswith("_")
     ]
 
-    # group by actual function identity
     for name, obj in cls.__dict__.items():
         if callable(obj) and not name.startswith("_"):
             groups.setdefault(id(obj), []).append(name)
@@ -59,9 +52,7 @@ def get_methods_with_aliases(cls, order_by: str):
         )
 
     else:
-        raise ValueError(
-            "order_by must be 'code' or 'alpha'"
-        )
+        raise ValueError("order_by must be 'code' or 'alpha'")
 
     return result
 
@@ -73,16 +64,6 @@ def get_methods_with_aliases(cls, order_by: str):
 def generate_sequences(order_by: Literal["code", "alpha"]):
     """
     Generates a markdown catalog of all sequence-generating methods.
-
-    Output format:
-
-    ## ClassName
-
-    | # | Canonical | Aliases |
-    |---|-----------|----------|
-    | 1 | method() | alias1(), alias2() |
-
-    Total per class and total global are included.
     """
 
     from figuratenum import (
@@ -99,17 +80,19 @@ def generate_sequences(order_by: Literal["code", "alpha"]):
         ZooFigurateNum,
     ]
 
+    # -> ensure directory exists
+    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
+
     total_sequences = 0
 
-    with open(
-        f"{OUTPUT_DIR}/sequences_api.md",
-        "w",
-        encoding="utf-8"
-    ) as f:
+    with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
 
-        f.write("# Complete Sequence Catalog\n\n")
+        f.write("# FigurateNum Sequence Generators Reference\n\n")
 
-        f.write("> Note: Some sequences have multiple names depending on geometric, combinatorial, or historical definitions in the literature. While they may generate identical outputs, their conceptual interpretations may differ.\n\n")
+        f.write(
+            "> Note: Some sequences share names across geometric, combinatorial, "
+            "or historical contexts. While outputs may coincide, their interpretations differ.\n\n"
+        )
 
         for cls in CLASSES:
 
@@ -138,37 +121,23 @@ def generate_sequences(order_by: Literal["code", "alpha"]):
 
                 param_str = ", ".join(params)
 
-                canonical = (
-                    f"`{names[0]}({param_str})`"
-                )
+                canonical = f"`{names[0]}({param_str})`"
 
                 aliases = [
                     f"`{name}({param_str})`"
                     for name in names[1:]
                 ]
 
-                alias_str = (
-                    ", ".join(aliases)
-                    if aliases
-                    else "—"
-                )
+                alias_str = ", ".join(aliases) if aliases else "—"
 
-                f.write(
-                    f"| {i} | {canonical} | {alias_str} |\n"
-                )
+                f.write(f"| {i} | {canonical} | {alias_str} |\n")
 
             f.write("\n")
-            f.write(
-                f"**Sequences in {cls.__name__}: "
-                f"{class_total}**\n\n"
-            )
+            f.write(f"**Sequences in {cls.__name__}: {class_total}**\n\n")
 
         f.write("---\n\n")
         f.write("## Summary\n\n")
-        f.write(
-            f"**Total unique sequences: "
-            f"{total_sequences}**\n"
-        )
+        f.write(f"**Total unique sequences: {total_sequences}**\n")
 
 
 # =========================
