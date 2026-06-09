@@ -117,9 +117,7 @@ class PlaneFigurateNum:
 
     def truncated_centered_pol(self, m: int) -> Generator[int]:
         return truncated_centered_pol(m)
-
-    def truncated_centered_mgonal(self, m: int) -> Generator[int]:
-        return truncated_centered_mgonal(m)
+    truncated_centered_mgonal = truncated_centered_pol
 
     def truncated_centered_hexagonal(self) -> Generator[int]:
         return truncated_centered_hexagonal()
