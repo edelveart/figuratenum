@@ -84,6 +84,7 @@ class ModularPlots:
         ax.set_rmax(1.1)
 
         plt.grid(False)
+        self.figure.tight_layout()
         if show:
             plt.show()
         return self.figure
