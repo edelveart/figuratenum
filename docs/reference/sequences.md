@@ -1,4 +1,4 @@
-# FigurateNum Sequence Generators Reference
+# FigurateNum — Sequence Generators API Reference
 
 > Note: Some sequences share names across geometric, combinatorial, or historical contexts. While outputs may coincide, their interpretations differ.
 
