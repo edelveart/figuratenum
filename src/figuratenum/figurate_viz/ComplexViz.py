@@ -199,7 +199,7 @@ class ComplexViz:
         name_seq : PlaneTypes
             Plane figurate number sequence defining its generating function f(z).
         m : int | None
-            Parameter controlling the evaluation of the sequence.
+            Parameter defining the m-gonal structure (if applicable).
         plot_type : PlotType, optional
             Overrides the default plot type of the instance.
         show : bool, default=True
@@ -237,7 +237,7 @@ class ComplexViz:
         name_seq : SpaceTypes
             Space figurate number sequence defining its generating function f(z).
         m : int | None
-            Parameter controlling the evaluation of the sequence.
+            Parameter defining the m-gonal structure (if applicable).
         plot_type : PlotType, optional
             Overrides the default plot type of the instance.
         show : bool, default=True
@@ -274,8 +274,10 @@ class ComplexViz:
         ----------
         name_seq : MultiDimTypes
             Multidimensional figurate number sequence defining its generating function f(z).
-        m, k : int | None
-            Parameters controlling the evaluation of the sequence.
+        m : int | None
+            Parameter defining the m-gonal structure (if applicable).
+        k : int | None
+            Parameter defining the k-dimensional structure (if applicable).
         plot_type : PlotType, optional
             Overrides the default plot type of the instance.
         show : bool, default=True

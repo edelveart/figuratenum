@@ -75,6 +75,45 @@ class DiscreteViz:
             )
 
     def visualize_plane(self, figuratenum_name: str, *, m: int | None = None, n_terms: int, show=True, **kwargs):
+        """
+        Visualize a plane figurate number sequence in a discrete modular geometry representation.
+
+        This method generates a figurate number sequence and visualizes it using a modular
+        polar transformation, producing a geometric pattern based on cyclic connections
+        between sequence indices.
+
+        Parameters
+        ----------
+        figuratenum_name : string
+            Name of the plane figurate number sequence.
+        m : int | None
+            Parameter defining the m-gonal structure (if applicable).
+        n_terms : int
+            Number of terms to generate from the sequence for visualization.
+        show : bool, default=True
+            Whether to display the plot immediately. If False, the figure is created but not shown.
+        **kwargs : dict
+            - circ_color : str, default="g"
+                Color of the connecting edges in the polar plot.
+            - bg_color : str, default="k"
+                Background color of the figure.
+            - num_text : bool, default=False
+                Whether to display numeric labels on the nodes.
+            - num_color : str, default="g"
+                Color of the numeric labels.
+            - rotate : int, default=0
+                Rotation offset applied to the sequence mapping.
+            - ext_circle : bool, default=False
+                Whether to display the outer polar boundary circle.
+            - h_modulo : int | None, default=len(sequence)
+                Modulo used for circular mapping of the sequence.
+
+        Returns
+        -------
+        matplotlib.figure.Figure
+            The generated modular visualization figure.
+            Returned even if `show=True`.
+        """
         self._get_valid_figuratenum_methods(
             figuratenum_name, PlaneFigurateNum())
 
@@ -84,6 +123,45 @@ class DiscreteViz:
         return ModularPlots(plane_seq, self.figsize, **kwargs).draw(show=show)
 
     def visualize_space(self, figuratenum_name, *, m: int | None = None, n_terms: int, show=True, **kwargs):
+        """
+        Visualize a space figurate number sequence in a discrete modular geometry representation.
+
+        This method generates a figurate number sequence and visualizes it using a modular
+        polar transformation, producing a geometric pattern based on cyclic connections
+        between sequence indices.
+
+        Parameters
+        ----------
+        figuratenum_name : string
+            Name of the space figurate number sequence.
+        m : int | None
+            Parameter defining the m-gonal structure (if applicable).
+        n_terms : int
+            Number of terms to generate from the sequence for visualization.
+        show : bool, default=True
+            Whether to display the plot immediately. If False, the figure is created but not shown.
+        **kwargs : dict
+            - circ_color : str, default="g"
+                Color of the connecting edges in the polar plot.
+            - bg_color : str, default="k"
+                Background color of the figure.
+            - num_text : bool, default=False
+                Whether to display numeric labels on the nodes.
+            - num_color : str, default="g"
+                Color of the numeric labels.
+            - rotate : int, default=0
+                Rotation offset applied to the sequence mapping.
+            - ext_circle : bool, default=False
+                Whether to display the outer polar boundary circle.
+            - h_modulo : int | None, default=len(sequence)
+                Modulo used for circular mapping of the sequence.
+
+        Returns
+        -------
+        matplotlib.figure.Figure
+            The generated modular visualization figure.
+            Returned even if `show=True`.
+        """
         self._get_valid_figuratenum_methods(
             figuratenum_name, SpaceFigurateNum())
 
@@ -93,6 +171,47 @@ class DiscreteViz:
         return ModularPlots(space, self.figsize, **kwargs).draw(show=show)
 
     def visualize_multidim(self, figuratenum_name, *, m: int | None = None, k: int | None = None,  n_terms: int, show=True, **kwargs):
+        """
+        Visualize a multidimensional figurate number sequence in a discrete modular geometry representation.
+
+        This method generates a figurate number sequence and visualizes it using a modular
+        polar transformation, producing a geometric pattern based on cyclic connections
+        between sequence indices.
+
+        Parameters
+        ----------
+        figuratenum_name : string
+            Name of the multidimensional figurate number sequence.
+        m : int | None
+            Parameter defining the m-gonal structure (if applicable).
+        k : int | None
+            Parameter defining the k-dimensional structure (if applicable).
+        n_terms : int
+            Number of terms to generate from the sequence for visualization.
+        show : bool, default=True
+            Whether to display the plot immediately. If False, the figure is created but not shown.
+        **kwargs : dict
+            - circ_color : str, default="g"
+                Color of the connecting edges in the polar plot.
+            - bg_color : str, default="k"
+                Background color of the figure.
+            - num_text : bool, default=False
+                Whether to display numeric labels on the nodes.
+            - num_color : str, default="g"
+                Color of the numeric labels.
+            - rotate : int, default=0
+                Rotation offset applied to the sequence mapping.
+            - ext_circle : bool, default=False
+                Whether to display the outer polar boundary circle.
+            - h_modulo : int | None, default=len(sequence)
+                Modulo used for circular mapping of the sequence.
+
+        Returns
+        -------
+        matplotlib.figure.Figure
+            The generated modular visualization figure.
+            Returned even if `show=True`.
+        """
         self._get_valid_figuratenum_methods(
             figuratenum_name, MultidimensionalFigurateNum())
 
@@ -100,32 +219,3 @@ class DiscreteViz:
             "MultiDim",  figuratenum_name, m=m, k=k,  n_terms=n_terms)
 
         return ModularPlots(multidim, self.figsize, **kwargs).draw(show=show)
-
-    def gaussian_plot(self, circ_color="g", bg_color: str = "k",
-                      num_text: bool = False, num_color: str = "g",
-                      rotate: int = 0, ext_circle: bool = False,
-                      h_modulo: int | None = None) -> ModularPlots:
-
-        return ModularPlots(self.fig_sequence, self.figsize, circ_color, bg_color, num_text,
-                            num_color, rotate, ext_circle, h_modulo)
-
-    def export_plot(self, filepath: str = "output.svg",
-                    circ_color: str = "g",
-                    bg_color: str = "k",
-                    num_text: bool = False,
-                    num_color: str = "g",
-                    rotate: int = 0,
-                    ext_circle: bool = False,
-                    h_modulo: int | None = None,
-                    **save_kwargs):
-        plot = self.gaussian_plot(
-            circ_color=circ_color,
-            bg_color=bg_color,
-            num_text=num_text,
-            num_color=num_color,
-            rotate=rotate,
-            ext_circle=ext_circle,
-            h_modulo=h_modulo
-        )
-        plot.draw(show=False)
-        plot.save(filename=filepath, **save_kwargs)
