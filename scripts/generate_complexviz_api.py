@@ -7,10 +7,13 @@ from typing import Literal, Union, get_args, get_origin, Callable
 
 from figuratenum.figurate_viz.ComplexViz import ComplexViz
 
+# =========================
+# CONFIG
+# =========================
 OUTPUT_FILE = "docs/reference/complexviz.md"
+
+
 # AST extractor
-
-
 def extract_literal(module_path: str, alias_name: str) -> list[str]:
     """
     Resolves *module_path* to its source file and extracts string values from:
@@ -51,7 +54,6 @@ def extract_literal(module_path: str, alias_name: str) -> list[str]:
 
 
 # Sequence catalogs (sourced from schema files)
-
 PLANE_SEQS = extract_literal(
     "figuratenum.db_figuratenum.PlaneSchema",    "PlaneTypes")
 SPACE_SEQS = extract_literal(
@@ -74,7 +76,6 @@ _ALIASES: dict[frozenset, str] = {
 
 
 #  Annotation formatter
-
 def fmt_ann(ann) -> str:
     if ann is inspect._empty:
         return ""
@@ -99,11 +100,10 @@ def fmt_ann(ann) -> str:
     s = s.replace("typing.", "")
     return s
 
+
 # =========================
 # Signature renderer
 # =========================
-
-
 def render_call(name: str, sig: inspect.Signature, indent: str = "    ") -> str:
     lines = []
     kw_written = False
@@ -290,7 +290,7 @@ def main():
     total = len(PLANE_SEQS) + len(SPACE_SEQS) + len(MULTIDIM_SEQS)
     summary = (
         f"Sequences summary:\n"
-        f"  • visualize_planePlaneTypes   : {len(PLANE_SEQS)}\n"
+        f"  • PlaneTypes   : {len(PLANE_SEQS)}\n"
         f"  • SpaceTypes   : {len(SPACE_SEQS)}\n"
         f"  • MultiDimTypes: {len(MULTIDIM_SEQS)}\n"
         f"  ──────────────\n"
