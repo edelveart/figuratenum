@@ -155,7 +155,7 @@ def generate_discreteviz_api(order_by: Literal["code", "alpha"]):
             w(f"### `{name}`")
             w()
             w("```python")
-            w(render_call(f"viz.{name}", sig))
+            w(render_call(f"{name}", sig))
             w("```")
             w()
 

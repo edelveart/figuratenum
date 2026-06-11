@@ -50,7 +50,7 @@ figsize : tuple[float, float], default=(6, 6)
 ### `visualize_plane`
 
 ```python
-viz.visualize_plane(
+visualize_plane(
     figuratenum_name : str,
     *,
     m : int | None = None,
@@ -105,7 +105,7 @@ matplotlib.figure.Figure
 ### `visualize_space`
 
 ```python
-viz.visualize_space(
+visualize_space(
     figuratenum_name,
     *,
     m : int | None = None,
@@ -160,7 +160,7 @@ matplotlib.figure.Figure
 ### `visualize_multidim`
 
 ```python
-viz.visualize_multidim(
+visualize_multidim(
     figuratenum_name,
     *,
     m : int | None = None,
