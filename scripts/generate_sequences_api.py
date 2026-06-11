@@ -61,7 +61,7 @@ def get_methods_with_aliases(cls, order_by: str):
 # SEQUENCES GENERATOR
 # =========================
 
-def generate_sequences(order_by: Literal["code", "alpha"]):
+def generate_sequences_api(order_by: Literal["code", "alpha"]):
     """
     Generates a markdown catalog of all sequence-generating methods.
     """
@@ -84,10 +84,10 @@ def generate_sequences(order_by: Literal["code", "alpha"]):
     os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
 
     total_sequences = 0
-
+    class_counts = {}
     with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
 
-        f.write("# FigurateNum Sequence Generators Reference\n\n")
+        f.write("# FigurateNum — Sequence Generators API Reference\n\n")
 
         f.write(
             "> Note: Some sequences share names across geometric, combinatorial, "
@@ -102,6 +102,7 @@ def generate_sequences(order_by: Literal["code", "alpha"]):
             )
 
             class_total = len(methods)
+            class_counts[cls.__name__] = class_total  # CLI
             total_sequences += class_total
 
             f.write(f"## {cls.__name__}\n\n")
@@ -138,6 +139,7 @@ def generate_sequences(order_by: Literal["code", "alpha"]):
         f.write("---\n\n")
         f.write("## Summary\n\n")
         f.write(f"**Total unique sequences: {total_sequences}**\n")
+        return class_counts, total_sequences
 
 
 # =========================
@@ -145,8 +147,17 @@ def generate_sequences(order_by: Literal["code", "alpha"]):
 # =========================
 
 def main():
-    generate_sequences(order_by="code")
-    print("Sequences list generated successfully. ✔")
+    class_counts, total_sequences = generate_sequences_api(order_by="code")
+
+    # Summary
+    summary = "Per-class summary:\n"
+    for name, count in class_counts.items():
+        summary += f"  {name:<28} {count}\n"
+    summary += f"  ──────────────"
+    summary += f"\nTotal sequences: {total_sequences}\n"
+    summary += f"Documentation file written to:\n  {OUTPUT_FILE} \n"
+    summary += "Sequences List API generated successfully. ✔"
+    print(summary)
 
 
 if __name__ == "__main__":
