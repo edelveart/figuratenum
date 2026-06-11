@@ -21,6 +21,19 @@ class DiscreteViz:
     """
 
     def __init__(self, fig_sequence: list[int] | tuple[int, ...] = [], figsize: tuple[float, float] = (6, 6)):
+        """
+        Initialize a DiscreteViz instance.
+
+        Default configuration for discrete geometric visualizations
+        of figurate number sequences.
+
+        Parameters
+        ----------
+        fig_sequence : list[int] | tuple[int, ...] | None, default=None
+            Sequence of integers to visualize. If None, an empty sequence is used.
+        figsize : tuple[float, float], default=(6, 6)
+            Figure size in inches (width, height).
+        """
         self.fig_sequence = fig_sequence
         self.figsize = figsize
 
