@@ -1,7 +1,7 @@
 <h1 align="center">FigurateNum</h1>
 
 <p align="center">
-  <em>FigurateNum generates and visualizes 235+ multidimensional figurate number families in a single Python interface</em>
+    <em>FigurateNum generates and visualizes 235+ plane, space, and multidimensional figurate number sequences and families</em>
 </p>
 
 <p align="center">
@@ -21,11 +21,10 @@
 <p align="center">
   <a href="https://edelveart.github.io/figuratenum/">Documentation</a>
   &nbsp;·&nbsp;
-  <a href="https://github.com/edelveart/figuratenum/tree/main/docs/reference">API Reference (Auto-generated)</a>
+  <a href="https://github.com/edelveart/figuratenum/tree/main/docs/reference">API Reference</a>
 </p>
 
-From polygonal numbers to Platonic solids and higher-dimensional analogues, **FigurateNum** unifies **235+** families of figurate numbers based on [Deza & Deza (2012)](https://doi.org/10.1142/8188).
-
+From polygonal numbers to Platonic solids and higher-dimensional analogues, **FigurateNum** unifies **235+** sequences and families of figurate numbers, following [Deza & Deza (2012)](https://doi.org/10.1142/8188).
 
 ## Gallery
 
@@ -98,16 +97,14 @@ Sequences are organized by dimension:
 
 ## Documentation
 
-| Resource                           | Repository Link                                                                                                 |
-| ---------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Documentation & Tutorial           | [edelveart.github.io/figuratenum](https://edelveart.github.io/figuratenum/)                                     |
-| Sequence Generators — Full Catalog | [sequences.md](https://github.com/edelveart/figuratenum/blob/main/docs/reference/sequences.md)                  |
-| ComplexViz API Reference           | [complexviz.md](https://github.com/edelveart/figuratenum/blob/main/docs/reference/complexviz.md)                |
-| DiscreteViz API Reference          | [discreteviz.md](https://github.com/edelveart/figuratenum/blob/main/docs/reference/discreteviz.md)              |
-| Errata of Figurate Numbers (2012)  | [errata-figuratenum.tex](https://github.com/edelveart/figuratenum/blob/main/docs/errata/errata-figuratenum.tex) |
-| Errata in PDF (external link)      | [errata-figuratenum.pdf](https://edelveart.github.io/resources-files/errata-figuratenum.pdf)                    |
+| Resource                           | Link                                                                                               |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------- |
+| Sequence Generators — Full Catalog | [sequences.md](https://github.com/edelveart/figuratenum/blob/main/docs/reference/sequences.md)     |
+| ComplexViz API Reference           | [complexviz.md](https://github.com/edelveart/figuratenum/blob/main/docs/reference/complexviz.md)   |
+| DiscreteViz API Reference          | [discreteviz.md](https://github.com/edelveart/figuratenum/blob/main/docs/reference/discreteviz.md) |
 
-#### Implementation Notes
+
+### Implementation Notes
 
 > FigurateNum uses optimized implementations of figurate number formulas for performance, while preserving mathematically equivalent results. Original expressions from Deza & Deza (2012) are available via `*_from_book()` methods for reference and validation.
 
@@ -122,7 +119,7 @@ FigurateNum is under active development. Contributions are welcome: fork the pro
 - New sequences, with a mathematical reference (OEIS, book, or paper).
 - Tests for existing sequences.
 - Documentation improvements.
-- Errata corrections at `docs/errata/errata-figuratenum.tex`.
+- Errata corrections at [`docs/errata/errata-figuratenum.tex`](https://github.com/edelveart/figuratenum/blob/main/docs/errata/errata-figuratenum.tex).
 
 When making commits, use conventional prefixes: `feat`, `refactor`, `fix`, `docs`, `test`.
 
