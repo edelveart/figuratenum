@@ -9,15 +9,13 @@ from ..multidimensional_figurate_numbers.MultidimensionalFigurateNum import Mult
 
 class DiscreteViz:
     """
-    Visualizes figurate numbers in a discrete, customizable 2D layout.
+    Visualizes figurate number sequences as modular orbits in discrete circular space.
 
-    Generates circular 2D plots of figurate number sequences, where each number
-    is represented as a point arranged along a circle. These can be seen as
-    geometric or visual “multiplication tables,” showing numeric patterns
-    through spatial arrangements. Customization includes colors, background,
-    text annotations, rotation, and more.
+    Each term of a sequence is reduced modulo n and mapped to one of n positions
+    on a circle. Consecutive terms are connected by edges, tracing an orbit in
+    Z/nZ. The resulting pattern exhibits arithmetic periodicity that is not directly evident from the sequence values.
 
-    Inspired by an expository article by J. Rogelio Pérez Buendía.
+    Inspired by an expository article by J. Rogelio Pérez Buendía (2025).
     """
 
     def __init__(self, fig_sequence: list[int] | tuple[int, ...] = [], figsize: tuple[float, float] = (6, 6)):

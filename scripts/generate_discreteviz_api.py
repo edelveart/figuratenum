@@ -104,7 +104,8 @@ def generate_discreteviz_api(order_by: Literal["code", "alpha"]):
         # ─ Header
         w("# FigurateNum — DiscreteViz API Reference")
         w()
-        w("> Discrete geometric visualization of figurate number sequences")
+        w("> Modular orbit visualization of figurate number sequences")
+        w("> in $\\mathbb{Z}/n\\mathbb{Z}$, inspired by **Rogelio Pérez Buendía (2025)**.")
         w()
         w("---")
         w()
