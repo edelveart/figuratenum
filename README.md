@@ -1,7 +1,7 @@
 <h1 align="center">FigurateNum</h1>
 
 <p align="center">
-    <em>FigurateNum generates and visualizes 235+ plane, space, and multidimensional figurate number sequences and families</em>
+    <em>FigurateNum generates and visualizes 235+ plane, space, and multidimensional figurate number sequences</em>
 </p>
 
 <p align="center">
