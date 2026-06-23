@@ -1,0 +1,38 @@
+[changelog]
+header = "# Changelog\n \n"
+body = """
+{% if version -%}
+{{ "\n" }}## [{{ version }}] - {{ timestamp | date(format="%Y-%m-%d") }}
+{% else -%}
+## [Unreleased]
+{% endif -%}
+{% set order = ["🚀 Features", "🐛 Bug Fixes", "🚜 Refactor", "⚡ Performance"] -%}
+{% for group in order -%}
+  {% set commits_in_group = commits | filter(attribute="group", value=group) -%}
+  {% if commits_in_group | length > 0 -%}
+{{ "\n" }}### {{ group }} {{"\n"}}
+    {%- for commit in commits_in_group %}
+- {{ commit.message | upper_first }}
+    {%- endfor %}
+  {% endif -%}
+{% endfor -%}
+"""
+trim = true
+sort_commits = "newest"
+use_timestamp = true
+
+[git]
+conventional_commits = true
+filter_unconventional = true
+split_commits = false
+
+commit_parsers = [
+    { message = "^feat", group = "🚀 Features" },
+    { message = "^fix", group = "🐛 Bug Fixes" },
+    { message = "^refactor", group = "🚜 Refactor" },
+    { message = "^perf", group = "⚡ Performance" },
+]
+
+tag_pattern = "^v[0-9]+\\.[0-9]+\\.[0-9]+([ab]|rc)?[0-9]*$"
+
+# git-cliff --tag v3.0.0 -o CHANGELOG.md

@@ -4,18 +4,19 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "figuratenum"
-version = "3.0.0-alpha0"
-description = "Generates 235 figurate number sequences and visualizes their generating functions across multiple dimensions in Python."
+version = "3.0.0"
+description = "FigurateNum generates and visualizes 235+ plane, space, and multidimensional figurate number sequences."
 readme = "README.md"
 authors = [{ name = "Edgar Armando Delgado Vega" }]
 license = "MIT"
-requires-python = ">=3.10"
+requires-python = ">=3.12"
 
 classifiers = [
     "Programming Language :: Python :: 3",
-    "Development Status :: 3 - Alpha",
     "Topic :: Scientific/Engineering :: Mathematics",
-    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Scientific/Engineering :: Visualization",
+    "Software Development :: Libraries :: Python Modules",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "Intended Audience :: Science/Research",
     "Intended Audience :: Education",
@@ -38,7 +39,7 @@ keywords = [
     "math visualization",
     "complex plane",
     "phase portraits",
-    "domain_coloring",
+    "domain coloring",
     "generating functions",
 ]
 
@@ -47,8 +48,9 @@ dev = ["autopep8", "pytest"]
 figurate-viz = ["matplotlib>=3.10.0", "numpy>=2.2.2", "sympy>=1.12"]
 
 [project.urls]
-Homepage = "https://github.com/edelveart/figuratenum"
-Source = "https://github.com/edelveart/figuratenum"
+Homepage = "https://edelveart.github.io/figuratenum"
+Documentation = "https://edelveart.github.io/figuratenum"
+Repository = "https://github.com/edelveart/figuratenum"
 
 [tool.setuptools]
 license-files = ["LICENSE"]
