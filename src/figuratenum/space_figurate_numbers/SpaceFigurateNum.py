@@ -2,15 +2,15 @@ from collections.abc import Generator
 
 
 from .space_figuratenum import (
-    m_pyramidal, cubic, tetrahedral,
-    octahedral, dodecahedral, icosahedral,
-    truncated_tetrahedral, truncated_cubic, truncated_octahedral,
-    stella_octangula, centered_cube, rhombic_dodecahedral,
-    hauy_rhombic_dodecahedral, centered_tetrahedron, centered_tetrahedral,
-    centered_square_pyramid, centered_pyramid, centered_mgonal_pyramid,
-    centered_octahedron, centered_icosahedron, centered_cuboctahedron,
-    centered_dodecahedron, centered_truncated_tetrahedron, centered_truncated_cube,
-    centered_truncated_octahedron, centered_mgonal_pyramidal, centered_hexagonal_pyramidal,
+    m_pyramidal, _m_pyramidal_incremental, _cubic_incremental, _tetrahedral_incremental,
+    _octahedral_incremental, _dodecahedral_incremental,  _icosahedral_incremental,
+    _truncated_tetrahedral_incremental, _truncated_cubic_incremental, _truncated_octahedral_incremental,
+    _stella_octangula_incremental, _centered_cube_incremental, _rhombic_dodecahedral_incremental,
+    _hauy_rhombic_dodecahedral_incremental, _centered_tetrahedron_incremental,  _centered_mgonal_pyramid_incremental, _mgonal_prism_incremental,
+    centered_square_pyramid, centered_pyramid,
+    _centered_octahedron_incremental, _centered_icosahedron_incremental,
+    _centered_dodecahedron_incremental, centered_truncated_tetrahedron, _centered_truncated_cube_incremental,  centered_truncated_cube, _centered_truncated_tetrahedron_incremental,  centered_truncated_octahedron,
+    _centered_truncated_octahedron_incremental, centered_mgonal_pyramidal, _centered_mgonal_pyramidal_incremental,  centered_hexagonal_pyramidal,
     hex_pyramidal,  hexagonal_prism, mgonal_prism, generalized_mgonal_pyramidal,
     generalized_cubic, generalized_octahedral, generalized_icosahedral,
     generalized_dodecahedral, generalized_centered_cube,
@@ -33,7 +33,6 @@ from .specific_space_figuratenum import (
     triangular_tetrahedral, triangular_square_pyramidal, square_tetrahedral,
     square_square_pyramidal, tetrahedral_square_pyramidal,
 
-
     centered_pentagonal_pyramid, centered_hexagonal_pyramid,
     centered_heptagonal_pyramid, centered_octagonal_pyramid,
 
@@ -49,86 +48,86 @@ from .specific_space_figuratenum import (
 class SpaceFigurateNum:
 
     def m_pyramidal(self, m: int) -> Generator[int]:
-        return m_pyramidal(m)
+        return _m_pyramidal_incremental(m)
 
     def cubic(self) -> Generator[int]:
-        return cubic()
+        return _cubic_incremental()
 
     def tetrahedral(self) -> Generator[int]:
-        return tetrahedral()
+        return _tetrahedral_incremental()
 
     def octahedral(self) -> Generator[int]:
-        return octahedral()
+        return _octahedral_incremental()
 
     def dodecahedral(self) -> Generator[int]:
-        return dodecahedral()
+        return _dodecahedral_incremental()
 
     def icosahedral(self) -> Generator[int]:
-        return icosahedral()
+        return _icosahedral_incremental()
 
     def truncated_tetrahedral(self) -> Generator[int]:
-        return truncated_tetrahedral()
+        return _truncated_tetrahedral_incremental()
 
     def truncated_cubic(self) -> Generator[int]:
-        return truncated_cubic()
+        return _truncated_cubic_incremental()
 
     def truncated_octahedral(self) -> Generator[int]:
-        return truncated_octahedral()
+        return _truncated_octahedral_incremental()
 
     def stella_octangula(self) -> Generator[int]:
-        return stella_octangula()
+        return _stella_octangula_incremental()
 
     def centered_cube(self) -> Generator[int]:
-        return centered_cube()
+        return _centered_cube_incremental()
 
     def rhombic_dodecahedral(self) -> Generator[int]:
-        return rhombic_dodecahedral()
+        return _rhombic_dodecahedral_incremental()
 
     def hauy_rhombic_dodecahedral(self) -> Generator[int]:
-        return hauy_rhombic_dodecahedral()
+        return _hauy_rhombic_dodecahedral_incremental()
 
     def centered_tetrahedron(self) -> Generator[int]:
-        return centered_tetrahedron()
+        return _centered_tetrahedron_incremental()
     centered_tetrahedral = centered_tetrahedron
 
     def centered_square_pyramid(self) -> Generator[int]:
-        return centered_square_pyramid()
+        return _centered_mgonal_pyramid_incremental(4)
     centered_pyramid = centered_square_pyramid
 
     def centered_mgonal_pyramid(self, m: int) -> Generator[int]:
-        return centered_mgonal_pyramid(m)
+        return _centered_mgonal_pyramid_incremental(m)
 
     def centered_octahedron(self) -> Generator[int]:
-        return centered_octahedron()
+        return _centered_octahedron_incremental()
 
     def centered_icosahedron(self) -> Generator[int]:
-        return centered_icosahedron()
+        return _centered_icosahedron_incremental()
     centered_cuboctahedron = centered_icosahedron
 
     def centered_dodecahedron(self) -> Generator[int]:
-        return centered_dodecahedron()
+        return _centered_dodecahedron_incremental()
 
     def centered_truncated_tetrahedron(self) -> Generator[int]:
-        return centered_truncated_tetrahedron()
+        return _centered_truncated_tetrahedron_incremental()
 
     def centered_truncated_cube(self) -> Generator[int]:
-        return centered_truncated_cube()
+        return _centered_truncated_cube_incremental()
 
     def centered_truncated_octahedron(self) -> Generator[int]:
-        return centered_truncated_octahedron()
+        return _centered_truncated_octahedron_incremental()
 
     def centered_mgonal_pyramidal(self, m: int) -> Generator[int]:
-        return centered_mgonal_pyramidal(m)
+        return _centered_mgonal_pyramidal_incremental(m)
 
     def centered_hexagonal_pyramidal(self) -> Generator[int]:
-        return centered_hexagonal_pyramidal()
+        return _centered_mgonal_pyramidal_incremental(6)
     hex_pyramidal = centered_hexagonal_pyramidal
 
     def hexagonal_prism(self) -> Generator[int]:
-        return hexagonal_prism()
+        return _mgonal_prism_incremental(6)
 
     def mgonal_prism(self, m: int) -> Generator[int]:
-        return mgonal_prism(m)
+        return _mgonal_prism_incremental(m)
 
     def generalized_mgonal_pyramidal(self, m: int, start_num) -> Generator[int]:
         return generalized_mgonal_pyramidal(m, start_num)
@@ -169,89 +168,89 @@ class SpaceFigurateNum:
     # specific space figuratenum
 
     def triangular_pyramidal(self) -> Generator[int]:
-        return triangular_pyramidal()
+        return _m_pyramidal_incremental(3)
 
     def square_pyramidal(self) -> Generator[int]:
-        return square_pyramidal()
+        return _m_pyramidal_incremental(4)
     pyramidal = square_pyramidal
 
     def pentagonal_pyramidal(self) -> Generator[int]:
-        return pentagonal_pyramidal()
+        return _m_pyramidal_incremental(5)
 
     def hexagonal_pyramidal(self) -> Generator[int]:
-        return hexagonal_pyramidal()
+        return _m_pyramidal_incremental(6)
 
     def heptagonal_pyramidal(self) -> Generator[int]:
-        return heptagonal_pyramidal()
+        return _m_pyramidal_incremental(7)
 
     def octagonal_pyramidal(self) -> Generator[int]:
-        return octagonal_pyramidal()
+        return _m_pyramidal_incremental(8)
 
     def nonagonal_pyramidal(self) -> Generator[int]:
-        return nonagonal_pyramidal()
+        return _m_pyramidal_incremental(9)
 
     def decagonal_pyramidal(self) -> Generator[int]:
-        return decagonal_pyramidal()
+        return _m_pyramidal_incremental(10)
 
     def hendecagonal_pyramidal(self) -> Generator[int]:
-        return hendecagonal_pyramidal()
+        return _m_pyramidal_incremental(11)
 
     def dodecagonal_pyramidal(self) -> Generator[int]:
-        return dodecagonal_pyramidal()
+        return _m_pyramidal_incremental(12)
 
     def tridecagonal_pyramidal(self) -> Generator[int]:
-        return tridecagonal_pyramidal()
+        return _m_pyramidal_incremental(13)
 
     def tetradecagonal_pyramidal(self) -> Generator[int]:
-        return tetradecagonal_pyramidal()
+        return _m_pyramidal_incremental(14)
 
     def pentadecagonal_pyramidal(self) -> Generator[int]:
-        return pentadecagonal_pyramidal()
+        return _m_pyramidal_incremental(15)
 
     def hexadecagonal_pyramidal(self) -> Generator[int]:
-        return hexadecagonal_pyramidal()
+        return _m_pyramidal_incremental(16)
 
     def heptadecagonal_pyramidal(self) -> Generator[int]:
-        return heptadecagonal_pyramidal()
+        return _m_pyramidal_incremental(17)
 
     def octadecagonal_pyramidal(self) -> Generator[int]:
-        return octadecagonal_pyramidal()
+        return _m_pyramidal_incremental(18)
 
     def nonadecagonal_pyramidal(self) -> Generator[int]:
-        return nonadecagonal_pyramidal()
+        return _m_pyramidal_incremental(19)
 
     def icosagonal_pyramidal(self) -> Generator[int]:
-        return icosagonal_pyramidal()
+        return _m_pyramidal_incremental(20)
 
     def icosihenagonal_pyramidal(self) -> Generator[int]:
-        return icosihenagonal_pyramidal()
+        return _m_pyramidal_incremental(21)
 
     def icosidigonal_pyramidal(self) -> Generator[int]:
-        return icosidigonal_pyramidal()
+        return _m_pyramidal_incremental(22)
 
     def icositrigonal_pyramidal(self) -> Generator[int]:
-        return icositrigonal_pyramidal()
+        return _m_pyramidal_incremental(23)
 
     def icositetragonal_pyramidal(self) -> Generator[int]:
-        return icositetragonal_pyramidal()
+        return _m_pyramidal_incremental(24)
 
     def icosipentagonal_pyramidal(self) -> Generator[int]:
-        return icosipentagonal_pyramidal()
+        return _m_pyramidal_incremental(25)
 
     def icosihexagonal_pyramidal(self) -> Generator[int]:
-        return icosihexagonal_pyramidal()
+        return _m_pyramidal_incremental(26)
 
     def icosiheptagonal_pyramidal(self) -> Generator[int]:
-        return icosiheptagonal_pyramidal()
+        return _m_pyramidal_incremental(27)
 
     def icosioctagonal_pyramidal(self) -> Generator[int]:
-        return icosioctagonal_pyramidal()
+        return _m_pyramidal_incremental(28)
 
     def icosinonagonal_pyramidal(self) -> Generator[int]:
-        return icosinonagonal_pyramidal()
+        return _m_pyramidal_incremental(29)
 
     def triacontagonal_pyramidal(self) -> Generator[int]:
-        return triacontagonal_pyramidal()
+        return _m_pyramidal_incremental(30)
 
     def triangular_tetrahedral(self) -> Generator[int]:
         return triangular_tetrahedral()
@@ -269,43 +268,43 @@ class SpaceFigurateNum:
         return tetrahedral_square_pyramidal()
 
     def centered_pentagonal_pyramid(self) -> Generator[int]:
-        return centered_pentagonal_pyramid()
+        return _centered_mgonal_pyramid_incremental(5)
 
     def centered_hexagonal_pyramid(self) -> Generator[int]:
-        return centered_hexagonal_pyramid()
+        return _centered_mgonal_pyramid_incremental(6)
 
     def centered_heptagonal_pyramid(self) -> Generator[int]:
-        return centered_heptagonal_pyramid()
+        return _centered_mgonal_pyramid_incremental(7)
 
     def centered_octagonal_pyramid(self) -> Generator[int]:
-        return centered_octagonal_pyramid()
+        return _centered_mgonal_pyramid_incremental(8)
 
     def centered_triangular_pyramidal(self) -> Generator[int]:
-        return centered_triangular_pyramidal()
+        return _centered_mgonal_pyramidal_incremental(3)
 
     def centered_square_pyramidal(self) -> Generator[int]:
-        return centered_square_pyramidal()
+        return _centered_mgonal_pyramidal_incremental(4)
 
     def centered_pentagonal_pyramidal(self) -> Generator[int]:
-        return centered_pentagonal_pyramidal()
+        return _centered_mgonal_pyramidal_incremental(5)
 
     def centered_heptagonal_pyramidal(self) -> Generator[int]:
-        return centered_heptagonal_pyramidal()
+        return _centered_mgonal_pyramidal_incremental(7)
 
     def centered_octagonal_pyramidal(self) -> Generator[int]:
-        return centered_octagonal_pyramidal()
+        return _centered_mgonal_pyramidal_incremental(8)
 
     def centered_nonagonal_pyramidal(self) -> Generator[int]:
-        return centered_nonagonal_pyramidal()
+        return _centered_mgonal_pyramidal_incremental(9)
 
     def centered_decagonal_pyramidal(self) -> Generator[int]:
-        return centered_decagonal_pyramidal()
+        return _centered_mgonal_pyramidal_incremental(10)
 
     def centered_hendecagonal_pyramidal(self) -> Generator[int]:
-        return centered_hendecagonal_pyramidal()
+        return _centered_mgonal_pyramidal_incremental(11)
 
     def centered_dodecagonal_pyramidal(self) -> Generator[int]:
-        return centered_dodecagonal_pyramidal()
+        return _centered_mgonal_pyramidal_incremental(12)
 
     def generalized_pentagonal_pyramidal(self) -> Generator[int]:
         return generalized_pentagonal_pyramidal()
