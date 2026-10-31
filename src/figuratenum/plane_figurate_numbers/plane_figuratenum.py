@@ -40,19 +40,11 @@ def centered_square() -> Generator[int]:
         delta += 1
 
 
-def diamond() -> Generator[int]:
-    return centered_square()
-
-
 def centered_dodecagonal() -> Generator[int]:
     delta = 1
     while True:
         yield 6 * delta ** 2 - 6 * delta + 1
         delta += 1
-
-
-def star() -> Generator[int]:
-    return centered_dodecagonal()
 
 
 def centered_mgonal(m: int) -> Generator[int]:
@@ -82,14 +74,6 @@ def pronic() -> Generator[int]:
 
 def _pronic_incremental() -> Generator[int]:
     return _quadratic_generator(2, 4, 2)
-
-
-def heteromecic() -> Generator[int]:
-    return _pronic_incremental()
-
-
-def oblong() -> Generator[int]:
-    return _pronic_incremental()
 
 
 def polite() -> Generator[int]:
@@ -146,15 +130,10 @@ def _polygram_incremental(m: int):
     a = 1
     b = 2 * m
     c = 2 * m
-
     while True:
         yield a
         a += b
         b += c
-
-
-def centered_star_polygonal(m: int) -> Generator[int]:
-    return _polygram_incremental(m)
 
 
 def pentagram() -> Generator[int]:
@@ -225,19 +204,11 @@ def _truncated_centered_pol_incremental(m: int) -> Generator[int]:
         b += c
 
 
-def truncated_centered_mgonal(m: int) -> Generator[int]:
-    return truncated_centered_pol(m)
-
-
 def truncated_centered_hexagonal() -> Generator[int]:
     delta = 1
     while True:
         yield 21 * delta ** 2 - 33 * delta + 13
         delta += 1
-
-
-def truncated_hex() -> Generator[int]:
-    return truncated_centered_hexagonal()
 
 
 def generalized_mgonal(m: int, start_num: int = 0) -> Generator[int]:
