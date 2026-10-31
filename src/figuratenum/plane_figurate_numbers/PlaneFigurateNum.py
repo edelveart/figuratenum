@@ -1,6 +1,7 @@
 from collections.abc import Generator
 
 from .plane_figuratenum import (
+    _polygonal_incremental,
     polygonal, centered_square, diamond,
     centered_dodecagonal, star, centered_mgonal,
     pronic, heteromecic, oblong,  polite,
@@ -13,16 +14,16 @@ from .plane_figuratenum import (
 )
 
 from .specific_plane_figuratenum import (
-    triangular, square, pentagonal,
-    hexagonal, heptagonal, octagonal,
-    nonagonal, decagonal, hendecagonal,
-    dodecagonal, tridecagonal, tetradecagonal,
-    pentadecagonal, hexadecagonal, heptadecagonal,
-    octadecagonal, nonadecagonal, icosagonal,
-    icosihenagonal, icosiheptagonal, icosidigonal,
-    icositrigonal, icositetragonal, icosipentagonal,
-    icosihexagonal,  icosioctagonal,
-    icosinonagonal, triacontagonal,
+    # triangular, square, pentagonal,
+    # hexagonal, heptagonal, octagonal,
+    # nonagonal, decagonal, hendecagonal,
+    # dodecagonal, tridecagonal, tetradecagonal,
+    # pentadecagonal, hexadecagonal, heptadecagonal,
+    # octadecagonal, nonadecagonal, icosagonal,
+    # icosihenagonal, icosiheptagonal, icosidigonal,
+    # icositrigonal, icositetragonal, icosipentagonal,
+    # icosihexagonal,  icosioctagonal,
+    # icosinonagonal, triacontagonal,
 
     centered_triangular,
 
@@ -66,7 +67,8 @@ from .specific_plane_figuratenum import (
 class PlaneFigurateNum:
 
     def polygonal(self, m: int) -> Generator[int]:
-        return polygonal(m)
+        return _polygonal_incremental(m)
+        # return polygonal(m)
 
     def centered_square(self) -> Generator[int]:
         return centered_square()
@@ -135,88 +137,88 @@ class PlaneFigurateNum:
     # specific plane figuratenum
 
     def triangular(self) -> Generator[int]:
-        return triangular()
+        return _polygonal_incremental(3)
 
     def square(self) -> Generator[int]:
-        return square()
+        return _polygonal_incremental(4)
 
     def pentagonal(self) -> Generator[int]:
-        return pentagonal()
+        return _polygonal_incremental(5)
 
     def hexagonal(self) -> Generator[int]:
-        return hexagonal()
+        return _polygonal_incremental(6)
 
     def heptagonal(self) -> Generator[int]:
-        return heptagonal()
+        return _polygonal_incremental(7)
 
     def octagonal(self) -> Generator[int]:
-        return octagonal()
+        return _polygonal_incremental(8)
 
     def nonagonal(self) -> Generator[int]:
-        return nonagonal()
+        return _polygonal_incremental(9)
 
     def decagonal(self) -> Generator[int]:
-        return decagonal()
+        return _polygonal_incremental(10)
 
     def hendecagonal(self) -> Generator[int]:
-        return hendecagonal()
+        return _polygonal_incremental(11)
 
     def dodecagonal(self) -> Generator[int]:
-        return dodecagonal()
+        return _polygonal_incremental(12)
 
     def tridecagonal(self) -> Generator[int]:
-        return tridecagonal()
+        return _polygonal_incremental(13)
 
     def tetradecagonal(self) -> Generator[int]:
-        return tetradecagonal()
+        return _polygonal_incremental(14)
 
     def pentadecagonal(self) -> Generator[int]:
-        return pentadecagonal()
+        return _polygonal_incremental(15)
 
     def hexadecagonal(self) -> Generator[int]:
-        return hexadecagonal()
+        return _polygonal_incremental(16)
 
     def heptadecagonal(self) -> Generator[int]:
-        return heptadecagonal()
+        return _polygonal_incremental(17)
 
     def octadecagonal(self) -> Generator[int]:
-        return octadecagonal()
+        return _polygonal_incremental(18)
 
     def nonadecagonal(self) -> Generator[int]:
-        return nonadecagonal()
+        return _polygonal_incremental(19)
 
     def icosagonal(self) -> Generator[int]:
-        return icosagonal()
+        return _polygonal_incremental(20)
 
     def icosihenagonal(self) -> Generator[int]:
-        return icosihenagonal()
-
-    def icosiheptagonal(self) -> Generator[int]:
-        return icosiheptagonal()
+        return _polygonal_incremental(21)
 
     def icosidigonal(self) -> Generator[int]:
-        return icosidigonal()
+        return _polygonal_incremental(22)
 
     def icositrigonal(self) -> Generator[int]:
-        return icositrigonal()
+        return _polygonal_incremental(23)
 
     def icositetragonal(self) -> Generator[int]:
-        return icositetragonal()
+        return _polygonal_incremental(24)
 
     def icosipentagonal(self) -> Generator[int]:
-        return icosipentagonal()
+        return _polygonal_incremental(25)
 
     def icosihexagonal(self) -> Generator[int]:
-        return icosihexagonal()
+        return _polygonal_incremental(26)
+
+    def icosiheptagonal(self) -> Generator[int]:
+        return _polygonal_incremental(27)
 
     def icosioctagonal(self) -> Generator[int]:
-        return icosioctagonal()
+        return _polygonal_incremental(28)
 
     def icosinonagonal(self) -> Generator[int]:
-        return icosinonagonal()
+        return _polygonal_incremental(29)
 
     def triacontagonal(self) -> Generator[int]:
-        return triacontagonal()
+        return _polygonal_incremental(30)
 
     def centered_triangular(self) -> Generator[int]:
         return centered_triangular()

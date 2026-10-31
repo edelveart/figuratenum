@@ -2,6 +2,17 @@ from math import log2, floor
 from collections.abc import Generator
 
 
+def _polygonal_incremental(m: int) -> Generator[int]:
+    a = 1
+    b = m - 1
+    c = m - 2
+
+    while True:
+        yield a
+        a += b
+        b += c
+
+
 def polygonal(m: int) -> Generator[int]:
     delta = 1
     while True:
