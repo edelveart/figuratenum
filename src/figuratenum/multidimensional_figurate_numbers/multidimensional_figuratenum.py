@@ -24,6 +24,10 @@ def pentatope() -> Generator[int]:
         delta += 1
 
 
+def _pentatope_incremental() -> Generator[int]:
+    return _quartic_generator(1, 4, 6, 4, 1)
+
+
 def k_dimensional_hypertetrahedron_from_book(k: int) -> Generator[int]:
     """Book definition. For reference only."""
     delta = 1
@@ -57,6 +61,10 @@ def biquadratic() -> Generator[int]:
         delta += 1
 
 
+def _biquadratic_incremental() -> Generator[int]:
+    return _quartic_generator(1, 15, 50, 60, 24)
+
+
 def k_dimensional_hypercube(k: int) -> Generator[int]:
     delta = 1
     while True:
@@ -71,11 +79,19 @@ def hyperoctahedral() -> Generator[int]:
         delta += 1
 
 
+def _hyperoctahedral_incremental() -> Generator[int]:
+    return _quartic_generator(1, 7, 18, 20, 8)
+
+
 def hypericosahedral() -> Generator[int]:
     delta = 1
     while True:
         yield (delta * (145 * delta ** 3 - 280 * delta ** 2 + 179 * delta - 38)) // 6
         delta += 1
+
+
+def _hypericosahedral_incremental() -> Generator[int]:
+    return _quartic_generator(1, 119, 708, 1170, 580)
 
 
 def hyperdodecahedral() -> Generator[int]:
@@ -85,11 +101,19 @@ def hyperdodecahedral() -> Generator[int]:
         delta += 1
 
 
+def _hyperdodecahedral_incremental() -> Generator[int]:
+    return _quartic_generator(1, 599, 3784, 6318, 3132)
+
+
 def polyoctahedral() -> Generator[int]:
     delta = 1
     while True:
         yield delta ** 2 * (3 * delta ** 2 - 4 * delta + 2)
         delta += 1
+
+
+def _polyoctahedral_incremental() -> Generator[int]:
+    return _quartic_generator(1, 23, 106, 156, 72)
 
 
 def k_dimensional_hyperoctahedron_from_book(k: int) -> Generator[int]:
@@ -131,6 +155,21 @@ def four_dimensional_mgonal_pyramidal(m: int) -> Generator[int]:
         delta += 1
 
 
+def _four_dimensional_mgonal_pyramidal_incremental(m: int) -> Generator[int]:
+    a = 1
+    b = m + 1
+    c = 3 * m - 3
+    d = 3 * m - 5
+    e = m - 2
+
+    while True:
+        yield a
+        a += b
+        b += c
+        c += d
+        d += e
+
+
 def k_dimensional_mgonal_pyramidal_from_book(k: int, m: int) -> Generator[int]:
     """Book definition. For reference only."""
     delta = 1
@@ -158,6 +197,10 @@ def centered_biquadratic() -> Generator[int]:
         delta += 1
 
 
+def _centered_biquadratic_incremental() -> Generator[int]:
+    return _quartic_generator(1, 16, 64, 96, 48)
+
+
 def k_dimensional_centered_hypercube(k: int) -> Generator[int]:
     delta = 1
     while True:
@@ -170,6 +213,10 @@ def centered_polytope() -> Generator[int]:
     while True:
         yield (5 * delta ** 4 - 10 * delta ** 3 + 55 * delta ** 2 - 50 * delta + 24) // 24
         delta += 1
+
+
+def _centered_polytope_incremental() -> Generator[int]:
+    return _quartic_generator(1, 5, 10, 10, 5)
 
 
 def k_dimensional_centered_hypertetrahedron(k: int) -> Generator[int]:
@@ -187,6 +234,10 @@ def centered_hyperoctahedral() -> Generator[int]:
     while True:
         yield (2 * delta ** 4 - 4 * delta ** 3 + 10 * delta ** 2 - 8 * delta + 3) // 3
         delta += 1
+
+
+def _centered_hyperoctahedral_incremental() -> Generator[int]:
+    return _quartic_generator(1, 8, 24, 32, 16)
 
 
 def nexus(k: int) -> Generator[int]:

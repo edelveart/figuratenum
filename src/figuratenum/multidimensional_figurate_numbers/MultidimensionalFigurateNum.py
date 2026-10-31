@@ -1,12 +1,11 @@
 from collections.abc import Generator
 from .multidimensional_figuratenum import (
-    pentatope, k_dimensional_hypertetrahedron,
-    biquadratic, k_dimensional_hypercube, hyperoctahedral,
-    hypericosahedral, hyperdodecahedral, polyoctahedral,
-    k_dimensional_hyperoctahedron, four_dimensional_mgonal_pyramidal,
+    _pentatope_incremental, _biquadratic_incremental, k_dimensional_hypertetrahedron, k_dimensional_hypercube, _hyperoctahedral_incremental,
+    _hypericosahedral_incremental, _hyperdodecahedral_incremental, _polyoctahedral_incremental,
+    k_dimensional_hyperoctahedron, _four_dimensional_mgonal_pyramidal_incremental,
     k_dimensional_mgonal_pyramidal,
-    centered_biquadratic, k_dimensional_centered_hypercube, centered_polytope,
-    k_dimensional_centered_hypertetrahedron, centered_hyperoctahedral,
+    _centered_biquadratic_incremental, k_dimensional_centered_hypercube, _centered_polytope_incremental,
+    k_dimensional_centered_hypertetrahedron, _centered_hyperoctahedral_incremental,
     nexus, k_dimensional_centered_hyperoctahedron,
 
     generalized_pentatope, generalized_k_dimensional_hypertetrahedron,
@@ -26,12 +25,6 @@ from .specific_multidimensional_figuratenum import (
     six_dimensional_hyperoctahedron, seven_dimensional_hyperoctahedron,
     eight_dimensional_hyperoctahedron, nine_dimensional_hyperoctahedron,
     ten_dimensional_hyperoctahedron,
-
-    four_dimensional_square_pyramidal, four_dimensional_pentagonal_pyramidal,
-    four_dimensional_hexagonal_pyramidal, four_dimensional_heptagonal_pyramidal,
-    four_dimensional_octagonal_pyramidal, four_dimensional_nonagonal_pyramidal,
-    four_dimensional_decagonal_pyramidal, four_dimensional_hendecagonal_pyramidal,
-    four_dimensional_dodecagonal_pyramidal,
 
     five_dimensional_mgonal_pyramidal, five_dimensional_square_pyramidal,
     five_dimensional_pentagonal_pyramidal, five_dimensional_hexagonal_pyramidal,
@@ -54,7 +47,7 @@ from .specific_multidimensional_figuratenum import (
 class MultidimensionalFigurateNum():
 
     def pentatope(self) -> Generator[int]:
-        return pentatope()
+        return _pentatope_incremental()
     hypertetrahedral = pentatope
     pentachoron = pentatope
     cell_5 = pentatope
@@ -68,7 +61,7 @@ class MultidimensionalFigurateNum():
     k_dim_hypertetrahedron = k_dimensional_hypertetrahedron
 
     def biquadratic(self) -> Generator[int]:
-        return biquadratic()
+        return _biquadratic_incremental()
     hypercube = biquadratic
     octachoron = biquadratic
     tesseract = biquadratic
@@ -80,28 +73,28 @@ class MultidimensionalFigurateNum():
     k_dim_hypercube = k_dimensional_hypercube
 
     def hyperoctahedral(self) -> Generator[int]:
-        return hyperoctahedral()
+        return _hyperoctahedral_incremental()
     hexadecachoron = hyperoctahedral
     four_cross_polytope = hyperoctahedral
     four_orthoplex = hyperoctahedral
     cell_16 = hyperoctahedral
 
     def hypericosahedral(self) -> Generator[int]:
-        return hypericosahedral()
+        return _hypericosahedral_incremental()
     tetraplex = hypericosahedral
     polytetrahedron = hypericosahedral
     hexacosichoron = hypericosahedral
     cell_600 = hypericosahedral
 
     def hyperdodecahedral(self) -> Generator[int]:
-        return hyperdodecahedral()
+        return _hyperdodecahedral_incremental()
     hecatonicosachoron = hyperdodecahedral
     dodecaplex = hyperdodecahedral
     polydodecahedron = hyperdodecahedral
     cell_120 = hyperdodecahedral
 
     def polyoctahedral(self) -> Generator[int]:
-        return polyoctahedral()
+        return _polyoctahedral_incremental()
     icositetrachoron = polyoctahedral
     octaplex = polyoctahedral
     hyperdiamond = polyoctahedral
@@ -113,7 +106,7 @@ class MultidimensionalFigurateNum():
     k_dim_hyperoctahedron = k_dimensional_hyperoctahedron
 
     def four_dimensional_mgonal_pyramidal(self, m: int) -> Generator[int]:
-        return four_dimensional_mgonal_pyramidal(m)
+        return _four_dimensional_mgonal_pyramidal_incremental(m)
     mgonal_pyramidal_of_the_second_order = four_dimensional_mgonal_pyramidal
     four_dim_mgonal_pyramidal = four_dimensional_mgonal_pyramidal
 
@@ -123,14 +116,14 @@ class MultidimensionalFigurateNum():
     k_dim_mgonal_pyramidal = k_dimensional_mgonal_pyramidal
 
     def centered_biquadratic(self) -> Generator[int]:
-        return centered_biquadratic()
+        return _centered_biquadratic_incremental()
 
     def k_dimensional_centered_hypercube(self, k: int) -> Generator[int]:
         return k_dimensional_centered_hypercube(k)
     k_dim_centered_hypercube = k_dimensional_centered_hypercube
 
     def centered_polytope(self) -> Generator[int]:
-        return centered_polytope()
+        return _centered_polytope_incremental()
     centered_hypertetrahedron = centered_polytope
 
     def k_dimensional_centered_hypertetrahedron(self, k: int) -> Generator[int]:
@@ -138,7 +131,7 @@ class MultidimensionalFigurateNum():
     k_dim_centered_hypertetrahedron = k_dimensional_centered_hypertetrahedron
 
     def centered_hyperoctahedral(self) -> Generator[int]:
-        return centered_hyperoctahedral()
+        return _centered_hyperoctahedral_incremental()
     orthoplex = centered_hyperoctahedral
     centered_hyperoctahedron = centered_hyperoctahedral
 
@@ -201,7 +194,7 @@ class MultidimensionalFigurateNum():
         return six_dimensional_hypercube()
 
     def four_dimensional_hyperoctahedron(self) -> Generator[int]:
-        return four_dimensional_hyperoctahedron()
+        return _hyperoctahedral_incremental()
 
     def five_dimensional_hyperoctahedron(self) -> Generator[int]:
         return five_dimensional_hyperoctahedron()
@@ -222,31 +215,31 @@ class MultidimensionalFigurateNum():
         return ten_dimensional_hyperoctahedron()
 
     def four_dimensional_square_pyramidal(self) -> Generator[int]:
-        return four_dimensional_square_pyramidal()
+        return _four_dimensional_mgonal_pyramidal_incremental(4)
 
     def four_dimensional_pentagonal_pyramidal(self) -> Generator[int]:
-        return four_dimensional_pentagonal_pyramidal()
+        return _four_dimensional_mgonal_pyramidal_incremental(5)
 
     def four_dimensional_hexagonal_pyramidal(self) -> Generator[int]:
-        return four_dimensional_hexagonal_pyramidal()
+        return _four_dimensional_mgonal_pyramidal_incremental(6)
 
     def four_dimensional_heptagonal_pyramidal(self) -> Generator[int]:
-        return four_dimensional_heptagonal_pyramidal()
+        return _four_dimensional_mgonal_pyramidal_incremental(7)
 
     def four_dimensional_octagonal_pyramidal(self) -> Generator[int]:
-        return four_dimensional_octagonal_pyramidal()
+        return _four_dimensional_mgonal_pyramidal_incremental(8)
 
     def four_dimensional_nonagonal_pyramidal(self) -> Generator[int]:
-        return four_dimensional_nonagonal_pyramidal()
+        return _four_dimensional_mgonal_pyramidal_incremental(9)
 
     def four_dimensional_decagonal_pyramidal(self) -> Generator[int]:
-        return four_dimensional_decagonal_pyramidal()
+        return _four_dimensional_mgonal_pyramidal_incremental(10)
 
     def four_dimensional_hendecagonal_pyramidal(self) -> Generator[int]:
-        return four_dimensional_hendecagonal_pyramidal()
+        return _four_dimensional_mgonal_pyramidal_incremental(11)
 
     def four_dimensional_dodecagonal_pyramidal(self) -> Generator[int]:
-        return four_dimensional_dodecagonal_pyramidal()
+        return _four_dimensional_mgonal_pyramidal_incremental(12)
 
     def five_dimensional_mgonal_pyramidal(self, m: int) -> Generator[int]:
         return five_dimensional_mgonal_pyramidal(m)
