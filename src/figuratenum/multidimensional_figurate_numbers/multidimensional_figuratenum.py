@@ -8,19 +8,20 @@ from ..utils import (
 )
 
 
+def _quartic_generator(a: int, b: int, c: int, d: int, e: int) -> Generator[int]:
+    while True:
+        yield a
+        a += b
+        b += c
+        c += d
+        d += e
+
+
 def pentatope() -> Generator[int]:
     delta = 1
     while True:
         yield (delta * (delta + 1) * (delta + 2) * (delta + 3)) // 24
         delta += 1
-
-
-def hypertetrahedral() -> Generator[int]:
-    return pentatope()
-
-
-def triangulotriangular() -> Generator[int]:
-    return pentatope()
 
 
 def k_dimensional_hypertetrahedron_from_book(k: int) -> Generator[int]:
@@ -49,18 +50,6 @@ def k_dimensional_hypertetrahedron(k: int) -> Generator[int]:
         delta += 1
 
 
-def k_hypertetrahedron(k: int) -> Generator[int]:
-    return k_dimensional_hypertetrahedron(k)
-
-
-def regular_k_polytopic(k: int) -> Generator[int]:
-    return k_dimensional_hypertetrahedron(k)
-
-
-def figurate_of_order_k(k: int) -> Generator[int]:
-    return k_dimensional_hypertetrahedron(k)
-
-
 def biquadratic() -> Generator[int]:
     delta = 1
     while True:
@@ -75,27 +64,11 @@ def k_dimensional_hypercube(k: int) -> Generator[int]:
         delta += 1
 
 
-def k_hypercube(k: int) -> Generator[int]:
-    return k_dimensional_hypercube(k)
-
-
 def hyperoctahedral() -> Generator[int]:
     delta = 1
     while True:
         yield (delta ** 2 * (delta ** 2 + 2)) // 3
         delta += 1
-
-
-def hexadecachoron() -> Generator[int]:
-    return hyperoctahedral()
-
-
-def four_cross_polytope() -> Generator[int]:
-    return hyperoctahedral()
-
-
-def four_orthoplex() -> Generator[int]:
-    return hyperoctahedral()
 
 
 def hypericosahedral() -> Generator[int]:
@@ -105,18 +78,6 @@ def hypericosahedral() -> Generator[int]:
         delta += 1
 
 
-def tetraplex() -> Generator[int]:
-    return hypericosahedral()
-
-
-def polytetrahedron() -> Generator[int]:
-    return hypericosahedral()
-
-
-def hexacosichoron() -> Generator[int]:
-    return hypericosahedral()
-
-
 def hyperdodecahedral() -> Generator[int]:
     delta = 1
     while True:
@@ -124,35 +85,11 @@ def hyperdodecahedral() -> Generator[int]:
         delta += 1
 
 
-def hecatonicosachoron() -> Generator[int]:
-    return hyperdodecahedral()
-
-
-def dodecaplex() -> Generator[int]:
-    return hyperdodecahedral()
-
-
-def polydodecahedron() -> Generator[int]:
-    return hyperdodecahedral()
-
-
 def polyoctahedral() -> Generator[int]:
     delta = 1
     while True:
         yield delta ** 2 * (3 * delta ** 2 - 4 * delta + 2)
         delta += 1
-
-
-def icositetrachoron() -> Generator[int]:
-    return polyoctahedral()
-
-
-def octaplex() -> Generator[int]:
-    return polyoctahedral()
-
-
-def hyperdiamond() -> Generator[int]:
-    return polyoctahedral()
 
 
 def k_dimensional_hyperoctahedron_from_book(k: int) -> Generator[int]:
@@ -187,19 +124,11 @@ def k_dimensional_hyperoctahedron(k: int) -> Generator[int]:
     return generalized_k_dimensional_hyperoctahedron(k, 1)
 
 
-def k_cross_polytope(k: int) -> Generator[int]:
-    return k_dimensional_hyperoctahedron(k)
-
-
 def four_dimensional_mgonal_pyramidal(m: int) -> Generator[int]:
     delta = 1
     while True:
         yield (delta * (delta + 1) * (delta + 2) * ((m - 2) * delta - m + 6)) // 24
         delta += 1
-
-
-def mgonal_pyramidal_of_the_second_order(m: int) -> Generator[int]:
-    return four_dimensional_mgonal_pyramidal(m)
 
 
 def k_dimensional_mgonal_pyramidal_from_book(k: int, m: int) -> Generator[int]:
@@ -218,10 +147,6 @@ def k_dimensional_mgonal_pyramidal(k: int, m: int):
         yield (bin_coeff * ((m - 2) * delta - m + k + 2)) // k
         bin_coeff = bin_coeff * (delta + k - 1) // delta
         delta += 1
-
-
-def mgonal_pyramidal_of_the_k_2_th_order(k: int, m: int) -> Generator[int]:
-    return k_dimensional_mgonal_pyramidal(k, m)
 
 
 def centered_biquadratic() -> Generator[int]:
@@ -262,10 +187,6 @@ def centered_hyperoctahedral() -> Generator[int]:
     while True:
         yield (2 * delta ** 4 - 4 * delta ** 3 + 10 * delta ** 2 - 8 * delta + 3) // 3
         delta += 1
-
-
-def orthoplex() -> Generator[int]:
-    return centered_hyperoctahedral()
 
 
 def nexus(k: int) -> Generator[int]:

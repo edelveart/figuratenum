@@ -1,16 +1,12 @@
 from collections.abc import Generator
 from .multidimensional_figuratenum import (
-    pentatope, hypertetrahedral, triangulotriangular, k_hypertetrahedron,
-    regular_k_polytopic, figurate_of_order_k, k_dimensional_hypertetrahedron,
-    biquadratic, k_dimensional_hypercube, k_hypercube, hyperoctahedral,
-    hexadecachoron, four_cross_polytope, four_orthoplex, hypericosahedral,
-    tetraplex, polytetrahedron, hexacosichoron, hyperdodecahedral,
-    hecatonicosachoron, dodecaplex, polydodecahedron, polyoctahedral,
-    icositetrachoron, octaplex, hyperdiamond,  k_dimensional_hyperoctahedron,
-    k_cross_polytope, four_dimensional_mgonal_pyramidal, mgonal_pyramidal_of_the_second_order,
-    k_dimensional_mgonal_pyramidal, mgonal_pyramidal_of_the_k_2_th_order,
+    pentatope, k_dimensional_hypertetrahedron,
+    biquadratic, k_dimensional_hypercube, hyperoctahedral,
+    hypericosahedral, hyperdodecahedral, polyoctahedral,
+    k_dimensional_hyperoctahedron, four_dimensional_mgonal_pyramidal,
+    k_dimensional_mgonal_pyramidal,
     centered_biquadratic, k_dimensional_centered_hypercube, centered_polytope,
-    k_dimensional_centered_hypertetrahedron, centered_hyperoctahedral, orthoplex,
+    k_dimensional_centered_hypertetrahedron, centered_hyperoctahedral,
     nexus, k_dimensional_centered_hyperoctahedron,
 
     generalized_pentatope, generalized_k_dimensional_hypertetrahedron,
