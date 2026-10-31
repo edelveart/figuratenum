@@ -146,6 +146,14 @@ def truncated_triangular() -> Generator[int]:
         delta += 1
 
 
+def _truncated_triangular_incremental() -> Generator[int]:
+    a, b, c = 1, 6, 6
+    while True:
+        yield a
+        a += b
+        b += c
+
+
 def truncated_square() -> Generator[int]:
     delta = 1
     while True:
@@ -153,11 +161,27 @@ def truncated_square() -> Generator[int]:
         delta += 1
 
 
+def _truncated_square_incremental() -> Generator[int]:
+    a, b, c = 1, 11, 14
+    while True:
+        yield a
+        a += b
+        b += c
+
+
 def truncated_pronic() -> Generator[int]:
     delta = 1
     while True:
         yield (7 * delta ** 2) - (7 * delta) + 2
         delta += 1
+
+
+def _truncated_pronic_incremental() -> Generator[int]:
+    a, b, c = 2, 14, 14
+    while True:
+        yield a
+        a += b
+        b += c
 
 
 def truncated_centered_pol(m: int) -> Generator[int]:

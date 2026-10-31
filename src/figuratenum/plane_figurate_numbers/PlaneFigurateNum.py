@@ -7,7 +7,7 @@ from .plane_figuratenum import (
     pronic, heteromecic, oblong,  polite,
     impolite, cross, aztec_diamond, polygram, _polygram_incremental,
     centered_star_polygonal, pentagram, gnomonic,
-    truncated_triangular, truncated_square, truncated_pronic,
+    truncated_triangular, _truncated_triangular_incremental, truncated_square, _truncated_square_incremental, truncated_pronic, _truncated_pronic_incremental,
     truncated_centered_pol, _truncated_centered_pol_incremental, truncated_centered_mgonal,
     truncated_centered_hexagonal, truncated_hex,
     generalized_mgonal, generalized_centered_pol, generalized_pronic
@@ -70,7 +70,7 @@ class PlaneFigurateNum:
         return _polygonal_incremental(m)
 
     def centered_mgonal(self, m: int) -> Generator[int]:
-        return centered_mgonal(m)
+        return _centered_mgonal_incremental(m)
 
     def pronic(self) -> Generator[int]:
         return pronic()
@@ -100,13 +100,13 @@ class PlaneFigurateNum:
         return gnomonic()
 
     def truncated_triangular(self) -> Generator[int]:
-        return truncated_triangular()
+        return _truncated_triangular_incremental()
 
     def truncated_square(self) -> Generator[int]:
-        return truncated_square()
+        return _truncated_square_incremental()
 
     def truncated_pronic(self) -> Generator[int]:
-        return truncated_pronic()
+        return _truncated_pronic_incremental()
 
     def truncated_centered_pol(self, m: int) -> Generator[int]:
         return _truncated_centered_pol_incremental(m)
