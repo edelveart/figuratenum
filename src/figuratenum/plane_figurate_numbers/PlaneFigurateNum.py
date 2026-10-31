@@ -8,7 +8,7 @@ from .plane_figuratenum import (
     impolite, cross, aztec_diamond, polygram, _polygram_incremental,
     centered_star_polygonal, pentagram, gnomonic,
     truncated_triangular, truncated_square, truncated_pronic,
-    truncated_centered_pol, truncated_centered_mgonal,
+    truncated_centered_pol, _truncated_centered_pol_incremental, truncated_centered_mgonal,
     truncated_centered_hexagonal, truncated_hex,
     generalized_mgonal, generalized_centered_pol, generalized_pronic
 )
@@ -68,15 +68,6 @@ class PlaneFigurateNum:
 
     def polygonal(self, m: int) -> Generator[int]:
         return _polygonal_incremental(m)
-        # return polygonal(m)
-
-    def centered_square(self) -> Generator[int]:
-        return centered_square()
-    diamond = centered_square
-
-    def centered_dodecagonal(self) -> Generator[int]:
-        return centered_dodecagonal()
-    star = centered_dodecagonal
 
     def centered_mgonal(self, m: int) -> Generator[int]:
         return centered_mgonal(m)
@@ -118,11 +109,11 @@ class PlaneFigurateNum:
         return truncated_pronic()
 
     def truncated_centered_pol(self, m: int) -> Generator[int]:
-        return truncated_centered_pol(m)
+        return _truncated_centered_pol_incremental(m)
     truncated_centered_mgonal = truncated_centered_pol
 
     def truncated_centered_hexagonal(self) -> Generator[int]:
-        return truncated_centered_hexagonal()
+        return _truncated_centered_pol_incremental(6)
     truncated_hex = truncated_centered_hexagonal
 
     def generalized_mgonal(self, m: int, start_num: int = 0) -> Generator[int]:
@@ -220,8 +211,13 @@ class PlaneFigurateNum:
     def triacontagonal(self) -> Generator[int]:
         return _polygonal_incremental(30)
 
+    # Centered
     def centered_triangular(self) -> Generator[int]:
         return _centered_mgonal_incremental(3)
+
+    def centered_square(self) -> Generator[int]:
+        return _centered_mgonal_incremental(4)
+    diamond = centered_square
 
     def centered_pentagonal(self) -> Generator[int]:
         return _centered_mgonal_incremental(5)
@@ -243,6 +239,10 @@ class PlaneFigurateNum:
 
     def centered_hendecagonal(self) -> Generator[int]:
         return _centered_mgonal_incremental(11)
+
+    def centered_dodecagonal(self) -> Generator[int]:
+        return _centered_mgonal_incremental(12)
+    star = centered_dodecagonal
 
     def centered_tridecagonal(self) -> Generator[int]:
         return _centered_mgonal_incremental(13)

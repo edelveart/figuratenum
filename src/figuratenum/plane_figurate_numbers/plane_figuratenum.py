@@ -167,6 +167,17 @@ def truncated_centered_pol(m: int) -> Generator[int]:
         delta += 1
 
 
+def _truncated_centered_pol_incremental(m: int) -> Generator[int]:
+    a = 1
+    b = 5 * m
+    c = 7 * m
+
+    while True:
+        yield a
+        a += b
+        b += c
+
+
 def truncated_centered_mgonal(m: int) -> Generator[int]:
     return truncated_centered_pol(m)
 
