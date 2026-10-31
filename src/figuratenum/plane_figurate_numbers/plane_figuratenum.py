@@ -49,7 +49,7 @@ def centered_mgonal(m: int) -> Generator[int]:
         delta += 1
 
 
-def _centered_mgonal_incremental(m: int):
+def _centered_mgonal_incremental(m: int) -> Generator[int]:
     a = 1
     b = m
     c = m
@@ -110,8 +110,19 @@ def polygram(m: int) -> Generator[int]:
         delta += 1
 
 
+def _polygram_incremental(m: int):
+    a = 1
+    b = 2 * m
+    c = 2 * m
+
+    while True:
+        yield a
+        a += b
+        b += c
+
+
 def centered_star_polygonal(m: int) -> Generator[int]:
-    return polygram(m)
+    return _polygonal_incremental(m)
 
 
 def pentagram() -> Generator[int]:

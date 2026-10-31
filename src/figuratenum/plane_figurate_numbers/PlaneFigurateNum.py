@@ -5,7 +5,7 @@ from .plane_figuratenum import (
     polygonal, centered_square, diamond,
     centered_dodecagonal, star, centered_mgonal, _centered_mgonal_incremental,
     pronic, heteromecic, oblong,  polite,
-    impolite, cross, aztec_diamond, polygram,
+    impolite, cross, aztec_diamond, polygram, _polygram_incremental,
     centered_star_polygonal, pentagram, gnomonic,
     truncated_triangular, truncated_square, truncated_pronic,
     truncated_centered_pol, truncated_centered_mgonal,
@@ -99,7 +99,7 @@ class PlaneFigurateNum:
         return aztec_diamond()
 
     def polygram(self, m: int) -> Generator[int]:
-        return polygram(m)
+        return _polygram_incremental(m)
     centered_star_polygonal = polygram
 
     def pentagram(self) -> Generator[int]:
