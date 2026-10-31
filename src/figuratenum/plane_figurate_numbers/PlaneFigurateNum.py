@@ -3,7 +3,7 @@ from collections.abc import Generator
 from .plane_figuratenum import (
     _polygonal_incremental,
     polygonal, centered_square, diamond,
-    centered_dodecagonal, star, centered_mgonal,
+    centered_dodecagonal, star, centered_mgonal, _centered_mgonal_incremental,
     pronic, heteromecic, oblong,  polite,
     impolite, cross, aztec_diamond, polygram,
     centered_star_polygonal, pentagram, gnomonic,
@@ -221,82 +221,82 @@ class PlaneFigurateNum:
         return _polygonal_incremental(30)
 
     def centered_triangular(self) -> Generator[int]:
-        return centered_triangular()
+        return _centered_mgonal_incremental(3)
 
     def centered_pentagonal(self) -> Generator[int]:
-        return centered_pentagonal()
+        return _centered_mgonal_incremental(5)
 
     def centered_hexagonal(self) -> Generator[int]:
-        return centered_hexagonal()
+        return _centered_mgonal_incremental(6)
 
     def centered_heptagonal(self) -> Generator[int]:
-        return centered_heptagonal()
+        return _centered_mgonal_incremental(7)
 
     def centered_octagonal(self) -> Generator[int]:
-        return centered_octagonal()
+        return _centered_mgonal_incremental(8)
 
     def centered_nonagonal(self) -> Generator[int]:
-        return centered_nonagonal()
+        return _centered_mgonal_incremental(9)
 
     def centered_decagonal(self) -> Generator[int]:
-        return centered_decagonal()
+        return _centered_mgonal_incremental(10)
 
     def centered_hendecagonal(self) -> Generator[int]:
-        return centered_hendecagonal()
+        return _centered_mgonal_incremental(11)
 
     def centered_tridecagonal(self) -> Generator[int]:
-        return centered_tridecagonal()
+        return _centered_mgonal_incremental(13)
 
     def centered_tetradecagonal(self) -> Generator[int]:
-        return centered_tetradecagonal()
+        return _centered_mgonal_incremental(14)
 
     def centered_pentadecagonal(self) -> Generator[int]:
-        return centered_pentadecagonal()
+        return _centered_mgonal_incremental(15)
 
     def centered_hexadecagonal(self) -> Generator[int]:
-        return centered_hexadecagonal()
+        return _centered_mgonal_incremental(16)
 
     def centered_heptadecagonal(self) -> Generator[int]:
-        return centered_heptadecagonal()
+        return _centered_mgonal_incremental(17)
 
     def centered_octadecagonal(self) -> Generator[int]:
-        return centered_octadecagonal()
+        return _centered_mgonal_incremental(18)
 
     def centered_nonadecagonal(self) -> Generator[int]:
-        return centered_nonadecagonal()
+        return _centered_mgonal_incremental(19)
 
     def centered_icosagonal(self) -> Generator[int]:
-        return centered_icosagonal()
+        return _centered_mgonal_incremental(20)
 
     def centered_icosihenagonal(self) -> Generator[int]:
-        return centered_icosihenagonal()
+        return _centered_mgonal_incremental(21)
 
     def centered_icosidigonal(self) -> Generator[int]:
-        return centered_icosidigonal()
+        return _centered_mgonal_incremental(22)
 
     def centered_icositrigonal(self) -> Generator[int]:
-        return centered_icositrigonal()
+        return _centered_mgonal_incremental(23)
 
     def centered_icositetragonal(self) -> Generator[int]:
-        return centered_icositetragonal()
+        return _centered_mgonal_incremental(24)
 
     def centered_icosipentagonal(self) -> Generator[int]:
-        return centered_icosipentagonal()
+        return _centered_mgonal_incremental(25)
 
     def centered_icosihexagonal(self) -> Generator[int]:
-        return centered_icosihexagonal()
+        return _centered_mgonal_incremental(26)
 
     def centered_icosiheptagonal(self) -> Generator[int]:
-        return centered_icosiheptagonal()
+        return _centered_mgonal_incremental(27)
 
     def centered_icosioctagonal(self) -> Generator[int]:
-        return centered_icosioctagonal()
+        return _centered_mgonal_incremental(28)
 
     def centered_icosinonagonal(self) -> Generator[int]:
-        return centered_icosinonagonal()
+        return _centered_mgonal_incremental(29)
 
     def centered_triacontagonal(self) -> Generator[int]:
-        return centered_triacontagonal()
+        return _centered_mgonal_incremental(30)
 
     def truncated_centered_triangular(self) -> Generator[int]:
         return truncated_centered_triangular()

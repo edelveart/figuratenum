@@ -49,6 +49,17 @@ def centered_mgonal(m: int) -> Generator[int]:
         delta += 1
 
 
+def _centered_mgonal_incremental(m: int):
+    a = 1
+    b = m
+    c = m
+
+    while True:
+        yield a
+        a += b
+        b += c
+
+
 def pronic() -> Generator[int]:
     delta = 1
     while True:
