@@ -1,7 +1,26 @@
 from collections.abc import Generator
 
 
-def _cubic_generator(a: int, b: int, c: int, d: int) -> Generator[int, None, None]:
+def _cubic_generator(a: int, b: int, c: int, d: int) -> Generator[int]:
+    while True:
+        yield a
+        a += b
+        b += c
+        c += d
+
+
+def m_pyramidal(m: int) -> Generator[int]:
+    delta = 1
+    while True:
+        yield (delta * (delta + 1) * ((m - 2) * delta - m + 5)) // 6
+        delta += 1
+
+
+def _m_pyramidal_incremental(m: int) -> Generator[int]:
+    a = 1
+    b = m
+    c = 2 * m - 3
+    d = m - 2
     while True:
         yield a
         a += b
@@ -27,26 +46,6 @@ def _dodecahedral_incremental() -> Generator[int]:
 
 def _icosahedral_incremental() -> Generator[int]:
     return _cubic_generator(1, 11, 25, 15)
-
-
-def m_pyramidal(m) -> Generator[int]:
-    delta = 1
-    while True:
-        yield (delta * (delta + 1) * ((m - 2) * delta - m + 5)) // 6
-        delta += 1
-
-
-def _m_pyramidal_incremental(m: int) -> Generator[int]:
-    a = 1
-    b = m
-    c = 2 * m - 3
-    d = m - 2
-
-    while True:
-        yield a
-        a += b
-        b += c
-        c += d
 
 
 def cubic() -> Generator[int]:
@@ -173,19 +172,11 @@ def _centered_tetrahedron_incremental() -> Generator[int]:
     return _cubic_generator(1, 4, 6, 4)
 
 
-def centered_tetrahedral() -> Generator[int]:
-    return centered_tetrahedron()
-
-
 def centered_square_pyramid() -> Generator[int]:
     delta = 1
     while True:
         yield (2 * delta - 1) * ((delta ** 2 - delta + 2)) // 2
         delta += 1
-
-
-def centered_pyramid() -> Generator[int]:
-    return centered_square_pyramid()
 
 
 def centered_mgonal_pyramid(m: int) -> Generator[int]:
@@ -228,10 +219,6 @@ def centered_icosahedron() -> Generator[int]:
 
 def _centered_icosahedron_incremental() -> Generator[int]:
     return _cubic_generator(1, 12, 30, 20)
-
-
-def centered_cuboctahedron() -> Generator[int]:
-    return centered_icosahedron()
 
 
 def centered_dodecahedron() -> Generator[int]:
@@ -303,10 +290,6 @@ def centered_hexagonal_pyramidal() -> Generator[int]:
     while True:
         yield delta ** 3
         delta += 1
-
-
-def hex_pyramidal() -> Generator[int]:
-    return centered_hexagonal_pyramidal()
 
 
 def hexagonal_prism() -> Generator[int]:
