@@ -94,7 +94,7 @@ class PlaneFigurateNum:
     centered_star_polygonal = polygram
 
     def pentagram(self) -> Generator[int]:
-        return pentagram()
+        return _polygram_incremental(5)
 
     def gnomonic(self) -> Generator[int]:
         return gnomonic()
