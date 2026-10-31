@@ -1,64 +1,13 @@
 from collections.abc import Generator
 
 from .plane_figuratenum import (
-    _polygonal_incremental,
-    polygonal, centered_square, diamond,
-    centered_dodecagonal, star, centered_mgonal, _centered_mgonal_incremental,
-    pronic, heteromecic, oblong,  polite,
-    impolite, cross, aztec_diamond, polygram, _polygram_incremental,
-    centered_star_polygonal, pentagram, gnomonic,
-    truncated_triangular, _truncated_triangular_incremental, truncated_square, _truncated_square_incremental, truncated_pronic, _truncated_pronic_incremental,
-    truncated_centered_pol, _truncated_centered_pol_incremental, truncated_centered_mgonal,
-    truncated_centered_hexagonal, truncated_hex,
+    _polygonal_incremental,  _centered_mgonal_incremental,
+    _pronic_incremental,   polite, _cross_incremental,  _aztec_diamond_incremental, _polygram_incremental, _impolite_incremental,
+    _gnomonic_incremental, _truncated_triangular_incremental, _truncated_square_incremental,  _truncated_pronic_incremental,  _truncated_centered_pol_incremental,
     generalized_mgonal, generalized_centered_pol, generalized_pronic
 )
 
 from .specific_plane_figuratenum import (
-    # triangular, square, pentagonal,
-    # hexagonal, heptagonal, octagonal,
-    # nonagonal, decagonal, hendecagonal,
-    # dodecagonal, tridecagonal, tetradecagonal,
-    # pentadecagonal, hexadecagonal, heptadecagonal,
-    # octadecagonal, nonadecagonal, icosagonal,
-    # icosihenagonal, icosiheptagonal, icosidigonal,
-    # icositrigonal, icositetragonal, icosipentagonal,
-    # icosihexagonal,  icosioctagonal,
-    # icosinonagonal, triacontagonal,
-
-    centered_triangular,
-
-    centered_pentagonal,
-    centered_hexagonal,
-    centered_heptagonal,
-    centered_octagonal,
-    centered_nonagonal,
-    centered_decagonal,
-    centered_hendecagonal,
-
-    centered_tridecagonal,
-    centered_tetradecagonal,
-    centered_pentadecagonal,
-    centered_hexadecagonal,
-    centered_heptadecagonal,
-    centered_octadecagonal,
-    centered_nonadecagonal,
-    centered_icosagonal,
-    centered_icosihenagonal,
-    centered_icosidigonal,
-    centered_icositrigonal,
-    centered_icositetragonal,
-    centered_icosipentagonal,
-    centered_icosihexagonal,
-    centered_icosiheptagonal,
-    centered_icosioctagonal,
-    centered_icosinonagonal,
-    centered_triacontagonal,
-
-
-    truncated_centered_triangular,
-    truncated_centered_square,
-    truncated_centered_pentagonal,
-
     generalized_pentagonal,
     generalized_hexagonal
 )
@@ -73,7 +22,7 @@ class PlaneFigurateNum:
         return _centered_mgonal_incremental(m)
 
     def pronic(self) -> Generator[int]:
-        return pronic()
+        return _pronic_incremental()
     heteromecic = pronic
     oblong = pronic
 
@@ -81,13 +30,13 @@ class PlaneFigurateNum:
         return polite()
 
     def impolite(self) -> Generator[int]:
-        return impolite()
+        return _impolite_incremental()
 
     def cross(self) -> Generator[int]:
-        return cross()
+        return _cross_incremental()
 
     def aztec_diamond(self) -> Generator[int]:
-        return aztec_diamond()
+        return _aztec_diamond_incremental()
 
     def polygram(self, m: int) -> Generator[int]:
         return _polygram_incremental(m)
@@ -97,7 +46,7 @@ class PlaneFigurateNum:
         return _polygram_incremental(5)
 
     def gnomonic(self) -> Generator[int]:
-        return gnomonic()
+        return _gnomonic_incremental()
 
     def truncated_triangular(self) -> Generator[int]:
         return _truncated_triangular_incremental()
@@ -299,13 +248,13 @@ class PlaneFigurateNum:
         return _centered_mgonal_incremental(30)
 
     def truncated_centered_triangular(self) -> Generator[int]:
-        return truncated_centered_triangular()
+        return _truncated_centered_pol_incremental(3)
 
     def truncated_centered_square(self) -> Generator[int]:
-        return truncated_centered_square()
+        return _truncated_centered_pol_incremental(4)
 
     def truncated_centered_pentagonal(self) -> Generator[int]:
-        return truncated_centered_pentagonal()
+        return _truncated_centered_pol_incremental(5)
 
     def generalized_pentagonal(self) -> Generator[int]:
         return generalized_pentagonal()
