@@ -2,13 +2,13 @@ from math import log2, floor
 from collections.abc import Generator
 
 
-def linear_generator(a, b):
+def _linear_generator(a, b) -> Generator[int]:
     while True:
         yield a
         a += b
 
 
-def quadratic_generator(a, b, c) -> Generator[int]:
+def _quadratic_generator(a, b, c) -> Generator[int]:
     while True:
         yield a
         a += b
@@ -81,7 +81,7 @@ def pronic() -> Generator[int]:
 
 
 def _pronic_incremental() -> Generator[int]:
-    return quadratic_generator(2, 4, 2)
+    return _quadratic_generator(2, 4, 2)
 
 
 def heteromecic() -> Generator[int]:
@@ -121,7 +121,7 @@ def cross() -> Generator[int]:
 
 
 def _cross_incremental():
-    return linear_generator(1, 4)
+    return _linear_generator(1, 4)
 
 
 def aztec_diamond() -> Generator[int]:
@@ -132,7 +132,7 @@ def aztec_diamond() -> Generator[int]:
 
 
 def _aztec_diamond_incremental() -> Generator[int]:
-    return quadratic_generator(4, 8, 4)
+    return _quadratic_generator(4, 8, 4)
 
 
 def polygram(m: int) -> Generator[int]:
@@ -172,7 +172,7 @@ def gnomonic() -> Generator[int]:
 
 
 def _gnomonic_incremental() -> Generator[int]:
-    return linear_generator(1, 2)
+    return _linear_generator(1, 2)
 
 
 def truncated_triangular() -> Generator[int]:
@@ -183,7 +183,7 @@ def truncated_triangular() -> Generator[int]:
 
 
 def _truncated_triangular_incremental() -> Generator[int]:
-    return quadratic_generator(1, 6, 6)
+    return _quadratic_generator(1, 6, 6)
 
 
 def truncated_square() -> Generator[int]:
@@ -194,7 +194,7 @@ def truncated_square() -> Generator[int]:
 
 
 def _truncated_square_incremental() -> Generator[int]:
-    return quadratic_generator(1, 11, 14)
+    return _quadratic_generator(1, 11, 14)
 
 
 def truncated_pronic() -> Generator[int]:
@@ -205,7 +205,7 @@ def truncated_pronic() -> Generator[int]:
 
 
 def _truncated_pronic_incremental() -> Generator[int]:
-    return quadratic_generator(2, 14, 14)
+    return _quadratic_generator(2, 14, 14)
 
 
 def truncated_centered_pol(m: int) -> Generator[int]:
